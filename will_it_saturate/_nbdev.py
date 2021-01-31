@@ -2,9 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"Creator": "01_create_files.ipynb"}
 
-modules = []
+modules = ["files.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 
