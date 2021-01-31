@@ -12,6 +12,9 @@ entries:
     - output: web,pdf
       title: module name here
       url: core.html
+    - output: web,pdf
+      title: module Files
+      url: create_files.html
     output: web
     title: will_it_saturate
   output: web
