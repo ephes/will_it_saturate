@@ -3,9 +3,13 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"create_with_urandom": "01_create_files.ipynb",
-         "Creator": "01_create_files.ipynb"}
+         "Creator": "01_create_files.ipynb",
+         "read_root": "02_serve_files.ipynb",
+         "serve_file": "02_serve_files.ipynb",
+         "app": "02_serve_files.ipynb"}
 
-modules = ["files.py"]
+modules = ["files.py",
+           "main.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 
