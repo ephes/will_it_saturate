@@ -37,6 +37,7 @@ nb_path: "01_create_files.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">math</span>
 
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 </pre></div>
@@ -51,78 +52,6 @@ nb_path: "01_create_files.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">Creator</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Create fil</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bandwidth</span><span class="o">=</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">file_size</span><span class="o">=</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bandwidth</span> <span class="o">=</span> <span class="n">bandwidth</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">file_size</span> <span class="o">=</span> <span class="n">file_size</span>
-    
-    
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-
-<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;binary_file&quot;</span><span class="p">)</span>
-<span class="k">with</span> <span class="n">path</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 151 ms, sys: 204 ms, total: 355 ms
-Wall time: 364 ms
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">8</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -130,30 +59,14 @@ Wall time: 364 ms
 <div class="output_area">
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="create_with_urandom" class="doc_header"><code>create_with_urandom</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/files.py#L8" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>create_with_urandom</code>(<strong><code>path</code></strong>, <strong><code>size</code></strong>)</p>
+</blockquote>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>125000000.0</pre>
-</div>
-
-</div>
-
-</div>
 </div>
 
 </div>
-    {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creator</span> <span class="o">=</span> <span class="n">Creator</span><span class="p">()</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -163,16 +76,6 @@ Wall time: 364 ms
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">creator</span><span class="o">.</span><span class="n">bandwidth</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -180,13 +83,125 @@ Wall time: 364 ms
 <div class="output_area">
 
 
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="Creator" class="doc_header"><code>class</code> <code>Creator</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/files.py#L14" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Creator</code>(<strong><code>bandwidth</code></strong>=<em><code>125000000.0</code></em>, <strong><code>duration</code></strong>=<em><code>30</code></em>, <strong><code>file_size</code></strong>=<em><code>100000000</code></em>)</p>
+</blockquote>
+<p>Create files used for benchmark.</p>
+<p>All sizes are in byte, durations in seconds.</p>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>125000000.0</pre>
 </div>
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">hundred_mbit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span>
+<span class="n">bandwidth</span> <span class="o">=</span> <span class="n">hundred_mbit</span> <span class="o">/</span> <span class="n">byte</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># seconds</span>
+<span class="n">file_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># 100MB</span>
+
+<span class="n">creator</span> <span class="o">=</span> <span class="n">Creator</span><span class="p">(</span><span class="n">bandwidth</span><span class="o">=</span><span class="n">bandwidth</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span> <span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">)</span>
+<span class="n">creator</span><span class="o">.</span><span class="n">create_files</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Tests">Tests<a class="anchor-link" href="#Tests"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Setup-File-Creator">Setup File Creator<a class="anchor-link" href="#Setup-File-Creator"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">gigabit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
+<span class="n">bandwidth</span> <span class="o">=</span> <span class="n">gigabit</span> <span class="o">/</span> <span class="n">byte</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># seconds</span>
+<span class="n">file_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span> <span class="o">*</span> <span class="mi">100</span>  <span class="c1"># 100MB</span>
+<span class="n">creator</span> <span class="o">=</span> <span class="n">Creator</span><span class="p">(</span><span class="n">bandwidth</span><span class="o">=</span><span class="n">bandwidth</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">,</span> <span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">creator</span><span class="o">.</span><span class="n">bandwidth</span> <span class="o">==</span> <span class="mf">125000000.0</span>
+<span class="k">assert</span> <span class="n">creator</span><span class="o">.</span><span class="n">number_of_files</span> <span class="o">==</span> <span class="mi">38</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test_file_size</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">size</span> <span class="o">==</span> <span class="n">file_size</span>
+
+<span class="n">creator</span><span class="o">.</span><span class="n">create_files</span><span class="p">(</span><span class="n">file_creator</span><span class="o">=</span><span class="n">test_file_size</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
