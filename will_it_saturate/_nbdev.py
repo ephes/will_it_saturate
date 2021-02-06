@@ -2,7 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"Creator": "01_create_files.ipynb"}
+index = {"create_with_urandom": "01_create_files.ipynb",
+         "Creator": "01_create_files.ipynb"}
 
 modules = ["files.py"]
 
