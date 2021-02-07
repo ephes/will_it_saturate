@@ -2,14 +2,24 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"create_with_urandom": "01_create_files.ipynb",
-         "Creator": "01_create_files.ipynb",
-         "read_root": "02_serve_files.ipynb",
-         "serve_file": "02_serve_files.ipynb",
-         "app": "02_serve_files.ipynb"}
+index = {"md5sum_for_path": "00_core.ipynb",
+         "FilesystemCreator": "00_core.ipynb",
+         "BenchmarkFile": "00_core.ipynb",
+         "BenchmarkRow": "00_core.ipynb",
+         "Benchmark": "00_core.ipynb",
+         "read_root": "01_serve_files.ipynb",
+         "get_file_urls": "01_serve_files.ipynb",
+         "serve_file": "01_serve_files.ipynb",
+         "app": "01_serve_files.ipynb",
+         "BaseClient": "02_run_benchmark.ipynb",
+         "HttpxClient": "02_run_benchmark.ipynb",
+         "create_with_urandom": "03_create_files_old.ipynb",
+         "Creator": "03_create_files_old.ipynb"}
 
-modules = ["files.py",
-           "main.py"]
+modules = ["core.py",
+           "main.py",
+           "client.py",
+           "files.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 

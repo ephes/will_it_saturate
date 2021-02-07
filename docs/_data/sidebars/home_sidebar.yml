@@ -10,11 +10,14 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module name here
+      title: module Core
       url: core.html
     - output: web,pdf
+      title: Title
+      url: run_benchmark.html
+    - output: web,pdf
       title: module Files
-      url: create_files.html
+      url: create_files_old.html
     output: web
     title: will_it_saturate
   output: web

@@ -1,7 +1,8 @@
 {
   "will_it_saturate": {
     "Overview": "/",
-    "module name here": "core.html",
-    "module Files": "create_files.html"
+    "module Core": "core.html",
+    "Title": "run_benchmark.html",
+    "module Files": "create_files_old.html"
   }
 }

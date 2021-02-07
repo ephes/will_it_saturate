@@ -63,6 +63,7 @@ class BenchmarkRow(BaseModel):
     bandwidth: int = int(10 ** 9 / 8)  # in bytes per second
     files: list[BenchmarkFile] = []
     file_creator: Callable = FilesystemCreator()
+    elapsed: Optional[float] = None
 
     def __str__(self):
         return f"size: {self.file_size} duration: {self.duration} bandwidth: {self.bandwidth}"
@@ -85,6 +86,10 @@ class BenchmarkRow(BaseModel):
 
     def get_bytes_per_second(self, elapsed):
         return self.complete_size / elapsed
+
+    @property
+    def bytes_per_second(self):
+        return self.complete_size / self.elapsed
 
     def create_files(self):
         if len(self.files) > 0:
