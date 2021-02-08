@@ -9,6 +9,7 @@ import time
 import httpx
 import asyncio
 import hashlib
+import aiohttp
 
 from pathlib import Path
 
@@ -29,6 +30,8 @@ class BaseClient:
 
         for bf in benchmark_files:
             assert bf.md5sum == md5_lookup.get(bf.url, "wrong")
+
+# Cell
 
 
 class HttpxClient(BaseClient):
