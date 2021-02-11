@@ -83,7 +83,7 @@ class AioHttpClient(BaseClient):
 
     async def measure_benchmark_row(self, br):
         urls = [bf.url for bf in br.files]
-        max_connections = min(br.number_of_connections, 1000)
+        max_connections = min(br.number_of_connections, 200)
         # max_connections = br.number_of_connections
         conn = aiohttp.TCPConnector(limit=max_connections)
         responses = []

@@ -51,10 +51,10 @@ nb_path: "04_use_nginx_to_serve_files.ipynb"
 
 
 
-<div id="e0aedb20-ce3d-4ef5-9404-e55ec87322ea"></div>
+<div id="d85cc7d9-95b5-4195-97bd-9d2786d7627d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e0aedb20-ce3d-4ef5-9404-e55ec87322ea');
+var element = $('#d85cc7d9-95b5-4195-97bd-9d2786d7627d');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -89,7 +89,7 @@ var element = $('#e0aedb20-ce3d-4ef5-9404-e55ec87322ea');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;8090&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;8000&quot;</span>
 <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;wis-nginx&quot;</span>
 <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;shell&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;capture_output&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 </pre></div>
@@ -106,15 +106,15 @@ var element = $('#e0aedb20-ce3d-4ef5-9404-e55ec87322ea');
 
 
 
-<div id="fe90cf05-4d57-431e-8df1-6d89fad0d946"></div>
+<div id="25f544c3-6bee-4c2a-bd78-9ca99485672d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fe90cf05-4d57-431e-8df1-6d89fad0d946');
+var element = $('#25f544c3-6bee-4c2a-bd78-9ca99485672d');
 
             setTimeout(function() {
-                var nbb_cell_id = 40;
-                var nbb_unformatted_code = "port = \"8090\"\nname = \"wis-nginx\"\nkwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}";
-                var nbb_formatted_code = "port = \"8090\"\nname = \"wis-nginx\"\nkwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "port = \"8000\"\nname = \"wis-nginx\"\nkwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}";
+                var nbb_formatted_code = "port = \"8000\"\nname = \"wis-nginx\"\nkwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -167,7 +167,7 @@ var element = $('#fe90cf05-4d57-431e-8df1-6d89fad0d946');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>796cd647f16c
+<pre>f14f966ab8ba
 
 </pre>
 </div>
@@ -178,13 +178,13 @@ var element = $('#fe90cf05-4d57-431e-8df1-6d89fad0d946');
 
 
 
-<div id="5aefc5c2-88c4-49a6-a861-592d453e0c0c"></div>
+<div id="d9564c0f-6aff-47a7-868a-f2d386423a0c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5aefc5c2-88c4-49a6-a861-592d453e0c0c');
+var element = $('#d9564c0f-6aff-47a7-868a-f2d386423a0c');
 
             setTimeout(function() {
-                var nbb_cell_id = 42;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "output = subprocess.run(f\"docker ps | grep {name}\", **kwargs)\nif len(output.stdout) > 0:\n    docker_id = output.stdout.split()[0]\n    output = subprocess.run(f\"docker kill {docker_id}\", **kwargs)\n    print(output.stdout)";
                 var nbb_formatted_code = "output = subprocess.run(f\"docker ps | grep {name}\", **kwargs)\nif len(output.stdout) > 0:\n    docker_id = output.stdout.split()[0]\n    output = subprocess.run(f\"docker kill {docker_id}\", **kwargs)\n    print(output.stdout)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -247,13 +247,13 @@ var element = $('#5aefc5c2-88c4-49a6-a861-592d453e0c0c');
 
 
 
-<div id="d16e08c1-20db-4d1c-9d91-c4e4a54cea62"></div>
+<div id="e64944ae-f02a-4f6c-9bb4-6544d195a1ec"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d16e08c1-20db-4d1c-9d91-c4e4a54cea62');
+var element = $('#e64944ae-f02a-4f6c-9bb4-6544d195a1ec');
 
             setTimeout(function() {
-                var nbb_cell_id = 43;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "output = subprocess.run(f\"docker rm {name}\", **kwargs)\nprint(output.stdout)";
                 var nbb_formatted_code = "output = subprocess.run(f\"docker rm {name}\", **kwargs)\nprint(output.stdout)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -315,13 +315,13 @@ var element = $('#d16e08c1-20db-4d1c-9d91-c4e4a54cea62');
 
 
 
-<div id="33038c0d-9c0a-430e-8315-c463c8948eef"></div>
+<div id="8b5cc6d9-3e46-4177-a09d-92dbcee847dc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#33038c0d-9c0a-430e-8315-c463c8948eef');
+var element = $('#8b5cc6d9-3e46-4177-a09d-92dbcee847dc');
 
             setTimeout(function() {
-                var nbb_cell_id = 38;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "output = subprocess.run(f\"docker build -f Dockerfile.nginx -t {name} .\", **kwargs)\nprint(output.stdout)";
                 var nbb_formatted_code = "output = subprocess.run(f\"docker build -f Dockerfile.nginx -t {name} .\", **kwargs)\nprint(output.stdout)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -373,7 +373,7 @@ var element = $('#33038c0d-9c0a-430e-8315-c463c8948eef');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>796cd647f16c9fae591d9d6430ba7a038c1d5644cdbbbbbaa73cc501ae075c91
+<pre>f14f966ab8ba2a7f43c08b24e52a9ce4491a69284f44eb0690d36ce45a16fe7e
 
 </pre>
 </div>
@@ -384,13 +384,13 @@ var element = $('#33038c0d-9c0a-430e-8315-c463c8948eef');
 
 
 
-<div id="5c098910-dd0e-4985-b5ae-779eb3fbf4d2"></div>
+<div id="61515206-41c4-44a6-a379-9adfa95cd766"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5c098910-dd0e-4985-b5ae-779eb3fbf4d2');
+var element = $('#61515206-41c4-44a6-a379-9adfa95cd766');
 
             setTimeout(function() {
-                var nbb_cell_id = 41;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "output = subprocess.run(f\"docker run --name {name} -d -p {port}:80 {name}\", **kwargs)\nprint(output.stdout)";
                 var nbb_formatted_code = "output = subprocess.run(f\"docker run --name {name} -d -p {port}:80 {name}\", **kwargs)\nprint(output.stdout)";
                 var nbb_cells = Jupyter.notebook.get_cells();
