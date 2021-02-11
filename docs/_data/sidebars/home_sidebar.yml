@@ -13,14 +13,17 @@ entries:
       title: module Core
       url: core.html
     - output: web,pdf
-      title: Title
+      title: Start the Server
       url: serve_files.html
     - output: web,pdf
-      title: aiohttp
+      title: Caveats
       url: run_benchmark.html
     - output: web,pdf
       title: module Files
       url: create_files_old.html
+    - output: web,pdf
+      title: Run Nginx via Docker
+      url: use_nginx_to_serve_files.html
     output: web
     title: will_it_saturate
   output: web

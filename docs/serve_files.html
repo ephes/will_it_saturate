@@ -1,6 +1,6 @@
 ---
 
-title: Title
+title: Start the Server
 
 
 keywords: fastai
@@ -95,7 +95,7 @@ nb_path: "01_serve_files.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/main.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>path</code></strong>:<code>str</code>, <strong><code>num</code></strong>:<code>int</code>)</p>
+<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/main.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>base</code></strong>:<code>str</code>, <strong><code>path</code></strong>:<code>str</code>, <strong><code>num</code></strong>:<code>int</code>)</p>
 </blockquote>
 
 </div>
@@ -120,15 +120,15 @@ nb_path: "01_serve_files.ipynb"
 
 
 
-<div id="adc84d66-4ae7-4900-826f-372dd9996c78"></div>
+<div id="fd16646b-82d3-45a8-aacb-4e905ddc481e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#adc84d66-4ae7-4900-826f-372dd9996c78');
+var element = $('#fd16646b-82d3-45a8-aacb-4e905ddc481e');
 
             setTimeout(function() {
-                var nbb_cell_id = 40;
-                var nbb_unformatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/files/{path}/{num}\")\nasync def serve_file(path: str, num: int):\n    file_path = str(Path(\"./data/\") / path / str(num))\n    return FileResponse(file_path)";
-                var nbb_formatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/files/{path}/{num}\")\nasync def serve_file(path: str, num: int):\n    file_path = str(Path(\"./data/\") / path / str(num))\n    return FileResponse(file_path)";
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/{base}/{path}/{num}\")\nasync def serve_file(base: str, path: str, num: int):\n    file_path = str(Path(base) / path / str(num))\n    return FileResponse(file_path)";
+                var nbb_formatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/{base}/{path}/{num}\")\nasync def serve_file(base: str, path: str, num: int):\n    file_path = str(Path(base) / path / str(num))\n    return FileResponse(file_path)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -174,8 +174,10 @@ var element = $('#adc84d66-4ae7-4900-826f-372dd9996c78');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converted 00_core.ipynb.
-Converted 01_create_files.ipynb.
-Converted 02_serve_files.ipynb.
+Converted 01_serve_files.ipynb.
+Converted 02_run_benchmark.ipynb.
+Converted 03_create_files_old.ipynb.
+Converted 04_use_nginx_to_serve_files.ipynb.
 Converted index.ipynb.
 </pre>
 </div>
@@ -186,13 +188,13 @@ Converted index.ipynb.
 
 
 
-<div id="303ea988-0aee-4a0e-82d5-f04d96c651b9"></div>
+<div id="a13a088c-d8bb-474a-b64e-6704988f19c2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#303ea988-0aee-4a0e-82d5-f04d96c651b9');
+var element = $('#a13a088c-d8bb-474a-b64e-6704988f19c2');
 
             setTimeout(function() {
-                var nbb_cell_id = 41;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();

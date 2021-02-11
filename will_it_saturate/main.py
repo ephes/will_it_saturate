@@ -24,7 +24,7 @@ def get_file_urls(base_dir: str):
     pass
 
 
-@app.get("/files/{path}/{num}")
-async def serve_file(path: str, num: int):
-    file_path = str(Path("./data/") / path / str(num))
+@app.get("/{base}/{path}/{num}")
+async def serve_file(base: str, path: str, num: int):
+    file_path = str(Path(base) / path / str(num))
     return FileResponse(file_path)

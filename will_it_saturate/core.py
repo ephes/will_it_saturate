@@ -51,7 +51,7 @@ class BenchmarkFile(BaseModel):
     @property
     def url(self):
         host = f"http://{self.hostname}:{self.port}"
-        path = f"files/{self.base_path}/{self.number}"
+        path = f"data/{self.base_path}/{self.number}"
         return f"{host}/{path}"
 
 # Cell
