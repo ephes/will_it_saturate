@@ -1,6 +1,6 @@
 ---
 
-title: Title
+title: aiohttp
 
 
 keywords: fastai
@@ -51,6 +51,7 @@ nb_path: "02_run_benchmark.ipynb"
 
 <span class="c1"># file_sizes = [10 ** 7, 10 ** 6]</span>
 <span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">]</span>
+<span class="c1"># file_sizes = [10 ** 7]</span>
 <span class="n">benchmark</span><span class="o">.</span><span class="n">create_rows</span><span class="p">(</span><span class="n">file_sizes</span><span class="p">)</span>
 </pre></div>
 
@@ -66,15 +67,15 @@ nb_path: "02_run_benchmark.ipynb"
 
 
 
-<div id="b569a15a-2115-4c1c-99df-213dd4cf8885"></div>
+<div id="378be810-5523-4b2c-b402-0891109a591d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b569a15a-2115-4c1c-99df-213dd4cf8885');
+var element = $('#378be810-5523-4b2c-b402-0891109a591d');
 
             setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\nbenchmark.create_rows(file_sizes)";
-                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\nbenchmark.create_rows(file_sizes)";
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
+                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -108,9 +109,52 @@ var element = $('#b569a15a-2115-4c1c-99df-213dd4cf8885');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BaseClient" class="doc_header"><code>class</code> <code>BaseClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L20" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseClient</code>(<strong><code>benchmark</code></strong>)</p>
+<h2 id="BaseClient" class="doc_header"><code>class</code> <code>BaseClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseClient</code>(<strong><code>benchmark</code></strong>)</p>
 </blockquote>
 
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="f1d27f88-f450-4558-8f84-34881e936e2c"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#f1d27f88-f450-4558-8f84-34881e936e2c');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# export\n\n\nclass BaseClient:\n    def __init__(self, benchmark):\n        self.benchmark = benchmark\n\n    def check_md5sums(self, benchmark_files, responses):\n        md5_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            md5_lookup[url] = hashlib.md5(response.content).hexdigest()\n\n        for bf in benchmark_files:\n            assert bf.md5sum == md5_lookup.get(bf.url, \"wrong\")";
+                var nbb_formatted_code = "# export\n\n\nclass BaseClient:\n    def __init__(self, benchmark):\n        self.benchmark = benchmark\n\n    def check_md5sums(self, benchmark_files, responses):\n        md5_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            md5_lookup[url] = hashlib.md5(response.content).hexdigest()\n\n        for bf in benchmark_files:\n            assert bf.md5sum == md5_lookup.get(bf.url, \"wrong\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
 </div>
 
 </div>
@@ -132,7 +176,7 @@ var element = $('#b569a15a-2115-4c1c-99df-213dd4cf8885');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L34" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>benchmark</code></strong>) :: <a href="/will_it_saturate/run_benchmark.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L37" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>benchmark</code></strong>) :: <a href="/will_it_saturate/run_benchmark.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -157,15 +201,15 @@ var element = $('#b569a15a-2115-4c1c-99df-213dd4cf8885');
 
 
 
-<div id="a8d503d8-9cd3-4117-b2ad-c5a4b438f986"></div>
+<div id="e144657e-bf13-4917-85a2-74c2fc7e75fd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a8d503d8-9cd3-4117-b2ad-c5a4b438f986');
+var element = $('#e144657e-bf13-4917-85a2-74c2fc7e75fd');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "# export\n\nclass BaseClient:\n    def __init__(self, benchmark):\n        self.benchmark = benchmark\n\n    def check_md5sums(self, benchmark_files, responses):\n        md5_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            md5_lookup[url] = hashlib.md5(response.content).hexdigest()\n\n        for bf in benchmark_files:\n            assert bf.md5sum == md5_lookup.get(bf.url, \"wrong\")\n\n\n            \nclass HttpxClient(BaseClient):\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        # httpx breaks on more than 100 parallel connections\n        max_connections = min(br.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
-                var nbb_formatted_code = "# export\n\n\nclass BaseClient:\n    def __init__(self, benchmark):\n        self.benchmark = benchmark\n\n    def check_md5sums(self, benchmark_files, responses):\n        md5_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            md5_lookup[url] = hashlib.md5(response.content).hexdigest()\n\n        for bf in benchmark_files:\n            assert bf.md5sum == md5_lookup.get(bf.url, \"wrong\")\n\n\nclass HttpxClient(BaseClient):\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        # httpx breaks on more than 100 parallel connections\n        max_connections = min(br.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# export\n\n\nclass HttpxClient(BaseClient):\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        # httpx breaks on more than 100 parallel connections\n        max_connections = min(br.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
+                var nbb_formatted_code = "# export\n\n\nclass HttpxClient(BaseClient):\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        # httpx breaks on more than 100 parallel connections\n        max_connections = min(br.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -210,13 +254,13 @@ var element = $('#a8d503d8-9cd3-4117-b2ad-c5a4b438f986');
 
 
 
-<div id="a1c8769b-cfe6-4308-b9fd-08e94ecf8303"></div>
+<div id="b5e93902-1ca1-4dd1-ae07-05b8a9409d99"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a1c8769b-cfe6-4308-b9fd-08e94ecf8303');
+var element = $('#b5e93902-1ca1-4dd1-ae07-05b8a9409d99');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "bclient = HttpxClient(benchmark)";
                 var nbb_formatted_code = "bclient = HttpxClient(benchmark)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -263,13 +307,13 @@ var element = $('#a1c8769b-cfe6-4308-b9fd-08e94ecf8303');
 
 
 
-<div id="f00f39ca-fb9a-42b4-9c88-791b60249dd4"></div>
+<div id="8821c20c-2729-4dc3-b48f-114f227603bf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f00f39ca-fb9a-42b4-9c88-791b60249dd4');
+var element = $('#8821c20c-2729-4dc3-b48f-114f227603bf');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "await bclient.run()";
                 var nbb_formatted_code = "await bclient.run()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -315,9 +359,9 @@ var element = $('#f00f39ca-fb9a-42b4-9c88-791b60249dd4');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>118178042.79873662
-103738741.96430975
-59168510.83409966
+<pre>115508622.77644457
+92834362.10747789
+55720874.5777953
 </pre>
 </div>
 </div>
@@ -327,15 +371,353 @@ var element = $('#f00f39ca-fb9a-42b4-9c88-791b60249dd4');
 
 
 
-<div id="20e043d1-1bf8-4271-976c-c4516ba298ef"></div>
+<div id="576d7a62-6987-4c83-b070-85d09662d4ce"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#20e043d1-1bf8-4271-976c-c4516ba298ef');
+var element = $('#576d7a62-6987-4c83-b070-85d09662d4ce');
 
             setTimeout(function() {
-                var nbb_cell_id = 11;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "for br in benchmark.rows:\n    print(br.bytes_per_second)";
                 var nbb_formatted_code = "for br in benchmark.rows:\n    print(br.bytes_per_second)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L59" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L65" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>benchmark</code></strong>) :: <a href="/will_it_saturate/run_benchmark.html#BaseClient"><code>BaseClient</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="8d21b60b-d104-4c4c-8b00-f851b41b0008"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#8d21b60b-d104-4c4c-8b00-f851b41b0008');
+
+            setTimeout(function() {
+                var nbb_cell_id = 19;
+                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        max_connections = min(br.number_of_connections, 1000)\n        # max_connections = br.number_of_connections\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        self.responses = responses\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
+                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        max_connections = min(br.number_of_connections, 1000)\n        # max_connections = br.number_of_connections\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        self.responses = responses\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bclient</span> <span class="o">=</span> <span class="n">AioHttpClient</span><span class="p">(</span><span class="n">benchmark</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="ef4473a9-ff0c-4908-8bf8-3492a0b1f80e"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#ef4473a9-ff0c-4908-8bf8-3492a0b1f80e');
+
+            setTimeout(function() {
+                var nbb_cell_id = 20;
+                var nbb_unformatted_code = "bclient = AioHttpClient(benchmark)";
+                var nbb_formatted_code = "bclient = AioHttpClient(benchmark)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">await</span> <span class="n">bclient</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="521f5dfa-7670-4480-aa4e-f2f9d4dfaca0"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#521f5dfa-7670-4480-aa4e-f2f9d4dfaca0');
+
+            setTimeout(function() {
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "await bclient.run()";
+                var nbb_formatted_code = "await bclient.run()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">elapsed</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3.42612158299994
+109453208.5086271
+3.4221362079999835
+109580676.28148651
+6.218838208999841
+60300652.21142169
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="9f675db2-65b9-44ed-bc30-cb6770577fd8"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#9f675db2-65b9-44ed-bc30-cb6770577fd8');
+
+            setTimeout(function() {
+                var nbb_cell_id = 22;
+                var nbb_unformatted_code = "for br in benchmark.rows:\n    print(br.elapsed)\n    print(br.bytes_per_second)";
+                var nbb_formatted_code = "for br in benchmark.rows:\n    print(br.elapsed)\n    print(br.bytes_per_second)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Export">Export<a class="anchor-link" href="#Export"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
+
+<span class="n">notebook2script</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Converted 00_core.ipynb.
+Converted 01_serve_files.ipynb.
+Converted 02_run_benchmark.ipynb.
+Converted 03_create_files_old.ipynb.
+Converted index.ipynb.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="38057159-fdd7-4481-aca5-624cc481ab09"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#38057159-fdd7-4481-aca5-624cc481ab09');
+
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

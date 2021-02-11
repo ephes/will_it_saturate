@@ -14,6 +14,9 @@ entries:
       url: core.html
     - output: web,pdf
       title: Title
+      url: serve_files.html
+    - output: web,pdf
+      title: aiohttp
       url: run_benchmark.html
     - output: web,pdf
       title: module Files
