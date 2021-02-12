@@ -15,14 +15,11 @@ index = {"md5sum_for_path": "00_core.ipynb",
          "BaseClient": "02_run_benchmark.ipynb",
          "HttpxClient": "02_run_benchmark.ipynb",
          "AioHttpResponse": "02_run_benchmark.ipynb",
-         "AioHttpClient": "02_run_benchmark.ipynb",
-         "create_with_urandom": "03_create_files_old.ipynb",
-         "Creator": "03_create_files_old.ipynb"}
+         "AioHttpClient": "02_run_benchmark.ipynb"}
 
 modules = ["core.py",
            "main.py",
-           "client.py",
-           "files.py"]
+           "client.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 

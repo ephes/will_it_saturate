@@ -19,9 +19,6 @@ entries:
       title: Caveats
       url: run_benchmark.html
     - output: web,pdf
-      title: module Files
-      url: create_files_old.html
-    - output: web,pdf
       title: Run Nginx via Docker
       url: use_nginx_to_serve_files.html
     - output: web,pdf
