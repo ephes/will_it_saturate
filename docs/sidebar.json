@@ -3,7 +3,7 @@
     "Overview": "/",
     "module Core": "core.html",
     "Start the Server": "serve_files.html",
-    "Caveats": "run_benchmark.html",
+    "Caveats": "benchmark_clients.html",
     "Run Nginx via Docker": "use_nginx_to_serve_files.html",
     "Create wrk JSON": "run_wrk_benchmark.html"
   }

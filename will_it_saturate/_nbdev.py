@@ -11,11 +11,11 @@ index = {"md5sum_for_path": "00_core.ipynb",
          "get_file_urls": "01_serve_files.ipynb",
          "serve_file": "01_serve_files.ipynb",
          "app": "01_serve_files.ipynb",
-         "convert_size": "02_run_benchmark.ipynb",
-         "BaseClient": "02_run_benchmark.ipynb",
-         "HttpxClient": "02_run_benchmark.ipynb",
-         "AioHttpResponse": "02_run_benchmark.ipynb",
-         "AioHttpClient": "02_run_benchmark.ipynb"}
+         "convert_size": "02_benchmark_clients.ipynb",
+         "BaseClient": "02_benchmark_clients.ipynb",
+         "HttpxClient": "02_benchmark_clients.ipynb",
+         "AioHttpResponse": "02_benchmark_clients.ipynb",
+         "AioHttpClient": "02_benchmark_clients.ipynb"}
 
 modules = ["core.py",
            "main.py",

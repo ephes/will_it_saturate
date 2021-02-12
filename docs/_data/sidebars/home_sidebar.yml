@@ -17,7 +17,7 @@ entries:
       url: serve_files.html
     - output: web,pdf
       title: Caveats
-      url: run_benchmark.html
+      url: benchmark_clients.html
     - output: web,pdf
       title: Run Nginx via Docker
       url: use_nginx_to_serve_files.html
