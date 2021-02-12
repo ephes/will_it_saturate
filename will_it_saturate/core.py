@@ -42,17 +42,23 @@ class BenchmarkFile(BaseModel):
     creator: Callable = FilesystemCreator()
 
     @property
-    def path(self):
+    def filesystem_path(self):
         return Path(self.data_root) / self.base_path / str(self.number)
 
     def get_or_create(self):
-        self.md5sum = self.creator(self.path, self.size)
+        self.md5sum = self.creator(self.filesystem_path, self.size)
+
+    @property
+    def path(self):
+        return f"{self.data_root}/{self.base_path}/{self.number}"
+
+    @property
+    def host(self):
+        return f"http://{self.hostname}:{self.port}"
 
     @property
     def url(self):
-        host = f"http://{self.hostname}:{self.port}"
-        path = f"data/{self.base_path}/{self.number}"
-        return f"{host}/{path}"
+        return f"{self.host}/{self.path}"
 
 # Cell
 
@@ -64,6 +70,7 @@ class BenchmarkRow(BaseModel):
     files: list[BenchmarkFile] = []
     file_creator: Callable = FilesystemCreator()
     elapsed: Optional[float] = None
+    data_root: str = "data"
 
     def __str__(self):
         return f"size: {self.file_size} duration: {self.duration} bandwidth: {self.bandwidth}"
@@ -100,6 +107,7 @@ class BenchmarkRow(BaseModel):
                 base_path=self.base_path,
                 size=self.file_size,
                 creator=self.file_creator,
+                data_root=self.data_root,
             )
             benchmark_file.get_or_create()
             self.files.append(benchmark_file)

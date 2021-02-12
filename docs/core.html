@@ -101,7 +101,7 @@ nb_path: "00_core.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BenchmarkFile" class="doc_header"><code>class</code> <code>BenchmarkFile</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L34" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkFile</code>(<strong><code>number</code></strong>:<code>int</code>, <strong><code>base_path</code></strong>:<code>str</code>, <strong><code>size</code></strong>:<code>int</code>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>hostname</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>md5sum</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>creator</code></strong>:<code>Callable</code>=<em><code>&lt;will_it_saturate.core.FilesystemCreator object at 0x10dfc1a60&gt;</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BenchmarkFile" class="doc_header"><code>class</code> <code>BenchmarkFile</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L34" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkFile</code>(<strong><code>number</code></strong>:<code>int</code>, <strong><code>base_path</code></strong>:<code>str</code>, <strong><code>size</code></strong>:<code>int</code>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>hostname</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>md5sum</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>creator</code></strong>:<code>Callable</code>=<em><code>&lt;will_it_saturate.core.FilesystemCreator object at 0x10be6b3d0&gt;</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -126,15 +126,15 @@ nb_path: "00_core.ipynb"
 
 
 
-<div id="ae881a51-5f68-424d-926f-407161183c76"></div>
+<div id="8f34d86d-481a-43e6-b348-85bd95c14467"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ae881a51-5f68-424d-926f-407161183c76');
+var element = $('#8f34d86d-481a-43e6-b348-85bd95c14467');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# export\n\n\ndef md5sum_for_path(path):\n    with path.open(\"rb\") as f:\n        md5sum = hashlib.md5(f.read()).hexdigest()\n    return md5sum\n\n\nclass FilesystemCreator:\n    def __call__(self, path, size):\n        path.parent.mkdir(parents=True, exist_ok=True)\n        if not path.exists():\n            with path.open(\"wb\") as f:\n                f.write(os.urandom(size))\n        return md5sum_for_path(path)\n\n\nclass BenchmarkFile(BaseModel):\n    number: int\n    base_path: str\n    size: int\n    data_root: str = \"data\"\n    hostname: str = \"localhost\"\n    port: int = 8000\n    md5sum: Optional[str] = None\n    creator: Callable = FilesystemCreator()\n\n    @property\n    def path(self):\n        return Path(self.data_root) / self.base_path / str(self.number)\n\n    def get_or_create(self):\n        self.md5sum = self.creator(self.path, self.size)\n\n    @property\n    def url(self):\n        host = f\"http://{self.hostname}:{self.port}\"\n        path = f\"files/{self.base_path}/{self.number}\"\n        return f\"{host}/{path}\"";
-                var nbb_formatted_code = "# export\n\n\ndef md5sum_for_path(path):\n    with path.open(\"rb\") as f:\n        md5sum = hashlib.md5(f.read()).hexdigest()\n    return md5sum\n\n\nclass FilesystemCreator:\n    def __call__(self, path, size):\n        path.parent.mkdir(parents=True, exist_ok=True)\n        if not path.exists():\n            with path.open(\"wb\") as f:\n                f.write(os.urandom(size))\n        return md5sum_for_path(path)\n\n\nclass BenchmarkFile(BaseModel):\n    number: int\n    base_path: str\n    size: int\n    data_root: str = \"data\"\n    hostname: str = \"localhost\"\n    port: int = 8000\n    md5sum: Optional[str] = None\n    creator: Callable = FilesystemCreator()\n\n    @property\n    def path(self):\n        return Path(self.data_root) / self.base_path / str(self.number)\n\n    def get_or_create(self):\n        self.md5sum = self.creator(self.path, self.size)\n\n    @property\n    def url(self):\n        host = f\"http://{self.hostname}:{self.port}\"\n        path = f\"files/{self.base_path}/{self.number}\"\n        return f\"{host}/{path}\"";
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# export\n\n\ndef md5sum_for_path(path):\n    with path.open(\"rb\") as f:\n        md5sum = hashlib.md5(f.read()).hexdigest()\n    return md5sum\n\n\nclass FilesystemCreator:\n    def __call__(self, path, size):\n        path.parent.mkdir(parents=True, exist_ok=True)\n        if not path.exists():\n            with path.open(\"wb\") as f:\n                f.write(os.urandom(size))\n        return md5sum_for_path(path)\n\n\nclass BenchmarkFile(BaseModel):\n    number: int\n    base_path: str\n    size: int\n    data_root: str = \"data\"\n    hostname: str = \"localhost\"\n    port: int = 8000\n    md5sum: Optional[str] = None\n    creator: Callable = FilesystemCreator()\n\n    @property\n    def filesystem_path(self):\n        return Path(self.data_root) / self.base_path / str(self.number)\n\n    def get_or_create(self):\n        self.md5sum = self.creator(self.filesystem_path, self.size)\n\n    @property\n    def path(self):\n        return f\"{self.data_root}/{self.base_path}/{self.number}\"\n    \n    @property\n    def host(self):\n        return f\"http://{self.hostname}:{self.port}\"\n\n    @property\n    def url(self):\n        return f\"{self.host}/{self.path}\"";
+                var nbb_formatted_code = "# export\n\n\ndef md5sum_for_path(path):\n    with path.open(\"rb\") as f:\n        md5sum = hashlib.md5(f.read()).hexdigest()\n    return md5sum\n\n\nclass FilesystemCreator:\n    def __call__(self, path, size):\n        path.parent.mkdir(parents=True, exist_ok=True)\n        if not path.exists():\n            with path.open(\"wb\") as f:\n                f.write(os.urandom(size))\n        return md5sum_for_path(path)\n\n\nclass BenchmarkFile(BaseModel):\n    number: int\n    base_path: str\n    size: int\n    data_root: str = \"data\"\n    hostname: str = \"localhost\"\n    port: int = 8000\n    md5sum: Optional[str] = None\n    creator: Callable = FilesystemCreator()\n\n    @property\n    def filesystem_path(self):\n        return Path(self.data_root) / self.base_path / str(self.number)\n\n    def get_or_create(self):\n        self.md5sum = self.creator(self.filesystem_path, self.size)\n\n    @property\n    def path(self):\n        return f\"{self.data_root}/{self.base_path}/{self.number}\"\n\n    @property\n    def host(self):\n        return f\"http://{self.hostname}:{self.port}\"\n\n    @property\n    def url(self):\n        return f\"{self.host}/{self.path}\"";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -187,7 +187,7 @@ var element = $('#ae881a51-5f68-424d-926f-407161183c76');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;http://localhost:8000/files/3000000_2_12500000/0&#39;</pre>
+<pre>&#39;http://localhost:8000/data/3000000_2_12500000/0&#39;</pre>
 </div>
 
 </div>
@@ -197,13 +197,13 @@ var element = $('#ae881a51-5f68-424d-926f-407161183c76');
 
 
 
-<div id="a5522c59-a16b-402d-9dc4-2741bc18adae"></div>
+<div id="a775dbb7-20ac-485e-a388-54b108369109"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a5522c59-a16b-402d-9dc4-2741bc18adae');
+var element = $('#a775dbb7-20ac-485e-a388-54b108369109');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "base_path = \"3000000_2_12500000\"\nbenchmark_file = BenchmarkFile(number=0, size=10 ** 6 * 3, base_path=base_path)\nbenchmark_file.url";
                 var nbb_formatted_code = "base_path = \"3000000_2_12500000\"\nbenchmark_file = BenchmarkFile(number=0, size=10 ** 6 * 3, base_path=base_path)\nbenchmark_file.url";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -257,13 +257,13 @@ var element = $('#a5522c59-a16b-402d-9dc4-2741bc18adae');
 
 
 
-<div id="47859f8b-d713-45da-9460-f990d1105563"></div>
+<div id="2343a60c-92c8-43df-9504-a8ef826d916c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#47859f8b-d713-45da-9460-f990d1105563');
+var element = $('#2343a60c-92c8-43df-9504-a8ef826d916c');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "assert \"localhost\" in benchmark_file.url\nassert base_path in benchmark_file.url";
                 var nbb_formatted_code = "assert \"localhost\" in benchmark_file.url\nassert base_path in benchmark_file.url";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -322,13 +322,13 @@ var element = $('#47859f8b-d713-45da-9460-f990d1105563');
 
 
 
-<div id="9db4576d-1046-42b2-939e-ad743d0dec8f"></div>
+<div id="b1dca9a0-63b7-4270-a918-4c3fb3b749b0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9db4576d-1046-42b2-939e-ad743d0dec8f');
+var element = $('#b1dca9a0-63b7-4270-a918-4c3fb3b749b0');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "file_size = 10 ** 6 * 3\n\n\nclass TestCreator:\n    def __call__(self, path, size):\n        assert size == file_size\n        return \"test_md5sum\"\n\n\nbenchmark_file = BenchmarkFile(\n    number=0, size=file_size, base_path=base_path, creator=TestCreator()\n)\nbenchmark_file.get_or_create()";
                 var nbb_formatted_code = "file_size = 10 ** 6 * 3\n\n\nclass TestCreator:\n    def __call__(self, path, size):\n        assert size == file_size\n        return \"test_md5sum\"\n\n\nbenchmark_file = BenchmarkFile(\n    number=0, size=file_size, base_path=base_path, creator=TestCreator()\n)\nbenchmark_file.get_or_create()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -370,7 +370,7 @@ var element = $('#9db4576d-1046-42b2-939e-ad743d0dec8f');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BenchmarkRow" class="doc_header"><code>class</code> <code>BenchmarkRow</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L60" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkRow</code>(<strong><code>file_size</code></strong>:<code>int</code>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>files</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkFile"><code>BenchmarkFile</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>&lt;will_it_saturate.core.FilesystemCreator object at 0x10e199040&gt;</code></em>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BenchmarkRow" class="doc_header"><code>class</code> <code>BenchmarkRow</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L66" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkRow</code>(<strong><code>file_size</code></strong>:<code>int</code>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>files</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkFile"><code>BenchmarkFile</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>&lt;will_it_saturate.core.FilesystemCreator object at 0x10c460040&gt;</code></em>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -395,15 +395,15 @@ var element = $('#9db4576d-1046-42b2-939e-ad743d0dec8f');
 
 
 
-<div id="2f327279-aefd-4ac3-be98-3ad2df544e48"></div>
+<div id="4a1d40c5-2dcc-4523-a27f-948f457e322c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2f327279-aefd-4ac3-be98-3ad2df544e48');
+var element = $('#4a1d40c5-2dcc-4523-a27f-948f457e322c');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "# export\n\n\nclass BenchmarkRow(BaseModel):\n    file_size: int  # size of a single file\n    duration: int = 30  # in seconds\n    bandwidth: int = int(10 ** 9 / 8)  # in bytes per second\n    files: list[BenchmarkFile] = []\n    file_creator: Callable = FilesystemCreator()\n    elapsed: Optional[float] = None\n\n    def __str__(self):\n        return f\"size: {self.file_size} duration: {self.duration} bandwidth: {self.bandwidth}\"\n\n    @property\n    def base_path(self):\n        return f\"{self.file_size}_{self.duration}_{self.bandwidth}\"\n\n    @property\n    def complete_size(self):\n        return self.duration * self.bandwidth\n\n    @property\n    def number_of_files(self):\n        return math.ceil(self.complete_size / self.file_size)\n\n    @property\n    def number_of_connections(self):\n        return math.ceil(self.bandwidth / self.file_size)\n\n    def get_bytes_per_second(self, elapsed):\n        return self.complete_size / elapsed\n    \n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    def create_files(self):\n        if len(self.files) > 0:\n            return\n        for num in range(self.number_of_files):\n            benchmark_file = BenchmarkFile(\n                number=num,\n                base_path=self.base_path,\n                size=self.file_size,\n                creator=self.file_creator,\n            )\n            benchmark_file.get_or_create()\n            self.files.append(benchmark_file)";
-                var nbb_formatted_code = "# export\n\n\nclass BenchmarkRow(BaseModel):\n    file_size: int  # size of a single file\n    duration: int = 30  # in seconds\n    bandwidth: int = int(10 ** 9 / 8)  # in bytes per second\n    files: list[BenchmarkFile] = []\n    file_creator: Callable = FilesystemCreator()\n    elapsed: Optional[float] = None\n\n    def __str__(self):\n        return f\"size: {self.file_size} duration: {self.duration} bandwidth: {self.bandwidth}\"\n\n    @property\n    def base_path(self):\n        return f\"{self.file_size}_{self.duration}_{self.bandwidth}\"\n\n    @property\n    def complete_size(self):\n        return self.duration * self.bandwidth\n\n    @property\n    def number_of_files(self):\n        return math.ceil(self.complete_size / self.file_size)\n\n    @property\n    def number_of_connections(self):\n        return math.ceil(self.bandwidth / self.file_size)\n\n    def get_bytes_per_second(self, elapsed):\n        return self.complete_size / elapsed\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    def create_files(self):\n        if len(self.files) > 0:\n            return\n        for num in range(self.number_of_files):\n            benchmark_file = BenchmarkFile(\n                number=num,\n                base_path=self.base_path,\n                size=self.file_size,\n                creator=self.file_creator,\n            )\n            benchmark_file.get_or_create()\n            self.files.append(benchmark_file)";
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "# export\n\n\nclass BenchmarkRow(BaseModel):\n    file_size: int  # size of a single file\n    duration: int = 30  # in seconds\n    bandwidth: int = int(10 ** 9 / 8)  # in bytes per second\n    files: list[BenchmarkFile] = []\n    file_creator: Callable = FilesystemCreator()\n    elapsed: Optional[float] = None\n    data_root: str = \"data\"\n\n    def __str__(self):\n        return f\"size: {self.file_size} duration: {self.duration} bandwidth: {self.bandwidth}\"\n\n    @property\n    def base_path(self):\n        return f\"{self.file_size}_{self.duration}_{self.bandwidth}\"\n\n    @property\n    def complete_size(self):\n        return self.duration * self.bandwidth\n\n    @property\n    def number_of_files(self):\n        return math.ceil(self.complete_size / self.file_size)\n\n    @property\n    def number_of_connections(self):\n        return math.ceil(self.bandwidth / self.file_size)\n\n    def get_bytes_per_second(self, elapsed):\n        return self.complete_size / elapsed\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    def create_files(self):\n        if len(self.files) > 0:\n            return\n        for num in range(self.number_of_files):\n            benchmark_file = BenchmarkFile(\n                number=num,\n                base_path=self.base_path,\n                size=self.file_size,\n                creator=self.file_creator,\n                data_root=self.data_root,\n            )\n            benchmark_file.get_or_create()\n            self.files.append(benchmark_file)";
+                var nbb_formatted_code = "# export\n\n\nclass BenchmarkRow(BaseModel):\n    file_size: int  # size of a single file\n    duration: int = 30  # in seconds\n    bandwidth: int = int(10 ** 9 / 8)  # in bytes per second\n    files: list[BenchmarkFile] = []\n    file_creator: Callable = FilesystemCreator()\n    elapsed: Optional[float] = None\n    data_root: str = \"data\"\n\n    def __str__(self):\n        return f\"size: {self.file_size} duration: {self.duration} bandwidth: {self.bandwidth}\"\n\n    @property\n    def base_path(self):\n        return f\"{self.file_size}_{self.duration}_{self.bandwidth}\"\n\n    @property\n    def complete_size(self):\n        return self.duration * self.bandwidth\n\n    @property\n    def number_of_files(self):\n        return math.ceil(self.complete_size / self.file_size)\n\n    @property\n    def number_of_connections(self):\n        return math.ceil(self.bandwidth / self.file_size)\n\n    def get_bytes_per_second(self, elapsed):\n        return self.complete_size / elapsed\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    def create_files(self):\n        if len(self.files) > 0:\n            return\n        for num in range(self.number_of_files):\n            benchmark_file = BenchmarkFile(\n                number=num,\n                base_path=self.base_path,\n                size=self.file_size,\n                creator=self.file_creator,\n                data_root=self.data_root,\n            )\n            benchmark_file.get_or_create()\n            self.files.append(benchmark_file)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -475,13 +475,13 @@ var element = $('#2f327279-aefd-4ac3-be98-3ad2df544e48');
 
 
 
-<div id="76591aeb-9239-4a59-9a9b-d93914e2bad7"></div>
+<div id="547a2efc-d29a-4a76-a176-34e8268bd1b1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#76591aeb-9239-4a59-9a9b-d93914e2bad7');
+var element = $('#547a2efc-d29a-4a76-a176-34e8268bd1b1');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 23;
                 var nbb_unformatted_code = "byte = 8\nhundred_mbit = 10 ** 8\nbandwidth = hundred_mbit / byte\nduration = 2  # seconds\nfile_size = 10 ** 6 * 3  # 100MB\n\nbenchmark_row = BenchmarkRow(\n    file_size=file_size,\n    duration=duration,\n    bandwidth=bandwidth,\n    file_creator=DummyCreator(),\n)\nbenchmark_row.create_files()\nprint(len(benchmark_row.files))";
                 var nbb_formatted_code = "byte = 8\nhundred_mbit = 10 ** 8\nbandwidth = hundred_mbit / byte\nduration = 2  # seconds\nfile_size = 10 ** 6 * 3  # 100MB\n\nbenchmark_row = BenchmarkRow(\n    file_size=file_size,\n    duration=duration,\n    bandwidth=bandwidth,\n    file_creator=DummyCreator(),\n)\nbenchmark_row.create_files()\nprint(len(benchmark_row.files))";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -544,13 +544,13 @@ var element = $('#76591aeb-9239-4a59-9a9b-d93914e2bad7');
 
 
 
-<div id="b1d669af-bbef-4844-92c5-f6925a935697"></div>
+<div id="80c1348c-9e33-4120-96a0-a5bed0c96aee"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b1d669af-bbef-4844-92c5-f6925a935697');
+var element = $('#80c1348c-9e33-4120-96a0-a5bed0c96aee');
 
             setTimeout(function() {
-                var nbb_cell_id = 11;
+                var nbb_cell_id = 24;
                 var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\n\ntest_params = {\n    \"file_size\": 10 ** 6 * 10,  # 10MB\n    \"duration\": 30,\n    \"bandwidth\": gigabit / byte,\n    \"file_creator\": DummyCreator(),\n}\n\ntest_benchmark_row = BenchmarkRow(**test_params)";
                 var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\n\ntest_params = {\n    \"file_size\": 10 ** 6 * 10,  # 10MB\n    \"duration\": 30,\n    \"bandwidth\": gigabit / byte,\n    \"file_creator\": DummyCreator(),\n}\n\ntest_benchmark_row = BenchmarkRow(**test_params)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -600,13 +600,13 @@ var element = $('#b1d669af-bbef-4844-92c5-f6925a935697');
 
 
 
-<div id="f50e6cd0-d4de-4f05-ab41-b65f2a4e04ee"></div>
+<div id="8e8b73a8-4c95-4729-9e37-6d75ad14e71d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f50e6cd0-d4de-4f05-ab41-b65f2a4e04ee');
+var element = $('#8e8b73a8-4c95-4729-9e37-6d75ad14e71d');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
+                var nbb_cell_id = 25;
                 var nbb_unformatted_code = "assert test_benchmark_row.bandwidth == 125000000\nassert test_benchmark_row.number_of_files == 375\nassert test_benchmark_row.get_bytes_per_second(30.0) == test_benchmark_row.bandwidth\nassert test_benchmark_row.number_of_connections == 13";
                 var nbb_formatted_code = "assert test_benchmark_row.bandwidth == 125000000\nassert test_benchmark_row.number_of_files == 375\nassert test_benchmark_row.get_bytes_per_second(30.0) == test_benchmark_row.bandwidth\nassert test_benchmark_row.number_of_connections == 13";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -658,13 +658,13 @@ var element = $('#f50e6cd0-d4de-4f05-ab41-b65f2a4e04ee');
 
 
 
-<div id="b44c6b12-4c2d-45f3-ab75-75d995dece0b"></div>
+<div id="b5e4a978-662b-4eba-81aa-105572b8816b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b44c6b12-4c2d-45f3-ab75-75d995dece0b');
+var element = $('#b5e4a978-662b-4eba-81aa-105572b8816b');
 
             setTimeout(function() {
-                var nbb_cell_id = 13;
+                var nbb_cell_id = 26;
                 var nbb_unformatted_code = "test_benchmark_row.create_files()\nassert len(test_benchmark_row.files) == test_benchmark_row.number_of_files\n\n# assert we don't generate files twice\ntest_benchmark_row.create_files()\nassert len(test_benchmark_row.files) == test_benchmark_row.number_of_files";
                 var nbb_formatted_code = "test_benchmark_row.create_files()\nassert len(test_benchmark_row.files) == test_benchmark_row.number_of_files\n\n# assert we don't generate files twice\ntest_benchmark_row.create_files()\nassert len(test_benchmark_row.files) == test_benchmark_row.number_of_files";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -706,7 +706,7 @@ var element = $('#b44c6b12-4c2d-45f3-ab75-75d995dece0b');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Benchmark" class="doc_header"><code>class</code> <code>Benchmark</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L110" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Benchmark</code>(<strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>rows</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkRow"><code>BenchmarkRow</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>&lt;will_it_saturate.core.FilesystemCreator object at 0x10e199070&gt;</code></em>) :: <code>BaseModel</code></p>
+<h2 id="Benchmark" class="doc_header"><code>class</code> <code>Benchmark</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L118" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Benchmark</code>(<strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>rows</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkRow"><code>BenchmarkRow</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>&lt;will_it_saturate.core.FilesystemCreator object at 0x10c460070&gt;</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -731,13 +731,13 @@ var element = $('#b44c6b12-4c2d-45f3-ab75-75d995dece0b');
 
 
 
-<div id="84ee2ff8-d09e-4887-8765-eabe3aa473cb"></div>
+<div id="b110598b-b896-4836-ac32-5ec28481dad9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#84ee2ff8-d09e-4887-8765-eabe3aa473cb');
+var element = $('#b110598b-b896-4836-ac32-5ec28481dad9');
 
             setTimeout(function() {
-                var nbb_cell_id = 14;
+                var nbb_cell_id = 27;
                 var nbb_unformatted_code = "# export\n\n\nclass Benchmark(BaseModel):\n    duration: int = 30  # in seconds\n    bandwidth: int = int(10 ** 9 / 8)  # in bytes per second\n    rows: list[BenchmarkRow] = []\n    file_creator: Callable = FilesystemCreator()\n\n    def create_rows(self, file_sizes):\n        if len(self.rows) > 0:\n            return\n        kwargs = dict(self)\n        del kwargs[\"rows\"]\n        for file_size in file_sizes:\n            benchmark_row = BenchmarkRow(file_size=file_size, **kwargs)\n            benchmark_row.create_files()\n            self.rows.append(benchmark_row)";
                 var nbb_formatted_code = "# export\n\n\nclass Benchmark(BaseModel):\n    duration: int = 30  # in seconds\n    bandwidth: int = int(10 ** 9 / 8)  # in bytes per second\n    rows: list[BenchmarkRow] = []\n    file_creator: Callable = FilesystemCreator()\n\n    def create_rows(self, file_sizes):\n        if len(self.rows) > 0:\n            return\n        kwargs = dict(self)\n        del kwargs[\"rows\"]\n        for file_size in file_sizes:\n            benchmark_row = BenchmarkRow(file_size=file_size, **kwargs)\n            benchmark_row.create_files()\n            self.rows.append(benchmark_row)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -808,13 +808,13 @@ var element = $('#84ee2ff8-d09e-4887-8765-eabe3aa473cb');
 
 
 
-<div id="618c3c9e-acd7-449f-a307-c29177e01124"></div>
+<div id="06dda0e7-d8f2-47c3-a488-9af960ae9048"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#618c3c9e-acd7-449f-a307-c29177e01124');
+var element = $('#06dda0e7-d8f2-47c3-a488-9af960ae9048');
 
             setTimeout(function() {
-                var nbb_cell_id = 15;
+                var nbb_cell_id = 28;
                 var nbb_unformatted_code = "byte = 8\nhundred_mbit = 10 ** 8\nbandwidth = hundred_mbit / byte\nduration = 2  # seconds\nfile_size = 10 ** 6 * 3  # 100MB\n\nbenchmark = Benchmark(\n    duration=duration, bandwidth=bandwidth, file_creator=DummyCreator()\n)\nbenchmark.create_rows([10 ** 7, 10 ** 6, 10 ** 5])\nprint(len(benchmark.rows))";
                 var nbb_formatted_code = "byte = 8\nhundred_mbit = 10 ** 8\nbandwidth = hundred_mbit / byte\nduration = 2  # seconds\nfile_size = 10 ** 6 * 3  # 100MB\n\nbenchmark = Benchmark(\n    duration=duration, bandwidth=bandwidth, file_creator=DummyCreator()\n)\nbenchmark.create_rows([10 ** 7, 10 ** 6, 10 ** 5])\nprint(len(benchmark.rows))";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -876,13 +876,13 @@ var element = $('#618c3c9e-acd7-449f-a307-c29177e01124');
 
 
 
-<div id="148776a1-f743-4cb1-9691-aabef9973d99"></div>
+<div id="bbc50cd3-b768-4da5-80fc-3961eeb638f7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#148776a1-f743-4cb1-9691-aabef9973d99');
+var element = $('#bbc50cd3-b768-4da5-80fc-3961eeb638f7');
 
             setTimeout(function() {
-                var nbb_cell_id = 16;
+                var nbb_cell_id = 29;
                 var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\n\ntest_params = {\n    \"duration\": 30,\n    \"bandwidth\": gigabit / byte,\n    \"file_creator\": DummyCreator(),\n}\n\ntest_benchmark = Benchmark(**test_params)";
                 var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\n\ntest_params = {\n    \"duration\": 30,\n    \"bandwidth\": gigabit / byte,\n    \"file_creator\": DummyCreator(),\n}\n\ntest_benchmark = Benchmark(**test_params)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -931,13 +931,13 @@ var element = $('#148776a1-f743-4cb1-9691-aabef9973d99');
 
 
 
-<div id="d35dfc72-7c3a-4863-8b0c-18925efafa7a"></div>
+<div id="0162784a-b6a7-44cf-ad27-1dcefc663380"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d35dfc72-7c3a-4863-8b0c-18925efafa7a');
+var element = $('#0162784a-b6a7-44cf-ad27-1dcefc663380');
 
             setTimeout(function() {
-                var nbb_cell_id = 17;
+                var nbb_cell_id = 30;
                 var nbb_unformatted_code = "file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\ntest_benchmark.create_rows(file_sizes)\nassert len(test_benchmark.rows) == len(file_sizes)";
                 var nbb_formatted_code = "file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\ntest_benchmark.create_rows(file_sizes)\nassert len(test_benchmark.rows) == len(file_sizes)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -994,6 +994,8 @@ var element = $('#d35dfc72-7c3a-4863-8b0c-18925efafa7a');
 Converted 01_serve_files.ipynb.
 Converted 02_run_benchmark.ipynb.
 Converted 03_create_files_old.ipynb.
+Converted 04_use_nginx_to_serve_files.ipynb.
+Converted 05_run_wrk_benchmark.ipynb.
 Converted index.ipynb.
 </pre>
 </div>
@@ -1004,13 +1006,13 @@ Converted index.ipynb.
 
 
 
-<div id="9a801f8d-dc7f-43dc-99c0-f4ccf09fdcbb"></div>
+<div id="bd88d1a8-4786-4763-bffa-50d5eeaf4135"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9a801f8d-dc7f-43dc-99c0-f4ccf09fdcbb');
+var element = $('#bd88d1a8-4786-4763-bffa-50d5eeaf4135');
 
             setTimeout(function() {
-                var nbb_cell_id = 18;
+                var nbb_cell_id = 31;
                 var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
