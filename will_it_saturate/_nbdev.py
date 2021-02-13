@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"md5sum_for_path": "00_core.ipynb",
+index = {"BenchmarkServer": "00_core.ipynb",
+         "CheckSumMixin": "00_core.ipynb",
+         "BenchmarkClient": "00_core.ipynb",
          "FilesystemCreator": "00_core.ipynb",
          "BenchmarkFile": "00_core.ipynb",
          "BenchmarkRow": "00_core.ipynb",
