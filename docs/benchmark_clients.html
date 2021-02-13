@@ -39,73 +39,6 @@ nb_path: "02_benchmark_clients.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="convert_size" class="doc_header"><code>convert_size</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>convert_size</code>(<strong><code>size_bytes</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="37c70b30-3eab-4d55-ba10-b732cf8fccad"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#37c70b30-3eab-4d55-ba10-b732cf8fccad');
-
-            setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]";
-                var nbb_formatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
@@ -114,12 +47,13 @@ var element = $('#37c70b30-3eab-4d55-ba10-b732cf8fccad');
 <span class="n">gigabit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
 <span class="n">bandwidth</span> <span class="o">=</span> <span class="n">gigabit</span> <span class="o">/</span> <span class="n">byte</span>
 
-<span class="n">benchmark</span> <span class="o">=</span> <span class="n">Benchmark</span><span class="p">(</span><span class="n">bandwidth</span><span class="o">=</span><span class="n">bandwidth</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># file_sizes = [10 ** 7, 10 ** 6]</span>
-<span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">]</span>
-<span class="c1"># file_sizes = [10 ** 7]</span>
-<span class="n">benchmark</span><span class="o">.</span><span class="n">create_rows</span><span class="p">(</span><span class="n">file_sizes</span><span class="p">)</span>
+<span class="c1"># file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]</span>
+<span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="n">benchmark</span> <span class="o">=</span> <span class="n">Benchmark</span><span class="p">(</span><span class="n">bandwidth</span><span class="o">=</span><span class="n">bandwidth</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">file_sizes</span><span class="o">=</span><span class="n">file_sizes</span><span class="p">)</span>
+<span class="n">benchmark</span><span class="o">.</span><span class="n">create_rows</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -134,15 +68,15 @@ var element = $('#37c70b30-3eab-4d55-ba10-b732cf8fccad');
 
 
 
-<div id="ebf93c31-f86b-47d0-8957-7fea05091100"></div>
+<div id="6283067f-f4e8-47df-ab27-4f014b75b8be"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ebf93c31-f86b-47d0-8957-7fea05091100');
+var element = $('#6283067f-f4e8-47df-ab27-4f014b75b8be');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
-                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n\n# file_sizes = [10 ** 7, 10 ** 6]\n# file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\nfile_sizes = [10 ** 7]\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3, file_sizes=file_sizes)\nbenchmark.create_rows()";
+                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n\n# file_sizes = [10 ** 7, 10 ** 6]\n# file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\nfile_sizes = [10 ** 7]\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3, file_sizes=file_sizes)\nbenchmark.create_rows()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -176,7 +110,7 @@ var element = $('#ebf93c31-f86b-47d0-8957-7fea05091100');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BaseClient" class="doc_header"><code>class</code> <code>BaseClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L34" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseClient</code>(<strong><code>benchmark</code></strong>, <strong><code>server</code></strong>, <strong><code>client</code></strong>)</p>
+<h2 id="BaseClient" class="doc_header"><code>class</code> <code>BaseClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L21" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseClient</code>(<strong><code>benchmark</code></strong>, <strong><code>server</code></strong>, <strong><code>client</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -201,13 +135,13 @@ var element = $('#ebf93c31-f86b-47d0-8957-7fea05091100');
 
 
 
-<div id="9ec1b96c-762e-4c68-8935-d0e9d1a0b382"></div>
+<div id="41c0b7c4-d393-4832-98d4-65d96a694263"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9ec1b96c-762e-4c68-8935-d0e9d1a0b382');
+var element = $('#41c0b7c4-d393-4832-98d4-65d96a694263');
 
             setTimeout(function() {
-                var nbb_cell_id = 23;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# export\n\n\nclass BaseClient:\n    def __init__(self, benchmark, server, client):\n        self.benchmark = benchmark\n        self.server = server\n        self.client = client\n\n    def check_md5sums(self, benchmark_files, responses):\n        md5_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            md5_lookup[url] = hashlib.md5(response.content).hexdigest()\n\n        for bf in benchmark_files:\n            assert bf.md5sum == md5_lookup.get(bf.url, \"wrong\")\n\n    def show_results(self):\n        print(\n            f\"Filesize  Transferred for server {self.server} with client {self.client}\"\n        )\n        for row in self.benchmark.rows:\n            file_size, file_unit = convert_size(row.file_size)\n            transferred_per_second, transferred_unit = convert_size(\n                row.bytes_per_second\n            )\n            file_string = f\"{file_size}{file_unit}\"\n            transferred_string = f\"{transferred_per_second}{transferred_unit}/s\"\n            print(f\"{file_string} {transferred_string:>11s}\")";
                 var nbb_formatted_code = "# export\n\n\nclass BaseClient:\n    def __init__(self, benchmark, server, client):\n        self.benchmark = benchmark\n        self.server = server\n        self.client = client\n\n    def check_md5sums(self, benchmark_files, responses):\n        md5_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            md5_lookup[url] = hashlib.md5(response.content).hexdigest()\n\n        for bf in benchmark_files:\n            assert bf.md5sum == md5_lookup.get(bf.url, \"wrong\")\n\n    def show_results(self):\n        print(\n            f\"Filesize  Transferred for server {self.server} with client {self.client}\"\n        )\n        for row in self.benchmark.rows:\n            file_size, file_unit = convert_size(row.file_size)\n            transferred_per_second, transferred_unit = convert_size(\n                row.bytes_per_second\n            )\n            file_string = f\"{file_size}{file_unit}\"\n            transferred_string = f\"{transferred_per_second}{transferred_unit}/s\"\n            print(f\"{file_string} {transferred_string:>11s}\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -243,7 +177,7 @@ var element = $('#9ec1b96c-762e-4c68-8935-d0e9d1a0b382');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L65" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>benchmark</code></strong>, <strong><code>server</code></strong>, <strong><code>client</code></strong>) :: <a href="/will_it_saturate/benchmark_clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L54" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
 </blockquote>
 
 </div>
@@ -260,6 +194,23 @@ var element = $('#9ec1b96c-762e-4c68-8935-d0e9d1a0b382');
     
 <div class="cell border-box-sizing code_cell rendered">
 
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 <div class="output_wrapper">
 <div class="output">
 
@@ -268,15 +219,15 @@ var element = $('#9ec1b96c-762e-4c68-8935-d0e9d1a0b382');
 
 
 
-<div id="df175048-9c7f-4686-9b33-8821dba81416"></div>
+<div id="420cc60c-6464-4cea-ab38-41f58df0b08d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#df175048-9c7f-4686-9b33-8821dba81416');
+var element = $('#420cc60c-6464-4cea-ab38-41f58df0b08d');
 
             setTimeout(function() {
-                var nbb_cell_id = 24;
-                var nbb_unformatted_code = "# export\n\n\nclass HttpxClient(BaseClient):\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        # httpx breaks on more than 100 parallel connections\n        max_connections = min(br.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
-                var nbb_formatted_code = "# export\n\n\nclass HttpxClient(BaseClient):\n    async def measure_benchmark_row(self, br):\n        urls = [bf.url for bf in br.files]\n        # httpx breaks on more than 100 parallel connections\n        max_connections = min(br.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        self.check_md5sums(br.files, responses)\n        br.elapsed = elapsed\n\n    async def run(self):\n        for br in self.benchmark.rows:\n            await self.measure_benchmark_row(br)";
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "client = HttpxClient(name=\"httpx\")";
+                var nbb_formatted_code = "client = HttpxClient(name=\"httpx\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -306,6 +257,294 @@ var element = $('#df175048-9c7f-4686-9b33-8821dba81416');
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">clients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="ac6f6902-93c2-4834-ba21-a4c4f8b2fd43"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#ac6f6902-93c2-4834-ba21-a4c4f8b2fd43');
+
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "benchmark.clients.append(client)";
+                var nbb_formatted_code = "benchmark.clients.append(client)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">BenchmarkServer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="0629b197-d155-4877-8e85-4962bd012adf"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#0629b197-d155-4877-8e85-4962bd012adf');
+
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "from will_it_saturate.core import BenchmarkServer";
+                var nbb_formatted_code = "from will_it_saturate.core import BenchmarkServer";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BenchmarkServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fastAPI&quot;</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="d89b38af-9b0b-4e58-9578-67c9b1f0d931"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#d89b38af-9b0b-4e58-9578-67c9b1f0d931');
+
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "benchmark.servers.append(BenchmarkServer(name=\"fastAPI\"))";
+                var nbb_formatted_code = "benchmark.servers.append(BenchmarkServer(name=\"fastAPI\"))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ValidationError</span>                           Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-11-4b26255d2bea&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>benchmark<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/core.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    241</span>             <span class="ansi-red-fg"># start with servers, because they are more expensive to create</span>
+<span class="ansi-green-intense-fg ansi-bold">    242</span>             <span class="ansi-green-fg">for</span> client <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>clients<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 243</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>test_server_with_client<span class="ansi-blue-fg">(</span>server<span class="ansi-blue-fg">,</span> client<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    244</span> 
+<span class="ansi-green-intense-fg ansi-bold">    245</span>     <span class="ansi-blue-fg">@</span>property
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/core.py</span> in <span class="ansi-cyan-fg">test_server_with_client</span><span class="ansi-blue-fg">(self, server, client)</span>
+<span class="ansi-green-intense-fg ansi-bold">    228</span>         <span class="ansi-green-fg">for</span> benchmark_row <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>rows<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    229</span>             elapsed <span class="ansi-blue-fg">=</span> client<span class="ansi-blue-fg">.</span>measure_benchmark_row<span class="ansi-blue-fg">(</span>benchmark_row<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 230</span><span class="ansi-red-fg">             result = BenchmarkResult(
+</span><span class="ansi-green-intense-fg ansi-bold">    231</span>                 server<span class="ansi-blue-fg">=</span>server<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    232</span>                 client<span class="ansi-blue-fg">=</span>client<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.1/envs/wis/lib/python3.9/site-packages/pydantic/main.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(__pydantic_self__, **data)</span>
+<span class="ansi-green-intense-fg ansi-bold">    360</span>         values<span class="ansi-blue-fg">,</span> fields_set<span class="ansi-blue-fg">,</span> validation_error <span class="ansi-blue-fg">=</span> validate_model<span class="ansi-blue-fg">(</span>__pydantic_self__<span class="ansi-blue-fg">.</span>__class__<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    361</span>         <span class="ansi-green-fg">if</span> validation_error<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 362</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> validation_error
+<span class="ansi-green-intense-fg ansi-bold">    363</span>         object_setattr<span class="ansi-blue-fg">(</span>__pydantic_self__<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;__dict__&#39;</span><span class="ansi-blue-fg">,</span> values<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    364</span>         object_setattr<span class="ansi-blue-fg">(</span>__pydantic_self__<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;__fields_set__&#39;</span><span class="ansi-blue-fg">,</span> fields_set<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">ValidationError</span>: 1 validation error for BenchmarkResult
+elapsed
+  none is not an allowed value (type=type_error.none.not_allowed)</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="bc6ee3ca-f4ec-4556-9e91-b5ef62c0240d"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#bc6ee3ca-f4ec-4556-9e91-b5ef62c0240d');
+
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "benchmark.run()";
+                var nbb_formatted_code = "benchmark.run()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4.2216322360000005 38
+Task done: t.result()=4.2216322360000005 &lt;&lt; return val of main()
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">bclient</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">(</span><span class="n">benchmark</span><span class="p">,</span> <span class="s2">&quot;fastAPI&quot;</span><span class="p">,</span> <span class="s2">&quot;httpx&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -321,10 +560,10 @@ var element = $('#df175048-9c7f-4686-9b33-8821dba81416');
 
 
 
-<div id="712c16c5-19df-47dd-a665-559db52e8850"></div>
+<div id="55d7931e-2587-4284-b9b2-ce4cd0291cb7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#712c16c5-19df-47dd-a665-559db52e8850');
+var element = $('#55d7931e-2587-4284-b9b2-ce4cd0291cb7');
 
             setTimeout(function() {
                 var nbb_cell_id = 25;
@@ -374,10 +613,10 @@ var element = $('#712c16c5-19df-47dd-a665-559db52e8850');
 
 
 
-<div id="77a8bdbf-c595-4f68-816c-f10b3dd8485f"></div>
+<div id="c2eca3a6-b0db-432f-8b2a-a1b8759449b0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#77a8bdbf-c595-4f68-816c-f10b3dd8485f');
+var element = $('#c2eca3a6-b0db-432f-8b2a-a1b8759449b0');
 
             setTimeout(function() {
                 var nbb_cell_id = 26;
@@ -438,10 +677,10 @@ var element = $('#77a8bdbf-c595-4f68-816c-f10b3dd8485f');
 
 
 
-<div id="d6974c10-cf8d-4b16-b69b-ac8cd6ee8a88"></div>
+<div id="9e2c9d25-36e8-4036-9ceb-b870bd817963"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d6974c10-cf8d-4b16-b69b-ac8cd6ee8a88');
+var element = $('#9e2c9d25-36e8-4036-9ceb-b870bd817963');
 
             setTimeout(function() {
                 var nbb_cell_id = 27;
@@ -514,10 +753,10 @@ File size: 97.66KB
 
 
 
-<div id="68ea4e47-6fee-469c-a5eb-4bedae8182cd"></div>
+<div id="cb6f1991-3aa0-4065-ab69-2e85fe7ed9a4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#68ea4e47-6fee-469c-a5eb-4bedae8182cd');
+var element = $('#cb6f1991-3aa0-4065-ab69-2e85fe7ed9a4');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -582,10 +821,10 @@ var element = $('#68ea4e47-6fee-469c-a5eb-4bedae8182cd');
 
 
 
-<div id="b2174a17-1cd1-40ab-81ed-f6c0a35f5e37"></div>
+<div id="696943d5-81ef-4f93-8f23-7ea0f6d1443a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b2174a17-1cd1-40ab-81ed-f6c0a35f5e37');
+var element = $('#696943d5-81ef-4f93-8f23-7ea0f6d1443a');
 
             setTimeout(function() {
                 var nbb_cell_id = 21;
@@ -650,10 +889,10 @@ var element = $('#b2174a17-1cd1-40ab-81ed-f6c0a35f5e37');
 
 
 
-<div id="ad898032-35df-4499-bf12-e00bab5fa5af"></div>
+<div id="59216df8-6575-4c32-baf4-2e4379dd0ac6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ad898032-35df-4499-bf12-e00bab5fa5af');
+var element = $('#59216df8-6575-4c32-baf4-2e4379dd0ac6');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;
@@ -727,10 +966,10 @@ File size: 97.66KB
 
 
 
-<div id="9c8f5f34-92d5-414f-9f7d-b6f683d1c1ae"></div>
+<div id="3d6a190e-ef91-49ef-ac75-9a0f5b9e61bf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9c8f5f34-92d5-414f-9f7d-b6f683d1c1ae');
+var element = $('#3d6a190e-ef91-49ef-ac75-9a0f5b9e61bf');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -804,10 +1043,10 @@ File size: 97.66KB
 
 
 
-<div id="747032c6-95b2-4fab-a6ce-ba3d29543766"></div>
+<div id="34d60e92-0266-4b41-9cde-999d2b3c1556"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#747032c6-95b2-4fab-a6ce-ba3d29543766');
+var element = $('#34d60e92-0266-4b41-9cde-999d2b3c1556');
 
             setTimeout(function() {
                 var nbb_cell_id = 52;
@@ -881,10 +1120,10 @@ File size: 97.66KB
 
 
 
-<div id="3b8a1a92-ca37-465e-9aad-6bd717488970"></div>
+<div id="97e9bb9b-d59b-4ad9-94d1-ff8b8a2c5440"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3b8a1a92-ca37-465e-9aad-6bd717488970');
+var element = $('#97e9bb9b-d59b-4ad9-94d1-ff8b8a2c5440');
 
             setTimeout(function() {
                 var nbb_cell_id = 24;
@@ -929,7 +1168,7 @@ var element = $('#3b8a1a92-ca37-465e-9aad-6bd717488970');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L87" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
+<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L114" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -953,7 +1192,7 @@ var element = $('#3b8a1a92-ca37-465e-9aad-6bd717488970');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L93" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>benchmark</code></strong>, <strong><code>server</code></strong>, <strong><code>client</code></strong>) :: <a href="/will_it_saturate/benchmark_clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L120" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>benchmark</code></strong>, <strong><code>server</code></strong>, <strong><code>client</code></strong>) :: <a href="/will_it_saturate/benchmark_clients.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -978,10 +1217,10 @@ var element = $('#3b8a1a92-ca37-465e-9aad-6bd717488970');
 
 
 
-<div id="98baded0-aaf5-45c5-85ef-a223106484dd"></div>
+<div id="1b78febd-caa0-43e5-8d9f-1b6bb863ef72"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#98baded0-aaf5-45c5-85ef-a223106484dd');
+var element = $('#1b78febd-caa0-43e5-8d9f-1b6bb863ef72');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -1031,10 +1270,10 @@ var element = $('#98baded0-aaf5-45c5-85ef-a223106484dd');
 
 
 
-<div id="e4cb9e7c-3237-4811-b0e3-dd6b86642d15"></div>
+<div id="652dfddd-4f04-4a5e-afeb-936f18f7b9ac"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e4cb9e7c-3237-4811-b0e3-dd6b86642d15');
+var element = $('#652dfddd-4f04-4a5e-afeb-936f18f7b9ac');
 
             setTimeout(function() {
                 var nbb_cell_id = 18;
@@ -1084,10 +1323,10 @@ var element = $('#e4cb9e7c-3237-4811-b0e3-dd6b86642d15');
 
 
 
-<div id="6774c220-e71f-41f9-b8f0-3debdd07e154"></div>
+<div id="7f2edf01-b8fd-4b96-bfd4-ccc7946c7881"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6774c220-e71f-41f9-b8f0-3debdd07e154');
+var element = $('#7f2edf01-b8fd-4b96-bfd4-ccc7946c7881');
 
             setTimeout(function() {
                 var nbb_cell_id = 19;
@@ -1154,10 +1393,10 @@ var element = $('#6774c220-e71f-41f9-b8f0-3debdd07e154');
 
 
 
-<div id="1e4ccd9a-c808-413b-966e-ee76445904ce"></div>
+<div id="8decbe14-41c1-4b82-bb30-4245bf2434cc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1e4ccd9a-c808-413b-966e-ee76445904ce');
+var element = $('#8decbe14-41c1-4b82-bb30-4245bf2434cc');
 
             setTimeout(function() {
                 var nbb_cell_id = 22;
@@ -1231,10 +1470,10 @@ File size: 97.66KB
 
 
 
-<div id="d5e4f957-32a5-4fe6-aeb5-95fed2e8c48c"></div>
+<div id="b70a1dd7-bdb7-416a-be10-90aba7fed4f1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d5e4f957-32a5-4fe6-aeb5-95fed2e8c48c');
+var element = $('#b70a1dd7-bdb7-416a-be10-90aba7fed4f1');
 
             setTimeout(function() {
                 var nbb_cell_id = 14;
@@ -1308,10 +1547,10 @@ File size: 97.66KB
 
 
 
-<div id="5266f7d8-f2b3-4713-8543-2f311691bafa"></div>
+<div id="7ca9f33e-0013-4639-b50f-1a0d1b2a35fe"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5266f7d8-f2b3-4713-8543-2f311691bafa');
+var element = $('#7ca9f33e-0013-4639-b50f-1a0d1b2a35fe');
 
             setTimeout(function() {
                 var nbb_cell_id = 60;
@@ -1385,10 +1624,10 @@ File size: 97.66KB
 
 
 
-<div id="0b405d3a-91e0-4295-b1f1-1b53daff8821"></div>
+<div id="55fb4e8c-042e-4e9f-81ce-f7f05a915a2b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0b405d3a-91e0-4295-b1f1-1b53daff8821');
+var element = $('#55fb4e8c-042e-4e9f-81ce-f7f05a915a2b');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;
@@ -1458,10 +1697,10 @@ Converted index.ipynb.
 
 
 
-<div id="452f3267-3fde-4f6d-8957-d3e78ff34878"></div>
+<div id="76e73432-edbd-4db6-9505-dd9f645bf252"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#452f3267-3fde-4f6d-8957-d3e78ff34878');
+var element = $('#76e73432-edbd-4db6-9505-dd9f645bf252');
 
             setTimeout(function() {
                 var nbb_cell_id = 13;

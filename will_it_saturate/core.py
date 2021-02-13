@@ -66,7 +66,7 @@ class FilesystemCreator(CheckSumMixin):
         if not path.exists():
             with path.open("wb") as f:
                 f.write(os.urandom(size))
-        return md5sum_for_path(path)
+        return self.checksum_for_path(path)
 
 
 class BenchmarkFile(BaseModel):

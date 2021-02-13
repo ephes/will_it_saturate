@@ -52,7 +52,7 @@ from .core import BenchmarkClient
 
 
 class HttpxClient(BenchmarkClient):
-    async def measure_benchmark_row(self, br):
+    async def measure_br(self, br):
         urls = [bf.url for bf in br.files]
         # httpx breaks on more than 100 parallel connections
         max_connections = min(br.number_of_connections, 100)
@@ -63,11 +63,30 @@ class HttpxClient(BenchmarkClient):
         async with httpx.AsyncClient(limits=limits) as client:
             responses = await asyncio.gather(*[client.get(url) for url in urls])
         elapsed = time.perf_counter() - start
+        return elapsed, responses
+
+    async def measure_async(self, br):
+        elapsed, responses = await self.measure_br(br)
+        print(elapsed, len(responses))
         self.verify_checksums(br.files, responses)
-        br.elapsed = elapsed
+        return elapsed
 
     def measure_benchmark_row(self, br):
+        loop = asyncio.get_running_loop()
+        task = loop.create_task(self.measure_async(br))
+        task.add_done_callback(
+            lambda t: print(
+                f"Task done: " f"{t.result()=} << return val of main()"  # optional
+            )
+        )  # optional (using py38)
 
+        # asyncio.run(self.measure_async(br))
+        # return 2.0
+
+
+#         urls = [bf.url for bf in br.files]
+#         elapsed, responses = await self.measure_urls(urls)
+#         self.verify_checksums(br.files, responses)
 
 # Cell
 
