@@ -118,15 +118,22 @@ class BenchmarkRow(BaseModel):
 class Benchmark(BaseModel):
     duration: int = 30  # in seconds
     bandwidth: int = int(10 ** 9 / 8)  # in bytes per second
+    file_sizes: list[int] = [10 ** 7, 10 ** 6, 10 ** 5]
     rows: list[BenchmarkRow] = []
     file_creator: Callable = FilesystemCreator()
 
-    def create_rows(self, file_sizes):
+    def create_row_from_file_size(self, file_size):
+        do_not_copy = {"rows", "file_sizes"}
+        kwargs = {k: v for k, v in dict(self).items() if k not in do_not_copy}
+        br = BenchmarkRow(file_size=file_size, **kwargs)
+        br.create_files()
+        return br
+
+    def create_rows(self):
         if len(self.rows) > 0:
+            # benchmark rows were already created
             return
-        kwargs = dict(self)
-        del kwargs["rows"]
-        for file_size in file_sizes:
-            benchmark_row = BenchmarkRow(file_size=file_size, **kwargs)
-            benchmark_row.create_files()
-            self.rows.append(benchmark_row)
+
+        # create a row for each file_size
+        for file_size in self.file_sizes:
+            self.rows.append(self.create_row_from_file_size(file_size))
