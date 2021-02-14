@@ -15,10 +15,8 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "get_file_urls": "01_serve_files.ipynb",
          "serve_file": "01_serve_files.ipynb",
          "app": "01_serve_files.ipynb",
-         "BaseClient": "02_benchmark_clients.ipynb",
          "HttpxClient": "02_benchmark_clients.ipynb",
-         "AioHttpResponse": "02_benchmark_clients.ipynb",
-         "AioHttpClient": "02_benchmark_clients.ipynb"}
+         "run_httpx": "02_benchmark_clients.ipynb"}
 
 modules = ["core.py",
            "main.py",

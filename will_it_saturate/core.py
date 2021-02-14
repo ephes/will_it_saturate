@@ -226,7 +226,7 @@ class Benchmark(BaseModel):
 
     def test_server_with_client(self, server, client):
         for benchmark_row in self.rows:
-            elapsed = client.measure_benchmark_row(benchmark_row)
+            elapsed = client.measure(benchmark_row)
             result = BenchmarkResult(
                 server=server.name,
                 client=client.name,
