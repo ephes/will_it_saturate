@@ -4,6 +4,7 @@
     "module Core": "core.html",
     "Start the Server": "serve_files.html",
     "Caveats": "benchmark_clients.html",
+    "Title": "wtf.html",
     "Run Nginx via Docker": "use_nginx_to_serve_files.html",
     "Create wrk JSON": "run_wrk_benchmark.html"
   }

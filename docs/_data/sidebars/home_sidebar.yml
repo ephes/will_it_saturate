@@ -19,6 +19,9 @@ entries:
       title: Caveats
       url: benchmark_clients.html
     - output: web,pdf
+      title: Title
+      url: wtf.html
+    - output: web,pdf
       title: Run Nginx via Docker
       url: use_nginx_to_serve_files.html
     - output: web,pdf

@@ -43,7 +43,8 @@ nb_path: "02_benchmark_clients.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;OBJC_DISABLE_INITIALIZE_FORK_SAFETY&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># set_start_method(&quot;fork&quot;)</span>
+<span class="c1"># print(os.environ[&quot;OBJC_DISABLE_INITIALIZE_FORK_SAFETY&quot;])</span>
 </pre></div>
 
     </div>
@@ -55,69 +56,36 @@ nb_path: "02_benchmark_clients.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>YES
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
 
 
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L31" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
-</blockquote>
 
+<div id="ec02b094-9e4f-4990-920b-fdd9069ba96e"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#ec02b094-9e4f-4990-920b-fdd9069ba96e');
+
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
+                var nbb_formatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
 </div>
 
 </div>
 
 </div>
 </div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -133,7 +101,6 @@ nb_path: "02_benchmark_clients.ipynb"
 <span class="n">gigabit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
 <span class="n">bandwidth</span> <span class="o">=</span> <span class="n">gigabit</span> <span class="o">/</span> <span class="n">byte</span>
 
-
 <span class="c1"># file_sizes = [10 ** 7, 10 ** 6]</span>
 <span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">]</span>
 <span class="c1"># file_sizes = [10 ** 7]</span>
@@ -142,8 +109,6 @@ nb_path: "02_benchmark_clients.ipynb"
     <span class="n">bandwidth</span><span class="o">=</span><span class="n">bandwidth</span><span class="p">,</span>
     <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">file_sizes</span><span class="o">=</span><span class="n">file_sizes</span><span class="p">,</span>
-    <span class="n">servers</span><span class="o">=</span><span class="p">[</span><span class="n">BenchmarkServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;uvicorn&quot;</span><span class="p">)],</span>
-    <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="n">HttpxClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">)],</span>
 <span class="p">)</span>
 <span class="n">benchmark</span><span class="o">.</span><span class="n">create_rows</span><span class="p">()</span>
 </pre></div>
@@ -152,50 +117,37 @@ nb_path: "02_benchmark_clients.ipynb"
 </div>
 </div>
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-
-<span class="n">benchmark</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
 <div class="output_wrapper">
 <div class="output">
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>measure
-new process
-measure server
-http://localhost:8000/data/10000000_3_125000000/0
-done
-measure
-new process
-measure server
-http://localhost:8000/data/1000000_3_125000000/0
-done
-measure
-new process
-measure server
-http://localhost:8000/data/100000_3_125000000/0
-done
-CPU times: user 21.7 ms, sys: 33.9 ms, total: 55.6 ms
-Wall time: 16.7 s
-</pre>
+
+
+
+<div id="6dbfd8d0-370b-4bf9-9f6b-3b19b2f4a532"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#6dbfd8d0-370b-4bf9-9f6b-3b19b2f4a532');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_rows()";
+                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_rows()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
 </div>
+
 </div>
 
 </div>
@@ -207,16 +159,6 @@ Wall time: 16.7 s
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">results_frame</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
 
 <div class="output_wrapper">
 <div class="output">
@@ -224,72 +166,77 @@ Wall time: 16.7 s
 <div class="output_area">
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L23" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
+</blockquote>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>server</th>
-      <th>client</th>
-      <th>file_size</th>
-      <th>elapsed</th>
-      <th>complete_size</th>
-      <th>file_size_h</th>
-      <th>bytes_per_second</th>
-      <th>bytes_per_second_h</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>uvicorn</td>
-      <td>httpx</td>
-      <td>10000000</td>
-      <td>3.279600</td>
-      <td>375000000</td>
-      <td>9.54MB</td>
-      <td>1.143432e+08</td>
-      <td>109.05MB</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>uvicorn</td>
-      <td>httpx</td>
-      <td>1000000</td>
-      <td>4.131801</td>
-      <td>375000000</td>
-      <td>976.56KB</td>
-      <td>9.075945e+07</td>
-      <td>86.55MB</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>uvicorn</td>
-      <td>httpx</td>
-      <td>100000</td>
-      <td>6.791448</td>
-      <td>375000000</td>
-      <td>97.66KB</td>
-      <td>5.521650e+07</td>
-      <td>52.66MB</td>
-    </tr>
-  </tbody>
-</table>
 </div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L52" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="8e422971-1586-48bf-baff-90e90f15585d"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#8e422971-1586-48bf-baff-90e90f15585d');
+
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# export\n\n\nclass HttpxClient(BenchmarkClient):\n    async def measure_server(self, benchmark_row):\n        print(\"measure server\")\n        urls = [bf.url for bf in benchmark_row.files]\n        print(urls[0])\n        max_connections = min(benchmark_row.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        print(\"done\")\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result\n\n\ndef run_httpx():\n    byte = 8\n    gigabit = 10 ** 9\n    bandwidth = gigabit / byte\n\n    # file_sizes = [10 ** 7, 10 ** 6]\n    # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n    file_sizes = [10 ** 7]\n\n    benchmark = Benchmark(\n        bandwidth=bandwidth,\n        duration=3,\n        file_sizes=file_sizes,\n        servers=[BenchmarkServer(name=\"uvicorn\")],\n        clients=[HttpxClient(name=\"httpx\")],\n    )\n    benchmark.create_rows()\n    benchmark.run()\n    print(benchmark.results_frame)";
+                var nbb_formatted_code = "# export\n\n\nclass HttpxClient(BenchmarkClient):\n    async def measure_server(self, benchmark_row):\n        print(\"measure server\")\n        urls = [bf.url for bf in benchmark_row.files]\n        print(urls[0])\n        max_connections = min(benchmark_row.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in urls])\n        elapsed = time.perf_counter() - start\n        print(\"done\")\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result\n\n\ndef run_httpx():\n    byte = 8\n    gigabit = 10 ** 9\n    bandwidth = gigabit / byte\n\n    # file_sizes = [10 ** 7, 10 ** 6]\n    # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n    file_sizes = [10 ** 7]\n\n    benchmark = Benchmark(\n        bandwidth=bandwidth,\n        duration=3,\n        file_sizes=file_sizes,\n        servers=[BenchmarkServer(name=\"uvicorn\")],\n        clients=[HttpxClient(name=\"httpx\")],\n    )\n    benchmark.create_rows()\n    benchmark.run()\n    print(benchmark.results_frame)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
 </div>
 
 </div>
@@ -308,8 +255,8 @@ Wall time: 16.7 s
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">()</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">elapsed</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">measure_server</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -322,986 +269,28 @@ Wall time: 16.7 s
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>measure
-new process
-measure server
+<pre>measure server
 http://localhost:8000/data/10000000_3_125000000/0
 done
-3.2253238749999866
+3.2920197919999996
 </pre>
 </div>
 </div>
 
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[]</pre>
-</div>
-
-</div>
-
 <div class="output_area">
 
 
 
 
-<div id="a66074c2-7871-4707-9f50-98fb0a39eb7d"></div>
+<div id="0e89468a-54cd-46d3-82eb-59379ca2d2d6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a66074c2-7871-4707-9f50-98fb0a39eb7d');
+var element = $('#0e89468a-54cd-46d3-82eb-59379ca2d2d6');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
-                var nbb_unformatted_code = "benchmark.rows";
-                var nbb_formatted_code = "benchmark.rows";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="6097ec8d-7fe9-4162-973d-b320121e9fa9"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#6097ec8d-7fe9-4162-973d-b320121e9fa9');
-
-            setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "client = HttpxClient(name=\"httpx\")";
-                var nbb_formatted_code = "client = HttpxClient(name=\"httpx\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">clients</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">client</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="9db458cc-8866-46de-9721-02c497d4404e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#9db458cc-8866-46de-9721-02c497d4404e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "benchmark.clients.append(client)";
-                var nbb_formatted_code = "benchmark.clients.append(client)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">BenchmarkServer</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="47ddcba2-f373-41fa-8398-67b5937a34be"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#47ddcba2-f373-41fa-8398-67b5937a34be');
-
-            setTimeout(function() {
-                var nbb_cell_id = 9;
-                var nbb_unformatted_code = "from will_it_saturate.core import BenchmarkServer";
-                var nbb_formatted_code = "from will_it_saturate.core import BenchmarkServer";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">servers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">BenchmarkServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fastAPI&quot;</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="a3c6aecc-b616-47f9-abf6-f7e389bdd829"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#a3c6aecc-b616-47f9-abf6-f7e389bdd829');
-
-            setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "benchmark.servers.append(BenchmarkServer(name=\"fastAPI\"))";
-                var nbb_formatted_code = "benchmark.servers.append(BenchmarkServer(name=\"fastAPI\"))";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValidationError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-11-4b26255d2bea&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>benchmark<span class="ansi-blue-fg">.</span>run<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/core.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">    241</span>             <span class="ansi-red-fg"># start with servers, because they are more expensive to create</span>
-<span class="ansi-green-intense-fg ansi-bold">    242</span>             <span class="ansi-green-fg">for</span> client <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>clients<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 243</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>test_server_with_client<span class="ansi-blue-fg">(</span>server<span class="ansi-blue-fg">,</span> client<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    244</span> 
-<span class="ansi-green-intense-fg ansi-bold">    245</span>     <span class="ansi-blue-fg">@</span>property
-
-<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/core.py</span> in <span class="ansi-cyan-fg">test_server_with_client</span><span class="ansi-blue-fg">(self, server, client)</span>
-<span class="ansi-green-intense-fg ansi-bold">    228</span>         <span class="ansi-green-fg">for</span> benchmark_row <span class="ansi-green-fg">in</span> self<span class="ansi-blue-fg">.</span>rows<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    229</span>             elapsed <span class="ansi-blue-fg">=</span> client<span class="ansi-blue-fg">.</span>measure_benchmark_row<span class="ansi-blue-fg">(</span>benchmark_row<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 230</span><span class="ansi-red-fg">             result = BenchmarkResult(
-</span><span class="ansi-green-intense-fg ansi-bold">    231</span>                 server<span class="ansi-blue-fg">=</span>server<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    232</span>                 client<span class="ansi-blue-fg">=</span>client<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.1/envs/wis/lib/python3.9/site-packages/pydantic/main.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(__pydantic_self__, **data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    360</span>         values<span class="ansi-blue-fg">,</span> fields_set<span class="ansi-blue-fg">,</span> validation_error <span class="ansi-blue-fg">=</span> validate_model<span class="ansi-blue-fg">(</span>__pydantic_self__<span class="ansi-blue-fg">.</span>__class__<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    361</span>         <span class="ansi-green-fg">if</span> validation_error<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 362</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> validation_error
-<span class="ansi-green-intense-fg ansi-bold">    363</span>         object_setattr<span class="ansi-blue-fg">(</span>__pydantic_self__<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;__dict__&#39;</span><span class="ansi-blue-fg">,</span> values<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    364</span>         object_setattr<span class="ansi-blue-fg">(</span>__pydantic_self__<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#39;__fields_set__&#39;</span><span class="ansi-blue-fg">,</span> fields_set<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ValidationError</span>: 1 validation error for BenchmarkResult
-elapsed
-  none is not an allowed value (type=type_error.none.not_allowed)</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="c0a2fee1-5803-4dfa-8357-d8f1c16d5015"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#c0a2fee1-5803-4dfa-8357-d8f1c16d5015');
-
-            setTimeout(function() {
-                var nbb_cell_id = 11;
-                var nbb_unformatted_code = "benchmark.run()";
-                var nbb_formatted_code = "benchmark.run()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4.2216322360000005 38
-Task done: t.result()=4.2216322360000005 &lt;&lt; return val of main()
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bclient</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">(</span><span class="n">benchmark</span><span class="p">,</span> <span class="s2">&quot;fastAPI&quot;</span><span class="p">,</span> <span class="s2">&quot;httpx&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="fe6ba7a4-02a0-406a-9297-66c5215298d1"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#fe6ba7a4-02a0-406a-9297-66c5215298d1');
-
-            setTimeout(function() {
-                var nbb_cell_id = 25;
-                var nbb_unformatted_code = "bclient = HttpxClient(benchmark, \"fastAPI\", \"httpx\")";
-                var nbb_formatted_code = "bclient = HttpxClient(benchmark, \"fastAPI\", \"httpx\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">await</span> <span class="n">bclient</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="9ae2eedb-faa4-4f3e-a1a7-b38c7d7f7ac4"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#9ae2eedb-faa4-4f3e-a1a7-b38c7d7f7ac4');
-
-            setTimeout(function() {
-                var nbb_cell_id = 26;
-                var nbb_unformatted_code = "await bclient.run()";
-                var nbb_formatted_code = "await bclient.run()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bclient</span><span class="o">.</span><span class="n">show_results</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Filesize  Transferred for server fastAPI with client httpx
-9.54MB   90.34MB/s
-976.56KB   87.31MB/s
-97.66KB   38.52MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="4eb54494-02cb-479b-acec-fa7d2b82488c"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#4eb54494-02cb-479b-acec-fa7d2b82488c');
-
-            setTimeout(function() {
-                var nbb_cell_id = 27;
-                var nbb_unformatted_code = "bclient.show_results()";
-                var nbb_formatted_code = "bclient.show_results()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark fastAPI + httpx: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark fastAPI + httpx: 
----------
-File size: 9.54MB
-59.63MB/s
----------
-File size: 976.56KB
-48.34MB/s
----------
-File size: 97.66KB
-11.57MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="ebaefc93-3b21-4e39-9cbd-5e8805fba175"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#ebaefc93-3b21-4e39-9cbd-5e8805fba175');
-
-            setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "print(\"Benchmark fastAPI + httpx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark fastAPI + httpx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filesize  Transferred for &quot;</span><span class="p">)</span>
-<span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="s2">&quot;97.66&quot;</span><span class="p">,</span> <span class="s2">&quot;KB&quot;</span>
-<span class="n">file_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="s2">&quot;11.57&quot;</span><span class="p">,</span> <span class="s2">&quot;MB&quot;</span>
-<span class="n">transferred_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span>
-<span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_string</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">transferred_string</span><span class="si">:</span><span class="s2">&gt;10s</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Filesize  Transferred for 
-97.66KB  11.57MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="270f95da-5fa2-444f-a072-699335bab63c"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#270f95da-5fa2-444f-a072-699335bab63c');
-
-            setTimeout(function() {
-                var nbb_cell_id = 21;
-                var nbb_unformatted_code = "print(\"Filesize  Transferred for \")\nfile_size, file_unit = \"97.66\", \"KB\"\nfile_string = f\"{file_size}{file_unit}\"\ntransferred_per_second, transferred_unit = \"11.57\", \"MB\"\ntransferred_string = f\"{transferred_per_second}{transferred_unit}/s\"\nline = f\"{file_string} {transferred_string:>10s}\"\nprint(line)";
-                var nbb_formatted_code = "print(\"Filesize  Transferred for \")\nfile_size, file_unit = \"97.66\", \"KB\"\nfile_string = f\"{file_size}{file_unit}\"\ntransferred_per_second, transferred_unit = \"11.57\", \"MB\"\ntransferred_string = f\"{transferred_per_second}{transferred_unit}/s\"\nline = f\"{file_string} {transferred_string:>10s}\"\nprint(line)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Filesize  Transferred for &quot;</span><span class="p">)</span>
-<span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="s2">&quot;976.56&quot;</span><span class="p">,</span> <span class="s2">&quot;KB&quot;</span>
-<span class="n">file_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="s2">&quot;11.57&quot;</span><span class="p">,</span> <span class="s2">&quot;MB&quot;</span>
-<span class="n">transferred_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span>
-<span class="n">line</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">file_string</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">transferred_string</span><span class="si">:</span><span class="s2">&gt;10s</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Filesize  Transferred for 
-976.56KB  11.57MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="a20d59d5-bd40-49ae-b80e-1aa27d29b700"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#a20d59d5-bd40-49ae-b80e-1aa27d29b700');
-
-            setTimeout(function() {
-                var nbb_cell_id = 20;
-                var nbb_unformatted_code = "print(\"Filesize  Transferred for \")\nfile_size, file_unit = \"976.56\", \"KB\"\nfile_string = f\"{file_size}{file_unit}\"\ntransferred_per_second, transferred_unit = \"11.57\", \"MB\"\ntransferred_string = f\"{transferred_per_second}{transferred_unit}/s\"\nline = f\"{file_string} {transferred_string:>10s}\"\nprint(line)";
-                var nbb_formatted_code = "print(\"Filesize  Transferred for \")\nfile_size, file_unit = \"976.56\", \"KB\"\nfile_string = f\"{file_size}{file_unit}\"\ntransferred_per_second, transferred_unit = \"11.57\", \"MB\"\ntransferred_string = f\"{transferred_per_second}{transferred_unit}/s\"\nline = f\"{file_string} {transferred_string:>10s}\"\nprint(line)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark fastAPI + httpx: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark fastAPI + httpx: 
----------
-File size: 9.54MB
-46.68MB/s
----------
-File size: 976.56KB
-42.95MB/s
----------
-File size: 97.66KB
-26.27MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="4d1e6eac-0067-4d49-a5e8-9012dfdd0685"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#4d1e6eac-0067-4d49-a5e8-9012dfdd0685');
-
-            setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "print(\"Benchmark fastAPI + httpx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark fastAPI + httpx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark Nginx with httpx: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark Nginx: 
----------
-File size: 9.54MB
-55.56MB/s
----------
-File size: 976.56KB
-49.69MB/s
----------
-File size: 97.66KB
-20.27MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="e98eccf1-e2d4-479c-833f-e1581ab3700e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#e98eccf1-e2d4-479c-833f-e1581ab3700e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 52;
-                var nbb_unformatted_code = "print(\"Benchmark Nginx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark Nginx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark Nginx with httpx: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark Nginx with httpx: 
----------
-File size: 9.54MB
-62.09MB/s
----------
-File size: 976.56KB
-74.07MB/s
----------
-File size: 97.66KB
-30.94MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="055bc0f8-164f-474f-92a1-b873f4b29c10"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#055bc0f8-164f-474f-92a1-b873f4b29c10');
-
-            setTimeout(function() {
-                var nbb_cell_id = 24;
-                var nbb_unformatted_code = "print(\"Benchmark Nginx with httpx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark Nginx with httpx: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
+                var nbb_unformatted_code = "client = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
+                var nbb_formatted_code = "client = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -1333,16 +322,54 @@ var element = $('#055bc0f8-164f-474f-92a1-b873f4b29c10');
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bclient</span> <span class="o">=</span> <span class="n">AioHttpClient</span><span class="p">(</span><span class="n">benchmark</span><span class="p">)</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-    </div>
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L75" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L81" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -1352,15 +379,15 @@ var element = $('#055bc0f8-164f-474f-92a1-b873f4b29c10');
 
 
 
-<div id="d5e73b5a-e2a3-4ea3-a3d1-b0f5a9208d00"></div>
+<div id="11b8165b-4a31-48ec-8cb5-6b360e3214f6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d5e73b5a-e2a3-4ea3-a3d1-b0f5a9208d00');
+var element = $('#11b8165b-4a31-48ec-8cb5-6b360e3214f6');
 
             setTimeout(function() {
-                var nbb_cell_id = 18;
-                var nbb_unformatted_code = "bclient = AioHttpClient(benchmark)";
-                var nbb_formatted_code = "bclient = AioHttpClient(benchmark)";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BenchmarkClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, benchmark_row):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result";
+                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BenchmarkClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, benchmark_row):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -1390,67 +417,9 @@ var element = $('#d5e73b5a-e2a3-4ea3-a3d1-b0f5a9208d00');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">await</span> <span class="n">bclient</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="e0f1f95a-819d-4cb4-825b-0ce063b5f65e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#e0f1f95a-819d-4cb4-825b-0ce063b5f65e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 19;
-                var nbb_unformatted_code = "await bclient.run()";
-                var nbb_formatted_code = "await bclient.run()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark fastAPI with aiohttp: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">AioHttpClient</span><span class="p">()</span>
+<span class="n">elapsed</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">measure_server</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1463,9 +432,7 @@ var element = $('#e0f1f95a-819d-4cb4-825b-0ce063b5f65e');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>61.16 MB
-54.44 MB
-31.9 MB
+<pre>3.271349916
 </pre>
 </div>
 </div>
@@ -1475,246 +442,15 @@ var element = $('#e0f1f95a-819d-4cb4-825b-0ce063b5f65e');
 
 
 
-<div id="19ad4930-b7d8-4ea2-bfcf-93b56bc76bd5"></div>
+<div id="2acd087d-6590-4c5c-8208-2d9d3ab03d32"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#19ad4930-b7d8-4ea2-bfcf-93b56bc76bd5');
+var element = $('#2acd087d-6590-4c5c-8208-2d9d3ab03d32');
 
             setTimeout(function() {
-                var nbb_cell_id = 22;
-                var nbb_unformatted_code = "for br in benchmark.rows:\n    # print(br.elapsed)\n    # print(br.bytes_per_second)\n    print(\" \".join([str(_) for _ in convert_size(br.bytes_per_second)]))";
-                var nbb_formatted_code = "for br in benchmark.rows:\n    # print(br.elapsed)\n    # print(br.bytes_per_second)\n    print(\" \".join([str(_) for _ in convert_size(br.bytes_per_second)]))";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark fastAPI with aiohttp: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark fastAPI with aiohttp: 
----------
-File size: 9.54MB
-49.37MB/s
----------
-File size: 976.56KB
-52.43MB/s
----------
-File size: 97.66KB
-35.38MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="f4547ad5-9632-4a21-b4d3-014514728a7b"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#f4547ad5-9632-4a21-b4d3-014514728a7b');
-
-            setTimeout(function() {
-                var nbb_cell_id = 14;
-                var nbb_unformatted_code = "print(\"Benchmark fastAPI with aiohttp: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark fastAPI with aiohttp: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark Nginx with aiohttp: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark Nginx with aiohttp: 
----------
-File size: 9.54MB
-60.81MB/s
----------
-File size: 976.56KB
-56.63MB/s
----------
-File size: 97.66KB
-40.02MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="4a3a261c-98c2-4c34-a254-2f988e6f4ad8"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#4a3a261c-98c2-4c34-a254-2f988e6f4ad8');
-
-            setTimeout(function() {
-                var nbb_cell_id = 60;
-                var nbb_unformatted_code = "print(\"Benchmark Nginx with aiohttp: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark Nginx with aiohttp: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benchmark Nginx with aiohttp: &quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">br</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File size: </span><span class="si">{</span><span class="n">file_size</span><span class="si">}{</span><span class="n">file_unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="n">file_size</span><span class="p">,</span> <span class="n">file_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">file_size</span><span class="p">)</span>
-    <span class="n">transferred_per_second</span><span class="p">,</span> <span class="n">transferred_unit</span> <span class="o">=</span> <span class="n">convert_size</span><span class="p">(</span><span class="n">br</span><span class="o">.</span><span class="n">bytes_per_second</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">transferred_per_second</span><span class="si">}{</span><span class="n">transferred_unit</span><span class="si">}</span><span class="s2">/s&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Benchmark Nginx with aiohttp: 
----------
-File size: 9.54MB
-80.27MB/s
----------
-File size: 976.56KB
-71.1MB/s
----------
-File size: 97.66KB
-56.49MB/s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="e58f63d5-af49-4fff-8639-c8b79c874870"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#e58f63d5-af49-4fff-8639-c8b79c874870');
-
-            setTimeout(function() {
-                var nbb_cell_id = 20;
-                var nbb_unformatted_code = "print(\"Benchmark Nginx with aiohttp: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
-                var nbb_formatted_code = "print(\"Benchmark Nginx with aiohttp: \")\nfor br in benchmark.rows:\n    print(\"---------\")\n    file_size, file_unit = convert_size(br.file_size)\n    print(f\"File size: {file_size}{file_unit}\")\n    file_size, file_unit = convert_size(br.file_size)\n    transferred_per_second, transferred_unit = convert_size(br.bytes_per_second)\n    print(f\"{transferred_per_second}{transferred_unit}/s\")";
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "client = AioHttpClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
+                var nbb_formatted_code = "client = AioHttpClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -1750,7 +486,7 @@ var element = $('#e58f63d5-af49-4fff-8639-c8b79c874870');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">snotebook2script</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nbdev.export</span> <span class="kn">import</span> <span class="n">notebook2script</span>
 
 <span class="n">notebook2script</span><span class="p">()</span>
 </pre></div>
@@ -1764,17 +500,47 @@ var element = $('#e58f63d5-af49-4fff-8639-c8b79c874870');
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">------------------------------------------------------</span>
-<span class="ansi-red-fg">ImportError</span>          Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-68dfb763b5b2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> nbdev<span class="ansi-blue-fg">.</span>export <span class="ansi-green-fg">import</span> snotebook2script
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-intense-fg ansi-bold">      3</span> notebook2script<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ImportError</span>: cannot import name &#39;snotebook2script&#39; from &#39;nbdev.export&#39; (/Users/jochen/.pyenv/versions/3.9.1/envs/wis/lib/python3.9/site-packages/nbdev/export.py)</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Converted 00_core.ipynb.
+Converted 01_serve_files.ipynb.
+Converted 02_benchmark_clients.ipynb.
+Converted 03_run_benchmark.ipynb.
+Converted 04_use_nginx_to_serve_files.ipynb.
+Converted 05_run_wrk_benchmark.ipynb.
+Converted 06_wtf.ipynb.
+Converted index.ipynb.
+</pre>
 </div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="00a9516b-6534-4823-b592-827c6b46cf73"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#00a9516b-6534-4823-b592-827c6b46cf73');
+
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
 </div>
 
 </div>
