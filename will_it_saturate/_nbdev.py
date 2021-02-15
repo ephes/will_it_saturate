@@ -11,18 +11,20 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "convert_size": "00_core.ipynb",
          "BenchmarkResult": "00_core.ipynb",
          "Benchmark": "00_core.ipynb",
-         "read_root": "01_serve_files.ipynb",
-         "get_file_urls": "01_serve_files.ipynb",
-         "serve_file": "01_serve_files.ipynb",
-         "app": "01_serve_files.ipynb",
+         "read_root": "01_serve_files_uvicorn.ipynb",
+         "get_file_urls": "01_serve_files_uvicorn.ipynb",
+         "serve_file": "01_serve_files_uvicorn.ipynb",
+         "app": "01_serve_files_uvicorn.ipynb",
          "HttpxClient": "02_benchmark_clients.ipynb",
          "run_httpx": "02_benchmark_clients.ipynb",
          "AioHttpResponse": "02_benchmark_clients.ipynb",
-         "AioHttpClient": "02_benchmark_clients.ipynb"}
+         "AioHttpClient": "02_benchmark_clients.ipynb",
+         "FastAPIUvicornServer": "06_fastapi_uvicorn_server.ipynb"}
 
 modules = ["core.py",
            "main.py",
-           "client.py"]
+           "client.py",
+           "server.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 

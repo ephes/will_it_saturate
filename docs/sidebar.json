@@ -2,10 +2,11 @@
   "will_it_saturate": {
     "Overview": "/",
     "module Core": "core.html",
-    "Start the Server": "serve_files.html",
+    "fastAPI Application": "serve_files_uvicorn.html",
     "Caveats": "benchmark_clients.html",
-    "Title": "wtf.html",
+    "Title": "run_benchmark.html",
     "Run Nginx via Docker": "use_nginx_to_serve_files.html",
-    "Create wrk JSON": "run_wrk_benchmark.html"
+    "Create wrk JSON": "run_wrk_benchmark.html",
+    "Start the Server": "fastapi_uvicorn_server.html"
   }
 }

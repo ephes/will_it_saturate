@@ -13,20 +13,23 @@ entries:
       title: module Core
       url: core.html
     - output: web,pdf
-      title: Start the Server
-      url: serve_files.html
+      title: fastAPI Application
+      url: serve_files_uvicorn.html
     - output: web,pdf
       title: Caveats
       url: benchmark_clients.html
     - output: web,pdf
       title: Title
-      url: wtf.html
+      url: run_benchmark.html
     - output: web,pdf
       title: Run Nginx via Docker
       url: use_nginx_to_serve_files.html
     - output: web,pdf
       title: Create wrk JSON
       url: run_wrk_benchmark.html
+    - output: web,pdf
+      title: Start the Server
+      url: fastapi_uvicorn_server.html
     output: web
     title: will_it_saturate
   output: web

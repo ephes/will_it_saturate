@@ -239,8 +239,10 @@ class Benchmark(BaseModel):
     def run(self):
         for server in self.servers:
             # start with servers, because they are more expensive to create
+            server.start()
             for client in self.clients:
                 self.test_server_with_client(server, client)
+            server.stop()
 
     @property
     def results_frame(self):

@@ -36,37 +36,12 @@ nb_path: "03_run_benchmark.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">BenchmarkServer</span><span class="p">,</span> <span class="n">Benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">Benchmark</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate.server</span> <span class="kn">import</span> <span class="n">FastAPIUvicornServer</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.client</span> <span class="kn">import</span> <span class="n">HttpxClient</span><span class="p">,</span> <span class="n">AioHttpClient</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-Traceback <span class="ansi-cyan-fg">(most recent call last)</span>:
-
-  File <span class="ansi-green-intense-fg ansi-bold">&#34;/Users/jochen/.pyenv/versions/3.9.1/envs/wis/lib/python3.9/site-packages/IPython/core/interactiveshell.py&#34;</span>, line <span class="ansi-green-intense-fg ansi-bold">3418</span>, in <span class="ansi-magenta-intense-fg ansi-bold">run_code</span>
-    exec(code_obj, self.user_global_ns, self.user_ns)
-
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-1-52e12853a5ec&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">2</span><span class="ansi-cyan-fg">, in </span><span class="ansi-magenta-fg">&lt;module&gt;</span>
-<span class="ansi-red-fg">    from will_it_saturate.client import HttpxClient, AioHttpClient</span>
-
-<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/client.py&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">100</span>
-<span class="ansi-red-fg">    ´        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))</span>
-                                                                                 ^
-<span class="ansi-red-fg">IndentationError</span><span class="ansi-red-fg">:</span> expected an indented block
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -88,11 +63,12 @@ Traceback <span class="ansi-cyan-fg">(most recent call last)</span>:
 <span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">]</span>
 <span class="c1"># file_sizes = [10 ** 7]</span>
 
+<span class="n">server</span> <span class="o">=</span> <span class="n">FastAPIUvicornServer</span><span class="p">()</span>
 <span class="n">benchmark</span> <span class="o">=</span> <span class="n">Benchmark</span><span class="p">(</span>
     <span class="n">bandwidth</span><span class="o">=</span><span class="n">bandwidth</span><span class="p">,</span>
     <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">file_sizes</span><span class="o">=</span><span class="n">file_sizes</span><span class="p">,</span>
-    <span class="n">servers</span><span class="o">=</span><span class="p">[</span><span class="n">BenchmarkServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;uvicorn&quot;</span><span class="p">)],</span>
+    <span class="n">servers</span><span class="o">=</span><span class="p">[</span><span class="n">server</span><span class="p">],</span>
     <span class="n">clients</span><span class="o">=</span><span class="p">[</span><span class="n">HttpxClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">),</span> <span class="n">AioHttpClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;aiohttp&quot;</span><span class="p">)],</span>
 <span class="p">)</span>
 <span class="n">benchmark</span><span class="o">.</span><span class="n">create_rows</span><span class="p">()</span>
@@ -129,11 +105,6 @@ Traceback <span class="ansi-cyan-fg">(most recent call last)</span>:
 <pre>measure
 measure
 measure
-measure
-measure
-measure
-CPU times: user 45.3 ms, sys: 66.6 ms, total: 112 ms
-Wall time: 34.1 s
 </pre>
 </div>
 </div>
@@ -196,69 +167,69 @@ Wall time: 34.1 s
   <tbody>
     <tr>
       <th>0</th>
-      <td>uvicorn</td>
+      <td>fastAPI/uvicorn</td>
       <td>httpx</td>
       <td>10000000</td>
-      <td>3.320911</td>
+      <td>6.212713</td>
       <td>375000000</td>
       <td>9.54MB</td>
-      <td>1.129208e+08</td>
-      <td>107.69MB</td>
+      <td>6.036010e+07</td>
+      <td>57.56MB</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>uvicorn</td>
+      <td>fastAPI/uvicorn</td>
       <td>httpx</td>
       <td>1000000</td>
-      <td>4.172176</td>
+      <td>7.464866</td>
       <td>375000000</td>
       <td>976.56KB</td>
-      <td>8.988115e+07</td>
-      <td>85.72MB</td>
+      <td>5.023533e+07</td>
+      <td>47.91MB</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>uvicorn</td>
+      <td>fastAPI/uvicorn</td>
       <td>httpx</td>
       <td>100000</td>
-      <td>6.846386</td>
+      <td>30.550003</td>
       <td>375000000</td>
       <td>97.66KB</td>
-      <td>5.477342e+07</td>
-      <td>52.24MB</td>
+      <td>1.227496e+07</td>
+      <td>11.71MB</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>uvicorn</td>
+      <td>fastAPI/uvicorn</td>
       <td>aiohttp</td>
       <td>10000000</td>
-      <td>3.269130</td>
+      <td>6.143259</td>
       <td>375000000</td>
       <td>9.54MB</td>
-      <td>1.147094e+08</td>
-      <td>109.4MB</td>
+      <td>6.104252e+07</td>
+      <td>58.21MB</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>uvicorn</td>
+      <td>fastAPI/uvicorn</td>
       <td>aiohttp</td>
       <td>1000000</td>
-      <td>3.540852</td>
+      <td>5.936163</td>
       <td>375000000</td>
       <td>976.56KB</td>
-      <td>1.059067e+08</td>
-      <td>101.0MB</td>
+      <td>6.317212e+07</td>
+      <td>60.25MB</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>uvicorn</td>
+      <td>fastAPI/uvicorn</td>
       <td>aiohttp</td>
       <td>100000</td>
-      <td>5.847973</td>
+      <td>9.707379</td>
       <td>375000000</td>
       <td>97.66KB</td>
-      <td>6.412478e+07</td>
-      <td>61.15MB</td>
+      <td>3.863041e+07</td>
+      <td>36.84MB</td>
     </tr>
   </tbody>
 </table>
@@ -267,6 +238,23 @@ Wall time: 34.1 s
 
 </div>
 
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">benchmark</span><span class="o">.</span><span class="n">results_frame</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

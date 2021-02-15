@@ -33,7 +33,8 @@ class HttpxClient(BenchmarkClient):
         async with httpx.AsyncClient(limits=limits) as client:
             responses = await asyncio.gather(*[client.get(url) for url in urls])
         elapsed = time.perf_counter() - start
-        print("done")
+        print("done: ", elapsed)
+        print("responses status: ", responses[0].status_code)
         return elapsed, responses
 
     def measure_in_new_process(self, benchmark_row):
