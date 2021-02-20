@@ -105,6 +105,8 @@ nb_path: "03_run_benchmark.ipynb"
 <pre>measure
 measure
 measure
+CPU times: user 36.1 ms, sys: 79.7 ms, total: 116 ms
+Wall time: 33.3 s
 </pre>
 </div>
 </div>
@@ -255,6 +257,118 @@ measure
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>server</th>
+      <th>client</th>
+      <th>file_size</th>
+      <th>elapsed</th>
+      <th>complete_size</th>
+      <th>file_size_h</th>
+      <th>bytes_per_second</th>
+      <th>bytes_per_second_h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>10000000</td>
+      <td>3.325116</td>
+      <td>375000000</td>
+      <td>9.54MB</td>
+      <td>1.127780e+08</td>
+      <td>107.55MB</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>1000000</td>
+      <td>3.553887</td>
+      <td>375000000</td>
+      <td>976.56KB</td>
+      <td>1.055183e+08</td>
+      <td>100.63MB</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>100000</td>
+      <td>6.097791</td>
+      <td>375000000</td>
+      <td>97.66KB</td>
+      <td>6.149768e+07</td>
+      <td>58.65MB</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>fastAPI/uvicorn</td>
+      <td>aiohttp</td>
+      <td>10000000</td>
+      <td>3.505289</td>
+      <td>375000000</td>
+      <td>9.54MB</td>
+      <td>1.069812e+08</td>
+      <td>102.03MB</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>fastAPI/uvicorn</td>
+      <td>aiohttp</td>
+      <td>1000000</td>
+      <td>3.478566</td>
+      <td>375000000</td>
+      <td>976.56KB</td>
+      <td>1.078030e+08</td>
+      <td>102.81MB</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>fastAPI/uvicorn</td>
+      <td>aiohttp</td>
+      <td>100000</td>
+      <td>4.947546</td>
+      <td>375000000</td>
+      <td>97.66KB</td>
+      <td>7.579515e+07</td>
+      <td>72.28MB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
 </div>
 </div>
 
