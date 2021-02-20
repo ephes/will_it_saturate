@@ -169,6 +169,7 @@ class BenchmarkResult(BaseModel):
     file_size: int
     elapsed: float
     complete_size: int
+    platform: str
 
     def make_readable(self, size_in_bytes):
         size, unit = convert_size(size_in_bytes)
@@ -196,6 +197,7 @@ class BenchmarkResult(BaseModel):
         }
 
 # Cell
+import platform
 
 
 class Benchmark(BaseModel):
@@ -204,6 +206,7 @@ class Benchmark(BaseModel):
     file_sizes: list[int] = [10 ** 7, 10 ** 6, 10 ** 5]
     rows: list[BenchmarkRow] = []
     file_creator: Callable = FilesystemCreator()
+    platform: str = ""
     servers: list[BenchmarkServer] = []
     clients: list[BenchmarkClient] = []
     results: list[BenchmarkResult] = []
@@ -233,10 +236,15 @@ class Benchmark(BaseModel):
                 file_size=benchmark_row.file_size,
                 elapsed=elapsed,
                 complete_size=benchmark_row.complete_size,
+                platform=self.platform,
             )
             self.results.append(result)
 
+    def collect_information_about_platform(self):
+        self.platform = platform.machine()
+
     def run(self):
+        self.collect_information_about_platform()
         for server in self.servers:
             # start with servers, because they are more expensive to create
             server.start()
