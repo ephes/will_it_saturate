@@ -197,6 +197,7 @@ class BenchmarkResult(BaseModel):
         }
 
 # Cell
+import cpuinfo
 import platform
 
 
@@ -206,7 +207,8 @@ class Benchmark(BaseModel):
     file_sizes: list[int] = [10 ** 7, 10 ** 6, 10 ** 5]
     rows: list[BenchmarkRow] = []
     file_creator: Callable = FilesystemCreator()
-    platform: str = ""
+    platform: Optional[str] = None
+    cpuinfo: Optional[dict] = None
     servers: list[BenchmarkServer] = []
     clients: list[BenchmarkClient] = []
     results: list[BenchmarkResult] = []
@@ -242,6 +244,7 @@ class Benchmark(BaseModel):
 
     def collect_information_about_platform(self):
         self.platform = platform.machine()
+        self.cpuinfo = cpuinfo.get_cpu_info()
 
     def run(self):
         self.collect_information_about_platform()
