@@ -137,6 +137,7 @@ class BenchmarkRow(BaseModel):
         return self.complete_size / self.elapsed
 
     def create_files(self):
+        print("create_files with: ", self.file_creator)
         if len(self.files) > 0:
             return
         for num in range(self.number_of_files):
