@@ -22,11 +22,11 @@ from pydantic import BaseModel
 class BenchmarkServer(BaseModel):
     name: str = "base_server"
 
-    def create(self):
+    def start(self):
         # do nothing
         pass
 
-    def remove(self):
+    def stop(self):
         # do nothing
         pass
 
@@ -137,7 +137,6 @@ class BenchmarkRow(BaseModel):
         return self.complete_size / self.elapsed
 
     def create_files(self):
-        print("create_files with: ", self.file_creator)
         if len(self.files) > 0:
             return
         for num in range(self.number_of_files):
@@ -244,8 +243,10 @@ class Benchmark(BaseModel):
             self.results.append(result)
 
     def collect_information_about_platform(self):
-        self.platform = platform.machine()
-        self.cpuinfo = cpuinfo.get_cpu_info()
+        if self.platform is None:
+            self.platform = platform.machine()
+        if self.cpuinfo is None:
+            self.cpuinfo = cpuinfo.get_cpu_info()
 
     def run(self):
         self.collect_information_about_platform()

@@ -59,10 +59,10 @@ nb_path: "02_benchmark_clients.ipynb"
 
 
 
-<div id="bbf96057-915f-4b2a-b558-848b6a677500"></div>
+<div id="b231123a-f2aa-436b-9a7e-67fb0fba51aa"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bbf96057-915f-4b2a-b558-848b6a677500');
+var element = $('#b231123a-f2aa-436b-9a7e-67fb0fba51aa');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -125,15 +125,15 @@ var element = $('#bbf96057-915f-4b2a-b558-848b6a677500');
 
 
 
-<div id="0d10c8c9-7347-4955-a252-c133458fdc03"></div>
+<div id="03b72b7f-5a34-4387-80e6-c562aeeb91f1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0d10c8c9-7347-4955-a252-c133458fdc03');
+var element = $('#03b72b7f-5a34-4387-80e6-c562aeeb91f1');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
-                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_rows()";
-                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_rows()";
+                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_rows()";
+                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_rows()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -216,10 +216,10 @@ var element = $('#0d10c8c9-7347-4955-a252-c133458fdc03');
 
 
 
-<div id="76f6556c-cedd-469c-86aa-de16b7330883"></div>
+<div id="a2a077c4-dfa1-4952-866c-0b727f9665ee"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#76f6556c-cedd-469c-86aa-de16b7330883');
+var element = $('#a2a077c4-dfa1-4952-866c-0b727f9665ee');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -271,8 +271,9 @@ var element = $('#76f6556c-cedd-469c-86aa-de16b7330883');
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>measure server
 http://localhost:8000/data/10000000_3_125000000/0
-done
-3.2920197919999996
+done:  6.558793869999999
+responses status:  200
+6.558793869999999
 </pre>
 </div>
 </div>
@@ -282,15 +283,15 @@ done
 
 
 
-<div id="39ad1900-3344-4ef0-a3df-ee4628153e94"></div>
+<div id="cd6ed0ea-af58-4298-9c16-5027faa2fa2e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#39ad1900-3344-4ef0-a3df-ee4628153e94');
+var element = $('#cd6ed0ea-af58-4298-9c16-5027faa2fa2e');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
-                var nbb_unformatted_code = "client = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
-                var nbb_formatted_code = "client = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
+                var nbb_unformatted_code = "# dont_test\n\nclient = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
+                var nbb_formatted_code = "# dont_test\n\nclient = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -379,15 +380,15 @@ var element = $('#39ad1900-3344-4ef0-a3df-ee4628153e94');
 
 
 
-<div id="8ae5cfb5-8422-49a9-85a6-2f582f04c2da"></div>
+<div id="d34443c0-85ab-42c2-94a0-3b008a11e1c5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8ae5cfb5-8422-49a9-85a6-2f582f04c2da');
+var element = $('#d34443c0-85ab-42c2-94a0-3b008a11e1c5');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
-                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BenchmarkClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, benchmark_row):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 100)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result";
-                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BenchmarkClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, benchmark_row):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 100)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result";
+                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BenchmarkClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, benchmark_row):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result";
+                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BenchmarkClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, benchmark_row):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, benchmark_row):\n        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))\n        self.verify_checksums(benchmark_row.files, responses)\n        return elapsed\n\n    def measure(self, benchmark_row):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [benchmark_row])\n        return result";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -432,7 +433,7 @@ var element = $('#8ae5cfb5-8422-49a9-85a6-2f582f04c2da');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.271349916
+<pre>5.592472877999999
 </pre>
 </div>
 </div>
@@ -442,15 +443,15 @@ var element = $('#8ae5cfb5-8422-49a9-85a6-2f582f04c2da');
 
 
 
-<div id="73ff0143-e271-494a-ae3b-6d1fee737e48"></div>
+<div id="b0d8b4d8-b622-4b2b-b05e-7d60a03c92be"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#73ff0143-e271-494a-ae3b-6d1fee737e48');
+var element = $('#b0d8b4d8-b622-4b2b-b05e-7d60a03c92be');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
-                var nbb_unformatted_code = "client = AioHttpClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
-                var nbb_formatted_code = "client = AioHttpClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
+                var nbb_unformatted_code = "# dont_test\n\nclient = AioHttpClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
+                var nbb_formatted_code = "# dont_test\n\nclient = AioHttpClient()\nelapsed, responses = await client.measure_server(benchmark.rows[0])\nprint(elapsed)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -518,15 +519,15 @@ Converted index.ipynb.
 
 
 
-<div id="c2d5ae59-b102-49c6-a930-6a3698d9b871"></div>
+<div id="8170204e-2ddf-446c-a174-f6eb0330da71"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c2d5ae59-b102-49c6-a930-6a3698d9b871');
+var element = $('#8170204e-2ddf-446c-a174-f6eb0330da71');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
-                var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
-                var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
