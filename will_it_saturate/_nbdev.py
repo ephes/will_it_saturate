@@ -19,6 +19,9 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "run_httpx": "02_benchmark_clients.ipynb",
          "AioHttpResponse": "02_benchmark_clients.ipynb",
          "AioHttpClient": "02_benchmark_clients.ipynb",
+         "WrkClient": "02_benchmark_clients.ipynb",
+         "counter": "02_benchmark_clients.ipynb",
+         "request": "02_benchmark_clients.ipynb",
          "FastAPIUvicornServer": "06_fastapi_uvicorn_server.ipynb"}
 
 modules = ["core.py",

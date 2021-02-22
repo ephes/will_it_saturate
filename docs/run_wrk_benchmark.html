@@ -55,13 +55,13 @@ nb_path: "05_run_wrk_benchmark.ipynb"
 
 
 
-<div id="c1361457-e2c2-4efc-8d5d-4d1dd793e57d"></div>
+<div id="2680e02f-db93-4f39-b76e-0f156baa1700"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c1361457-e2c2-4efc-8d5d-4d1dd793e57d');
+var element = $('#2680e02f-db93-4f39-b76e-0f156baa1700');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 2;
                 var nbb_unformatted_code = "import json\n\nfrom pathlib import Path\n\nfrom will_it_saturate.core import Benchmark";
                 var nbb_formatted_code = "import json\n\nfrom pathlib import Path\n\nfrom will_it_saturate.core import Benchmark";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -114,18 +114,33 @@ var element = $('#c1361457-e2c2-4efc-8d5d-4d1dd793e57d');
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-858c2a26a935&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     10</span> file_sizes <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> <span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> <span class="ansi-cyan-fg">6</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> <span class="ansi-cyan-fg">5</span><span class="ansi-blue-fg">]</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-red-fg"># file_sizes = [10 ** 7]</span>
+<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg"> </span>benchmark<span class="ansi-blue-fg">.</span>create_rows<span class="ansi-blue-fg">(</span>file_sizes<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: create_rows() takes 1 positional argument but 2 were given</pre>
+</div>
+</div>
+
+<div class="output_area">
 
 
 
-<div id="4e708607-d9ce-40bb-986d-41195f97980a"></div>
+
+<div id="2c7217f8-ab6d-4ba8-a7f1-33f12a49f833"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4e708607-d9ce-40bb-986d-41195f97980a');
+var element = $('#2c7217f8-ab6d-4ba8-a7f1-33f12a49f833');
 
             setTimeout(function() {
-                var nbb_cell_id = 11;
-                var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
-                var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
+                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\nbenchmark = Benchmark(bandwidth=bandwidth, duration=3)\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\nbenchmark.create_rows(file_sizes)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -177,13 +192,13 @@ var element = $('#4e708607-d9ce-40bb-986d-41195f97980a');
 
 
 
-<div id="e0cf53fa-0e64-4d86-a2e5-904548a2a9f1"></div>
+<div id="93bdec6f-6d6b-4dac-9669-f35f17c2929f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e0cf53fa-0e64-4d86-a2e5-904548a2a9f1');
+var element = $('#93bdec6f-6d6b-4dac-9669-f35f17c2929f');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "def create_url_list(benchmark_row):\n    template = {\n        \"method\": \"GET\",\n    }\n    urls = []\n    for bf in benchmark_row.files:\n        urls.append({**template, \"path\": bf.path})\n    return urls";
                 var nbb_formatted_code = "def create_url_list(benchmark_row):\n    template = {\n        \"method\": \"GET\",\n    }\n    urls = []\n    for bf in benchmark_row.files:\n        urls.append({**template, \"path\": bf.path})\n    return urls";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -249,10 +264,10 @@ data/100000_3_125000000.json
 
 
 
-<div id="1085f829-47f1-4538-9596-0b4d242a2232"></div>
+<div id="a7b26cb6-c246-41c5-ad08-9cb66f408f26"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1085f829-47f1-4538-9596-0b4d242a2232');
+var element = $('#a7b26cb6-c246-41c5-ad08-9cb66f408f26');
 
             setTimeout(function() {
                 var nbb_cell_id = 19;
@@ -312,10 +327,10 @@ var element = $('#1085f829-47f1-4538-9596-0b4d242a2232');
 
 
 
-<div id="eb22f6fd-a287-417b-908f-12e1f49d9705"></div>
+<div id="5d72f017-3d0d-4313-8822-342c240ff2d3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#eb22f6fd-a287-417b-908f-12e1f49d9705');
+var element = $('#5d72f017-3d0d-4313-8822-342c240ff2d3');
 
             setTimeout(function() {
                 var nbb_cell_id = 38;
@@ -394,10 +409,10 @@ var element = $('#eb22f6fd-a287-417b-908f-12e1f49d9705');
 
 
 
-<div id="63a280f2-debc-4823-ab9f-3b2d9a2bd597"></div>
+<div id="a20da75c-a123-41e7-9c6d-ce2133485c78"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#63a280f2-debc-4823-ab9f-3b2d9a2bd597');
+var element = $('#a20da75c-a123-41e7-9c6d-ce2133485c78');
 
             setTimeout(function() {
                 var nbb_cell_id = 39;
@@ -451,10 +466,10 @@ var element = $('#63a280f2-debc-4823-ab9f-3b2d9a2bd597');
 
 
 
-<div id="d0c72e54-0a0a-49d1-aeec-01effe155903"></div>
+<div id="69ed0f15-6045-43f9-9e48-52e6d09ce5c8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d0c72e54-0a0a-49d1-aeec-01effe155903');
+var element = $('#69ed0f15-6045-43f9-9e48-52e6d09ce5c8');
 
             setTimeout(function() {
                 var nbb_cell_id = 40;
