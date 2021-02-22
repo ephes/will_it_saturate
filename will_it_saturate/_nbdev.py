@@ -15,19 +15,20 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "get_file_urls": "01_serve_files_uvicorn.ipynb",
          "serve_file": "01_serve_files_uvicorn.ipynb",
          "app": "01_serve_files_uvicorn.ipynb",
-         "HttpxClient": "02_benchmark_clients.ipynb",
-         "run_httpx": "02_benchmark_clients.ipynb",
-         "AioHttpResponse": "02_benchmark_clients.ipynb",
-         "AioHttpClient": "02_benchmark_clients.ipynb",
-         "WrkClient": "02_benchmark_clients.ipynb",
-         "counter": "02_benchmark_clients.ipynb",
-         "request": "02_benchmark_clients.ipynb",
-         "FastAPIUvicornServer": "06_fastapi_uvicorn_server.ipynb"}
+         "FastAPIUvicornServer": "02_fastapi_uvicorn_server.ipynb",
+         "NginxDockerServer": "03_nginx_docker_server.ipynb",
+         "HttpxClient": "04_benchmark_clients.ipynb",
+         "run_httpx": "04_benchmark_clients.ipynb",
+         "counter": "04_benchmark_clients.ipynb",
+         "request": "04_benchmark_clients.ipynb",
+         "AioHttpResponse": "04_benchmark_clients.ipynb",
+         "AioHttpClient": "04_benchmark_clients.ipynb",
+         "WrkClient": "04_benchmark_clients.ipynb"}
 
 modules = ["core.py",
            "main.py",
-           "client.py",
-           "server.py"]
+           "server.py",
+           "client.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 

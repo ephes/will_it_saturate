@@ -16,20 +16,23 @@ entries:
       title: fastAPI Application
       url: serve_files_uvicorn.html
     - output: web,pdf
+      title: Start the Server
+      url: fastapi_uvicorn_server.html
+    - output: web,pdf
+      title: Nginx Docker Server
+      url: nginx_docker_server.html
+    - output: web,pdf
       title: Caveats
       url: benchmark_clients.html
     - output: web,pdf
       title: Title
       url: run_benchmark.html
     - output: web,pdf
-      title: Run Nginx via Docker
-      url: use_nginx_to_serve_files.html
-    - output: web,pdf
       title: Create wrk JSON
-      url: run_wrk_benchmark.html
+      url: run_wrk_benchmark_test.html
     - output: web,pdf
-      title: Start the Server
-      url: fastapi_uvicorn_server.html
+      title: Run Nginx via Docker
+      url: use_nginx_to_serve_files_test.html
     output: web
     title: will_it_saturate
   output: web
