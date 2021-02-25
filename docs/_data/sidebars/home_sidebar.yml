@@ -33,6 +33,9 @@ entries:
     - output: web,pdf
       title: Run Nginx via Docker
       url: use_nginx_to_serve_files_test.html
+    - output: web,pdf
+      title: Usage
+      url: write_to_sqlite_test.html
     output: web
     title: will_it_saturate
   output: web

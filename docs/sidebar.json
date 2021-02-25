@@ -8,6 +8,7 @@
     "Caveats": "benchmark_clients.html",
     "Title": "run_benchmark.html",
     "Create wrk JSON": "run_wrk_benchmark_test.html",
-    "Run Nginx via Docker": "use_nginx_to_serve_files_test.html"
+    "Run Nginx via Docker": "use_nginx_to_serve_files_test.html",
+    "Usage": "write_to_sqlite_test.html"
   }
 }
