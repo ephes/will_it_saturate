@@ -171,6 +171,9 @@ class BenchmarkResult(BaseModel):
     elapsed: float
     complete_size: int
 
+    def __hash__(self):
+        return hash(self.json())
+
     def make_readable(self, size_in_bytes):
         size, unit = convert_size(size_in_bytes)
         return f"{size}{unit}"
@@ -224,11 +227,19 @@ class Benchmark(BaseModel):
     file_sizes: list[int] = [10 ** 7, 10 ** 6, 10 ** 5]
     rows: list[BenchmarkRow] = []
     file_creator: Callable = FilesystemCreator()
-    platform: Optional[str] = platform.machine()
+    uname: Optional[Any] = platform.uname()
     cpuinfo: Optional[dict] = cpuinfo.get_cpu_info()
     servers: list[BenchmarkServer] = []
     clients: list[BenchmarkClient] = []
     results: list[BenchmarkResult] = []
+    repository: Optional[BaseRepository] = None
+
+    @property
+    def json_id(self):
+        return json.dumps(self.uname)
+
+    def __hash__(self):
+        return hash(self.json_id)
 
     def create_row_from_file_size(self, file_size):
         do_not_copy = {"rows", "file_sizes"}
@@ -255,9 +266,15 @@ class Benchmark(BaseModel):
                 file_size=benchmark_row.file_size,
                 elapsed=elapsed,
                 complete_size=benchmark_row.complete_size,
-                platform=self.platform,
+                platform=self.uname.machine,
             )
             self.results.append(result)
+            self.persist_result()
+
+    def persist_result(self):
+        if self.repository is None:
+            return
+        self.repository.persist(self)
 
     def run(self):
         for server in self.servers:
@@ -266,6 +283,18 @@ class Benchmark(BaseModel):
             for client in self.clients:
                 self.test_server_with_client(server, client)
             server.stop()
+
+    def json(self):
+        # return super().json(exclude={"rows", "repository"})
+        fields = {
+            "duration",
+            "bandwidth",
+            "file_sizes",
+            "cpuinfo",
+            "json_id",
+            "cpuinfo",
+        }
+        return super().json(include=fields)
 
     @property
     def results_frame(self):
