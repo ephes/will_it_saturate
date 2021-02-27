@@ -168,11 +168,26 @@ class BenchmarkResult(BaseModel):
     server: str
     client: str
     file_size: int
-    elapsed: float
+    elapsed: Optional[float] = None
     complete_size: int
 
     def __hash__(self):
-        return hash(self.json())
+        return hash(self.json(exclude={"elapsed"}))
+
+    def __eq__(self, other):
+        self_dict, other_dict = self.dict(exclude={"elapsed"}), other.dict(
+            exclude={"elapsed"}
+        )
+        return self_dict == other_dict
+
+    @classmethod
+    def build_empty_result(cls, row, server, client):
+        return cls(
+            server=server.name,
+            client=client.name,
+            file_size=row.file_size,
+            complete_size=row.complete_size,
+        )
 
     def make_readable(self, size_in_bytes):
         size, unit = convert_size(size_in_bytes)
@@ -241,8 +256,18 @@ class Benchmark(BaseModel):
     def __hash__(self):
         return hash(self.json_id)
 
+    def __eq__(self, other):
+        self.uname == other.uname
+
     def create_row_from_file_size(self, file_size):
-        do_not_copy = {"rows", "file_sizes"}
+        do_not_copy = {
+            "rows",
+            "file_sizes",
+            "servers",
+            "clients",
+            "results",
+            "repository",
+        }
         kwargs = {k: v for k, v in dict(self).items() if k not in do_not_copy}
         br = BenchmarkRow(file_size=file_size, **kwargs)
         br.create_files()
@@ -257,24 +282,34 @@ class Benchmark(BaseModel):
         for file_size in self.file_sizes:
             self.rows.append(self.create_row_from_file_size(file_size))
 
-    def test_server_with_client(self, server, client):
-        for benchmark_row in self.rows:
-            elapsed = client.measure(benchmark_row)
-            result = BenchmarkResult(
-                server=server.name,
-                client=client.name,
-                file_size=benchmark_row.file_size,
-                elapsed=elapsed,
-                complete_size=benchmark_row.complete_size,
-                platform=self.uname.machine,
-            )
-            self.results.append(result)
-            self.persist_result()
+    def measure(self, row, server, client):
+        elapsed = client.measure(row)
+        return result
 
-    def persist_result(self):
-        if self.repository is None:
-            return
-        self.repository.persist(self)
+    def build_empty_result(self, row, server, client):
+        return BenchmarkResult(
+            server=server.name,
+            client=client.name,
+            file_size=row.file_size,
+            elapsed=elapsed,
+            complete_size=row.complete_size,
+            platform=self.uname.machine,
+        )
+
+    def test_server_with_client(self, server, client):
+        for row in self.rows:
+            result = BenchmarkResult.build_empty_result(row, server, client)
+            if (
+                self.repository is not None
+                and (already_measured := self.repository.get_result(self, result))
+                is not None
+            ):
+                result = already_measured
+            else:
+                result.elapsed = client.measure(row)
+                if self.repository is not None:
+                    self.repository.add_result(self, result)
+            self.results.append(result)
 
     def run(self):
         for server in self.servers:

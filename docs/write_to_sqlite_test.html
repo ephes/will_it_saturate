@@ -140,6 +140,13 @@ nb_path: "write_to_sqlite_test.ipynb"
         <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">IntegrityError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="k">pass</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">persist</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">benchmark</span><span class="p">):</span>
+        <span class="n">persisted_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">benchmark</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">results</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">result</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">persisted_results</span><span class="p">:</span>
+                <span class="n">persisted_results</span><span class="p">[</span><span class="n">result</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">results</span><span class="p">[</span><span class="n">benchmark</span><span class="p">]</span> <span class="o">=</span> <span class="n">persisted_results</span>
 </pre></div>
 
     </div>
@@ -154,10 +161,10 @@ nb_path: "write_to_sqlite_test.ipynb"
 
 
 
-<div id="0c77dafb-bb9d-4c30-bcdb-0fd02355f920"></div>
+<div id="71feb4a3-e7ba-4ac3-a69d-e9229822fe80"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0c77dafb-bb9d-4c30-bcdb-0fd02355f920');
+var element = $('#71feb4a3-e7ba-4ac3-a69d-e9229822fe80');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -209,10 +216,10 @@ var element = $('#0c77dafb-bb9d-4c30-bcdb-0fd02355f920');
 
 
 
-<div id="cf92e775-e314-4215-b734-9f3cb1334d8b"></div>
+<div id="7fa2ccf0-ea5d-43fe-a332-71bd10ac1b27"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#cf92e775-e314-4215-b734-9f3cb1334d8b');
+var element = $('#7fa2ccf0-ea5d-43fe-a332-71bd10ac1b27');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -267,10 +274,10 @@ var element = $('#cf92e775-e314-4215-b734-9f3cb1334d8b');
 
 
 
-<div id="b416cb82-4105-4b6c-acde-b4f2b5244ec5"></div>
+<div id="eedf39b3-b23a-45d4-81e0-cc9dd820fc50"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b416cb82-4105-4b6c-acde-b4f2b5244ec5');
+var element = $('#eedf39b3-b23a-45d4-81e0-cc9dd820fc50');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -330,10 +337,10 @@ var element = $('#b416cb82-4105-4b6c-acde-b4f2b5244ec5');
 
 
 
-<div id="443b37e3-5271-4f05-b413-3e3313aedd10"></div>
+<div id="3436a4a6-822a-4378-8834-875f13d13006"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#443b37e3-5271-4f05-b413-3e3313aedd10');
+var element = $('#3436a4a6-822a-4378-8834-875f13d13006');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -401,10 +408,10 @@ var element = $('#443b37e3-5271-4f05-b413-3e3313aedd10');
 
 
 
-<div id="553053dd-9c4d-4bd9-bb29-79718377cb53"></div>
+<div id="e73e965d-0c27-4205-a1ea-47c8e15fc8f1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#553053dd-9c4d-4bd9-bb29-79718377cb53');
+var element = $('#e73e965d-0c27-4205-a1ea-47c8e15fc8f1');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -473,10 +480,10 @@ var element = $('#553053dd-9c4d-4bd9-bb29-79718377cb53');
 
 
 
-<div id="0dff6c56-a921-4475-bf89-3b3611339995"></div>
+<div id="3d63a910-ad22-49b2-ba07-5564b2441f32"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0dff6c56-a921-4475-bf89-3b3611339995');
+var element = $('#3d63a910-ad22-49b2-ba07-5564b2441f32');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -538,10 +545,10 @@ var element = $('#0dff6c56-a921-4475-bf89-3b3611339995');
 
 
 
-<div id="e97ce6e7-6bce-4e0a-9da6-372bd2c9d090"></div>
+<div id="9a81859c-c667-479a-862a-fb48e351e0f0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e97ce6e7-6bce-4e0a-9da6-372bd2c9d090');
+var element = $('#9a81859c-c667-479a-862a-fb48e351e0f0');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
