@@ -11,6 +11,8 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "convert_size": "00_core.ipynb",
          "BenchmarkResult": "00_core.ipynb",
          "BaseRepository": "00_core.ipynb",
+         "get_macos_machine_id": "00_core.ipynb",
+         "get_machine_id": "00_core.ipynb",
          "Benchmark": "00_core.ipynb",
          "read_root": "01_serve_files_uvicorn.ipynb",
          "get_file_urls": "01_serve_files_uvicorn.ipynb",
@@ -24,12 +26,14 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "request": "04_benchmark_clients.ipynb",
          "AioHttpResponse": "04_benchmark_clients.ipynb",
          "AioHttpClient": "04_benchmark_clients.ipynb",
-         "WrkClient": "04_benchmark_clients.ipynb"}
+         "WrkClient": "04_benchmark_clients.ipynb",
+         "SqliteRepository": "05_persistence.ipynb"}
 
 modules = ["core.py",
            "main.py",
            "server.py",
-           "client.py"]
+           "client.py",
+           "persistence.py"]
 
 doc_url = "https://ephes.github.io/will_it_saturate/"
 
