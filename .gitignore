@@ -144,3 +144,7 @@ data
 
 # nginx Dockerfile
 Dockerfile.nginx
+
+# sqlite
+example.db
+results.db
