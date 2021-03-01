@@ -205,6 +205,14 @@ class BenchmarkResult(BaseModel):
     def readable_bytes_per_second(self):
         return self.make_readable(self.bytes_per_second)
 
+    def dict_with_properties(self):
+        return {
+            **super().dict(),
+            "file_size_h": self.readable_file_size,
+            "bytes_per_second": self.bytes_per_second,
+            "bytes_per_second_h": self.readable_bytes_per_second,
+        }
+
 
 # This does not work yet
 #     def dict(self):
@@ -309,10 +317,6 @@ class Benchmark(BaseModel):
         for file_size in self.file_sizes:
             self.rows.append(self.create_row_from_file_size(file_size))
 
-    def measure(self, row, server, client):
-        elapsed = client.measure(row)
-        return result
-
     def build_empty_result(self, row, server, client):
         return BenchmarkResult(
             server=server.name,
@@ -328,23 +332,30 @@ class Benchmark(BaseModel):
             result = BenchmarkResult.build_empty_result(row, server, client)
             if (
                 self.repository is not None
-                and (already_measured := self.repository.get_result(self, result))
+                and (
+                    already_measured := self.repository.get_result(self, result)
+                ).elapsed
                 is not None
             ):
+                print("already measured: ", already_measured)
                 result = already_measured
             else:
+                if not server.started:
+                    server.start()
                 result.elapsed = client.measure(row)
                 if self.repository is not None:
                     self.repository.add_result(self, result)
+                print("measured: ", result)
             self.results.append(result)
 
     def run(self):
         for server in self.servers:
             # start with servers, because they are more expensive to create
-            server.start()
+            print(f"server: {server}")
             for client in self.clients:
                 self.test_server_with_client(server, client)
-            server.stop()
+            if server.started:
+                server.stop()
 
     def json(self):
         # return super().json(exclude={"rows", "repository"})
@@ -357,4 +368,4 @@ class Benchmark(BaseModel):
 
     @property
     def results_frame(self):
-        return pd.DataFrame([r.dict() for r in self.results])
+        return pd.DataFrame([r.dict_with_properties() for r in self.results])

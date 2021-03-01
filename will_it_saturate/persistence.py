@@ -144,3 +144,10 @@ class SqliteRepository(BaseRepository):
         except sqlite3.IntegrityError as e:
             pass
         self.connection.commit()
+
+    @classmethod
+    def build_repository(cls, database_name):
+        conn = sqlite3.connect(database_name)
+        repo = cls(connection=conn)
+        repo.create_tables()
+        return repo
