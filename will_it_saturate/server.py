@@ -15,7 +15,9 @@ class FastAPIUvicornServer(BenchmarkServer):
 
     def get_pid(self):
         kwargs = {"shell": True, "capture_output": True, "text": True}
-        output = subprocess.run(f"ps aux | grep will_it_saturate.main:app", **kwargs)
+        output = subprocess.run(
+            f"ps aux | grep will_it_saturate.fastapi.main:app", **kwargs
+        )
         lines = [l for l in output.stdout.split("\n") if len(l) > 0 and "grep" not in l]
         if len(lines) > 0:
             pid = lines[0].split()[1]

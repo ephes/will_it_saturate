@@ -47,7 +47,7 @@ nb_path: "01_serve_files_uvicorn.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="read_root" class="doc_header"><code>read_root</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/main.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>read_root</code>()</p>
+<h4 id="read_root" class="doc_header"><code>read_root</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/fastapi/main.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>read_root</code>()</p>
 </blockquote>
 
 </div>
@@ -71,7 +71,7 @@ nb_path: "01_serve_files_uvicorn.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_file_urls" class="doc_header"><code>get_file_urls</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/main.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_file_urls</code>(<strong><code>base_dir</code></strong>:<code>str</code>)</p>
+<h4 id="get_file_urls" class="doc_header"><code>get_file_urls</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/fastapi/main.py#L22" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_file_urls</code>(<strong><code>base_dir</code></strong>:<code>str</code>)</p>
 </blockquote>
 
 </div>
@@ -95,7 +95,7 @@ nb_path: "01_serve_files_uvicorn.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/main.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>base</code></strong>:<code>str</code>, <strong><code>path</code></strong>:<code>str</code>, <strong><code>num</code></strong>:<code>int</code>)</p>
+<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/fastapi/main.py#L27" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>base</code></strong>:<code>str</code>, <strong><code>path</code></strong>:<code>str</code>, <strong><code>num</code></strong>:<code>int</code>)</p>
 </blockquote>
 
 </div>
@@ -120,15 +120,15 @@ nb_path: "01_serve_files_uvicorn.ipynb"
 
 
 
-<div id="34d795df-a445-4f37-9d23-d75131ec4a91"></div>
+<div id="aef000da-2e0f-4334-89a0-e52fafb55014"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#34d795df-a445-4f37-9d23-d75131ec4a91');
+var element = $('#aef000da-2e0f-4334-89a0-e52fafb55014');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
-                var nbb_unformatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/{base}/{path}/{num}\")\nasync def serve_file(base: str, path: str, num: int):\n    file_path = str(Path(base) / path / str(num))\n    print(\"file path: \", file_path)\n    return FileResponse(file_path)";
-                var nbb_formatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/{base}/{path}/{num}\")\nasync def serve_file(base: str, path: str, num: int):\n    file_path = str(Path(base) / path / str(num))\n    print(\"file path: \", file_path)\n    return FileResponse(file_path)";
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/{base}/{path}/{num}\")\nasync def serve_file(base: str, path: str, num: int):\n    file_path = str(Path(base) / path / str(num))\n    return FileResponse(file_path)";
+                var nbb_formatted_code = "# export\n\napp = FastAPI()\n\n\n@app.get(\"/\")\ndef read_root():\n    return {\"Hello\": \"World\"}\n\n\n@app.get(\"/pathinfo/{base_dir}\")\ndef get_file_urls(base_dir: str):\n    pass\n\n\n@app.get(\"/{base}/{path}/{num}\")\nasync def serve_file(base: str, path: str, num: int):\n    file_path = str(Path(base) / path / str(num))\n    return FileResponse(file_path)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -175,12 +175,14 @@ var element = $('#34d795df-a445-4f37-9d23-d75131ec4a91');
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converted 00_core.ipynb.
 Converted 01_serve_files_uvicorn.ipynb.
-Converted 02_benchmark_clients.ipynb.
-Converted 03_run_benchmark.ipynb.
-Converted 04_use_nginx_to_serve_files.ipynb.
-Converted 05_run_wrk_benchmark.ipynb.
-Converted 06_fastapi_uvicorn_server.ipynb.
+Converted 02_fastapi_uvicorn_server.ipynb.
+Converted 03_nginx_docker_server.ipynb.
+Converted 04_benchmark_clients.ipynb.
+Converted 05_persistence.ipynb.
+Converted 06_run_benchmark.ipynb.
 Converted index.ipynb.
+Converted run_wrk_benchmark_test.ipynb.
+Converted use_nginx_to_serve_files_test.ipynb.
 </pre>
 </div>
 </div>
@@ -190,15 +192,15 @@ Converted index.ipynb.
 
 
 
-<div id="05d7612e-aa8b-4b28-a86f-5377e353fa6a"></div>
+<div id="a9a7dd7c-17a5-4f2c-9e81-a22a7c9a8d9a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#05d7612e-aa8b-4b28-a86f-5377e353fa6a');
+var element = $('#a9a7dd7c-17a5-4f2c-9e81-a22a7c9a8d9a');
 
             setTimeout(function() {
-                var nbb_cell_id = 14;
-                var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
-                var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

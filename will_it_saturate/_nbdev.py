@@ -30,7 +30,7 @@ index = {"BenchmarkServer": "00_core.ipynb",
          "SqliteRepository": "05_persistence.ipynb"}
 
 modules = ["core.py",
-           "main.py",
+           "fastapi/main.py",
            "server.py",
            "client.py",
            "persistence.py"]

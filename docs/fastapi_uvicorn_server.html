@@ -92,7 +92,7 @@ nb_path: "02_fastapi_uvicorn_server.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>98556
+<pre>None
 stopped..
 None
 False
@@ -105,15 +105,15 @@ False
 
 
 
-<div id="11449717-6df1-4967-a411-0a808f4e2347"></div>
+<div id="3b9783d9-fcfe-4bb1-abed-e303f84855c3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#11449717-6df1-4967-a411-0a808f4e2347');
+var element = $('#3b9783d9-fcfe-4bb1-abed-e303f84855c3');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "server = FastAPIUvicornServer()\nserver.start()\nprint(server.get_pid())\nserver.stop()\nprint(\"stopped..\")\nprint(server.get_pid())\nprint(server.started)";
-                var nbb_formatted_code = "server = FastAPIUvicornServer()\nserver.start()\nprint(server.get_pid())\nserver.stop()\nprint(\"stopped..\")\nprint(server.get_pid())\nprint(server.started)";
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# dont_test\n\nserver = FastAPIUvicornServer()\nserver.start()\nprint(server.get_pid())\nserver.stop()\nprint(\"stopped..\")\nprint(server.get_pid())\nprint(server.started)";
+                var nbb_formatted_code = "# dont_test\n\nserver = FastAPIUvicornServer()\nserver.start()\nprint(server.get_pid())\nserver.stop()\nprint(\"stopped..\")\nprint(server.get_pid())\nprint(server.started)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -166,12 +166,14 @@ var element = $('#11449717-6df1-4967-a411-0a808f4e2347');
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converted 00_core.ipynb.
 Converted 01_serve_files_uvicorn.ipynb.
-Converted 02_benchmark_clients.ipynb.
-Converted 03_run_benchmark.ipynb.
-Converted 04_use_nginx_to_serve_files.ipynb.
-Converted 05_run_wrk_benchmark.ipynb.
-Converted 06_fastapi_uvicorn_server.ipynb.
+Converted 02_fastapi_uvicorn_server.ipynb.
+Converted 03_nginx_docker_server.ipynb.
+Converted 04_benchmark_clients.ipynb.
+Converted 05_persistence.ipynb.
+Converted 06_run_benchmark.ipynb.
 Converted index.ipynb.
+Converted run_wrk_benchmark_test.ipynb.
+Converted use_nginx_to_serve_files_test.ipynb.
 </pre>
 </div>
 </div>
@@ -181,15 +183,15 @@ Converted index.ipynb.
 
 
 
-<div id="66f630c4-b152-4a6a-8ae8-3a7ef60c6a4b"></div>
+<div id="946fd3ba-a0eb-4d55-8d19-78a811649a5f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#66f630c4-b152-4a6a-8ae8-3a7ef60c6a4b');
+var element = $('#946fd3ba-a0eb-4d55-8d19-78a811649a5f');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
-                var nbb_formatted_code = "from nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
