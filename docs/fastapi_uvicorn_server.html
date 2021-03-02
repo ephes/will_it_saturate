@@ -92,11 +92,65 @@ nb_path: "02_fastapi_uvicorn_server.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>None
-stopped..
-None
-False
+<pre>89049
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-4-239e34bf793b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> server<span class="ansi-blue-fg">.</span>start<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span>server<span class="ansi-blue-fg">.</span>get_pid<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>server<span class="ansi-blue-fg">.</span>stop<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;stopped..&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> print<span class="ansi-blue-fg">(</span>server<span class="ansi-blue-fg">.</span>get_pid<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-3-d40c0e26968c&gt;</span> in <span class="ansi-cyan-fg">stop</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">     38</span>     <span class="ansi-green-fg">def</span> stop<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     39</span>         <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>started<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 40</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>stop_server<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">&lt;ipython-input-3-d40c0e26968c&gt;</span> in <span class="ansi-cyan-fg">stop_server</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">     29</span> 
+<span class="ansi-green-intense-fg ansi-bold">     30</span>     <span class="ansi-green-fg">def</span> stop_server<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 31</span><span class="ansi-red-fg">         </span>subprocess<span class="ansi-blue-fg">.</span>check_output<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;kill&#34;</span><span class="ansi-blue-fg">,</span> self<span class="ansi-blue-fg">.</span>get_pid<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     32</span>         time<span class="ansi-blue-fg">.</span>sleep<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span>  <span class="ansi-red-fg"># dunno why this is necessary</span>
+<span class="ansi-green-intense-fg ansi-bold">     33</span> 
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">check_output</span><span class="ansi-blue-fg">(timeout, *popenargs, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    422</span>         kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;input&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> empty
+<span class="ansi-green-intense-fg ansi-bold">    423</span> 
+<span class="ansi-green-fg">--&gt; 424</span><span class="ansi-red-fg">     return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+</span><span class="ansi-green-intense-fg ansi-bold">    425</span>                **kwargs).stdout
+<span class="ansi-green-intense-fg ansi-bold">    426</span> 
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">run</span><span class="ansi-blue-fg">(input, capture_output, timeout, check, *popenargs, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    503</span>         kwargs<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;stderr&#39;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> PIPE
+<span class="ansi-green-intense-fg ansi-bold">    504</span> 
+<span class="ansi-green-fg">--&gt; 505</span><span class="ansi-red-fg">     </span><span class="ansi-green-fg">with</span> Popen<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span>popenargs<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> process<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    506</span>         <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    507</span>             stdout<span class="ansi-blue-fg">,</span> stderr <span class="ansi-blue-fg">=</span> process<span class="ansi-blue-fg">.</span>communicate<span class="ansi-blue-fg">(</span>input<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, args, bufsize, executable, stdin, stdout, stderr, preexec_fn, close_fds, shell, cwd, env, universal_newlines, startupinfo, creationflags, restore_signals, start_new_session, pass_fds, user, group, extra_groups, encoding, errors, text, umask)</span>
+<span class="ansi-green-intense-fg ansi-bold">    949</span>                             encoding=encoding, errors=errors)
+<span class="ansi-green-intense-fg ansi-bold">    950</span> 
+<span class="ansi-green-fg">--&gt; 951</span><span class="ansi-red-fg">             self._execute_child(args, executable, preexec_fn, close_fds,
+</span><span class="ansi-green-intense-fg ansi-bold">    952</span>                                 pass_fds<span class="ansi-blue-fg">,</span> cwd<span class="ansi-blue-fg">,</span> env<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    953</span>                                 startupinfo<span class="ansi-blue-fg">,</span> creationflags<span class="ansi-blue-fg">,</span> shell<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/subprocess.py</span> in <span class="ansi-cyan-fg">_execute_child</span><span class="ansi-blue-fg">(self, args, executable, preexec_fn, close_fds, pass_fds, cwd, env, startupinfo, creationflags, shell, p2cread, p2cwrite, c2pread, c2pwrite, errread, errwrite, restore_signals, gid, gids, uid, umask, start_new_session)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1754</span>                     fds_to_keep <span class="ansi-blue-fg">=</span> set<span class="ansi-blue-fg">(</span>pass_fds<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1755</span>                     fds_to_keep<span class="ansi-blue-fg">.</span>add<span class="ansi-blue-fg">(</span>errpipe_write<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 1756</span><span class="ansi-red-fg">                     self.pid = _posixsubprocess.fork_exec(
+</span><span class="ansi-green-intense-fg ansi-bold">   1757</span>                             args<span class="ansi-blue-fg">,</span> executable_list<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">   1758</span>                             close_fds<span class="ansi-blue-fg">,</span> tuple<span class="ansi-blue-fg">(</span>sorted<span class="ansi-blue-fg">(</span>map<span class="ansi-blue-fg">(</span>int<span class="ansi-blue-fg">,</span> fds_to_keep<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
+
+<span class="ansi-red-fg">TypeError</span>: expected str, bytes or os.PathLike object, not NoneType</pre>
 </div>
 </div>
 
@@ -105,10 +159,10 @@ False
 
 
 
-<div id="3b9783d9-fcfe-4bb1-abed-e303f84855c3"></div>
+<div id="9ce2a0f3-8ac1-468e-920f-0386bdc3353a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3b9783d9-fcfe-4bb1-abed-e303f84855c3');
+var element = $('#9ce2a0f3-8ac1-468e-920f-0386bdc3353a');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -155,59 +209,6 @@ var element = $('#3b9783d9-fcfe-4bb1-abed-e303f84855c3');
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Converted 00_core.ipynb.
-Converted 01_serve_files_uvicorn.ipynb.
-Converted 02_fastapi_uvicorn_server.ipynb.
-Converted 03_nginx_docker_server.ipynb.
-Converted 04_benchmark_clients.ipynb.
-Converted 05_persistence.ipynb.
-Converted 06_run_benchmark.ipynb.
-Converted index.ipynb.
-Converted run_wrk_benchmark_test.ipynb.
-Converted use_nginx_to_serve_files_test.ipynb.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="946fd3ba-a0eb-4d55-8d19-78a811649a5f"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#946fd3ba-a0eb-4d55-8d19-78a811649a5f');
-
-            setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
-                var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 

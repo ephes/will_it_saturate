@@ -28,8 +28,10 @@ class FastAPIUvicornServer(BenchmarkServer):
         return self.get_pid() is not None
 
     def start_server(self):
-        subprocess.Popen(["uvicorn", "--no-access-log", "will_it_saturate.main:app"])
-        # subprocess.Popen(["uvicorn", "will_it_saturate.main:app"])
+        subprocess.Popen(
+            ["uvicorn", "--no-access-log", "will_it_saturate.fastapi.main:app"]
+        )
+        # subprocess.Popen(["uvicorn", "will_it_saturate.fastapi.main:app"])
 
     def stop_server(self):
         subprocess.check_output(["kill", self.get_pid()])
