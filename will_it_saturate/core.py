@@ -269,7 +269,7 @@ def get_macos_machine_id():
 @cache
 def get_machine_id():
     os = platform.platform().lower().split("-")[0]
-    os_lookup = {"macos": get_macos_machine_id}
+    os_lookup = {"macos": get_macos_machine_id, "linux": "not_implemented_yet"}
     return os_lookup[os]()
 
 
