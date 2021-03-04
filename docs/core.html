@@ -78,10 +78,10 @@ nb_path: "00_core.ipynb"
 
 
 
-<div id="181f3453-fb4f-4fb9-ac87-37c0fd570f9b"></div>
+<div id="3ccf2dfd-03bb-4764-8f70-3c086cb0dfdc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#181f3453-fb4f-4fb9-ac87-37c0fd570f9b');
+var element = $('#3ccf2dfd-03bb-4764-8f70-3c086cb0dfdc');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -138,10 +138,10 @@ var element = $('#181f3453-fb4f-4fb9-ac87-37c0fd570f9b');
 
 
 
-<div id="4279a413-d9ca-4feb-827a-def17c1fc89b"></div>
+<div id="069eaa94-3548-44ef-a491-9890c81085de"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4279a413-d9ca-4feb-827a-def17c1fc89b');
+var element = $('#069eaa94-3548-44ef-a491-9890c81085de');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -199,10 +199,10 @@ var element = $('#4279a413-d9ca-4feb-827a-def17c1fc89b');
 
 
 
-<div id="8f8b01fb-35c3-4371-b271-9db12e9a37e2"></div>
+<div id="2d3d12af-fe52-4cdc-b4e8-fef17bced671"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8f8b01fb-35c3-4371-b271-9db12e9a37e2');
+var element = $('#2d3d12af-fe52-4cdc-b4e8-fef17bced671');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -272,10 +272,10 @@ var element = $('#8f8b01fb-35c3-4371-b271-9db12e9a37e2');
 
 
 
-<div id="e4bafeb7-df35-44d8-bf35-d8808641188f"></div>
+<div id="a8ee7cdc-036a-480b-8bf1-5bf330032fe7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e4bafeb7-df35-44d8-bf35-d8808641188f');
+var element = $('#a8ee7cdc-036a-480b-8bf1-5bf330032fe7');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -336,10 +336,10 @@ var element = $('#e4bafeb7-df35-44d8-bf35-d8808641188f');
 
 
 
-<div id="9388883f-4acb-44fe-86be-0820fd1a9ed2"></div>
+<div id="eb44df1a-45e6-47dc-b77a-8aaea5146822"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9388883f-4acb-44fe-86be-0820fd1a9ed2');
+var element = $('#eb44df1a-45e6-47dc-b77a-8aaea5146822');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -399,10 +399,10 @@ var element = $('#9388883f-4acb-44fe-86be-0820fd1a9ed2');
 
 
 
-<div id="a1f0bb72-8ab9-4d3c-ba4a-c3457ac8c713"></div>
+<div id="29730681-d148-4240-a9aa-4baa4b0865ea"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a1f0bb72-8ab9-4d3c-ba4a-c3457ac8c713');
+var element = $('#29730681-d148-4240-a9aa-4baa4b0865ea');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -472,15 +472,15 @@ var element = $('#a1f0bb72-8ab9-4d3c-ba4a-c3457ac8c713');
 
 
 
-<div id="b559f2ad-5969-4d87-972e-a6a2a668c7b9"></div>
+<div id="0b44c0fd-4a62-42cf-aa6b-85add0a3da00"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b559f2ad-5969-4d87-972e-a6a2a668c7b9');
+var element = $('#0b44c0fd-4a62-42cf-aa6b-85add0a3da00');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
-                var nbb_unformatted_code = "# export\n\n\nclass BenchmarkClient(CheckSumMixin, BaseModel):\n    name: str = \"base_client\"\n\n    def verify_checksums(self, benchmark_files, responses):\n        checksum_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            checksum_lookup[url] = self.calculate_checksum(response.content)\n\n        for bf in benchmark_files:\n            assert bf.checksum == checksum_lookup.get(bf.url, None)";
-                var nbb_formatted_code = "# export\n\n\nclass BenchmarkClient(CheckSumMixin, BaseModel):\n    name: str = \"base_client\"\n\n    def verify_checksums(self, benchmark_files, responses):\n        checksum_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            checksum_lookup[url] = self.calculate_checksum(response.content)\n\n        for bf in benchmark_files:\n            assert bf.checksum == checksum_lookup.get(bf.url, None)";
+                var nbb_unformatted_code = "# export\n\n\nclass BenchmarkClient(CheckSumMixin, BaseModel):\n    name: str = \"base_client\"\n\n    def verify_checksums(self, benchmark_files, responses):\n        checksum_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            checksum_lookup[url] = self.calculate_checksum(response.content)\n\n        for bf in benchmark_files:\n            looked_up_checksum = checksum_lookup.get(bf.url, None)\n            if bf.checksum != looked_up_checksum:\n                print(bf.checksum, bf.url)\n            assert bf.checksum == checksum_lookup.get(bf.url, None)";
+                var nbb_formatted_code = "# export\n\n\nclass BenchmarkClient(CheckSumMixin, BaseModel):\n    name: str = \"base_client\"\n\n    def verify_checksums(self, benchmark_files, responses):\n        checksum_lookup = {}\n        for response in responses:\n            url = str(response.url)\n            checksum_lookup[url] = self.calculate_checksum(response.content)\n\n        for bf in benchmark_files:\n            looked_up_checksum = checksum_lookup.get(bf.url, None)\n            if bf.checksum != looked_up_checksum:\n                print(bf.checksum, bf.url)\n            assert bf.checksum == checksum_lookup.get(bf.url, None)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -532,10 +532,10 @@ var element = $('#b559f2ad-5969-4d87-972e-a6a2a668c7b9');
 
 
 
-<div id="5f250e4d-aa24-424f-bf4d-f61c3057033d"></div>
+<div id="ae102190-4fad-40de-9754-a735e28a13de"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5f250e4d-aa24-424f-bf4d-f61c3057033d');
+var element = $('#ae102190-4fad-40de-9754-a735e28a13de');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -591,10 +591,10 @@ var element = $('#5f250e4d-aa24-424f-bf4d-f61c3057033d');
 
 
 
-<div id="82f38ed0-e51d-48a4-b3df-e75fb7bc2396"></div>
+<div id="34322655-51a5-476b-876a-12371b1eca4c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#82f38ed0-e51d-48a4-b3df-e75fb7bc2396');
+var element = $('#34322655-51a5-476b-876a-12371b1eca4c');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -639,7 +639,7 @@ var element = $('#82f38ed0-e51d-48a4-b3df-e75fb7bc2396');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="FilesystemCreator" class="doc_header"><code>class</code> <code>FilesystemCreator</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L59" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FilesystemCreator</code>() :: <a href="/will_it_saturate/core.html#CheckSumMixin"><code>CheckSumMixin</code></a></p>
+<h2 id="FilesystemCreator" class="doc_header"><code>class</code> <code>FilesystemCreator</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L62" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FilesystemCreator</code>() :: <a href="/will_it_saturate/core.html#CheckSumMixin"><code>CheckSumMixin</code></a></p>
 </blockquote>
 
 </div>
@@ -663,7 +663,7 @@ var element = $('#82f38ed0-e51d-48a4-b3df-e75fb7bc2396');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BenchmarkFile" class="doc_header"><code>class</code> <code>BenchmarkFile</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L73" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkFile</code>(<strong><code>number</code></strong>:<code>int</code>, <strong><code>base_path</code></strong>:<code>str</code>, <strong><code>size</code></strong>:<code>int</code>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>hostname</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>checksum</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>creator</code></strong>:<code>Callable</code>=<em><code>FilesystemCreator()</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BenchmarkFile" class="doc_header"><code>class</code> <code>BenchmarkFile</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L76" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkFile</code>(<strong><code>number</code></strong>:<code>int</code>, <strong><code>base_path</code></strong>:<code>str</code>, <strong><code>size</code></strong>:<code>int</code>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>hostname</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>checksum</code></strong>:<code>str</code>=<em><code>None</code></em>, <strong><code>creator</code></strong>:<code>Callable</code>=<em><code>FilesystemCreator()</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -688,10 +688,10 @@ var element = $('#82f38ed0-e51d-48a4-b3df-e75fb7bc2396');
 
 
 
-<div id="de5bbec6-0b7b-4e15-bfe7-5cff887dbde0"></div>
+<div id="4d87d543-73f3-4446-9c40-4d7b0cc9e047"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#de5bbec6-0b7b-4e15-bfe7-5cff887dbde0');
+var element = $('#4d87d543-73f3-4446-9c40-4d7b0cc9e047');
 
             setTimeout(function() {
                 var nbb_cell_id = 13;
@@ -759,10 +759,10 @@ var element = $('#de5bbec6-0b7b-4e15-bfe7-5cff887dbde0');
 
 
 
-<div id="55c144be-7505-4f85-8150-c0a7d39dd4e6"></div>
+<div id="b082a6c4-3bb1-40cc-8a76-b63fee32fd75"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#55c144be-7505-4f85-8150-c0a7d39dd4e6');
+var element = $('#b082a6c4-3bb1-40cc-8a76-b63fee32fd75');
 
             setTimeout(function() {
                 var nbb_cell_id = 14;
@@ -820,10 +820,10 @@ var element = $('#55c144be-7505-4f85-8150-c0a7d39dd4e6');
 
 
 
-<div id="1ab8c38c-3be2-4ccc-8da3-757e6cdad563"></div>
+<div id="487d61ca-b55f-47a6-9205-36ea88f0d449"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1ab8c38c-3be2-4ccc-8da3-757e6cdad563');
+var element = $('#487d61ca-b55f-47a6-9205-36ea88f0d449');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -885,10 +885,10 @@ var element = $('#1ab8c38c-3be2-4ccc-8da3-757e6cdad563');
 
 
 
-<div id="6f99cad0-37b7-4538-a700-aea66ede0b00"></div>
+<div id="cb4677ee-46fc-4f28-b9e6-ba57a4b666a2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6f99cad0-37b7-4538-a700-aea66ede0b00');
+var element = $('#cb4677ee-46fc-4f28-b9e6-ba57a4b666a2');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -933,7 +933,7 @@ var element = $('#6f99cad0-37b7-4538-a700-aea66ede0b00');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BenchmarkRow" class="doc_header"><code>class</code> <code>BenchmarkRow</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L105" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkRow</code>(<strong><code>file_size</code></strong>:<code>int</code>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>files</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkFile"><code>BenchmarkFile</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>FilesystemCreator()</code></em>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BenchmarkRow" class="doc_header"><code>class</code> <code>BenchmarkRow</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L108" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkRow</code>(<strong><code>file_size</code></strong>:<code>int</code>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>files</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkFile"><code>BenchmarkFile</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>FilesystemCreator()</code></em>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -958,10 +958,10 @@ var element = $('#6f99cad0-37b7-4538-a700-aea66ede0b00');
 
 
 
-<div id="5a704f0e-bbef-45ed-9966-c4d07f635279"></div>
+<div id="151ee6d1-bd2b-4ec4-8ba0-5a88bedd951c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5a704f0e-bbef-45ed-9966-c4d07f635279');
+var element = $('#151ee6d1-bd2b-4ec4-8ba0-5a88bedd951c');
 
             setTimeout(function() {
                 var nbb_cell_id = 17;
@@ -1038,10 +1038,10 @@ var element = $('#5a704f0e-bbef-45ed-9966-c4d07f635279');
 
 
 
-<div id="5d1d85af-6560-4efb-8ec5-b5d0e984ba42"></div>
+<div id="86bae1b8-0fc0-4fda-b91a-31f1887c46c1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5d1d85af-6560-4efb-8ec5-b5d0e984ba42');
+var element = $('#86bae1b8-0fc0-4fda-b91a-31f1887c46c1');
 
             setTimeout(function() {
                 var nbb_cell_id = 19;
@@ -1107,10 +1107,10 @@ var element = $('#5d1d85af-6560-4efb-8ec5-b5d0e984ba42');
 
 
 
-<div id="8193cf5c-c2bf-41e8-b630-213a975c1c9b"></div>
+<div id="8a39e58c-be7d-4fd0-89d8-1e007c600730"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8193cf5c-c2bf-41e8-b630-213a975c1c9b');
+var element = $('#8a39e58c-be7d-4fd0-89d8-1e007c600730');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;
@@ -1164,10 +1164,10 @@ var element = $('#8193cf5c-c2bf-41e8-b630-213a975c1c9b');
 
 
 
-<div id="47a87d84-0255-472f-933c-ebf1d50020a8"></div>
+<div id="ac5b2d89-84fb-498b-93fd-78a41565fdb9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#47a87d84-0255-472f-933c-ebf1d50020a8');
+var element = $('#ac5b2d89-84fb-498b-93fd-78a41565fdb9');
 
             setTimeout(function() {
                 var nbb_cell_id = 21;
@@ -1222,10 +1222,10 @@ var element = $('#47a87d84-0255-472f-933c-ebf1d50020a8');
 
 
 
-<div id="887eba66-650c-4980-8cd8-16baab6d2041"></div>
+<div id="82744008-c1b2-432c-bd90-89ceecb6c013"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#887eba66-650c-4980-8cd8-16baab6d2041');
+var element = $('#82744008-c1b2-432c-bd90-89ceecb6c013');
 
             setTimeout(function() {
                 var nbb_cell_id = 22;
@@ -1270,7 +1270,7 @@ var element = $('#887eba66-650c-4980-8cd8-16baab6d2041');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="convert_size" class="doc_header"><code>convert_size</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L157" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>convert_size</code>(<strong><code>size_bytes</code></strong>)</p>
+<h4 id="convert_size" class="doc_header"><code>convert_size</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L160" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>convert_size</code>(<strong><code>size_bytes</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -1294,7 +1294,7 @@ var element = $('#887eba66-650c-4980-8cd8-16baab6d2041');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BenchmarkResult" class="doc_header"><code>class</code> <code>BenchmarkResult</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L167" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkResult</code>(<strong><code>server</code></strong>:<code>str</code>, <strong><code>client</code></strong>:<code>str</code>, <strong><code>file_size</code></strong>:<code>int</code>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>complete_size</code></strong>:<code>int</code>) :: <code>BaseModel</code></p>
+<h2 id="BenchmarkResult" class="doc_header"><code>class</code> <code>BenchmarkResult</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L170" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BenchmarkResult</code>(<strong><code>server</code></strong>:<code>str</code>, <strong><code>client</code></strong>:<code>str</code>, <strong><code>file_size</code></strong>:<code>int</code>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>complete_size</code></strong>:<code>int</code>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -1319,14 +1319,14 @@ var element = $('#887eba66-650c-4980-8cd8-16baab6d2041');
 
 
 
-<div id="9df3bfe2-feb7-429f-8fad-fd81e9b4652e"></div>
+<div id="e8985a0e-95f0-4d37-89e2-0d995e91c3eb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9df3bfe2-feb7-429f-8fad-fd81e9b4652e');
+var element = $('#e8985a0e-95f0-4d37-89e2-0d995e91c3eb');
 
             setTimeout(function() {
-                var nbb_cell_id = 42;
-                var nbb_unformatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass BenchmarkResult(BaseModel):\n    server: str\n    client: str\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server.name,\n            client=client.name,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n    \n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }\n\n\n# This does not work yet\n#     def dict(self):\n#         _dict = super().dict()\n#         return {\n#             **super().dict(),\n#             \"file_size_h\": self.readable_file_size,\n#             \"bytes_per_second\": self.bytes_per_second,\n#             \"bytes_per_second_h\": self.readable_bytes_per_second,\n#         }\n\n#     def json(self):\n#         return json.dumps(self.dict())";
+                var nbb_cell_id = 23;
+                var nbb_unformatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass BenchmarkResult(BaseModel):\n    server: str\n    client: str\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server.name,\n            client=client.name,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n\n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }\n\n\n# This does not work yet\n#     def dict(self):\n#         _dict = super().dict()\n#         return {\n#             **super().dict(),\n#             \"file_size_h\": self.readable_file_size,\n#             \"bytes_per_second\": self.bytes_per_second,\n#             \"bytes_per_second_h\": self.readable_bytes_per_second,\n#         }\n\n#     def json(self):\n#         return json.dumps(self.dict())";
                 var nbb_formatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass BenchmarkResult(BaseModel):\n    server: str\n    client: str\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server.name,\n            client=client.name,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n\n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }\n\n\n# This does not work yet\n#     def dict(self):\n#         _dict = super().dict()\n#         return {\n#             **super().dict(),\n#             \"file_size_h\": self.readable_file_size,\n#             \"bytes_per_second\": self.bytes_per_second,\n#             \"bytes_per_second_h\": self.readable_bytes_per_second,\n#         }\n\n#     def json(self):\n#         return json.dumps(self.dict())";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
@@ -1397,13 +1397,13 @@ var element = $('#9df3bfe2-feb7-429f-8fad-fd81e9b4652e');
 
 
 
-<div id="86a9e79f-598a-43b9-8079-aaf3010e8916"></div>
+<div id="d3ca5e15-48f9-4a87-8019-d46dccf2e645"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#86a9e79f-598a-43b9-8079-aaf3010e8916');
+var element = $('#d3ca5e15-48f9-4a87-8019-d46dccf2e645');
 
             setTimeout(function() {
-                var nbb_cell_id = 44;
+                var nbb_cell_id = 24;
                 var nbb_unformatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = BenchmarkResult(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())\nprint(result.dict_with_properties())";
                 var nbb_formatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = BenchmarkResult(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())\nprint(result.dict_with_properties())";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -1457,13 +1457,13 @@ var element = $('#86a9e79f-598a-43b9-8079-aaf3010e8916');
 
 
 
-<div id="66274557-ee71-467d-8557-768ae4dbdcee"></div>
+<div id="f8373a4b-d432-4c33-9a4b-46caf4584220"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#66274557-ee71-467d-8557-768ae4dbdcee');
+var element = $('#f8373a4b-d432-4c33-9a4b-46caf4584220');
 
             setTimeout(function() {
-                var nbb_cell_id = 45;
+                var nbb_cell_id = 25;
                 var nbb_unformatted_code = "assert result.readable_bytes_per_second == \"31.79MB\"\nassert \"file_size\" in result.json()";
                 var nbb_formatted_code = "assert result.readable_bytes_per_second == \"31.79MB\"\nassert \"file_size\" in result.json()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -1540,13 +1540,13 @@ var element = $('#66274557-ee71-467d-8557-768ae4dbdcee');
 
 
 
-<div id="1cad31a8-0279-4e7d-9d0a-56afc979da18"></div>
+<div id="8aebaadb-f16f-457b-8531-6e2b6dbeb961"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1cad31a8-0279-4e7d-9d0a-56afc979da18');
+var element = $('#8aebaadb-f16f-457b-8531-6e2b6dbeb961');
 
             setTimeout(function() {
-                var nbb_cell_id = 46;
+                var nbb_cell_id = 26;
                 var nbb_unformatted_code = "class TestClient(BenchmarkClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass TestServer(BenchmarkServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\nrow_params = {\n    \"file_size\": 10 ** 6 * 10,\n    \"duration\": 30,\n    \"bandwidth\": 10 ** 9 / 8,\n    \"file_creator\": DummyCreator(),\n}\nrow = BenchmarkRow(**row_params)\n\ntest_result = BenchmarkResult.build_empty_result(\n    row, TestServer(name=\"server\"), TestClient(name=\"client\")\n)";
                 var nbb_formatted_code = "class TestClient(BenchmarkClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass TestServer(BenchmarkServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\nrow_params = {\n    \"file_size\": 10 ** 6 * 10,\n    \"duration\": 30,\n    \"bandwidth\": 10 ** 9 / 8,\n    \"file_creator\": DummyCreator(),\n}\nrow = BenchmarkRow(**row_params)\n\ntest_result = BenchmarkResult.build_empty_result(\n    row, TestServer(name=\"server\"), TestClient(name=\"client\")\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -1594,13 +1594,13 @@ var element = $('#1cad31a8-0279-4e7d-9d0a-56afc979da18');
 
 
 
-<div id="4008a944-9919-47e0-b218-1a21fd7b685f"></div>
+<div id="759a1777-5dc5-4ca8-985c-eae546000d97"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4008a944-9919-47e0-b218-1a21fd7b685f');
+var element = $('#759a1777-5dc5-4ca8-985c-eae546000d97');
 
             setTimeout(function() {
-                var nbb_cell_id = 47;
+                var nbb_cell_id = 27;
                 var nbb_unformatted_code = "assert test_result.server == \"server\"\nassert test_result.client == \"client\"";
                 var nbb_formatted_code = "assert test_result.server == \"server\"\nassert test_result.client == \"client\"";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -1642,7 +1642,7 @@ var element = $('#4008a944-9919-47e0-b218-1a21fd7b685f');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BaseRepository" class="doc_header"><code>class</code> <code>BaseRepository</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L233" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseRepository</code>(<strong><code>session</code></strong>:<code>Any</code>=<em><code>None</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BaseRepository" class="doc_header"><code>class</code> <code>BaseRepository</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L236" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseRepository</code>(<strong><code>session</code></strong>:<code>Any</code>=<em><code>None</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -1667,13 +1667,13 @@ var element = $('#4008a944-9919-47e0-b218-1a21fd7b685f');
 
 
 
-<div id="d18a8461-408a-4c15-ab90-47c7264306d5"></div>
+<div id="00741735-3025-43cf-98b3-d1b7f08bf095"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d18a8461-408a-4c15-ab90-47c7264306d5');
+var element = $('#00741735-3025-43cf-98b3-d1b7f08bf095');
 
             setTimeout(function() {
-                var nbb_cell_id = 48;
+                var nbb_cell_id = 28;
                 var nbb_unformatted_code = "# export\n\n\nclass BaseRepository(BaseModel):\n    session: Any = None\n\n    def get_result(self, benchmark, result):\n        pass\n\n    def add_result(self, benchmark, result):\n        pass";
                 var nbb_formatted_code = "# export\n\n\nclass BaseRepository(BaseModel):\n    session: Any = None\n\n    def get_result(self, benchmark, result):\n        pass\n\n    def add_result(self, benchmark, result):\n        pass";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -1715,7 +1715,7 @@ var element = $('#d18a8461-408a-4c15-ab90-47c7264306d5');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_macos_machine_id" class="doc_header"><code>get_macos_machine_id</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L250" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_macos_machine_id</code>()</p>
+<h4 id="get_macos_machine_id" class="doc_header"><code>get_macos_machine_id</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L253" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_macos_machine_id</code>()</p>
 </blockquote>
 
 </div>
@@ -1739,7 +1739,7 @@ var element = $('#d18a8461-408a-4c15-ab90-47c7264306d5');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_machine_id" class="doc_header"><code>get_machine_id</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L266" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_machine_id</code>()</p>
+<h4 id="get_machine_id" class="doc_header"><code>get_machine_id</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L269" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_machine_id</code>()</p>
 </blockquote>
 
 </div>
@@ -1763,7 +1763,7 @@ var element = $('#d18a8461-408a-4c15-ab90-47c7264306d5');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Benchmark" class="doc_header"><code>class</code> <code>Benchmark</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L273" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Benchmark</code>(<strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>file_sizes</code></strong>:<code>list</code>[<code>int</code>]=<em><code>[10000000, 1000000, 100000]</code></em>, <strong><code>rows</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkRow"><code>BenchmarkRow</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>FilesystemCreator()</code></em>, <strong><code>uname</code></strong>:<code>Any</code>=<em><code>uname_result(system='Darwin', node='ephesmpb.fritz.box', release='20.3.0', version='Darwin Kernel Version 20.3.0: Thu Jan 21 00:07:06 PST 2021; root:xnu-7195.81.3~1/RELEASE_X86_64', machine='x86_64')</code></em>, <strong><code>cpuinfo</code></strong>:<code>dict</code>=<em><code>{'python_version': '3.9.2.final.0 (64 bit)', 'cpuinfo_version': [7, 0, 0], 'cpuinfo_version_string': '7.0.0', 'arch': 'X86_64', 'bits': 64, 'count': 16, 'arch_string_raw': 'x86_64', 'vendor_id_raw': 'GenuineIntel', 'brand_raw': 'Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz', 'hz_advertised_friendly': '2.3000 GHz', 'hz_actual_friendly': '2.3000 GHz', 'hz_advertised': [2300000000, 0], 'hz_actual': [2300000000, 0], 'l2_cache_size': 262144, 'stepping': 13, 'model': 158, 'family': 6, 'flags': ['1gbpage', '3dnowprefetch', 'abm', 'acapmsr', 'acpi', 'adx', 'aes', 'apic', 'avx', 'avx1.0', 'avx2', 'bmi1', 'bmi2', 'clflush', 'clflushopt', 'clfsh', 'clfsopt', 'cmov', 'cx16', 'cx8', 'de', 'ds', 'ds_cpl', 'dscpl', 'dtes64', 'dts', 'em64t', 'erms', 'est', 'f16c', 'fma', 'fpu', 'fpu_csds', 'fxsr', 'ht', 'htt', 'ibrs', 'intel_pt', 'invpcid', 'ipt', 'l1df', 'lahf', 'lahf_lm', 'lzcnt', 'mca', 'mce', 'mdclear', 'mmx', 'mon', 'monitor', 'movbe', 'mpx', 'msr', 'mtrr', 'osxsave', 'pae', 'pat', 'pbe', 'pcid', 'pclmulqdq', 'pdcm', 'pge', 'pni', 'popcnt', 'prefetchw', 'pse', 'pse36', 'rdrand', 'rdrnd', 'rdseed', 'rdtscp', 'rdwrfsgs', 'seglim64', 'sep', 'sgx', 'sgx_lc', 'sgxlc', 'smap', 'smep', 'smx', 'ss', 'ssbd', 'sse', 'sse2', 'sse3', 'sse4.1', 'sse4.2', 'sse4_1', 'sse4_2', 'ssse3', 'stibp', 'syscall', 'tm', 'tm2', 'tpr', 'tsc', 'tsc_thread_offset', 'tscdeadline', 'tsci', 'tsctmr', 'vme', 'vmx', 'x2apic', 'xd', 'xsave', 'xtpr'], 'l2_cache_line_size': 256, 'l2_cache_associativity': 6}</code></em>, <strong><code>servers</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkServer"><code>BenchmarkServer</code></a>]=<em><code>[]</code></em>, <strong><code>clients</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a>]=<em><code>[]</code></em>, <strong><code>results</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkResult"><code>BenchmarkResult</code></a>]=<em><code>[]</code></em>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/core.html#BaseRepository"><code>BaseRepository</code></a>=<em><code>None</code></em>, <strong><code>machine_id</code></strong>:<code>str</code>=<em><code>'C02ZPB8KMD6T'</code></em>) :: <code>BaseModel</code></p>
+<h2 id="Benchmark" class="doc_header"><code>class</code> <code>Benchmark</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/core.py#L276" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Benchmark</code>(<strong><code>duration</code></strong>:<code>int</code>=<em><code>30</code></em>, <strong><code>bandwidth</code></strong>:<code>int</code>=<em><code>125000000</code></em>, <strong><code>file_sizes</code></strong>:<code>list</code>[<code>int</code>]=<em><code>[10000000, 1000000, 100000]</code></em>, <strong><code>rows</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkRow"><code>BenchmarkRow</code></a>]=<em><code>[]</code></em>, <strong><code>file_creator</code></strong>:<code>Callable</code>=<em><code>FilesystemCreator()</code></em>, <strong><code>uname</code></strong>:<code>Any</code>=<em><code>uname_result(system='Darwin', node='141621S0', release='19.6.0', version='Darwin Kernel Version 19.6.0: Thu Oct 29 22:56:45 PDT 2020; root:xnu-6153.141.2.2~1/RELEASE_X86_64', machine='x86_64')</code></em>, <strong><code>cpuinfo</code></strong>:<code>dict</code>=<em><code>{'python_version': '3.9.2.final.0 (64 bit)', 'cpuinfo_version': [7, 0, 0], 'cpuinfo_version_string': '7.0.0', 'arch': 'X86_64', 'bits': 64, 'count': 12, 'arch_string_raw': 'x86_64', 'vendor_id_raw': 'GenuineIntel', 'brand_raw': 'Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz', 'hz_advertised_friendly': '2.6000 GHz', 'hz_actual_friendly': '2.6000 GHz', 'hz_advertised': [2600000000, 0], 'hz_actual': [2600000000, 0], 'l2_cache_size': 262144, 'stepping': 10, 'model': 158, 'family': 6, 'flags': ['1gbpage', '3dnowprefetch', 'abm', 'acpi', 'adx', 'aes', 'apic', 'avx', 'avx1.0', 'avx2', 'bmi1', 'bmi2', 'clflush', 'clflushopt', 'clfsh', 'clfsopt', 'cmov', 'cx16', 'cx8', 'de', 'ds', 'ds_cpl', 'dscpl', 'dtes64', 'dts', 'em64t', 'erms', 'est', 'f16c', 'fma', 'fpu', 'fpu_csds', 'fxsr', 'ht', 'htt', 'ibrs', 'intel_pt', 'invpcid', 'ipt', 'l1df', 'lahf', 'lahf_lm', 'lzcnt', 'mca', 'mce', 'mdclear', 'mmx', 'mon', 'monitor', 'movbe', 'mpx', 'msr', 'mtrr', 'osxsave', 'pae', 'pat', 'pbe', 'pcid', 'pclmulqdq', 'pdcm', 'pge', 'pni', 'popcnt', 'prefetchw', 'pse', 'pse36', 'rdrand', 'rdrnd', 'rdseed', 'rdtscp', 'rdwrfsgs', 'seglim64', 'sep', 'sgx', 'sgx_lc', 'sgxlc', 'smap', 'smep', 'ss', 'ssbd', 'sse', 'sse2', 'sse3', 'sse4.1', 'sse4.2', 'sse4_1', 'sse4_2', 'ssse3', 'stibp', 'syscall', 'tm', 'tm2', 'tpr', 'tsc', 'tsc_thread_offset', 'tscdeadline', 'tsci', 'tsctmr', 'tsxfa', 'vme', 'vmx', 'x2apic', 'xd', 'xsave', 'xtpr'], 'l2_cache_line_size': 256, 'l2_cache_associativity': 6}</code></em>, <strong><code>servers</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkServer"><code>BenchmarkServer</code></a>]=<em><code>[]</code></em>, <strong><code>clients</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a>]=<em><code>[]</code></em>, <strong><code>results</code></strong>:<code>list</code>[<a href="/will_it_saturate/core.html#BenchmarkResult"><code>BenchmarkResult</code></a>]=<em><code>[]</code></em>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/core.html#BaseRepository"><code>BaseRepository</code></a>=<em><code>None</code></em>, <strong><code>machine_id</code></strong>:<code>str</code>=<em><code>'C02ZD1Y8LVDQ'</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -1920,13 +1920,13 @@ measured:  server=&#39;Nginx&#39; client=&#39;Httpx&#39; file_size=100000 elapse
 
 
 
-<div id="4f428b7f-872f-42e8-a133-c892f76abd45"></div>
+<div id="07f45e55-cd16-49a9-82e5-144a8830b0e7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4f428b7f-872f-42e8-a133-c892f76abd45');
+var element = $('#07f45e55-cd16-49a9-82e5-144a8830b0e7');
 
             setTimeout(function() {
-                var nbb_cell_id = 51;
+                var nbb_cell_id = 31;
                 var nbb_unformatted_code = "# dont_test\n\nbyte = 8\nhundred_mbit = 10 ** 8\nbandwidth = hundred_mbit / byte\nduration = 2  # seconds\nfile_size = 10 ** 6 * 3  # 100MB\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n\nbenchmark = Benchmark(\n    duration=duration,\n    bandwidth=bandwidth,\n    file_creator=DummyCreator(),\n    file_sizes=file_sizes,\n    servers=[TestServer(name=\"Nginx\")],\n    clients=[TestClient(name=\"Httpx\")],\n    repository=TestRepository(),\n)\nbenchmark.create_rows()\nprint(len(benchmark.rows))\n\nbenchmark.run()\n# pprint(benchmark.results)\nbenchmark.results_frame";
                 var nbb_formatted_code = "# dont_test\n\nbyte = 8\nhundred_mbit = 10 ** 8\nbandwidth = hundred_mbit / byte\nduration = 2  # seconds\nfile_size = 10 ** 6 * 3  # 100MB\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n\nbenchmark = Benchmark(\n    duration=duration,\n    bandwidth=bandwidth,\n    file_creator=DummyCreator(),\n    file_sizes=file_sizes,\n    servers=[TestServer(name=\"Nginx\")],\n    clients=[TestClient(name=\"Httpx\")],\n    repository=TestRepository(),\n)\nbenchmark.create_rows()\nprint(len(benchmark.rows))\n\nbenchmark.run()\n# pprint(benchmark.results)\nbenchmark.results_frame";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -1999,8 +1999,8 @@ var element = $('#4f428b7f-872f-42e8-a133-c892f76abd45');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 11.5 ms, sys: 415 µs, total: 11.9 ms
-Wall time: 11.5 ms
+<pre>CPU times: user 17.8 ms, sys: 734 µs, total: 18.5 ms
+Wall time: 18.9 ms
 </pre>
 </div>
 </div>
@@ -2010,13 +2010,13 @@ Wall time: 11.5 ms
 
 
 
-<div id="0acbb219-f43a-4101-9d03-cba5e2b86a07"></div>
+<div id="8016c818-9343-4626-a045-857067c25c08"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0acbb219-f43a-4101-9d03-cba5e2b86a07');
+var element = $('#8016c818-9343-4626-a045-857067c25c08');
 
             setTimeout(function() {
-                var nbb_cell_id = 52;
+                var nbb_cell_id = 32;
                 var nbb_unformatted_code = "%%time\nfrom collections import namedtuple\n\nTestPlatform = namedtuple(\"TestPlatform\", [\"machine\"])\n    \nbyte = 8\ngigabit = 10 ** 9\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n\ntest_params = {\n    \"duration\": 3,\n    \"bandwidth\": gigabit / byte / 10,  # divided by ten for test duration\n    \"file_creator\": DummyCreator(),\n    \"file_sizes\": file_sizes,\n    \"cpuinfo\": {\"python_version\": 4.0},\n    \"uname\": TestPlatform(\"M3\"),\n    \"repository\": TestRepository(),\n}\n\ntest_benchmark = Benchmark(**test_params)\n\ntest_benchmark.create_rows()\nassert len(test_benchmark.rows) == len(file_sizes)";
                 var nbb_formatted_code = "%%time\nfrom collections import namedtuple\n\nTestPlatform = namedtuple(\"TestPlatform\", [\"machine\"])\n    \nbyte = 8\ngigabit = 10 ** 9\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n\ntest_params = {\n    \"duration\": 3,\n    \"bandwidth\": gigabit / byte / 10,  # divided by ten for test duration\n    \"file_creator\": DummyCreator(),\n    \"file_sizes\": file_sizes,\n    \"cpuinfo\": {\"python_version\": 4.0},\n    \"uname\": TestPlatform(\"M3\"),\n    \"repository\": TestRepository(),\n}\n\ntest_benchmark = Benchmark(**test_params)\n\ntest_benchmark.create_rows()\nassert len(test_benchmark.rows) == len(file_sizes)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2097,8 +2097,8 @@ measure_benchmark_row:  size: 1000000 duration: 3 bandwidth: 12500000
 measured:  server=&#39;bar&#39; client=&#39;foo&#39; file_size=1000000 elapsed=2.0 complete_size=37500000
 measure_benchmark_row:  size: 100000 duration: 3 bandwidth: 12500000
 measured:  server=&#39;bar&#39; client=&#39;foo&#39; file_size=100000 elapsed=2.0 complete_size=37500000
-CPU times: user 12.9 ms, sys: 720 µs, total: 13.6 ms
-Wall time: 13 ms
+CPU times: user 16.4 ms, sys: 1.62 ms, total: 18 ms
+Wall time: 16.8 ms
 </pre>
 </div>
 </div>
@@ -2108,13 +2108,13 @@ Wall time: 13 ms
 
 
 
-<div id="ed2dd518-e7bf-47fd-9a36-f00a3c9bcd50"></div>
+<div id="63c49e3b-3831-468a-90e0-10506536e370"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ed2dd518-e7bf-47fd-9a36-f00a3c9bcd50');
+var element = $('#63c49e3b-3831-468a-90e0-10506536e370');
 
             setTimeout(function() {
-                var nbb_cell_id = 53;
+                var nbb_cell_id = 33;
                 var nbb_unformatted_code = "%%time\n\nclass TestClient(BenchmarkClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass TestServer(BenchmarkServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\ntest_params = {\n    **test_params,\n    \"clients\": [TestClient(name=\"foo\")],\n    \"servers\": [TestServer(name=\"bar\")],\n}\ntest_benchmark = Benchmark(**test_params)\ntest_benchmark.create_rows()\ntest_benchmark.run()";
                 var nbb_formatted_code = "%%time\n\nclass TestClient(BenchmarkClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass TestServer(BenchmarkServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\ntest_params = {\n    **test_params,\n    \"clients\": [TestClient(name=\"foo\")],\n    \"servers\": [TestServer(name=\"bar\")],\n}\ntest_benchmark = Benchmark(**test_params)\ntest_benchmark.create_rows()\ntest_benchmark.run()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2161,13 +2161,13 @@ var element = $('#ed2dd518-e7bf-47fd-9a36-f00a3c9bcd50');
 
 
 
-<div id="ef195abd-1dfa-4666-95cb-60d88ced8eee"></div>
+<div id="5d993b8f-8a9f-4bd6-9a7d-9382261410b8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ef195abd-1dfa-4666-95cb-60d88ced8eee');
+var element = $('#5d993b8f-8a9f-4bd6-9a7d-9382261410b8');
 
             setTimeout(function() {
-                var nbb_cell_id = 54;
+                var nbb_cell_id = 34;
                 var nbb_unformatted_code = "assert len(test_benchmark.results) == len(test_benchmark.rows)";
                 var nbb_formatted_code = "assert len(test_benchmark.results) == len(test_benchmark.rows)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2215,13 +2215,13 @@ var element = $('#ef195abd-1dfa-4666-95cb-60d88ced8eee');
 
 
 
-<div id="a4d03d69-9935-44a7-ac67-2cde923741f5"></div>
+<div id="7e098ccc-2d9f-4776-9f51-6925515cdb88"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a4d03d69-9935-44a7-ac67-2cde923741f5');
+var element = $('#7e098ccc-2d9f-4776-9f51-6925515cdb88');
 
             setTimeout(function() {
-                var nbb_cell_id = 55;
+                var nbb_cell_id = 35;
                 var nbb_unformatted_code = "assert test_benchmark.servers[0].started\nassert test_benchmark.servers[0].stopped";
                 var nbb_formatted_code = "assert test_benchmark.servers[0].started\nassert test_benchmark.servers[0].stopped";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2269,13 +2269,13 @@ var element = $('#a4d03d69-9935-44a7-ac67-2cde923741f5');
 
 
 
-<div id="1c3f6415-757d-410e-a2a2-3c7d09df74f4"></div>
+<div id="eaf929bd-91d9-41e2-9830-3cd4a32a902d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1c3f6415-757d-410e-a2a2-3c7d09df74f4');
+var element = $('#eaf929bd-91d9-41e2-9830-3cd4a32a902d');
 
             setTimeout(function() {
-                var nbb_cell_id = 56;
+                var nbb_cell_id = 36;
                 var nbb_unformatted_code = "assert test_benchmark.uname.machine == \"M3\"\nassert \"python_version\" in test_benchmark.cpuinfo";
                 var nbb_formatted_code = "assert test_benchmark.uname.machine == \"M3\"\nassert \"python_version\" in test_benchmark.cpuinfo";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2322,13 +2322,13 @@ var element = $('#1c3f6415-757d-410e-a2a2-3c7d09df74f4');
 
 
 
-<div id="ecd00331-6275-4801-b43e-26c4633b6c3a"></div>
+<div id="f8dbbf80-ee0b-4828-9485-d56c70ac2a65"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ecd00331-6275-4801-b43e-26c4633b6c3a');
+var element = $('#f8dbbf80-ee0b-4828-9485-d56c70ac2a65');
 
             setTimeout(function() {
-                var nbb_cell_id = 57;
+                var nbb_cell_id = 37;
                 var nbb_unformatted_code = "assert \"duration\" in test_benchmark.json()";
                 var nbb_formatted_code = "assert \"duration\" in test_benchmark.json()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2377,13 +2377,13 @@ var element = $('#ecd00331-6275-4801-b43e-26c4633b6c3a');
 
 
 
-<div id="f0a8bb2b-c6bc-41c4-8232-5a9224915aef"></div>
+<div id="32631661-7b6e-4c86-ab04-7ed889b0837f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f0a8bb2b-c6bc-41c4-8232-5a9224915aef');
+var element = $('#32631661-7b6e-4c86-ab04-7ed889b0837f');
 
             setTimeout(function() {
-                var nbb_cell_id = 58;
+                var nbb_cell_id = 38;
                 var nbb_unformatted_code = "assert len(test_benchmark.repository.results[test_benchmark]) == len(\n    test_benchmark.results\n)";
                 var nbb_formatted_code = "assert len(test_benchmark.repository.results[test_benchmark]) == len(\n    test_benchmark.results\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2443,13 +2443,13 @@ already measured:  server=&#39;bar&#39; client=&#39;foo&#39; file_size=100000 el
 
 
 
-<div id="7c5ba07a-f200-40b9-b55d-2d0203b95bbe"></div>
+<div id="8a0fc6a4-8203-4184-947a-8c19956207b1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7c5ba07a-f200-40b9-b55d-2d0203b95bbe');
+var element = $('#8a0fc6a4-8203-4184-947a-8c19956207b1');
 
             setTimeout(function() {
-                var nbb_cell_id = 59;
+                var nbb_cell_id = 39;
                 var nbb_unformatted_code = "# assert already measured results are not measured again\ntest_benchmark.clients = [TestClient(name=\"foo\")]\ntest_benchmark.run()\nassert test_benchmark.clients[0].measured == False";
                 var nbb_formatted_code = "# assert already measured results are not measured again\ntest_benchmark.clients = [TestClient(name=\"foo\")]\ntest_benchmark.run()\nassert test_benchmark.clients[0].measured == False";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -2503,15 +2503,14 @@ var element = $('#7c5ba07a-f200-40b9-b55d-2d0203b95bbe');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converted 00_core.ipynb.
-Converted 01_serve_files_uvicorn.ipynb.
-Converted 02_fastapi_uvicorn_server.ipynb.
-Converted 03_nginx_docker_server.ipynb.
-Converted 04_benchmark_clients.ipynb.
-Converted 05_persistence.ipynb.
-Converted 06_run_benchmark.ipynb.
+Converted 01_django_views.ipynb.
+Converted 01_fastapi_views.ipynb.
+Converted 02_docker_servers.ipynb.
+Converted 02_local_servers.ipynb.
+Converted 03_benchmark_clients.ipynb.
+Converted 04_persistence.ipynb.
+Converted 05_run_benchmark.ipynb.
 Converted index.ipynb.
-Converted run_wrk_benchmark_test.ipynb.
-Converted use_nginx_to_serve_files_test.ipynb.
 </pre>
 </div>
 </div>
@@ -2521,13 +2520,13 @@ Converted use_nginx_to_serve_files_test.ipynb.
 
 
 
-<div id="824c4cda-ea33-478f-8bc4-56c3467d15fd"></div>
+<div id="5210ff83-a2b8-487c-a146-50fc052140e5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#824c4cda-ea33-478f-8bc4-56c3467d15fd');
+var element = $('#5210ff83-a2b8-487c-a146-50fc052140e5');
 
             setTimeout(function() {
-                var nbb_cell_id = 61;
+                var nbb_cell_id = 41;
                 var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();

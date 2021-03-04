@@ -51,6 +51,9 @@ class BenchmarkClient(CheckSumMixin, BaseModel):
             checksum_lookup[url] = self.calculate_checksum(response.content)
 
         for bf in benchmark_files:
+            looked_up_checksum = checksum_lookup.get(bf.url, None)
+            if bf.checksum != looked_up_checksum:
+                print(bf.checksum, bf.url)
             assert bf.checksum == checksum_lookup.get(bf.url, None)
 
 # Cell
