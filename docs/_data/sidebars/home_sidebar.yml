@@ -32,7 +32,7 @@ entries:
       url: persistence.html
     - output: web,pdf
       title: Title
-      url: run_benchmark.html
+      url: benchmark_without_benchmark.html
     output: web
     title: will_it_saturate
   output: web

@@ -82,7 +82,7 @@ class BenchmarkFile(BaseModel):
     hostname: str = "localhost"
     port: int = 8000
     checksum: Optional[str] = None
-    creator: Callable = FilesystemCreator()
+    creator: Optional[Callable] = FilesystemCreator()
 
     @property
     def filesystem_path(self):
@@ -150,6 +150,9 @@ class Epoch(BaseModel):
             )
             benchmark_file.get_or_create()
             self.files.append(benchmark_file)
+
+    def dict_without_file_creator(self):
+        return {k: v for k, v in super().dict().items() if k != "file_creator"}
 
 # Cell
 
@@ -288,7 +291,7 @@ class Benchmark(BaseModel):
     cpuinfo: Optional[dict] = cpuinfo.get_cpu_info()
     servers: list[BaseServer] = []
     clients: list[BaseClient] = []
-    results: list[BenchmarkResult] = []
+    results: list[Result] = []
     repository: Optional[BaseRepository] = None
     machine_id: str = get_machine_id()
 
@@ -326,7 +329,7 @@ class Benchmark(BaseModel):
             self.epochs.append(self.create_epoch_from_file_size(file_size))
 
     def build_empty_result(self, epoch, server, client):
-        return BenchmarkResult(
+        return Result(
             server=server.name,
             client=client.name,
             file_size=epoch.file_size,
@@ -337,7 +340,7 @@ class Benchmark(BaseModel):
 
     def test_server_with_client(self, server, client):
         for epoch in self.epochs:
-            result = BenchmarkResult.build_empty_result(epoch, server, client)
+            result = Result.build_empty_result(epoch, server, client)
             if (
                 self.repository is not None
                 and (
