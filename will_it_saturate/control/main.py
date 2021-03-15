@@ -20,7 +20,7 @@ from ..server import (
 
 app = FastAPI()
 
-servers = []
+servers = {}
 
 
 @app.get("/")
@@ -39,10 +39,12 @@ def create_epoch(epoch: Epoch):
 @app.post("/servers/")
 def create_server(server: BaseServer):
     print(server)
-    created_server = FastAPIUvicornServer(name=server.name)
     global servers
-    servers.append(created_server)
-    return created_server
+    if server.name not in servers:
+        created_server = FastAPIUvicornServer(name=server.name)
+        created_server.start()
+        servers[server.name] = created_server
+    return servers[server.name]
 
 
 @app.get("/servers/")

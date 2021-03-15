@@ -28,11 +28,11 @@ request = None
 
 
 class HttpxClient(BaseClient):
-    async def measure_server(self, benchmark_row):
+    async def measure_server(self, epoch):
         print("measure server")
-        urls = [bf.url for bf in benchmark_row.files]
+        urls = [bf.url for bf in epoch.files]
         print(urls[0])
-        max_connections = min(benchmark_row.number_of_connections, 100)
+        max_connections = min(epoch.number_of_connections, 100)
         limits = httpx.Limits(
             max_keepalive_connections=5, max_connections=max_connections
         )
@@ -45,16 +45,16 @@ class HttpxClient(BaseClient):
         print("responses status: ", responses[0].status_code)
         return elapsed, responses
 
-    def measure_in_new_process(self, benchmark_row):
+    def measure_in_new_process(self, epoch):
         print("new process")
-        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))
-        self.verify_checksums(benchmark_row.files, responses)
+        elapsed, responses = asyncio.run(self.measure_server(epoch))
+        self.verify_checksums(epoch.files, responses)
         return elapsed
 
-    def measure(self, benchmark_row):
+    def measure(self, epoch):
         print("measure")
         with Pool(1) as p:
-            [result] = p.map(self.measure_in_new_process, [benchmark_row])
+            [result] = p.map(self.measure_in_new_process, [epoch])
         return result
 
 
@@ -93,9 +93,9 @@ class AioHttpClient(BaseClient):
             content = await response.read()
             return AioHttpResponse(url, content)
 
-    async def measure_server(self, benchmark_row):
-        urls = [bf.url for bf in benchmark_row.files]
-        max_connections = min(benchmark_row.number_of_connections, 200)
+    async def measure_server(self, epoch):
+        urls = [bf.url for bf in epoch.files]
+        max_connections = min(epoch.number_of_connections, 200)
         conn = aiohttp.TCPConnector(limit=max_connections)
         responses = []
         start = time.perf_counter()
@@ -105,14 +105,14 @@ class AioHttpClient(BaseClient):
         elapsed = time.perf_counter() - start
         return elapsed, responses
 
-    def measure_in_new_process(self, benchmark_row):
-        elapsed, responses = asyncio.run(self.measure_server(benchmark_row))
-        self.verify_checksums(benchmark_row.files, responses)
+    def measure_in_new_process(self, epoch):
+        elapsed, responses = asyncio.run(self.measure_server(epoch))
+        self.verify_checksums(epoch.files, responses)
         return elapsed
 
-    def measure(self, benchmark_row):
+    def measure(self, epoch):
         with Pool(1) as p:
-            [result] = p.map(self.measure_in_new_process, [benchmark_row])
+            [result] = p.map(self.measure_in_new_process, [epoch])
         return result
 
 # Cell
@@ -123,13 +123,13 @@ class WrkClient(BaseClient):
     duration: int = 20
     threads: int = 1
 
-    def create_urls_string(self, benchmark_row):
+    def create_urls_string(self, epoch):
         urls = []
-        for bf in benchmark_row.files:
+        for bf in epoch.files:
             urls.append(f'    {{path = "/{bf.path}"}},')
         return "\n".join(urls)
 
-    def create_lua_script(self, benchmark_row):
+    def create_lua_script(self, epoch):
         requests_head = "requests = {"
         requests_tail = "}"
         lua_body = """
@@ -160,7 +160,7 @@ request = function()
   return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)
 end
         """
-        urls = self.create_urls_string(benchmark_row)
+        urls = self.create_urls_string(epoch)
         lua = "\n".join([requests_head, urls, requests_tail, lua_body])
         with Path(f"wrk.lua").open("w") as f:
             f.write(lua)
@@ -184,7 +184,7 @@ end
         elapsed = time.perf_counter() - start
         return elapsed
 
-    def measure(self, benchmark_row):
-        self.create_lua_script(benchmark_row)
+    def measure(self, epoch):
+        self.create_lua_script(epoch)
         elapsed = self.run_wrk()
         return elapsed
