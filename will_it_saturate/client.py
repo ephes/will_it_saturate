@@ -17,7 +17,7 @@ from pathlib import Path
 from multiprocessing import Pool
 from multiprocessing import set_start_method
 
-from .core import Benchmark, BenchmarkServer, BenchmarkClient
+from .core import Benchmark, BaseServer, BaseClient
 
 # Cell
 
@@ -27,7 +27,7 @@ counter = 0
 request = None
 
 
-class HttpxClient(BenchmarkClient):
+class HttpxClient(BaseClient):
     async def measure_server(self, benchmark_row):
         print("measure server")
         urls = [bf.url for bf in benchmark_row.files]
@@ -87,7 +87,7 @@ class AioHttpResponse:
         self.content = content
 
 
-class AioHttpClient(BenchmarkClient):
+class AioHttpClient(BaseClient):
     async def fetch_page(self, session, url):
         async with session.get(url) as response:
             content = await response.read()
@@ -118,7 +118,7 @@ class AioHttpClient(BenchmarkClient):
 # Cell
 
 
-class WrkClient(BenchmarkClient):
+class WrkClient(BaseClient):
     connections: int = 200
     duration: int = 20
     threads: int = 1

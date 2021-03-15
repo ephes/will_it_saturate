@@ -7,10 +7,10 @@ __all__ = ['NginxDockerServer', 'FastAPIUvicornServer', 'DjangoGunicornWSGIServe
 import time
 import subprocess
 
-from .core import BenchmarkServer
+from .core import BaseServer
 
 
-class NginxDockerServer(BenchmarkServer):
+class NginxDockerServer(BaseServer):
     name: str = "nginx/docker"
     docker_name: str = "wis-nginx"
     port: int = 8000
@@ -85,10 +85,10 @@ class NginxDockerServer(BenchmarkServer):
 import time
 import subprocess
 
-from .core import BenchmarkServer
+from .core import BaseServer
 
 
-class FastAPIUvicornServer(BenchmarkServer):
+class FastAPIUvicornServer(BaseServer):
     name: str = "fastAPI/uvicorn"
 
     def get_pid(self):
@@ -124,7 +124,7 @@ class FastAPIUvicornServer(BenchmarkServer):
             self.stop_server()
 
 # Cell
-class DjangoGunicornWSGIServer(BenchmarkServer):
+class DjangoGunicornWSGIServer(BaseServer):
     name: str = "django/gunicorn/wsgi"
 
     def get_pids(self):
