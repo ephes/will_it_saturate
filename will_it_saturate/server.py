@@ -107,7 +107,13 @@ class FastAPIUvicornServer(BaseServer):
 
     def start_server(self):
         subprocess.Popen(
-            ["uvicorn", "--no-access-log", "will_it_saturate.fastapi.main:app"]
+            [
+                "uvicorn",
+                "--port",
+                str(self.port),
+                "--no-access-log",
+                "will_it_saturate.fastapi.main:app",
+            ]
         )
         # subprocess.Popen(["uvicorn", "will_it_saturate.fastapi.main:app"])
 

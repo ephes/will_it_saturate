@@ -22,6 +22,8 @@ from pydantic import BaseModel
 
 class BaseServer(BaseModel):
     name: str = "base_server"
+    host: str = "localhost"
+    port: int = 8000
 
     def start(self):
         pass

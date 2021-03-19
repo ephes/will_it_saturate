@@ -41,7 +41,7 @@ def create_server(server: BaseServer):
     print(server)
     global servers
     if server.name not in servers:
-        created_server = FastAPIUvicornServer(name=server.name)
+        created_server = FastAPIUvicornServer(name=server.name, port=5001)
         created_server.start()
         servers[server.name] = created_server
     return servers[server.name]
