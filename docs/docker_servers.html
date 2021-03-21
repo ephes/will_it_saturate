@@ -40,7 +40,7 @@ nb_path: "02_docker_servers.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NginxDockerServer" class="doc_header"><code>class</code> <code>NginxDockerServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/server.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxDockerServer</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/docker'</code></em>, <strong><code>docker_name</code></strong>:<code>str</code>=<em><code>'wis-nginx'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>subprocess_kwargs</code></strong>:<code>dict</code>=<em><code>{'shell': True, 'capture_output': True, 'text': True}</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkServer"><code>BenchmarkServer</code></a></p>
+<h2 id="NginxDockerServer" class="doc_header"><code>class</code> <code>NginxDockerServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/server.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxDockerServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/docker'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>docker_name</code></strong>:<code>str</code>=<em><code>'wis-nginx'</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>subprocess_kwargs</code></strong>:<code>dict</code>=<em><code>{'shell': True, 'capture_output': True, 'text': True}</code></em>) :: <a href="/will_it_saturate/core.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -108,13 +108,13 @@ False
 
 
 
-<div id="c1b6f319-aad5-4eac-9cf9-17ef4f6b5a0b"></div>
+<div id="151ea92c-93f1-48fd-9fc7-b7c3701d1758"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c1b6f319-aad5-4eac-9cf9-17ef4f6b5a0b');
+var element = $('#151ea92c-93f1-48fd-9fc7-b7c3701d1758');
 
             setTimeout(function() {
-                var nbb_cell_id = 14;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "# dont_test\n\nserver = NginxDockerServer()\nserver.start()\nprint(server.docker_id)\nserver.stop()\nprint(\"stopped..\")\nprint(server.docker_id)\nprint(server.started)";
                 var nbb_formatted_code = "# dont_test\n\nserver = NginxDockerServer()\nserver.start()\nprint(server.docker_id)\nserver.stop()\nprint(\"stopped..\")\nprint(server.docker_id)\nprint(server.started)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -174,10 +174,10 @@ var element = $('#c1b6f319-aad5-4eac-9cf9-17ef4f6b5a0b');
 
 
 
-<div id="9434806d-0975-49a4-b4f6-fac7ab143c0a"></div>
+<div id="1cb35737-9b3e-4083-bb03-0a827d38e3a4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9434806d-0975-49a4-b4f6-fac7ab143c0a');
+var element = $('#1cb35737-9b3e-4083-bb03-0a827d38e3a4');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -238,10 +238,10 @@ wis-nginx
 
 
 
-<div id="059d5c12-9b8c-4fcb-a1a5-effa43bc4431"></div>
+<div id="39921317-9b9e-461c-92c4-c758ef3ee59a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#059d5c12-9b8c-4fcb-a1a5-effa43bc4431');
+var element = $('#39921317-9b9e-461c-92c4-c758ef3ee59a');
 
             setTimeout(function() {
                 var nbb_cell_id = 17;
@@ -315,10 +315,10 @@ Converted index.ipynb.
 
 
 
-<div id="42899f67-b8de-4471-aa3e-60ae27850087"></div>
+<div id="fc47c1d3-458c-4ee4-a348-d205dd6fe9e9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#42899f67-b8de-4471-aa3e-60ae27850087');
+var element = $('#fc47c1d3-458c-4ee4-a348-d205dd6fe9e9');
 
             setTimeout(function() {
                 var nbb_cell_id = 19;

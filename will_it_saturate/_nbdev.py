@@ -2,11 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"BaseServer": "00_core.ipynb",
-         "CheckSumMixin": "00_core.ipynb",
-         "BaseClient": "00_core.ipynb",
+index = {"CheckSumMixin": "00_core.ipynb",
          "FilesystemCreator": "00_core.ipynb",
          "BenchmarkFile": "00_core.ipynb",
+         "BaseServer": "00_core.ipynb",
+         "BaseClient": "00_core.ipynb",
          "Epoch": "00_core.ipynb",
          "convert_size": "00_core.ipynb",
          "Result": "00_core.ipynb",

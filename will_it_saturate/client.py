@@ -30,8 +30,7 @@ request = None
 class HttpxClient(BaseClient):
     async def measure_server(self, epoch):
         print("measure server")
-        urls = [bf.url for bf in epoch.files]
-        print(urls[0])
+        print(epoch.urls[0])
         max_connections = min(epoch.number_of_connections, 100)
         limits = httpx.Limits(
             max_keepalive_connections=5, max_connections=max_connections
@@ -39,7 +38,7 @@ class HttpxClient(BaseClient):
         timeout = httpx.Timeout(30.0, connect=60.0)
         start = time.perf_counter()
         async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:
-            responses = await asyncio.gather(*[client.get(url) for url in urls])
+            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])
         elapsed = time.perf_counter() - start
         print("done: ", elapsed)
         print("responses status: ", responses[0].status_code)
@@ -48,7 +47,7 @@ class HttpxClient(BaseClient):
     def measure_in_new_process(self, epoch):
         print("new process")
         elapsed, responses = asyncio.run(self.measure_server(epoch))
-        self.verify_checksums(epoch.files, responses)
+        self.verify_checksums(epoch, responses)
         return elapsed
 
     def measure(self, epoch):

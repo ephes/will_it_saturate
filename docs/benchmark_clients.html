@@ -51,6 +51,42 @@ nb_path: "03_benchmark_clients.ipynb"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="6a7fe2a5-efc7-4e1d-b9af-d6c0418aed94"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#6a7fe2a5-efc7-4e1d-b9af-d6c0418aed94');
+
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
+                var nbb_formatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -74,13 +110,49 @@ nb_path: "03_benchmark_clients.ipynb"
     <span class="n">duration</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">file_sizes</span><span class="o">=</span><span class="n">file_sizes</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">benchmark</span><span class="o">.</span><span class="n">create_rows</span><span class="p">()</span>
+<span class="n">benchmark</span><span class="o">.</span><span class="n">create_epochs</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="a2f7095a-62cf-433e-a04a-6e6e246d10b2"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#a2f7095a-62cf-433e-a04a-6e6e246d10b2');
+
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_epochs()";
+                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\nbenchmark = Benchmark(\n    bandwidth=bandwidth,\n    duration=3,\n    file_sizes=file_sizes,\n)\nbenchmark.create_epochs()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -95,7 +167,7 @@ nb_path: "03_benchmark_clients.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L30" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
+<h2 id="HttpxClient" class="doc_header"><code>class</code> <code>HttpxClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L30" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HttpxClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -119,7 +191,7 @@ nb_path: "03_benchmark_clients.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L61" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
+<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L60" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
 </blockquote>
 
 </div>
@@ -141,19 +213,32 @@ nb_path: "03_benchmark_clients.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-1-dea081cab149&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> 
-<span class="ansi-green-intense-fg ansi-bold">      8</span> 
-<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">class</span> HttpxClient<span class="ansi-blue-fg">(</span>BenchmarkClient<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span>     <span class="ansi-green-fg">async</span> <span class="ansi-green-fg">def</span> measure_server<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> benchmark_row<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;measure server&#34;</span><span class="ansi-blue-fg">)</span>
 
-<span class="ansi-red-fg">NameError</span>: name &#39;BenchmarkClient&#39; is not defined</pre>
+
+
+<div id="17cbe0a5-45a1-43be-b884-cd0ccf526429"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#17cbe0a5-45a1-43be-b884-cd0ccf526429');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch.files, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\ndef run_httpx():\n    byte = 8\n    gigabit = 10 ** 9\n    bandwidth = gigabit / byte\n\n    # file_sizes = [10 ** 7, 10 ** 6]\n    # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n    file_sizes = [10 ** 7]\n\n    benchmark = Benchmark(\n        bandwidth=bandwidth,\n        duration=3,\n        file_sizes=file_sizes,\n        servers=[BenchmarkServer(name=\"uvicorn\")],\n        clients=[HttpxClient(name=\"httpx\")],\n    )\n    benchmark.create_rows()\n    benchmark.run()\n    print(benchmark.results_frame)";
+                var nbb_formatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch.files, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\ndef run_httpx():\n    byte = 8\n    gigabit = 10 ** 9\n    bandwidth = gigabit / byte\n\n    # file_sizes = [10 ** 7, 10 ** 6]\n    # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n    file_sizes = [10 ** 7]\n\n    benchmark = Benchmark(\n        bandwidth=bandwidth,\n        duration=3,\n        file_sizes=file_sizes,\n        servers=[BenchmarkServer(name=\"uvicorn\")],\n        clients=[HttpxClient(name=\"httpx\")],\n    )\n    benchmark.create_rows()\n    benchmark.run()\n    print(benchmark.results_frame)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
 </div>
+
 </div>
 
 </div>
@@ -170,7 +255,7 @@ nb_path: "03_benchmark_clients.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">()</span>
-<span class="n">elapsed</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">measure_server</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">elapsed</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">measure_server</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
 </pre></div>
 
@@ -183,140 +268,48 @@ nb_path: "03_benchmark_clients.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>measure server
-http://localhost:8000/data/10000000_3_125000000/0
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-6-314ab886b5c5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-intense-fg ansi-bold">      3</span> client <span class="ansi-blue-fg">=</span> HttpxClient<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>elapsed<span class="ansi-blue-fg">,</span> responses <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">await</span> client<span class="ansi-blue-fg">.</span>measure_server<span class="ansi-blue-fg">(</span>benchmark<span class="ansi-blue-fg">.</span>epochs<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span>elapsed<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;benchmark&#39; is not defined</pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ConnectError</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_exceptions.py</span> in <span class="ansi-cyan-fg">map_exceptions</span><span class="ansi-blue-fg">(mapping, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    325</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 326</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">yield</span>
-<span class="ansi-green-intense-fg ansi-bold">    327</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
 
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_single_request</span><span class="ansi-blue-fg">(self, request, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1501</span>         <span class="ansi-green-fg">with</span> map_exceptions<span class="ansi-blue-fg">(</span>HTTPCORE_EXC_MAP<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1502</span><span class="ansi-red-fg">             (status_code, headers, stream, ext,) = await transport.arequest(
-</span><span class="ansi-green-intense-fg ansi-bold">   1503</span>                 request<span class="ansi-blue-fg">.</span>method<span class="ansi-blue-fg">.</span>encode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
 
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpcore/_async/connection_pool.py</span> in <span class="ansi-cyan-fg">arequest</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
-<span class="ansi-green-intense-fg ansi-bold">    217</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 218</span><span class="ansi-red-fg">                 response = await connection.arequest(
-</span><span class="ansi-green-intense-fg ansi-bold">    219</span>                     method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">=</span>stream<span class="ansi-blue-fg">,</span> ext<span class="ansi-blue-fg">=</span>ext
 
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpcore/_async/connection.py</span> in <span class="ansi-cyan-fg">arequest</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
-<span class="ansi-green-intense-fg ansi-bold">     92</span>                     )
-<span class="ansi-green-fg">---&gt; 93</span><span class="ansi-red-fg">                     </span>self<span class="ansi-blue-fg">.</span>socket <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">await</span> self<span class="ansi-blue-fg">.</span>_open_socket<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     94</span>                 self<span class="ansi-blue-fg">.</span>_create_connection<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>socket<span class="ansi-blue-fg">)</span>
+<div id="79aa5d9c-b219-49ad-ba65-9315c78beb8a"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#79aa5d9c-b219-49ad-ba65-9315c78beb8a');
 
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpcore/_async/connection.py</span> in <span class="ansi-cyan-fg">_open_socket</span><span class="ansi-blue-fg">(self, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    118</span>                 <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>uds <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 119</span><span class="ansi-red-fg">                     return await self.backend.open_tcp_stream(
-</span><span class="ansi-green-intense-fg ansi-bold">    120</span>                         hostname<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpcore/_backends/auto.py</span> in <span class="ansi-cyan-fg">open_tcp_stream</span><span class="ansi-blue-fg">(self, hostname, port, ssl_context, timeout, local_address)</span>
-<span class="ansi-green-intense-fg ansi-bold">     43</span>     ) -&gt; AsyncSocketStream:
-<span class="ansi-green-fg">---&gt; 44</span><span class="ansi-red-fg">         return await self.backend.open_tcp_stream(
-</span><span class="ansi-green-intense-fg ansi-bold">     45</span>             hostname<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">,</span> ssl_context<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">,</span> local_address<span class="ansi-blue-fg">=</span>local_address
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpcore/_backends/asyncio.py</span> in <span class="ansi-cyan-fg">open_tcp_stream</span><span class="ansi-blue-fg">(self, hostname, port, ssl_context, timeout, local_address)</span>
-<span class="ansi-green-intense-fg ansi-bold">    269</span>             )
-<span class="ansi-green-fg">--&gt; 270</span><span class="ansi-red-fg">             return SocketStream(
-</span><span class="ansi-green-intense-fg ansi-bold">    271</span>                 stream_reader<span class="ansi-blue-fg">=</span>stream_reader<span class="ansi-blue-fg">,</span> stream_writer<span class="ansi-blue-fg">=</span>stream_writer
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/contextlib.py</span> in <span class="ansi-cyan-fg">__exit__</span><span class="ansi-blue-fg">(self, type, value, traceback)</span>
-<span class="ansi-green-intense-fg ansi-bold">    134</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 135</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>gen<span class="ansi-blue-fg">.</span>throw<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">,</span> traceback<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    136</span>             <span class="ansi-green-fg">except</span> StopIteration <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpcore/_exceptions.py</span> in <span class="ansi-cyan-fg">map_exceptions</span><span class="ansi-blue-fg">(map)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span>             <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>exc<span class="ansi-blue-fg">,</span> from_exc<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> to_exc<span class="ansi-blue-fg">(</span>exc<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-intense-fg ansi-bold">     13</span>         <span class="ansi-green-fg">raise</span>
-
-<span class="ansi-red-fg">ConnectError</span>: Multiple exceptions: [Errno 61] Connect call failed (&#39;::1&#39;, 8000, 0, 0), [Errno 61] Connect call failed (&#39;127.0.0.1&#39;, 8000)
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg">ConnectError</span>                              Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-98d2cba3258c&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-intense-fg ansi-bold">      3</span> client <span class="ansi-blue-fg">=</span> HttpxClient<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 4</span><span class="ansi-red-fg"> </span>elapsed<span class="ansi-blue-fg">,</span> responses <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">await</span> client<span class="ansi-blue-fg">.</span>measure_server<span class="ansi-blue-fg">(</span>benchmark<span class="ansi-blue-fg">.</span>rows<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> print<span class="ansi-blue-fg">(</span>elapsed<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">&lt;ipython-input-4-553669203778&gt;</span> in <span class="ansi-cyan-fg">measure_server</span><span class="ansi-blue-fg">(self, benchmark_row)</span>
-<span class="ansi-green-intense-fg ansi-bold">     18</span>         start <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>perf_counter<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     19</span>         <span class="ansi-green-fg">async</span> <span class="ansi-green-fg">with</span> httpx<span class="ansi-blue-fg">.</span>AsyncClient<span class="ansi-blue-fg">(</span>limits<span class="ansi-blue-fg">=</span>limits<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> client<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 20</span><span class="ansi-red-fg">             </span>responses <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">await</span> asyncio<span class="ansi-blue-fg">.</span>gather<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">*</span><span class="ansi-blue-fg">[</span>client<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> url <span class="ansi-green-fg">in</span> urls<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     21</span>         elapsed <span class="ansi-blue-fg">=</span> time<span class="ansi-blue-fg">.</span>perf_counter<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> start
-<span class="ansi-green-intense-fg ansi-bold">     22</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;done: &#34;</span><span class="ansi-blue-fg">,</span> elapsed<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-fg">(self, url, params, headers, cookies, auth, allow_redirects, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1546</span>         <span class="ansi-blue-fg">**</span>Parameters<span class="ansi-blue-fg">**</span><span class="ansi-blue-fg">:</span> See<span class="ansi-red-fg"> </span><span class="ansi-red-fg">`</span>httpx<span class="ansi-blue-fg">.</span>request<span class="ansi-red-fg">`</span><span class="ansi-blue-fg">.</span>
-<span class="ansi-green-intense-fg ansi-bold">   1547</span>         &#34;&#34;&#34;
-<span class="ansi-green-fg">-&gt; 1548</span><span class="ansi-red-fg">         return await self.request(
-</span><span class="ansi-green-intense-fg ansi-bold">   1549</span>             <span class="ansi-blue-fg">&#34;GET&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1550</span>             url<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, content, data, files, json, params, headers, cookies, auth, allow_redirects, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1369</span>             cookies<span class="ansi-blue-fg">=</span>cookies<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1370</span>         )
-<span class="ansi-green-fg">-&gt; 1371</span><span class="ansi-red-fg">         response = await self.send(
-</span><span class="ansi-green-intense-fg ansi-bold">   1372</span>             request<span class="ansi-blue-fg">,</span> auth<span class="ansi-blue-fg">=</span>auth<span class="ansi-blue-fg">,</span> allow_redirects<span class="ansi-blue-fg">=</span>allow_redirects<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout
-<span class="ansi-green-intense-fg ansi-bold">   1373</span>         )
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, request, stream, auth, allow_redirects, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1404</span>         auth <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_build_request_auth<span class="ansi-blue-fg">(</span>request<span class="ansi-blue-fg">,</span> auth<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1405</span> 
-<span class="ansi-green-fg">-&gt; 1406</span><span class="ansi-red-fg">         response = await self._send_handling_auth(
-</span><span class="ansi-green-intense-fg ansi-bold">   1407</span>             request<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1408</span>             auth<span class="ansi-blue-fg">=</span>auth<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_handling_auth</span><span class="ansi-blue-fg">(self, request, auth, timeout, allow_redirects, history)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1442</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1443</span>         <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1444</span><span class="ansi-red-fg">             response = await self._send_handling_redirects(
-</span><span class="ansi-green-intense-fg ansi-bold">   1445</span>                 request<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1446</span>                 timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_handling_redirects</span><span class="ansi-blue-fg">(self, request, timeout, allow_redirects, history)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1474</span>                 )
-<span class="ansi-green-intense-fg ansi-bold">   1475</span> 
-<span class="ansi-green-fg">-&gt; 1476</span><span class="ansi-red-fg">             </span>response <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">await</span> self<span class="ansi-blue-fg">.</span>_send_single_request<span class="ansi-blue-fg">(</span>request<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1477</span>             response<span class="ansi-blue-fg">.</span>history <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>history<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1478</span> 
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_single_request</span><span class="ansi-blue-fg">(self, request, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1500</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1501</span>         <span class="ansi-green-fg">with</span> map_exceptions<span class="ansi-blue-fg">(</span>HTTPCORE_EXC_MAP<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">-&gt; 1502</span><span class="ansi-red-fg">             (status_code, headers, stream, ext,) = await transport.arequest(
-</span><span class="ansi-green-intense-fg ansi-bold">   1503</span>                 request<span class="ansi-blue-fg">.</span>method<span class="ansi-blue-fg">.</span>encode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">   1504</span>                 request<span class="ansi-blue-fg">.</span>url<span class="ansi-blue-fg">.</span>raw<span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/contextlib.py</span> in <span class="ansi-cyan-fg">__exit__</span><span class="ansi-blue-fg">(self, type, value, traceback)</span>
-<span class="ansi-green-intense-fg ansi-bold">    133</span>                 value <span class="ansi-blue-fg">=</span> type<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    134</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 135</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>gen<span class="ansi-blue-fg">.</span>throw<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">,</span> traceback<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    136</span>             <span class="ansi-green-fg">except</span> StopIteration <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    137</span>                 <span class="ansi-red-fg"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/envs/wis/lib/python3.9/site-packages/httpx/_exceptions.py</span> in <span class="ansi-cyan-fg">map_exceptions</span><span class="ansi-blue-fg">(mapping, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    341</span> 
-<span class="ansi-green-intense-fg ansi-bold">    342</span>         message <span class="ansi-blue-fg">=</span> str<span class="ansi-blue-fg">(</span>exc<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">--&gt; 343</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> mapped_exc<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> exc  <span class="ansi-red-fg"># type: ignore</span>
-<span class="ansi-green-intense-fg ansi-bold">    344</span> 
-<span class="ansi-green-intense-fg ansi-bold">    345</span> 
-
-<span class="ansi-red-fg">ConnectError</span>: Multiple exceptions: [Errno 61] Connect call failed (&#39;::1&#39;, 8000, 0, 0), [Errno 61] Connect call failed (&#39;127.0.0.1&#39;, 8000)</pre>
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nclient = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.epochs[0])\nprint(elapsed)";
+                var nbb_formatted_code = "# dont_test\n\nclient = HttpxClient()\nelapsed, responses = await client.measure_server(benchmark.epochs[0])\nprint(elapsed)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
 </div>
+
 </div>
 
 </div>
@@ -342,7 +335,7 @@ The above exception was the direct cause of the following exception:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L84" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
+<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L83" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -366,7 +359,7 @@ The above exception was the direct cause of the following exception:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L90" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
+<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L89" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/core.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -383,6 +376,42 @@ The above exception was the direct cause of the following exception:
     
 <div class="cell border-box-sizing code_cell rendered">
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="052d0374-e759-411d-9b2e-527dca6ccc34"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#052d0374-e759-411d-9b2e-527dca6ccc34');
+
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, epoch):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch.files, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
+                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, epoch):\n        urls = [bf.url for bf in benchmark_row.files]\n        max_connections = min(benchmark_row.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch.files, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -394,7 +423,7 @@ The above exception was the direct cause of the following exception:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">AioHttpClient</span><span class="p">()</span>
-<span class="n">elapsed</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">measure_server</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">elapsed</span><span class="p">,</span> <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">measure_server</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
 </pre></div>
 
@@ -422,7 +451,7 @@ The above exception was the direct cause of the following exception:
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L121" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>200</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>) :: <a href="/will_it_saturate/core.html#BenchmarkClient"><code>BenchmarkClient</code></a></p>
+<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/client.py#L120" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>200</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>) :: <a href="/will_it_saturate/core.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -438,6 +467,42 @@ The above exception was the direct cause of the following exception:
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="dbebcbd9-9a02-4ee1-b464-b4b0562e6b94"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#dbebcbd9-9a02-4ee1-b464-b4b0562e6b94');
+
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "# export\n\n\nclass WrkClient(BaseClient):\n    connections: int = 200\n    duration: int = 20\n    threads: int = 1\n\n    def create_urls_string(self, benchmark_row):\n        urls = []\n        for bf in benchmark_row.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, benchmark_row):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(benchmark_row)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        output = subprocess.run(\n            [\n                \"wrk\",\n                \"-c\",\n                str(self.connections),\n                \"-t\",\n                str(self.threads),\n                \"-s\",\n                \"wrk.lua\",\n                \"http://localhost:8000\",\n            ],\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, benchmark_row):\n        self.create_lua_script(benchmark_row)\n        elapsed = self.run_wrk()\n        return elapsed";
+                var nbb_formatted_code = "# export\n\n\nclass WrkClient(BaseClient):\n    connections: int = 200\n    duration: int = 20\n    threads: int = 1\n\n    def create_urls_string(self, benchmark_row):\n        urls = []\n        for bf in benchmark_row.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, benchmark_row):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(benchmark_row)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        output = subprocess.run(\n            [\n                \"wrk\",\n                \"-c\",\n                str(self.connections),\n                \"-t\",\n                str(self.threads),\n                \"-s\",\n                \"wrk.lua\",\n                \"http://localhost:8000\",\n            ],\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, benchmark_row):\n        self.create_lua_script(benchmark_row)\n        elapsed = self.run_wrk()\n        return elapsed";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -488,7 +553,7 @@ The above exception was the direct cause of the following exception:
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">WrkClient</span><span class="p">()</span>
-<span class="n">elapsed</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">elapsed</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">benchmark</span><span class="o">.</span><span class="n">epochs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">elapsed</span><span class="p">)</span>
 </pre></div>
 
@@ -530,11 +595,13 @@ The above exception was the direct cause of the following exception:
 <pre>Converted 00_core.ipynb.
 Converted 01_django_views.ipynb.
 Converted 01_fastapi_views.ipynb.
+Converted 02_control_server.ipynb.
 Converted 02_docker_servers.ipynb.
 Converted 02_local_servers.ipynb.
 Converted 03_benchmark_clients.ipynb.
 Converted 04_persistence.ipynb.
 Converted 05_run_benchmark.ipynb.
+Converted 06_benchmark_without_benchmark.ipynb.
 Converted index.ipynb.
 </pre>
 </div>
@@ -545,13 +612,13 @@ Converted index.ipynb.
 
 
 
-<div id="2e2a944c-dc2c-4372-9f92-6e5b9c92965f"></div>
+<div id="99c29ea3-b274-4c4f-8461-beb42699e63d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2e2a944c-dc2c-4372-9f92-6e5b9c92965f');
+var element = $('#99c29ea3-b274-4c4f-8461-beb42699e63d');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();

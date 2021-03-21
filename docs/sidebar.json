@@ -4,10 +4,12 @@
     "module Core": "core.html",
     "Django Views": "django_views.html",
     "fastAPI Application Views": "fastapi_views.html",
+    "fastAPI Control Server": "control_server.html",
     "Nginx Docker Server": "docker_servers.html",
     "FastAPIUvicornServer": "local_servers.html",
     "Caveats": "benchmark_clients.html",
     "Usage": "persistence.html",
-    "Title": "benchmark_without_benchmark.html"
+    "Title": "run_benchmark.html",
+    "Remote Benchmark": "benchmark_without_benchmark.html"
   }
 }

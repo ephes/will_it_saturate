@@ -19,6 +19,9 @@ entries:
       title: fastAPI Application Views
       url: fastapi_views.html
     - output: web,pdf
+      title: fastAPI Control Server
+      url: control_server.html
+    - output: web,pdf
       title: Nginx Docker Server
       url: docker_servers.html
     - output: web,pdf
@@ -32,6 +35,9 @@ entries:
       url: persistence.html
     - output: web,pdf
       title: Title
+      url: run_benchmark.html
+    - output: web,pdf
+      title: Remote Benchmark
       url: benchmark_without_benchmark.html
     output: web
     title: will_it_saturate
