@@ -3,6 +3,7 @@
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {"CheckSumMixin": "00_core.ipynb",
+         "Host": "00_core.ipynb",
          "FilesystemCreator": "00_core.ipynb",
          "BenchmarkFile": "00_core.ipynb",
          "BaseServer": "00_core.ipynb",
