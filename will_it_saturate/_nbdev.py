@@ -2,10 +2,13 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"CheckSumMixin": "00_core.ipynb",
-         "Host": "00_core.ipynb",
-         "FilesystemCreator": "00_core.ipynb",
+index = {"Host": "00_core.ipynb",
+         "calculate_checksum": "00_core.ipynb",
+         "checksum_for_path": "00_core.ipynb",
+         "create_via_filesystem": "00_core.ipynb",
+         "dummy_creator": "00_core.ipynb",
          "BenchmarkFile": "00_core.ipynb",
+         "FILE_CREATORS": "00_core.ipynb",
          "BaseServer": "00_core.ipynb",
          "BaseClient": "00_core.ipynb",
          "Epoch": "00_core.ipynb",
