@@ -9,7 +9,7 @@ from pydantic import BaseModel
 
 from fastapi import FastAPI
 
-from ..core import Epoch, FilesystemCreator, BaseServer
+from ..core import Epoch, BaseServer
 
 from ..server import (
     FastAPIUvicornServer,
@@ -31,7 +31,6 @@ def read_root():
 @app.post("/epochs/")
 def create_epoch(epoch: Epoch):
     print(epoch)
-    epoch.file_creator = FilesystemCreator()
     epoch.create_files()
     return epoch
 
