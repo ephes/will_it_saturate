@@ -84,13 +84,13 @@ nb_path: "04_persistence.ipynb"
 
 
 
-<div id="84084005-2dcd-425e-a573-af99d79b36eb"></div>
+<div id="8d1f1720-283a-40c7-8b4d-da095faa64a8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#84084005-2dcd-425e-a573-af99d79b36eb');
+var element = $('#8d1f1720-283a-40c7-8b4d-da095faa64a8');
 
             setTimeout(function() {
-                var nbb_cell_id = 58;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "conn = sqlite3.connect(\"example.db\")\nrepo = SqliteRepository(connection=conn)\nrepo.create_tables()";
                 var nbb_formatted_code = "conn = sqlite3.connect(\"example.db\")\nrepo = SqliteRepository(connection=conn)\nrepo.create_tables()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -122,8 +122,8 @@ var element = $('#84084005-2dcd-425e-a573-af99d79b36eb');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">Benchmark</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">BenchmarkResult</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">Result</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">Benchmark</span>
 
 <span class="n">benchmark</span> <span class="o">=</span> <span class="n">Benchmark</span><span class="p">()</span>
 <span class="n">benchmark</span> <span class="o">=</span> <span class="n">Benchmark</span><span class="p">()</span>
@@ -143,15 +143,15 @@ var element = $('#84084005-2dcd-425e-a573-af99d79b36eb');
 
 
 
-<div id="8c955951-8848-43f7-8d59-d2f5b9574225"></div>
+<div id="0a71e119-419f-46ee-bf3f-7f991be31d3e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8c955951-8848-43f7-8d59-d2f5b9574225');
+var element = $('#0a71e119-419f-46ee-bf3f-7f991be31d3e');
 
             setTimeout(function() {
-                var nbb_cell_id = 59;
-                var nbb_unformatted_code = "from will_it_saturate.core import Benchmark\nfrom will_it_saturate.core import BenchmarkResult\n\nbenchmark = Benchmark()\nbenchmark = Benchmark()\nrepo.add_benchmark(benchmark)\nrepo.add_benchmark(benchmark)  # should not raise integrity exception";
-                var nbb_formatted_code = "from will_it_saturate.core import Benchmark\nfrom will_it_saturate.core import BenchmarkResult\n\nbenchmark = Benchmark()\nbenchmark = Benchmark()\nrepo.add_benchmark(benchmark)\nrepo.add_benchmark(benchmark)  # should not raise integrity exception";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "from will_it_saturate.core import Result\nfrom will_it_saturate.core import Benchmark\n\nbenchmark = Benchmark()\nbenchmark = Benchmark()\nrepo.add_benchmark(benchmark)\nrepo.add_benchmark(benchmark)  # should not raise integrity exception";
+                var nbb_formatted_code = "from will_it_saturate.core import Result\nfrom will_it_saturate.core import Benchmark\n\nbenchmark = Benchmark()\nbenchmark = Benchmark()\nrepo.add_benchmark(benchmark)\nrepo.add_benchmark(benchmark)  # should not raise integrity exception";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -197,10 +197,10 @@ var element = $('#8c955951-8848-43f7-8d59-d2f5b9574225');
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(1,
- &#39;2021-02-28 16:27:43&#39;,
- &#39;C02ZPB8KMD6T&#39;,
- &#39;[&#34;Darwin&#34;, &#34;ephesmpb.fritz.box&#34;, &#34;20.3.0&#34;, &#34;Darwin Kernel Version 20.3.0: Thu Jan 21 00:07:06 PST 2021; root:xnu-7195.81.3~1/RELEASE_X86_64&#34;, &#34;x86_64&#34;, &#34;i386&#34;]&#39;,
- &#39;{&#34;duration&#34;: 30, &#34;bandwidth&#34;: 125000000, &#34;cpuinfo&#34;: {&#34;python_version&#34;: &#34;3.9.2.final.0 (64 bit)&#34;, &#34;cpuinfo_version&#34;: [7, 0, 0], &#34;cpuinfo_version_string&#34;: &#34;7.0.0&#34;, &#34;arch&#34;: &#34;X86_64&#34;, &#34;bits&#34;: 64, &#34;count&#34;: 16, &#34;arch_string_raw&#34;: &#34;x86_64&#34;, &#34;vendor_id_raw&#34;: &#34;GenuineIntel&#34;, &#34;brand_raw&#34;: &#34;Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz&#34;, &#34;hz_advertised_friendly&#34;: &#34;2.3000 GHz&#34;, &#34;hz_actual_friendly&#34;: &#34;2.3000 GHz&#34;, &#34;hz_advertised&#34;: [2300000000, 0], &#34;hz_actual&#34;: [2300000000, 0], &#34;l2_cache_size&#34;: 262144, &#34;stepping&#34;: 13, &#34;model&#34;: 158, &#34;family&#34;: 6, &#34;flags&#34;: [&#34;1gbpage&#34;, &#34;3dnowprefetch&#34;, &#34;abm&#34;, &#34;acapmsr&#34;, &#34;acpi&#34;, &#34;adx&#34;, &#34;aes&#34;, &#34;apic&#34;, &#34;avx&#34;, &#34;avx1.0&#34;, &#34;avx2&#34;, &#34;bmi1&#34;, &#34;bmi2&#34;, &#34;clflush&#34;, &#34;clflushopt&#34;, &#34;clfsh&#34;, &#34;clfsopt&#34;, &#34;cmov&#34;, &#34;cx16&#34;, &#34;cx8&#34;, &#34;de&#34;, &#34;ds&#34;, &#34;ds_cpl&#34;, &#34;dscpl&#34;, &#34;dtes64&#34;, &#34;dts&#34;, &#34;em64t&#34;, &#34;erms&#34;, &#34;est&#34;, &#34;f16c&#34;, &#34;fma&#34;, &#34;fpu&#34;, &#34;fpu_csds&#34;, &#34;fxsr&#34;, &#34;ht&#34;, &#34;htt&#34;, &#34;ibrs&#34;, &#34;intel_pt&#34;, &#34;invpcid&#34;, &#34;ipt&#34;, &#34;l1df&#34;, &#34;lahf&#34;, &#34;lahf_lm&#34;, &#34;lzcnt&#34;, &#34;mca&#34;, &#34;mce&#34;, &#34;mdclear&#34;, &#34;mmx&#34;, &#34;mon&#34;, &#34;monitor&#34;, &#34;movbe&#34;, &#34;mpx&#34;, &#34;msr&#34;, &#34;mtrr&#34;, &#34;osxsave&#34;, &#34;pae&#34;, &#34;pat&#34;, &#34;pbe&#34;, &#34;pcid&#34;, &#34;pclmulqdq&#34;, &#34;pdcm&#34;, &#34;pge&#34;, &#34;pni&#34;, &#34;popcnt&#34;, &#34;prefetchw&#34;, &#34;pse&#34;, &#34;pse36&#34;, &#34;rdrand&#34;, &#34;rdrnd&#34;, &#34;rdseed&#34;, &#34;rdtscp&#34;, &#34;rdwrfsgs&#34;, &#34;seglim64&#34;, &#34;sep&#34;, &#34;sgx&#34;, &#34;sgx_lc&#34;, &#34;sgxlc&#34;, &#34;smap&#34;, &#34;smep&#34;, &#34;smx&#34;, &#34;ss&#34;, &#34;ssbd&#34;, &#34;sse&#34;, &#34;sse2&#34;, &#34;sse3&#34;, &#34;sse4.1&#34;, &#34;sse4.2&#34;, &#34;sse4_1&#34;, &#34;sse4_2&#34;, &#34;ssse3&#34;, &#34;stibp&#34;, &#34;syscall&#34;, &#34;tm&#34;, &#34;tm2&#34;, &#34;tpr&#34;, &#34;tsc&#34;, &#34;tsc_thread_offset&#34;, &#34;tscdeadline&#34;, &#34;tsci&#34;, &#34;tsctmr&#34;, &#34;vme&#34;, &#34;vmx&#34;, &#34;x2apic&#34;, &#34;xd&#34;, &#34;xsave&#34;, &#34;xtpr&#34;], &#34;l2_cache_line_size&#34;: 256, &#34;l2_cache_associativity&#34;: 6}}&#39;)</pre>
+ &#39;2021-03-04 08:19:17&#39;,
+ &#39;C02ZD1Y8LVDQ&#39;,
+ &#39;[&#34;Darwin&#34;, &#34;141621S0&#34;, &#34;19.6.0&#34;, &#34;Darwin Kernel Version 19.6.0: Thu Oct 29 22:56:45 PDT 2020; root:xnu-6153.141.2.2~1/RELEASE_X86_64&#34;, &#34;x86_64&#34;, &#34;i386&#34;]&#39;,
+ &#39;{&#34;duration&#34;: 30, &#34;bandwidth&#34;: 125000000, &#34;cpuinfo&#34;: {&#34;python_version&#34;: &#34;3.9.2.final.0 (64 bit)&#34;, &#34;cpuinfo_version&#34;: [7, 0, 0], &#34;cpuinfo_version_string&#34;: &#34;7.0.0&#34;, &#34;arch&#34;: &#34;X86_64&#34;, &#34;bits&#34;: 64, &#34;count&#34;: 12, &#34;arch_string_raw&#34;: &#34;x86_64&#34;, &#34;vendor_id_raw&#34;: &#34;GenuineIntel&#34;, &#34;brand_raw&#34;: &#34;Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz&#34;, &#34;hz_advertised_friendly&#34;: &#34;2.6000 GHz&#34;, &#34;hz_actual_friendly&#34;: &#34;2.6000 GHz&#34;, &#34;hz_advertised&#34;: [2600000000, 0], &#34;hz_actual&#34;: [2600000000, 0], &#34;l2_cache_size&#34;: 262144, &#34;stepping&#34;: 10, &#34;model&#34;: 158, &#34;family&#34;: 6, &#34;flags&#34;: [&#34;1gbpage&#34;, &#34;3dnowprefetch&#34;, &#34;abm&#34;, &#34;acpi&#34;, &#34;adx&#34;, &#34;aes&#34;, &#34;apic&#34;, &#34;avx&#34;, &#34;avx1.0&#34;, &#34;avx2&#34;, &#34;bmi1&#34;, &#34;bmi2&#34;, &#34;clflush&#34;, &#34;clflushopt&#34;, &#34;clfsh&#34;, &#34;clfsopt&#34;, &#34;cmov&#34;, &#34;cx16&#34;, &#34;cx8&#34;, &#34;de&#34;, &#34;ds&#34;, &#34;ds_cpl&#34;, &#34;dscpl&#34;, &#34;dtes64&#34;, &#34;dts&#34;, &#34;em64t&#34;, &#34;erms&#34;, &#34;est&#34;, &#34;f16c&#34;, &#34;fma&#34;, &#34;fpu&#34;, &#34;fpu_csds&#34;, &#34;fxsr&#34;, &#34;ht&#34;, &#34;htt&#34;, &#34;ibrs&#34;, &#34;intel_pt&#34;, &#34;invpcid&#34;, &#34;ipt&#34;, &#34;l1df&#34;, &#34;lahf&#34;, &#34;lahf_lm&#34;, &#34;lzcnt&#34;, &#34;mca&#34;, &#34;mce&#34;, &#34;mdclear&#34;, &#34;mmx&#34;, &#34;mon&#34;, &#34;monitor&#34;, &#34;movbe&#34;, &#34;mpx&#34;, &#34;msr&#34;, &#34;mtrr&#34;, &#34;osxsave&#34;, &#34;pae&#34;, &#34;pat&#34;, &#34;pbe&#34;, &#34;pcid&#34;, &#34;pclmulqdq&#34;, &#34;pdcm&#34;, &#34;pge&#34;, &#34;pni&#34;, &#34;popcnt&#34;, &#34;prefetchw&#34;, &#34;pse&#34;, &#34;pse36&#34;, &#34;rdrand&#34;, &#34;rdrnd&#34;, &#34;rdseed&#34;, &#34;rdtscp&#34;, &#34;rdwrfsgs&#34;, &#34;seglim64&#34;, &#34;sep&#34;, &#34;sgx&#34;, &#34;sgx_lc&#34;, &#34;sgxlc&#34;, &#34;smap&#34;, &#34;smep&#34;, &#34;ss&#34;, &#34;ssbd&#34;, &#34;sse&#34;, &#34;sse2&#34;, &#34;sse3&#34;, &#34;sse4.1&#34;, &#34;sse4.2&#34;, &#34;sse4_1&#34;, &#34;sse4_2&#34;, &#34;ssse3&#34;, &#34;stibp&#34;, &#34;syscall&#34;, &#34;tm&#34;, &#34;tm2&#34;, &#34;tpr&#34;, &#34;tsc&#34;, &#34;tsc_thread_offset&#34;, &#34;tscdeadline&#34;, &#34;tsci&#34;, &#34;tsctmr&#34;, &#34;tsxfa&#34;, &#34;vme&#34;, &#34;vmx&#34;, &#34;x2apic&#34;, &#34;xd&#34;, &#34;xsave&#34;, &#34;xtpr&#34;], &#34;l2_cache_line_size&#34;: 256, &#34;l2_cache_associativity&#34;: 6}}&#39;)</pre>
 </div>
 
 </div>
@@ -210,13 +210,13 @@ var element = $('#8c955951-8848-43f7-8d59-d2f5b9574225');
 
 
 
-<div id="72c9f6ef-e353-4361-8fcb-335882297e87"></div>
+<div id="b88bcefa-d708-4a3f-80b2-49c7a54eb9c9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#72c9f6ef-e353-4361-8fcb-335882297e87');
+var element = $('#b88bcefa-d708-4a3f-80b2-49c7a54eb9c9');
 
             setTimeout(function() {
-                var nbb_cell_id = 60;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "repo.get_benchmark(benchmark)";
                 var nbb_formatted_code = "repo.get_benchmark(benchmark)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -263,7 +263,7 @@ var element = $('#72c9f6ef-e353-4361-8fcb-335882297e87');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;{&#34;duration&#34;: 30, &#34;bandwidth&#34;: 125000000, &#34;cpuinfo&#34;: {&#34;python_version&#34;: &#34;3.9.2.final.0 (64 bit)&#34;, &#34;cpuinfo_version&#34;: [7, 0, 0], &#34;cpuinfo_version_string&#34;: &#34;7.0.0&#34;, &#34;arch&#34;: &#34;X86_64&#34;, &#34;bits&#34;: 64, &#34;count&#34;: 16, &#34;arch_string_raw&#34;: &#34;x86_64&#34;, &#34;vendor_id_raw&#34;: &#34;GenuineIntel&#34;, &#34;brand_raw&#34;: &#34;Intel(R) Core(TM) i9-9880H CPU @ 2.30GHz&#34;, &#34;hz_advertised_friendly&#34;: &#34;2.3000 GHz&#34;, &#34;hz_actual_friendly&#34;: &#34;2.3000 GHz&#34;, &#34;hz_advertised&#34;: [2300000000, 0], &#34;hz_actual&#34;: [2300000000, 0], &#34;l2_cache_size&#34;: 262144, &#34;stepping&#34;: 13, &#34;model&#34;: 158, &#34;family&#34;: 6, &#34;flags&#34;: [&#34;1gbpage&#34;, &#34;3dnowprefetch&#34;, &#34;abm&#34;, &#34;acapmsr&#34;, &#34;acpi&#34;, &#34;adx&#34;, &#34;aes&#34;, &#34;apic&#34;, &#34;avx&#34;, &#34;avx1.0&#34;, &#34;avx2&#34;, &#34;bmi1&#34;, &#34;bmi2&#34;, &#34;clflush&#34;, &#34;clflushopt&#34;, &#34;clfsh&#34;, &#34;clfsopt&#34;, &#34;cmov&#34;, &#34;cx16&#34;, &#34;cx8&#34;, &#34;de&#34;, &#34;ds&#34;, &#34;ds_cpl&#34;, &#34;dscpl&#34;, &#34;dtes64&#34;, &#34;dts&#34;, &#34;em64t&#34;, &#34;erms&#34;, &#34;est&#34;, &#34;f16c&#34;, &#34;fma&#34;, &#34;fpu&#34;, &#34;fpu_csds&#34;, &#34;fxsr&#34;, &#34;ht&#34;, &#34;htt&#34;, &#34;ibrs&#34;, &#34;intel_pt&#34;, &#34;invpcid&#34;, &#34;ipt&#34;, &#34;l1df&#34;, &#34;lahf&#34;, &#34;lahf_lm&#34;, &#34;lzcnt&#34;, &#34;mca&#34;, &#34;mce&#34;, &#34;mdclear&#34;, &#34;mmx&#34;, &#34;mon&#34;, &#34;monitor&#34;, &#34;movbe&#34;, &#34;mpx&#34;, &#34;msr&#34;, &#34;mtrr&#34;, &#34;osxsave&#34;, &#34;pae&#34;, &#34;pat&#34;, &#34;pbe&#34;, &#34;pcid&#34;, &#34;pclmulqdq&#34;, &#34;pdcm&#34;, &#34;pge&#34;, &#34;pni&#34;, &#34;popcnt&#34;, &#34;prefetchw&#34;, &#34;pse&#34;, &#34;pse36&#34;, &#34;rdrand&#34;, &#34;rdrnd&#34;, &#34;rdseed&#34;, &#34;rdtscp&#34;, &#34;rdwrfsgs&#34;, &#34;seglim64&#34;, &#34;sep&#34;, &#34;sgx&#34;, &#34;sgx_lc&#34;, &#34;sgxlc&#34;, &#34;smap&#34;, &#34;smep&#34;, &#34;smx&#34;, &#34;ss&#34;, &#34;ssbd&#34;, &#34;sse&#34;, &#34;sse2&#34;, &#34;sse3&#34;, &#34;sse4.1&#34;, &#34;sse4.2&#34;, &#34;sse4_1&#34;, &#34;sse4_2&#34;, &#34;ssse3&#34;, &#34;stibp&#34;, &#34;syscall&#34;, &#34;tm&#34;, &#34;tm2&#34;, &#34;tpr&#34;, &#34;tsc&#34;, &#34;tsc_thread_offset&#34;, &#34;tscdeadline&#34;, &#34;tsci&#34;, &#34;tsctmr&#34;, &#34;vme&#34;, &#34;vmx&#34;, &#34;x2apic&#34;, &#34;xd&#34;, &#34;xsave&#34;, &#34;xtpr&#34;], &#34;l2_cache_line_size&#34;: 256, &#34;l2_cache_associativity&#34;: 6}}&#39;</pre>
+<pre>&#39;{&#34;duration&#34;: 30, &#34;bandwidth&#34;: 125000000, &#34;cpuinfo&#34;: {&#34;python_version&#34;: &#34;3.9.2.final.0 (64 bit)&#34;, &#34;cpuinfo_version&#34;: [7, 0, 0], &#34;cpuinfo_version_string&#34;: &#34;7.0.0&#34;, &#34;arch&#34;: &#34;X86_64&#34;, &#34;bits&#34;: 64, &#34;count&#34;: 12, &#34;arch_string_raw&#34;: &#34;x86_64&#34;, &#34;vendor_id_raw&#34;: &#34;GenuineIntel&#34;, &#34;brand_raw&#34;: &#34;Intel(R) Core(TM) i7-9750H CPU @ 2.60GHz&#34;, &#34;hz_advertised_friendly&#34;: &#34;2.6000 GHz&#34;, &#34;hz_actual_friendly&#34;: &#34;2.6000 GHz&#34;, &#34;hz_advertised&#34;: [2600000000, 0], &#34;hz_actual&#34;: [2600000000, 0], &#34;l2_cache_size&#34;: 262144, &#34;stepping&#34;: 10, &#34;model&#34;: 158, &#34;family&#34;: 6, &#34;flags&#34;: [&#34;1gbpage&#34;, &#34;3dnowprefetch&#34;, &#34;abm&#34;, &#34;acpi&#34;, &#34;adx&#34;, &#34;aes&#34;, &#34;apic&#34;, &#34;avx&#34;, &#34;avx1.0&#34;, &#34;avx2&#34;, &#34;bmi1&#34;, &#34;bmi2&#34;, &#34;clflush&#34;, &#34;clflushopt&#34;, &#34;clfsh&#34;, &#34;clfsopt&#34;, &#34;cmov&#34;, &#34;cx16&#34;, &#34;cx8&#34;, &#34;de&#34;, &#34;ds&#34;, &#34;ds_cpl&#34;, &#34;dscpl&#34;, &#34;dtes64&#34;, &#34;dts&#34;, &#34;em64t&#34;, &#34;erms&#34;, &#34;est&#34;, &#34;f16c&#34;, &#34;fma&#34;, &#34;fpu&#34;, &#34;fpu_csds&#34;, &#34;fxsr&#34;, &#34;ht&#34;, &#34;htt&#34;, &#34;ibrs&#34;, &#34;intel_pt&#34;, &#34;invpcid&#34;, &#34;ipt&#34;, &#34;l1df&#34;, &#34;lahf&#34;, &#34;lahf_lm&#34;, &#34;lzcnt&#34;, &#34;mca&#34;, &#34;mce&#34;, &#34;mdclear&#34;, &#34;mmx&#34;, &#34;mon&#34;, &#34;monitor&#34;, &#34;movbe&#34;, &#34;mpx&#34;, &#34;msr&#34;, &#34;mtrr&#34;, &#34;osxsave&#34;, &#34;pae&#34;, &#34;pat&#34;, &#34;pbe&#34;, &#34;pcid&#34;, &#34;pclmulqdq&#34;, &#34;pdcm&#34;, &#34;pge&#34;, &#34;pni&#34;, &#34;popcnt&#34;, &#34;prefetchw&#34;, &#34;pse&#34;, &#34;pse36&#34;, &#34;rdrand&#34;, &#34;rdrnd&#34;, &#34;rdseed&#34;, &#34;rdtscp&#34;, &#34;rdwrfsgs&#34;, &#34;seglim64&#34;, &#34;sep&#34;, &#34;sgx&#34;, &#34;sgx_lc&#34;, &#34;sgxlc&#34;, &#34;smap&#34;, &#34;smep&#34;, &#34;ss&#34;, &#34;ssbd&#34;, &#34;sse&#34;, &#34;sse2&#34;, &#34;sse3&#34;, &#34;sse4.1&#34;, &#34;sse4.2&#34;, &#34;sse4_1&#34;, &#34;sse4_2&#34;, &#34;ssse3&#34;, &#34;stibp&#34;, &#34;syscall&#34;, &#34;tm&#34;, &#34;tm2&#34;, &#34;tpr&#34;, &#34;tsc&#34;, &#34;tsc_thread_offset&#34;, &#34;tscdeadline&#34;, &#34;tsci&#34;, &#34;tsctmr&#34;, &#34;tsxfa&#34;, &#34;vme&#34;, &#34;vmx&#34;, &#34;x2apic&#34;, &#34;xd&#34;, &#34;xsave&#34;, &#34;xtpr&#34;], &#34;l2_cache_line_size&#34;: 256, &#34;l2_cache_associativity&#34;: 6}}&#39;</pre>
 </div>
 
 </div>
@@ -273,13 +273,13 @@ var element = $('#72c9f6ef-e353-4361-8fcb-335882297e87');
 
 
 
-<div id="d046e457-a4e3-4252-abdb-4c2e8086e5ef"></div>
+<div id="69c48163-0216-4d4c-a2f5-bb7818444d74"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d046e457-a4e3-4252-abdb-4c2e8086e5ef');
+var element = $('#69c48163-0216-4d4c-a2f5-bb7818444d74');
 
             setTimeout(function() {
-                var nbb_cell_id = 61;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "benchmark.json()";
                 var nbb_formatted_code = "benchmark.json()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -326,13 +326,13 @@ var element = $('#d046e457-a4e3-4252-abdb-4c2e8086e5ef');
 
 
 
-<div id="58a9b090-989c-4f7c-a6e2-011d0e3f7743"></div>
+<div id="b65a93be-ae32-4cdb-b612-e5352a8f4db0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#58a9b090-989c-4f7c-a6e2-011d0e3f7743');
+var element = $('#b65a93be-ae32-4cdb-b612-e5352a8f4db0');
 
             setTimeout(function() {
-                var nbb_cell_id = 62;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "# repo.get_benchmark(benchmark)";
                 var nbb_formatted_code = "# repo.get_benchmark(benchmark)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -379,13 +379,13 @@ var element = $('#58a9b090-989c-4f7c-a6e2-011d0e3f7743');
 
 
 
-<div id="9781515a-e053-40f3-9ae7-d3dcd706f7e5"></div>
+<div id="71bedc23-f522-47e4-8d4a-b61dfed41cb0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9781515a-e053-40f3-9ae7-d3dcd706f7e5');
+var element = $('#71bedc23-f522-47e4-8d4a-b61dfed41cb0');
 
             setTimeout(function() {
-                var nbb_cell_id = 63;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "benchmark.machine_id = \"foobar\"";
                 var nbb_formatted_code = "benchmark.machine_id = \"foobar\"";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -419,7 +419,7 @@ var element = $('#9781515a-e053-40f3-9ae7-d3dcd706f7e5');
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span>
 <span class="n">complete_size</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">file_size</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">BenchmarkResult</span><span class="p">(</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
     <span class="n">server</span><span class="o">=</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span>
     <span class="n">client</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">,</span>
     <span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">,</span>
@@ -450,15 +450,15 @@ var element = $('#9781515a-e053-40f3-9ae7-d3dcd706f7e5');
 
 
 
-<div id="f98794fd-0a31-4374-88ba-810c8672ed47"></div>
+<div id="4d495b10-ac0b-402c-93f8-632e36faad87"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f98794fd-0a31-4374-88ba-810c8672ed47');
+var element = $('#4d495b10-ac0b-402c-93f8-632e36faad87');
 
             setTimeout(function() {
-                var nbb_cell_id = 67;
-                var nbb_unformatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = BenchmarkResult(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    complete_size=complete_size,\n)\n\nresult = repo.get_result(benchmark, result)\nprint(result.elapsed)";
-                var nbb_formatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = BenchmarkResult(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    complete_size=complete_size,\n)\n\nresult = repo.get_result(benchmark, result)\nprint(result.elapsed)";
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    complete_size=complete_size,\n)\n\nresult = repo.get_result(benchmark, result)\nprint(result.elapsed)";
+                var nbb_formatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    complete_size=complete_size,\n)\n\nresult = repo.get_result(benchmark, result)\nprint(result.elapsed)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -488,11 +488,11 @@ var element = $('#f98794fd-0a31-4374-88ba-810c8672ed47');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">BenchmarkResult</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">Result</span>
 
 <span class="n">file_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span>
 <span class="n">complete_size</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">file_size</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">BenchmarkResult</span><span class="p">(</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
     <span class="n">server</span><span class="o">=</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span>
     <span class="n">client</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">,</span>
     <span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">,</span>
@@ -522,15 +522,15 @@ var element = $('#f98794fd-0a31-4374-88ba-810c8672ed47');
 
 
 
-<div id="3ec5dbba-d142-4827-b6c3-405308ab9692"></div>
+<div id="4aee3053-12da-4642-9aa4-cc86defb9aca"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3ec5dbba-d142-4827-b6c3-405308ab9692');
+var element = $('#4aee3053-12da-4642-9aa4-cc86defb9aca');
 
             setTimeout(function() {
-                var nbb_cell_id = 65;
-                var nbb_unformatted_code = "from will_it_saturate.core import BenchmarkResult\n\nfile_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = BenchmarkResult(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())";
-                var nbb_formatted_code = "from will_it_saturate.core import BenchmarkResult\n\nfile_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = BenchmarkResult(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())";
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "from will_it_saturate.core import Result\n\nfile_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())";
+                var nbb_formatted_code = "from will_it_saturate.core import Result\n\nfile_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -572,27 +572,16 @@ var element = $('#3ec5dbba-d142-4827-b6c3-405308ab9692');
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-            insert into result (benchmark_id,server,client,file_size,complete_size,elapsed)
-            values (?,?,?,?,?,?)
-        
-</pre>
-</div>
-</div>
-
-<div class="output_area">
 
 
 
-
-<div id="994658b2-f43c-41c6-9ae8-fe53c3c3a51c"></div>
+<div id="b4b6ca2f-0699-4c91-b681-6c205e741aaf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#994658b2-f43c-41c6-9ae8-fe53c3c3a51c');
+var element = $('#b4b6ca2f-0699-4c91-b681-6c205e741aaf');
 
             setTimeout(function() {
-                var nbb_cell_id = 55;
+                var nbb_cell_id = 16;
                 var nbb_unformatted_code = "repo.add_result(benchmark, result)";
                 var nbb_formatted_code = "repo.add_result(benchmark, result)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -646,15 +635,16 @@ var element = $('#994658b2-f43c-41c6-9ae8-fe53c3c3a51c');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converted 00_core.ipynb.
-Converted 01_serve_files_uvicorn.ipynb.
-Converted 02_fastapi_uvicorn_server.ipynb.
-Converted 03_nginx_docker_server.ipynb.
-Converted 04_benchmark_clients.ipynb.
-Converted 05_persistence.ipynb.
-Converted 06_run_benchmark.ipynb.
+Converted 01_django_views.ipynb.
+Converted 01_fastapi_views.ipynb.
+Converted 02_control_server.ipynb.
+Converted 02_docker_servers.ipynb.
+Converted 02_local_servers.ipynb.
+Converted 03_benchmark_clients.ipynb.
+Converted 04_persistence.ipynb.
+Converted 05_run_benchmark.ipynb.
+Converted 06_benchmark_without_benchmark.ipynb.
 Converted index.ipynb.
-Converted run_wrk_benchmark_test.ipynb.
-Converted use_nginx_to_serve_files_test.ipynb.
 </pre>
 </div>
 </div>
@@ -664,13 +654,13 @@ Converted use_nginx_to_serve_files_test.ipynb.
 
 
 
-<div id="fe50d574-f760-409c-8e4f-27b9e75d1b22"></div>
+<div id="3cfe8b19-4ed3-468f-a41d-99d5a893a364"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fe50d574-f760-409c-8e4f-27b9e75d1b22');
+var element = $('#3cfe8b19-4ed3-468f-a41d-99d5a893a364');
 
             setTimeout(function() {
-                var nbb_cell_id = 72;
+                var nbb_cell_id = 17;
                 var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
