@@ -51,10 +51,10 @@ nb_path: "06_benchmark_without_benchmark.ipynb"
 
 
 
-<div id="75b841b5-ea10-42b8-b4e2-b4c9e45ed7a0"></div>
+<div id="833f3e2a-4871-40d0-8f0c-e2f1ab54dd70"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#75b841b5-ea10-42b8-b4e2-b4c9e45ed7a0');
+var element = $('#833f3e2a-4871-40d0-8f0c-e2f1ab54dd70');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -98,7 +98,7 @@ var element = $('#75b841b5-ea10-42b8-b4e2-b4c9e45ed7a0');
     <span class="n">NginxDockerServer</span><span class="p">,</span>
     <span class="n">DjangoGunicornWSGIServer</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">FilesystemCreator</span><span class="p">,</span> <span class="n">Epoch</span><span class="p">,</span> <span class="n">Result</span><span class="p">,</span> <span class="n">BenchmarkFile</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate.core</span> <span class="kn">import</span> <span class="n">Epoch</span><span class="p">,</span> <span class="n">Result</span><span class="p">,</span> <span class="n">BenchmarkFile</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.client</span> <span class="kn">import</span> <span class="n">HttpxClient</span><span class="p">,</span> <span class="n">AioHttpClient</span><span class="p">,</span> <span class="n">WrkClient</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.persistence</span> <span class="kn">import</span> <span class="n">SqliteRepository</span>
 </pre></div>
@@ -115,15 +115,15 @@ var element = $('#75b841b5-ea10-42b8-b4e2-b4c9e45ed7a0');
 
 
 
-<div id="f52f290d-c57a-4ff5-9c0c-84c28d70e8ba"></div>
+<div id="8007b588-86ba-4a5b-80a5-2a6278cb958d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f52f290d-c57a-4ff5-9c0c-84c28d70e8ba');
+var element = $('#8007b588-86ba-4a5b-80a5-2a6278cb958d');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.server import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.core import FilesystemCreator, Epoch, Result, BenchmarkFile\nfrom will_it_saturate.client import HttpxClient, AioHttpClient, WrkClient\nfrom will_it_saturate.persistence import SqliteRepository";
-                var nbb_formatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.server import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.core import FilesystemCreator, Epoch, Result, BenchmarkFile\nfrom will_it_saturate.client import HttpxClient, AioHttpClient, WrkClient\nfrom will_it_saturate.persistence import SqliteRepository";
+                var nbb_unformatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.server import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.core import Epoch, Result, BenchmarkFile\nfrom will_it_saturate.client import HttpxClient, AioHttpClient, WrkClient\nfrom will_it_saturate.persistence import SqliteRepository";
+                var nbb_formatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.server import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.core import Epoch, Result, BenchmarkFile\nfrom will_it_saturate.client import HttpxClient, AioHttpClient, WrkClient\nfrom will_it_saturate.persistence import SqliteRepository";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -156,7 +156,7 @@ var element = $('#f52f290d-c57a-4ff5-9c0c-84c28d70e8ba');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">run_epoch</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
     <span class="n">control_base</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8001/&quot;</span>
     <span class="n">control_epochs</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">control_base</span><span class="p">,</span> <span class="s2">&quot;epochs/&quot;</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">control_epochs</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">dict_without_file_creator</span><span class="p">())</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">control_epochs</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
 
     <span class="k">for</span> <span class="n">bfile</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;files&quot;</span><span class="p">]:</span>
         <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bfile</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;creator&quot;</span><span class="p">}</span>
@@ -191,15 +191,15 @@ var element = $('#f52f290d-c57a-4ff5-9c0c-84c28d70e8ba');
 
 
 
-<div id="b1d82bc2-81b4-4edc-bd8f-1c5369efc843"></div>
+<div id="34c6557e-d11b-40a5-a678-f95527960983"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b1d82bc2-81b4-4edc-bd8f-1c5369efc843');
+var element = $('#34c6557e-d11b-40a5-a678-f95527960983');
 
             setTimeout(function() {
-                var nbb_cell_id = 30;
-                var nbb_unformatted_code = "def run_epoch(server, client, epoch):\n    control_base = \"http://localhost:8001/\"\n    control_epochs = urljoin(control_base, \"epochs/\")\n    r = httpx.post(control_epochs, json=epoch.dict_without_file_creator())\n\n    for bfile in r.json()[\"files\"]:\n        kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n        epoch.files.append(BenchmarkFile(**kwargs))\n\n    control_servers = urljoin(control_base, \"servers/\")\n    r = httpx.post(control_servers, json=server.dict())\n    server = server.__class__(**r.json())\n\n    epoch.urls = [server.file_to_url(file) for file in epoch.files]\n\n    result = Result(\n        server=server.name,\n        client=client.name,\n        file_size=epoch.file_size,\n        complete_size=epoch.complete_size,\n    )\n\n    result.elapsed = client.measure(epoch)\n    return result";
-                var nbb_formatted_code = "def run_epoch(server, client, epoch):\n    control_base = \"http://localhost:8001/\"\n    control_epochs = urljoin(control_base, \"epochs/\")\n    r = httpx.post(control_epochs, json=epoch.dict_without_file_creator())\n\n    for bfile in r.json()[\"files\"]:\n        kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n        epoch.files.append(BenchmarkFile(**kwargs))\n\n    control_servers = urljoin(control_base, \"servers/\")\n    r = httpx.post(control_servers, json=server.dict())\n    server = server.__class__(**r.json())\n\n    epoch.urls = [server.file_to_url(file) for file in epoch.files]\n\n    result = Result(\n        server=server.name,\n        client=client.name,\n        file_size=epoch.file_size,\n        complete_size=epoch.complete_size,\n    )\n\n    result.elapsed = client.measure(epoch)\n    return result";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "def run_epoch(server, client, epoch):\n    control_base = \"http://localhost:8001/\"\n    control_epochs = urljoin(control_base, \"epochs/\")\n    r = httpx.post(control_epochs, json=epoch.dict())\n\n    for bfile in r.json()[\"files\"]:\n        kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n        epoch.files.append(BenchmarkFile(**kwargs))\n\n    control_servers = urljoin(control_base, \"servers/\")\n    r = httpx.post(control_servers, json=server.dict())\n    server = server.__class__(**r.json())\n\n    epoch.urls = [server.file_to_url(file) for file in epoch.files]\n\n    result = Result(\n        server=server.name,\n        client=client.name,\n        file_size=epoch.file_size,\n        complete_size=epoch.complete_size,\n    )\n\n    result.elapsed = client.measure(epoch)\n    return result";
+                var nbb_formatted_code = "def run_epoch(server, client, epoch):\n    control_base = \"http://localhost:8001/\"\n    control_epochs = urljoin(control_base, \"epochs/\")\n    r = httpx.post(control_epochs, json=epoch.dict())\n\n    for bfile in r.json()[\"files\"]:\n        kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n        epoch.files.append(BenchmarkFile(**kwargs))\n\n    control_servers = urljoin(control_base, \"servers/\")\n    r = httpx.post(control_servers, json=server.dict())\n    server = server.__class__(**r.json())\n\n    epoch.urls = [server.file_to_url(file) for file in epoch.files]\n\n    result = Result(\n        server=server.name,\n        client=client.name,\n        file_size=epoch.file_size,\n        complete_size=epoch.complete_size,\n    )\n\n    result.elapsed = client.measure(epoch)\n    return result";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -245,15 +245,15 @@ var element = $('#b1d82bc2-81b4-4edc-bd8f-1c5369efc843');
 
 
 
-<div id="e96802cc-f7ef-4106-ab0c-a2e937cd7852"></div>
+<div id="5f878d80-8d73-472a-aa4f-bffa7bbe8e13"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e96802cc-f7ef-4106-ab0c-a2e937cd7852');
+var element = $('#5f878d80-8d73-472a-aa4f-bffa7bbe8e13');
 
             setTimeout(function() {
-                var nbb_cell_id = 31;
-                var nbb_unformatted_code = "byte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)";
-                var nbb_formatted_code = "byte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)";
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)";
+                var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -299,15 +299,15 @@ var element = $('#e96802cc-f7ef-4106-ab0c-a2e937cd7852');
 
 
 
-<div id="63199f4d-17cb-4a08-bbae-f994dd3a84a6"></div>
+<div id="6cf79f7f-c048-47a9-8a85-00505615907e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#63199f4d-17cb-4a08-bbae-f994dd3a84a6');
+var element = $('#6cf79f7f-c048-47a9-8a85-00505615907e');
 
             setTimeout(function() {
-                var nbb_cell_id = 32;
-                var nbb_unformatted_code = "server = FastAPIUvicornServer()\nclient = HttpxClient(name=\"httpx\")";
-                var nbb_formatted_code = "server = FastAPIUvicornServer()\nclient = HttpxClient(name=\"httpx\")";
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "# dont_test\n\nserver = FastAPIUvicornServer()\nclient = HttpxClient(name=\"httpx\")";
+                var nbb_formatted_code = "# dont_test\n\nserver = FastAPIUvicornServer()\nclient = HttpxClient(name=\"httpx\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -337,8 +337,7 @@ var element = $('#63199f4d-17cb-4a08-bbae-f994dd3a84a6');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">run_epoch</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">run_epoch</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -352,8 +351,6 @@ var element = $('#63199f4d-17cb-4a08-bbae-f994dd3a84a6');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>measure
-CPU times: user 28.1 ms, sys: 10.2 ms, total: 38.3 ms
-Wall time: 9.38 s
 </pre>
 </div>
 </div>
@@ -363,15 +360,15 @@ Wall time: 9.38 s
 
 
 
-<div id="d171ae9b-8780-4f01-b948-d77d187c2767"></div>
+<div id="fadfe497-a6a4-4ab2-a5b6-d4d4532cff6b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d171ae9b-8780-4f01-b948-d77d187c2767');
+var element = $('#fadfe497-a6a4-4ab2-a5b6-d4d4532cff6b');
 
             setTimeout(function() {
-                var nbb_cell_id = 33;
-                var nbb_unformatted_code = "%%time\nresult = run_epoch(server, client, epoch)";
-                var nbb_formatted_code = "%%time\nresult = run_epoch(server, client, epoch)";
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "# dont_test\n\nresult = run_epoch(server, client, epoch)";
+                var nbb_formatted_code = "# dont_test\n\nresult = run_epoch(server, client, epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -416,7 +413,7 @@ var element = $('#d171ae9b-8780-4f01-b948-d77d187c2767');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>59206337.146475695</pre>
+<pre>52162649.75030322</pre>
 </div>
 
 </div>
@@ -426,15 +423,15 @@ var element = $('#d171ae9b-8780-4f01-b948-d77d187c2767');
 
 
 
-<div id="776e61cb-908a-45d6-8bcf-979a00807d58"></div>
+<div id="bc268c45-e00e-4f86-8ac2-78cba7bca022"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#776e61cb-908a-45d6-8bcf-979a00807d58');
+var element = $('#bc268c45-e00e-4f86-8ac2-78cba7bca022');
 
             setTimeout(function() {
-                var nbb_cell_id = 34;
-                var nbb_unformatted_code = "result.bytes_per_second";
-                var nbb_formatted_code = "result.bytes_per_second";
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "# dont_test\n\nresult.bytes_per_second";
+                var nbb_formatted_code = "# dont_test\n\nresult.bytes_per_second";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -464,200 +461,7 @@ var element = $('#776e61cb-908a-45d6-8bcf-979a00807d58');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">run_epoch</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>measure
-CPU times: user 38.6 ms, sys: 11.3 ms, total: 49.9 ms
-Wall time: 9.41 s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="3d1694e3-3c8a-478a-9130-6fa5c0515f1c"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#3d1694e3-3c8a-478a-9130-6fa5c0515f1c');
-
-            setTimeout(function() {
-                var nbb_cell_id = 20;
-                var nbb_unformatted_code = "%%time\nresult = run_epoch(10 ** 7)";
-                var nbb_formatted_code = "%%time\nresult = run_epoch(10 ** 7)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">run_epoch</span><span class="p">(</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>measure
-CPU times: user 28.8 ms, sys: 10.4 ms, total: 39.1 ms
-Wall time: 9.7 s
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="efa73772-a255-4e7e-a229-c53c0efe563c"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#efa73772-a255-4e7e-a229-c53c0efe563c');
-
-            setTimeout(function() {
-                var nbb_cell_id = 21;
-                var nbb_unformatted_code = "%%time\nresult = run_epoch(10 ** 6)";
-                var nbb_formatted_code = "%%time\nresult = run_epoch(10 ** 6)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">bytes_per_second</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>56193971.8565544</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="6d1cf609-1ff0-433c-94de-97b9b2473f9e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#6d1cf609-1ff0-433c-94de-97b9b2473f9e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 22;
-                var nbb_unformatted_code = "result.bytes_per_second";
-                var nbb_formatted_code = "result.bytes_per_second";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
-
-<span class="n">byte</span> <span class="o">=</span> <span class="mi">8</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="n">gigabit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
 <span class="n">bandwidth</span> <span class="o">=</span> <span class="n">gigabit</span> <span class="o">/</span> <span class="n">byte</span>
 <span class="n">duration</span> <span class="o">=</span> <span class="mi">3</span>
@@ -668,7 +472,7 @@ var element = $('#6d1cf609-1ff0-433c-94de-97b9b2473f9e');
 <span class="n">control_base</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:8001/&quot;</span>
 <span class="n">control_epochs</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">control_base</span><span class="p">,</span> <span class="s2">&quot;epochs/&quot;</span><span class="p">)</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">control_epochs</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">dict_without_file_creator</span><span class="p">())</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">httpx</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">control_epochs</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">dict</span><span class="p">())</span>
 
 <span class="k">for</span> <span class="n">bfile</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;files&quot;</span><span class="p">]:</span>
     <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">bfile</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="o">!=</span> <span class="s2">&quot;creator&quot;</span><span class="p">}</span>
@@ -707,8 +511,6 @@ var element = $('#6d1cf609-1ff0-433c-94de-97b9b2473f9e');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>measure
-CPU times: user 31.8 ms, sys: 10.2 ms, total: 42.1 ms
-Wall time: 9.3 s
 </pre>
 </div>
 </div>
@@ -718,7 +520,7 @@ Wall time: 9.3 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>Result(server=&#39;fastAPI/uvicorn&#39;, client=&#39;httpx&#39;, file_size=10000000, elapsed=6.217392495, complete_size=375000000)</pre>
+<pre>Result(server=&#39;fastAPI/uvicorn&#39;, client=&#39;httpx&#39;, file_size=10000000, elapsed=6.916868163999999, complete_size=375000000)</pre>
 </div>
 
 </div>
@@ -728,15 +530,15 @@ Wall time: 9.3 s
 
 
 
-<div id="a3329ee9-fc83-4bba-b3d8-7c5112873ace"></div>
+<div id="03f32652-0f5d-4dcc-a744-6fb3d8ab195b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a3329ee9-fc83-4bba-b3d8-7c5112873ace');
+var element = $('#03f32652-0f5d-4dcc-a744-6fb3d8ab195b');
 
             setTimeout(function() {
-                var nbb_cell_id = 17;
-                var nbb_unformatted_code = "%%time\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\nepoch = Epoch(file_size=file_size, duration=duration)\n\ncontrol_base = \"http://localhost:8001/\"\ncontrol_epochs = urljoin(control_base, \"epochs/\")\n\nr = httpx.post(control_epochs, json=epoch.dict_without_file_creator())\n\nfor bfile in r.json()[\"files\"]:\n    kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n    epoch.files.append(BenchmarkFile(**kwargs))\n\n\nserver = FastAPIUvicornServer()\ncontrol_servers = urljoin(control_base, \"servers/\")\nr = httpx.post(control_servers, json=server.dict())\nserver = FastAPIUvicornServer(**r.json())\n\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\n\nclient = HttpxClient(name=\"httpx\")\n\n\nresult = Result(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nresult.elapsed = client.measure(epoch)\nresult";
-                var nbb_formatted_code = "%%time\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\nepoch = Epoch(file_size=file_size, duration=duration)\n\ncontrol_base = \"http://localhost:8001/\"\ncontrol_epochs = urljoin(control_base, \"epochs/\")\n\nr = httpx.post(control_epochs, json=epoch.dict_without_file_creator())\n\nfor bfile in r.json()[\"files\"]:\n    kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n    epoch.files.append(BenchmarkFile(**kwargs))\n\n\nserver = FastAPIUvicornServer()\ncontrol_servers = urljoin(control_base, \"servers/\")\nr = httpx.post(control_servers, json=server.dict())\nserver = FastAPIUvicornServer(**r.json())\n\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\n\nclient = HttpxClient(name=\"httpx\")\n\n\nresult = Result(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nresult.elapsed = client.measure(epoch)\nresult";
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\nepoch = Epoch(file_size=file_size, duration=duration)\n\ncontrol_base = \"http://localhost:8001/\"\ncontrol_epochs = urljoin(control_base, \"epochs/\")\n\nr = httpx.post(control_epochs, json=epoch.dict())\n\nfor bfile in r.json()[\"files\"]:\n    kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n    epoch.files.append(BenchmarkFile(**kwargs))\n\n\nserver = FastAPIUvicornServer()\ncontrol_servers = urljoin(control_base, \"servers/\")\nr = httpx.post(control_servers, json=server.dict())\nserver = FastAPIUvicornServer(**r.json())\n\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\n\nclient = HttpxClient(name=\"httpx\")\n\n\nresult = Result(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nresult.elapsed = client.measure(epoch)\nresult";
+                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\nepoch = Epoch(file_size=file_size, duration=duration)\n\ncontrol_base = \"http://localhost:8001/\"\ncontrol_epochs = urljoin(control_base, \"epochs/\")\n\nr = httpx.post(control_epochs, json=epoch.dict())\n\nfor bfile in r.json()[\"files\"]:\n    kwargs = {k: v for k, v in bfile.items() if k != \"creator\"}\n    epoch.files.append(BenchmarkFile(**kwargs))\n\n\nserver = FastAPIUvicornServer()\ncontrol_servers = urljoin(control_base, \"servers/\")\nr = httpx.post(control_servers, json=server.dict())\nserver = FastAPIUvicornServer(**r.json())\n\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\n\nclient = HttpxClient(name=\"httpx\")\n\n\nresult = Result(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nresult.elapsed = client.measure(epoch)\nresult";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -781,7 +583,7 @@ var element = $('#a3329ee9-fc83-4bba-b3d8-7c5112873ace');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>60314673.7642144</pre>
+<pre>54215288.06226934</pre>
 </div>
 
 </div>
@@ -791,15 +593,15 @@ var element = $('#a3329ee9-fc83-4bba-b3d8-7c5112873ace');
 
 
 
-<div id="4278f836-ffd1-47cb-a8b8-63dfa4550264"></div>
+<div id="4ee1fd24-b60a-4b17-90ee-0f883c1a33d6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4278f836-ffd1-47cb-a8b8-63dfa4550264');
+var element = $('#4ee1fd24-b60a-4b17-90ee-0f883c1a33d6');
 
             setTimeout(function() {
-                var nbb_cell_id = 18;
-                var nbb_unformatted_code = "result.bytes_per_second";
-                var nbb_formatted_code = "result.bytes_per_second";
+                var nbb_cell_id = 16;
+                var nbb_unformatted_code = "# dont_test\n\nresult.bytes_per_second";
+                var nbb_formatted_code = "# dont_test\n\nresult.bytes_per_second";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -875,18 +677,35 @@ var element = $('#4278f836-ffd1-47cb-a8b8-63dfa4550264');
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-17-b602bf88e199&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      6</span> duration <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">3</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> file_size <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> <span class="ansi-cyan-fg">7</span>
+<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg"> </span>file_creator <span class="ansi-blue-fg">=</span> FilesystemCreator<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      9</span> 
+<span class="ansi-green-intense-fg ansi-bold">     10</span> 
+
+<span class="ansi-red-fg">NameError</span>: name &#39;FilesystemCreator&#39; is not defined</pre>
+</div>
+</div>
+
+<div class="output_area">
 
 
 
-<div id="4f0f997f-5731-4442-815d-d5eb78eee982"></div>
+
+<div id="79a5810e-9c53-428e-a259-4efb1c2a3ac4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4f0f997f-5731-4442-815d-d5eb78eee982');
+var element = $('#79a5810e-9c53-428e-a259-4efb1c2a3ac4');
 
             setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\nfile_creator = FilesystemCreator()\n\n\n# server = DjangoGunicornWSGIServer()\nserver = FastAPIUvicornServer()\n# client = AioHttpClient(name=\"aiohttp\")\nclient = HttpxClient(name=\"httpx\")\n# repository = SqliteRepository.build_repository(\"foo.db\")\n\nepoch = Epoch(file_size=file_size, duration=duration, file_creator=file_creator)\n\nepoch.create_files()\n\nresult = BenchmarkResult(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nif not server.started:\n    server.start\n\n# result.elapsed = client.measure(epoch)";
-                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\nfile_creator = FilesystemCreator()\n\n\n# server = DjangoGunicornWSGIServer()\nserver = FastAPIUvicornServer()\n# client = AioHttpClient(name=\"aiohttp\")\nclient = HttpxClient(name=\"httpx\")\n# repository = SqliteRepository.build_repository(\"foo.db\")\n\nepoch = Epoch(file_size=file_size, duration=duration, file_creator=file_creator)\n\nepoch.create_files()\n\nresult = BenchmarkResult(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nif not server.started:\n    server.start\n\n# result.elapsed = client.measure(epoch)";
+                var nbb_cell_id = 17;
+                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\nfile_creator = FilesystemCreator()\n\n\n# server = DjangoGunicornWSGIServer()\nserver = FastAPIUvicornServer()\n# client = AioHttpClient(name=\"aiohttp\")\nclient = HttpxClient(name=\"httpx\")\n# repository = SqliteRepository.build_repository(\"foo.db\")\n\nepoch = Epoch(file_size=file_size, duration=duration, file_creator=file_creator)\n\nepoch.create_files()\n\nresult = BenchmarkResult(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nif not server.started:\n    server.start\n\nresult.elapsed = client.measure(epoch)";
+                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\nfile_creator = FilesystemCreator()\n\n\n# server = DjangoGunicornWSGIServer()\nserver = FastAPIUvicornServer()\n# client = AioHttpClient(name=\"aiohttp\")\nclient = HttpxClient(name=\"httpx\")\n# repository = SqliteRepository.build_repository(\"foo.db\")\n\nepoch = Epoch(file_size=file_size, duration=duration, file_creator=file_creator)\n\nepoch.create_files()\n\nresult = BenchmarkResult(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nif not server.started:\n    server.start\n\nresult.elapsed = client.measure(epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
