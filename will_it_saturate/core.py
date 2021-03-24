@@ -9,11 +9,13 @@ __all__ = ['Host', 'calculate_checksum', 'checksum_for_path', 'create_via_filesy
 import os
 import math
 import json
+import httpx
 import hashlib
 
 import pandas as pd
 
 from pathlib import Path
+from urllib.parse import urljoin
 from typing import Optional, Callable, Any
 
 from pydantic import BaseModel
@@ -24,6 +26,29 @@ from pydantic import BaseModel
 class Host(BaseModel):
     name: str
     control_port: int = 8001
+
+    @property
+    def control_url(self):
+        return f"http://{self.name}:{self.control_port}/"
+
+    @property
+    def machine(self):
+        url = urljoin(self.control_url, "machine")
+        r = httpx.get(url)
+        r.raise_for_status()
+        return r.json()
+
+    def get_or_create_files(self, epoch):
+        url = urljoin(self.control_url, "epochs")
+        r = httpx.post(url, json=epoch.dict())
+        r.raise_for_status()
+        return [BenchmarkFile(**file) for file in r.json()["files"]]
+
+    def get_or_create_server(self, server):
+        url = urljoin(self.control_url, "servers")
+        r = httpx.post(url, json=server.dict())
+        r.raise_for_status()
+        return server.__class__(**r.json())
 
 # Cell
 

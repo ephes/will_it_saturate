@@ -9,7 +9,7 @@
     "FastAPIUvicornServer": "local_servers.html",
     "Caveats": "benchmark_clients.html",
     "Usage": "persistence.html",
-    "Title": "run_benchmark.html",
+    "Title": "explore_host.html",
     "Remote Benchmark": "benchmark_without_benchmark.html"
   }
 }

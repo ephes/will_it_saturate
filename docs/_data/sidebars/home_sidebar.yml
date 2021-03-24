@@ -35,7 +35,7 @@ entries:
       url: persistence.html
     - output: web,pdf
       title: Title
-      url: run_benchmark.html
+      url: explore_host.html
     - output: web,pdf
       title: Remote Benchmark
       url: benchmark_without_benchmark.html
