@@ -11,9 +11,11 @@ from pydantic import BaseModel
 
 from fastapi import FastAPI
 
-from ..core import Epoch, BaseServer, get_machine_id
+from ..epochs import Epoch
+from ..hosts import get_machine_id
 
-from ..server import (
+from ..servers import (
+    BaseServer,
     FastAPIUvicornServer,
     NginxDockerServer,
     DjangoGunicornWSGIServer,

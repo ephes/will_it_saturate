@@ -10,8 +10,6 @@ from typing import Optional
 from pydantic import BaseModel
 
 from .epochs import Epoch
-from .clients import BaseClient
-from .servers import BaseServer
 
 # Cell
 

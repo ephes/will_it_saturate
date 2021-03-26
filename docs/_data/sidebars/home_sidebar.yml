@@ -22,29 +22,11 @@ entries:
       title: File
       url: file.html
     - output: web,pdf
-      title: Nginx Docker Server
-      url: docker_servers.html
-    - output: web,pdf
-      title: FastAPIUvicornServer
-      url: local_servers.html
-    - output: web,pdf
-      title: Servers
-      url: servers.html
-    - output: web,pdf
-      title: Clients
-      url: clients.html
-    - output: web,pdf
       title: module Epochs
       url: epochs.html
     - output: web,pdf
-      title: Title
-      url: run_benchmark.html
-    - output: web,pdf
       title: module Results
       url: results.html
-    - output: web,pdf
-      title: module Repositories
-      url: repositories.html
     - output: web,pdf
       title: module Core
       url: core.html
@@ -55,14 +37,32 @@ entries:
       title: Control Client
       url: control_client.html
     - output: web,pdf
+      title: Servers
+      url: servers.html
+    - output: web,pdf
+      title: FastAPIUvicornServer
+      url: local_servers.html
+    - output: web,pdf
+      title: Nginx Docker Server
+      url: docker_servers.html
+    - output: web,pdf
+      title: Clients
+      url: clients.html
+    - output: web,pdf
       title: Caveats
       url: benchmark_clients.html
     - output: web,pdf
+      title: module Repositories
+      url: repositories.html
+    - output: web,pdf
       title: Usage
-      url: persistence.html
+      url: sqlite_repository.html
     - output: web,pdf
       title: Remote Benchmark
       url: benchmark_without_benchmark.html
+    - output: web,pdf
+      title: Title
+      url: run_benchmark.html
     output: web
     title: will_it_saturate
   output: web
