@@ -10,8 +10,8 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: module Core
-      url: core.html
+      title: Host
+      url: host.html
     - output: web,pdf
       title: Django Views
       url: django_views.html
@@ -19,8 +19,8 @@ entries:
       title: fastAPI Application Views
       url: fastapi_views.html
     - output: web,pdf
-      title: fastAPI Control Server
-      url: control_server.html
+      title: File
+      url: file.html
     - output: web,pdf
       title: Nginx Docker Server
       url: docker_servers.html
@@ -28,14 +28,38 @@ entries:
       title: FastAPIUvicornServer
       url: local_servers.html
     - output: web,pdf
+      title: Servers
+      url: servers.html
+    - output: web,pdf
+      title: Clients
+      url: clients.html
+    - output: web,pdf
+      title: module Epochs
+      url: epochs.html
+    - output: web,pdf
+      title: Title
+      url: run_benchmark.html
+    - output: web,pdf
+      title: module Results
+      url: results.html
+    - output: web,pdf
+      title: module Repositories
+      url: repositories.html
+    - output: web,pdf
+      title: module Core
+      url: core.html
+    - output: web,pdf
+      title: fastAPI Control Server
+      url: control_server.html
+    - output: web,pdf
+      title: Control Client
+      url: control_client.html
+    - output: web,pdf
       title: Caveats
       url: benchmark_clients.html
     - output: web,pdf
       title: Usage
       url: persistence.html
-    - output: web,pdf
-      title: Title
-      url: explore_host.html
     - output: web,pdf
       title: Remote Benchmark
       url: benchmark_without_benchmark.html

@@ -1,15 +1,23 @@
 {
   "will_it_saturate": {
     "Overview": "/",
-    "module Core": "core.html",
+    "Host": "host.html",
     "Django Views": "django_views.html",
     "fastAPI Application Views": "fastapi_views.html",
-    "fastAPI Control Server": "control_server.html",
+    "File": "file.html",
     "Nginx Docker Server": "docker_servers.html",
     "FastAPIUvicornServer": "local_servers.html",
+    "Servers": "servers.html",
+    "Clients": "clients.html",
+    "module Epochs": "epochs.html",
+    "Title": "run_benchmark.html",
+    "module Results": "results.html",
+    "module Repositories": "repositories.html",
+    "module Core": "core.html",
+    "fastAPI Control Server": "control_server.html",
+    "Control Client": "control_client.html",
     "Caveats": "benchmark_clients.html",
     "Usage": "persistence.html",
-    "Title": "explore_host.html",
     "Remote Benchmark": "benchmark_without_benchmark.html"
   }
 }

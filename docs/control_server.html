@@ -48,16 +48,25 @@ nb_path: "02_control_server.ipynb"
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The nb_black extension is already loaded. To reload it, use:
+  %reload_ext nb_black
+</pre>
+</div>
+</div>
+
+<div class="output_area">
 
 
 
-<div id="df90b50c-9cc5-4ebb-90d7-3db9af6951e2"></div>
+
+<div id="8566eeda-84dc-491a-bd6f-a987b5c8f225"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#df90b50c-9cc5-4ebb-90d7-3db9af6951e2');
+var element = $('#8566eeda-84dc-491a-bd6f-a987b5c8f225');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
+                var nbb_cell_id = 43;
                 var nbb_unformatted_code = "%load_ext nb_black";
                 var nbb_formatted_code = "%load_ext nb_black";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -106,13 +115,13 @@ var element = $('#df90b50c-9cc5-4ebb-90d7-3db9af6951e2');
 
 
 
-<div id="32cde721-686f-43c5-91dc-78a88589cbd6"></div>
+<div id="803453cf-88c0-4bc5-91a5-edfcb00b0f0b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#32cde721-686f-43c5-91dc-78a88589cbd6');
+var element = $('#803453cf-88c0-4bc5-91a5-edfcb00b0f0b');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 44;
                 var nbb_unformatted_code = "import httpx\n\nfrom will_it_saturate.core import Epoch";
                 var nbb_formatted_code = "import httpx\n\nfrom will_it_saturate.core import Epoch";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -302,13 +311,13 @@ var element = $('#32cde721-686f-43c5-91dc-78a88589cbd6');
 
 
 
-<div id="62cd799d-7e54-452f-bc90-039d6ef44a4b"></div>
+<div id="c4d501ec-5aca-407c-9f14-cdbd35f24e47"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#62cd799d-7e54-452f-bc90-039d6ef44a4b');
+var element = $('#c4d501ec-5aca-407c-9f14-cdbd35f24e47');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 51;
                 var nbb_unformatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\nepoch = Epoch(\n    file_size=file_size,\n    duration=3,\n    bandwith=bandwidth,\n)";
                 var nbb_formatted_code = "byte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\nepoch = Epoch(\n    file_size=file_size,\n    duration=3,\n    bandwith=bandwidth,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -366,13 +375,13 @@ var element = $('#62cd799d-7e54-452f-bc90-039d6ef44a4b');
 
 
 
-<div id="841316b3-6c9b-4693-bf03-85a0dd882088"></div>
+<div id="a7848429-5235-4727-8d2a-6fd271104aea"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#841316b3-6c9b-4693-bf03-85a0dd882088');
+var element = $('#a7848429-5235-4727-8d2a-6fd271104aea');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
+                var nbb_cell_id = 52;
                 var nbb_unformatted_code = "url = \"http://localhost:8001/epochs/\"\n\nr = httpx.post(url, json=epoch.dict())\nprint(r.status_code, r.json())";
                 var nbb_formatted_code = "url = \"http://localhost:8001/epochs/\"\n\nr = httpx.post(url, json=epoch.dict())\nprint(r.status_code, r.json())";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -426,8 +435,10 @@ var element = $('#841316b3-6c9b-4693-bf03-85a0dd882088');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Converted 00_core.ipynb.
+Converted 00_host.ipynb.
 Converted 01_django_views.ipynb.
 Converted 01_fastapi_views.ipynb.
+Converted 02_control_client.ipynb.
 Converted 02_control_server.ipynb.
 Converted 02_docker_servers.ipynb.
 Converted 02_local_servers.ipynb.
@@ -435,8 +446,9 @@ Converted 03_benchmark_clients.ipynb.
 Converted 04_persistence.ipynb.
 Converted 05_run_benchmark.ipynb.
 Converted 06_benchmark_without_benchmark.ipynb.
-Converted 07_explore_host.ipynb.
+Converted Untitled.ipynb.
 Converted index.ipynb.
+Converted spacy_test.ipynb.
 </pre>
 </div>
 </div>
@@ -446,13 +458,13 @@ Converted index.ipynb.
 
 
 
-<div id="6fb6a965-c21d-4fb9-ac6b-da2589757155"></div>
+<div id="f036447c-c79e-468a-ad92-5a58257a3bb8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6fb6a965-c21d-4fb9-ac6b-da2589757155');
+var element = $('#f036447c-c79e-468a-ad92-5a58257a3bb8');
 
             setTimeout(function() {
-                var nbb_cell_id = 21;
+                var nbb_cell_id = 53;
                 var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();
