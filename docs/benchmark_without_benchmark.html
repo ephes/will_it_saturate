@@ -51,10 +51,10 @@ nb_path: "90_benchmark_without_benchmark.ipynb"
 
 
 
-<div id="4c845f61-e73e-48f3-aee1-3596003bfdfa"></div>
+<div id="082a17af-b4c2-4038-be67-467e345a0a4a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4c845f61-e73e-48f3-aee1-3596003bfdfa');
+var element = $('#082a17af-b4c2-4038-be67-467e345a0a4a');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -120,13 +120,13 @@ var element = $('#4c845f61-e73e-48f3-aee1-3596003bfdfa');
 
 
 
-<div id="fd62d27b-18ce-4b85-8f5d-1659ea2228ee"></div>
+<div id="5788e1a8-96da-4b5f-bca6-f611bb90191a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fd62d27b-18ce-4b85-8f5d-1659ea2228ee');
+var element = $('#5788e1a8-96da-4b5f-bca6-f611bb90191a');
 
             setTimeout(function() {
-                var nbb_cell_id = 3;
+                var nbb_cell_id = 2;
                 var nbb_unformatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.hosts import Host\nfrom will_it_saturate.epochs import Epoch\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import HttpxClient, AioHttpClient, WrkClient";
                 var nbb_formatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.hosts import Host\nfrom will_it_saturate.epochs import Epoch\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import HttpxClient, AioHttpClient, WrkClient";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -202,13 +202,13 @@ var element = $('#fd62d27b-18ce-4b85-8f5d-1659ea2228ee');
 
 
 
-<div id="f0d12750-86bd-4303-97aa-ffe91e25951f"></div>
+<div id="807dc99c-d3b9-4bef-bf3f-a7cce8dac64c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f0d12750-86bd-4303-97aa-ffe91e25951f');
+var element = $('#807dc99c-d3b9-4bef-bf3f-a7cce8dac64c');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 3;
                 var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\n\ncontrol_host = Host(name=\"localhost\", port=8001)\ncontrol_client = ControlClient(host=control_host)\n\nserver = control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\nbenchmark_client = HttpxClient(name=\"httpx\")\n\nfiles = control_client.get_or_create_files(epoch)\nprint(files[:10])\n\nepoch.urls = [server.file_to_url(file) for file in files]\n\nresult = Result(\n    server=server.name,\n    client=benchmark_client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\n\ncontrol_host = Host(name=\"localhost\", port=8001)\ncontrol_client = ControlClient(host=control_host)\n\nserver = control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\nbenchmark_client = HttpxClient(name=\"httpx\")\n\nfiles = control_client.get_or_create_files(epoch)\nprint(files[:10])\n\nepoch.urls = [server.file_to_url(file) for file in files]\n\nresult = Result(\n    server=server.name,\n    client=benchmark_client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -260,69 +260,16 @@ var element = $('#f0d12750-86bd-4303-97aa-ffe91e25951f');
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">RemoteTraceback</span>                           Traceback (most recent call last)
-<span class="ansi-red-fg">RemoteTraceback</span>: 
-&#34;&#34;&#34;
-Traceback (most recent call last):
-  File &#34;/Users/wersdoerfer/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py&#34;, line 125, in worker
-    result = (True, func(*args, **kwds))
-  File &#34;/Users/wersdoerfer/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py&#34;, line 48, in mapstar
-    return list(map(*args))
-  File &#34;/Users/wersdoerfer/projects/will_it_saturate/will_it_saturate/client.py&#34;, line 50, in measure_in_new_process
-    self.verify_checksums(epoch, responses)
-  File &#34;/Users/wersdoerfer/projects/will_it_saturate/will_it_saturate/clients.py&#34;, line 19, in verify_checksums
-    checksum_lookup[url] = calculate_checksum(response.content)
-NameError: name &#39;calculate_checksum&#39; is not defined
-&#34;&#34;&#34;
-
-The above exception was the direct cause of the following exception:
-
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-10-45ebf6aa8fc8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># dont_test</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>result<span class="ansi-blue-fg">.</span>elapsed <span class="ansi-blue-fg">=</span> benchmark_client<span class="ansi-blue-fg">.</span>measure<span class="ansi-blue-fg">(</span>epoch<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/client.py</span> in <span class="ansi-cyan-fg">measure</span><span class="ansi-blue-fg">(self, epoch)</span>
-<span class="ansi-green-intense-fg ansi-bold">     54</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;measure&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     55</span>         <span class="ansi-green-fg">with</span> Pool<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> p<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 56</span><span class="ansi-red-fg">             </span><span class="ansi-blue-fg">[</span>result<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> p<span class="ansi-blue-fg">.</span>map<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>measure_in_new_process<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>epoch<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     57</span>         <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">     58</span> 
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py</span> in <span class="ansi-cyan-fg">map</span><span class="ansi-blue-fg">(self, func, iterable, chunksize)</span>
-<span class="ansi-green-intense-fg ansi-bold">    362</span>         <span class="ansi-green-fg">in</span> a list that <span class="ansi-green-fg">is</span> returned<span class="ansi-blue-fg">.</span>
-<span class="ansi-green-intense-fg ansi-bold">    363</span>         &#39;&#39;&#39;
-<span class="ansi-green-fg">--&gt; 364</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_map_async<span class="ansi-blue-fg">(</span>func<span class="ansi-blue-fg">,</span> iterable<span class="ansi-blue-fg">,</span> mapstar<span class="ansi-blue-fg">,</span> chunksize<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    365</span> 
-<span class="ansi-green-intense-fg ansi-bold">    366</span>     <span class="ansi-green-fg">def</span> starmap<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> func<span class="ansi-blue-fg">,</span> iterable<span class="ansi-blue-fg">,</span> chunksize<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-fg">(self, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    769</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_value
-<span class="ansi-green-intense-fg ansi-bold">    770</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 771</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> self<span class="ansi-blue-fg">.</span>_value
-<span class="ansi-green-intense-fg ansi-bold">    772</span> 
-<span class="ansi-green-intense-fg ansi-bold">    773</span>     <span class="ansi-green-fg">def</span> _set<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> i<span class="ansi-blue-fg">,</span> obj<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;calculate_checksum&#39; is not defined</pre>
-</div>
-</div>
-
-<div class="output_area">
 
 
 
-
-<div id="2dce7373-f5c7-4407-97a7-6f093e5356cd"></div>
+<div id="db5f4507-220b-4702-9d0f-677c874b86de"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2dce7373-f5c7-4407-97a7-6f093e5356cd');
+var element = $('#db5f4507-220b-4702-9d0f-677c874b86de');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "# dont_test\n\nresult.elapsed = benchmark_client.measure(epoch)";
                 var nbb_formatted_code = "# dont_test\n\nresult.elapsed = benchmark_client.measure(epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -369,7 +316,7 @@ var element = $('#2dce7373-f5c7-4407-97a7-6f093e5356cd');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>51339233.66119223</pre>
+<pre>52186936.92073767</pre>
 </div>
 
 </div>
@@ -379,15 +326,15 @@ var element = $('#2dce7373-f5c7-4407-97a7-6f093e5356cd');
 
 
 
-<div id="22778e27-0303-45da-8da5-79703e6f300b"></div>
+<div id="47355985-f7d3-4ead-8128-11ab6f37ee7b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#22778e27-0303-45da-8da5-79703e6f300b');
+var element = $('#47355985-f7d3-4ead-8128-11ab6f37ee7b');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
-                var nbb_unformatted_code = "result.bytes_per_second";
-                var nbb_formatted_code = "result.bytes_per_second";
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# dont_test\n\nresult.bytes_per_second";
+                var nbb_formatted_code = "# dont_test\n\nresult.bytes_per_second";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -455,10 +402,10 @@ var element = $('#22778e27-0303-45da-8da5-79703e6f300b');
 
 
 
-<div id="cf779e6b-885a-4e4b-975c-5ea8fbb5f63f"></div>
+<div id="4e63aa52-c5c2-41f1-8239-db7903471bcc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#cf779e6b-885a-4e4b-975c-5ea8fbb5f63f');
+var element = $('#4e63aa52-c5c2-41f1-8239-db7903471bcc');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -509,10 +456,10 @@ var element = $('#cf779e6b-885a-4e4b-975c-5ea8fbb5f63f');
 
 
 
-<div id="43b3338a-0195-4bc9-9738-23938a812657"></div>
+<div id="b8cab324-f913-465c-901c-626f026ae5c1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#43b3338a-0195-4bc9-9738-23938a812657');
+var element = $('#b8cab324-f913-465c-901c-626f026ae5c1');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -563,10 +510,10 @@ var element = $('#43b3338a-0195-4bc9-9738-23938a812657');
 
 
 
-<div id="dff270b3-dcd3-4868-9c1c-c46848144973"></div>
+<div id="27cab943-4601-4e66-b22a-03b796420d0f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dff270b3-dcd3-4868-9c1c-c46848144973');
+var element = $('#27cab943-4601-4e66-b22a-03b796420d0f');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -624,10 +571,10 @@ var element = $('#dff270b3-dcd3-4868-9c1c-c46848144973');
 
 
 
-<div id="251bd03f-3879-4007-9e8d-6562bb62e17e"></div>
+<div id="13a394eb-54ed-4b75-9e72-e997c451b24b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#251bd03f-3879-4007-9e8d-6562bb62e17e');
+var element = $('#13a394eb-54ed-4b75-9e72-e997c451b24b');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -687,10 +634,10 @@ var element = $('#251bd03f-3879-4007-9e8d-6562bb62e17e');
 
 
 
-<div id="6addb7b2-cce3-4230-98ed-4fea5737dd99"></div>
+<div id="f9a11b44-93f1-4f8a-be91-ffcf7ee0fee1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6addb7b2-cce3-4230-98ed-4fea5737dd99');
+var element = $('#f9a11b44-93f1-4f8a-be91-ffcf7ee0fee1');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -794,10 +741,10 @@ var element = $('#6addb7b2-cce3-4230-98ed-4fea5737dd99');
 
 
 
-<div id="ccdc049a-0e8f-44ef-9ccd-832b3dd28b51"></div>
+<div id="dbbb2729-4850-490e-92c5-55640b4d3eb7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ccdc049a-0e8f-44ef-9ccd-832b3dd28b51');
+var element = $('#dbbb2729-4850-490e-92c5-55640b4d3eb7');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -857,10 +804,10 @@ var element = $('#ccdc049a-0e8f-44ef-9ccd-832b3dd28b51');
 
 
 
-<div id="5a8e858a-13fd-48f0-a868-7fb3e059af92"></div>
+<div id="1daa3a6a-374e-4aee-8dd3-79c0270b7966"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5a8e858a-13fd-48f0-a868-7fb3e059af92');
+var element = $('#1daa3a6a-374e-4aee-8dd3-79c0270b7966');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -1008,10 +955,10 @@ The above exception was the direct cause of the following exception:
 
 
 
-<div id="9791c1da-92d7-4d08-8295-16bc3983683d"></div>
+<div id="4bd56cbc-2b1a-4cc9-bdb7-ff8b5e755e95"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9791c1da-92d7-4d08-8295-16bc3983683d');
+var element = $('#4bd56cbc-2b1a-4cc9-bdb7-ff8b5e755e95');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;
