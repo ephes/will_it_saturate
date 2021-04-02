@@ -37,6 +37,9 @@ entries:
       title: Control Client
       url: control_client.html
     - output: web,pdf
+      title: Control Server Command Line Interface
+      url: control_cli.html
+    - output: web,pdf
       title: Servers
       url: servers.html
     - output: web,pdf

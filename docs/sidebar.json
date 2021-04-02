@@ -10,6 +10,7 @@
     "module Core": "core.html",
     "fastAPI Control Server": "control_server.html",
     "Control Client": "control_client.html",
+    "Control Server Command Line Interface": "control_cli.html",
     "Servers": "servers.html",
     "FastAPIUvicornServer": "local_servers.html",
     "Nginx Docker Server": "docker_servers.html",
