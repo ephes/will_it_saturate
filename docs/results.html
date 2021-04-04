@@ -51,10 +51,10 @@ nb_path: "06_results.ipynb"
 
 
 
-<div id="995e3113-bc1f-463f-b17f-1538ea0617bf"></div>
+<div id="1681d9b6-741e-4d62-9fc2-1c30c31aad91"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#995e3113-bc1f-463f-b17f-1538ea0617bf');
+var element = $('#1681d9b6-741e-4d62-9fc2-1c30c31aad91');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -106,7 +106,7 @@ var element = $('#995e3113-bc1f-463f-b17f-1538ea0617bf');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="convert_size" class="doc_header"><code>convert_size</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/results.py#L17" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>convert_size</code>(<strong><code>size_bytes</code></strong>)</p>
+<h4 id="convert_size" class="doc_header"><code>convert_size</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/results.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>convert_size</code>(<strong><code>size_bytes</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -130,7 +130,7 @@ var element = $('#995e3113-bc1f-463f-b17f-1538ea0617bf');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Result" class="doc_header"><code>class</code> <code>Result</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/results.py#L27" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Result</code>(<strong><code>server</code></strong>:<code>str</code>, <strong><code>client</code></strong>:<code>str</code>, <strong><code>file_size</code></strong>:<code>int</code>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>complete_size</code></strong>:<code>int</code>) :: <code>BaseModel</code></p>
+<h2 id="Result" class="doc_header"><code>class</code> <code>Result</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/results.py#L29" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Result</code>(<strong><code>server</code></strong>:<a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a>, <strong><code>client</code></strong>:<a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a>, <strong><code>file_size</code></strong>:<code>int</code>, <strong><code>elapsed</code></strong>:<code>float</code>=<em><code>None</code></em>, <strong><code>complete_size</code></strong>:<code>int</code>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -155,15 +155,15 @@ var element = $('#995e3113-bc1f-463f-b17f-1538ea0617bf');
 
 
 
-<div id="a43aed5a-cf6c-4341-96ad-f56e58bdd942"></div>
+<div id="3621938a-a3c3-4524-ac15-9ed3da055bea"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a43aed5a-cf6c-4341-96ad-f56e58bdd942');
+var element = $('#3621938a-a3c3-4524-ac15-9ed3da055bea');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass Result(BaseModel):\n    server: str\n    client: str\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server.name,\n            client=client.name,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n\n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }";
-                var nbb_formatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass Result(BaseModel):\n    server: str\n    client: str\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server.name,\n            client=client.name,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n\n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }";
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass Result(BaseModel):\n    server: BaseServer\n    client: BaseClient\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server,\n            client=client,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n\n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }";
+                var nbb_formatted_code = "# export\n\n\ndef convert_size(size_bytes):\n    if size_bytes == 0:\n        return \"0B\"\n    size_name = (\"B\", \"KB\", \"MB\", \"GB\", \"TB\", \"PB\", \"EB\", \"ZB\", \"YB\")\n    i = int(math.floor(math.log(size_bytes, 1024)))\n    p = math.pow(1024, i)\n    s = round(size_bytes / p, 2)\n    return s, size_name[i]\n\n\nclass Result(BaseModel):\n    server: BaseServer\n    client: BaseClient\n    file_size: int\n    elapsed: Optional[float] = None\n    complete_size: int\n\n    def __hash__(self):\n        return hash(self.json(exclude={\"elapsed\"}))\n\n    def __eq__(self, other):\n        self_dict, other_dict = self.dict(exclude={\"elapsed\"}), other.dict(\n            exclude={\"elapsed\"}\n        )\n        return self_dict == other_dict\n\n    @classmethod\n    def build_empty_result(cls, row, server, client):\n        return cls(\n            server=server,\n            client=client,\n            file_size=row.file_size,\n            complete_size=row.complete_size,\n        )\n\n    def make_readable(self, size_in_bytes):\n        size, unit = convert_size(size_in_bytes)\n        return f\"{size}{unit}\"\n\n    @property\n    def readable_file_size(self):\n        return self.make_readable(self.file_size)\n\n    @property\n    def bytes_per_second(self):\n        return self.complete_size / self.elapsed\n\n    @property\n    def readable_bytes_per_second(self):\n        return self.make_readable(self.bytes_per_second)\n\n    def dict_with_properties(self):\n        return {\n            **super().dict(),\n            \"file_size_h\": self.readable_file_size,\n            \"bytes_per_second\": self.bytes_per_second,\n            \"bytes_per_second_h\": self.readable_bytes_per_second,\n        }";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -202,8 +202,8 @@ var element = $('#a43aed5a-cf6c-4341-96ad-f56e58bdd942');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span>
 <span class="n">complete_size</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">file_size</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
-    <span class="n">server</span><span class="o">=</span><span class="s2">&quot;nginx&quot;</span><span class="p">,</span>
-    <span class="n">client</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">,</span>
+    <span class="n">server</span><span class="o">=</span><span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;nginx&quot;</span><span class="p">),</span>
+    <span class="n">client</span><span class="o">=</span><span class="n">BaseClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">),</span>
     <span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">,</span>
     <span class="n">elapsed</span><span class="o">=</span><span class="mf">3.0</span><span class="p">,</span>
     <span class="n">complete_size</span><span class="o">=</span><span class="n">complete_size</span><span class="p">,</span>
@@ -222,8 +222,8 @@ var element = $('#a43aed5a-cf6c-4341-96ad-f56e58bdd942');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#39;server&#39;: &#39;nginx&#39;, &#39;client&#39;: &#39;httpx&#39;, &#39;file_size&#39;: 1000000, &#39;elapsed&#39;: 3.0, &#39;complete_size&#39;: 100000000}
-{&#39;server&#39;: &#39;nginx&#39;, &#39;client&#39;: &#39;httpx&#39;, &#39;file_size&#39;: 1000000, &#39;elapsed&#39;: 3.0, &#39;complete_size&#39;: 100000000, &#39;file_size_h&#39;: &#39;976.56KB&#39;, &#39;bytes_per_second&#39;: 33333333.333333332, &#39;bytes_per_second_h&#39;: &#39;31.79MB&#39;}
+<pre>{&#39;server&#39;: {&#39;protocol&#39;: &#39;http&#39;, &#39;name&#39;: &#39;nginx&#39;, &#39;host&#39;: &#39;localhost&#39;, &#39;port&#39;: 8000}, &#39;client&#39;: {&#39;name&#39;: &#39;httpx&#39;}, &#39;file_size&#39;: 1000000, &#39;elapsed&#39;: 3.0, &#39;complete_size&#39;: 100000000}
+{&#39;server&#39;: {&#39;protocol&#39;: &#39;http&#39;, &#39;name&#39;: &#39;nginx&#39;, &#39;host&#39;: &#39;localhost&#39;, &#39;port&#39;: 8000}, &#39;client&#39;: {&#39;name&#39;: &#39;httpx&#39;}, &#39;file_size&#39;: 1000000, &#39;elapsed&#39;: 3.0, &#39;complete_size&#39;: 100000000, &#39;file_size_h&#39;: &#39;976.56KB&#39;, &#39;bytes_per_second&#39;: 33333333.333333332, &#39;bytes_per_second_h&#39;: &#39;31.79MB&#39;}
 </pre>
 </div>
 </div>
@@ -233,15 +233,15 @@ var element = $('#a43aed5a-cf6c-4341-96ad-f56e58bdd942');
 
 
 
-<div id="d49ace55-50f6-46e1-ada3-b16144ad6f84"></div>
+<div id="b325f1a5-445d-4774-b80b-1ccc5e122ff4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d49ace55-50f6-46e1-ada3-b16144ad6f84');
+var element = $('#b325f1a5-445d-4774-b80b-1ccc5e122ff4');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())\nprint(result.dict_with_properties())";
-                var nbb_formatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=\"nginx\",\n    client=\"httpx\",\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())\nprint(result.dict_with_properties())";
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=BaseServer(name=\"nginx\"),\n    client=BaseClient(name=\"httpx\"),\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())\nprint(result.dict_with_properties())";
+                var nbb_formatted_code = "file_size = 10 ** 6\ncomplete_size = 100 * file_size\nresult = Result(\n    server=BaseServer(name=\"nginx\"),\n    client=BaseClient(name=\"httpx\"),\n    file_size=file_size,\n    elapsed=3.0,\n    complete_size=complete_size,\n)\nprint(result.dict())\nprint(result.dict_with_properties())";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -293,13 +293,13 @@ var element = $('#d49ace55-50f6-46e1-ada3-b16144ad6f84');
 
 
 
-<div id="695010bc-c9be-4d25-9875-7565b30c0493"></div>
+<div id="8974bf3b-64bb-474f-b121-e25f9a995c15"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#695010bc-c9be-4d25-9875-7565b30c0493');
+var element = $('#8974bf3b-64bb-474f-b121-e25f9a995c15');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 11;
                 var nbb_unformatted_code = "assert result.readable_bytes_per_second == \"31.79MB\"\nassert \"file_size\" in result.json()";
                 var nbb_formatted_code = "assert result.readable_bytes_per_second == \"31.79MB\"\nassert \"file_size\" in result.json()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -335,7 +335,7 @@ var element = $('#695010bc-c9be-4d25-9875-7565b30c0493');
 <span class="kn">from</span> <span class="nn">will_it_saturate.servers</span> <span class="kn">import</span> <span class="n">BaseServer</span>
 
 
-<span class="k">class</span> <span class="nc">TestClient</span><span class="p">(</span><span class="n">BaseClient</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Client</span><span class="p">(</span><span class="n">BaseClient</span><span class="p">):</span>
     <span class="n">measured</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="k">def</span> <span class="nf">measure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">benchmark_row</span><span class="p">):</span>
@@ -344,7 +344,7 @@ var element = $('#695010bc-c9be-4d25-9875-7565b30c0493');
         <span class="k">return</span> <span class="mf">2.0</span>
 
 
-<span class="k">class</span> <span class="nc">TestServer</span><span class="p">(</span><span class="n">BaseServer</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">Server</span><span class="p">(</span><span class="n">BaseServer</span><span class="p">):</span>
     <span class="n">started</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">stopped</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
@@ -363,9 +363,11 @@ var element = $('#695010bc-c9be-4d25-9875-7565b30c0493');
 <span class="p">}</span>
 <span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">(</span><span class="o">**</span><span class="n">row_params</span><span class="p">)</span>
 
-<span class="n">test_result</span> <span class="o">=</span> <span class="n">Result</span><span class="o">.</span><span class="n">build_empty_result</span><span class="p">(</span>
-    <span class="n">epoch</span><span class="p">,</span> <span class="n">TestServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="p">),</span> <span class="n">TestClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;client&quot;</span><span class="p">)</span>
-<span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;client&quot;</span><span class="p">)</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="p">)</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="o">.</span><span class="n">build_empty_result</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">server</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -380,15 +382,15 @@ var element = $('#695010bc-c9be-4d25-9875-7565b30c0493');
 
 
 
-<div id="7028b124-d663-4073-8e0a-4976488ec159"></div>
+<div id="f0c65e75-4ace-40d4-af8a-2a86e79175c5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7028b124-d663-4073-8e0a-4976488ec159');
+var element = $('#f0c65e75-4ace-40d4-af8a-2a86e79175c5');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "from will_it_saturate.clients import BaseClient\nfrom will_it_saturate.servers import BaseServer\n\n\nclass TestClient(BaseClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass TestServer(BaseServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\nrow_params = {\n    \"file_size\": 10 ** 6 * 10,\n    \"duration\": 30,\n    \"bandwidth\": 10 ** 9 / 8,\n    \"file_creator_name\": \"dummy\",\n}\nepoch = Epoch(**row_params)\n\ntest_result = Result.build_empty_result(\n    epoch, TestServer(name=\"server\"), TestClient(name=\"client\")\n)";
-                var nbb_formatted_code = "from will_it_saturate.clients import BaseClient\nfrom will_it_saturate.servers import BaseServer\n\n\nclass TestClient(BaseClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass TestServer(BaseServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\nrow_params = {\n    \"file_size\": 10 ** 6 * 10,\n    \"duration\": 30,\n    \"bandwidth\": 10 ** 9 / 8,\n    \"file_creator_name\": \"dummy\",\n}\nepoch = Epoch(**row_params)\n\ntest_result = Result.build_empty_result(\n    epoch, TestServer(name=\"server\"), TestClient(name=\"client\")\n)";
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "from will_it_saturate.clients import BaseClient\nfrom will_it_saturate.servers import BaseServer\n\n\nclass Client(BaseClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass Server(BaseServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\nrow_params = {\n    \"file_size\": 10 ** 6 * 10,\n    \"duration\": 30,\n    \"bandwidth\": 10 ** 9 / 8,\n    \"file_creator_name\": \"dummy\",\n}\nepoch = Epoch(**row_params)\n\n\nclient = Client(name=\"client\")\nserver = Server(name=\"server\")\n\nresult = Result.build_empty_result(epoch, server, client)";
+                var nbb_formatted_code = "from will_it_saturate.clients import BaseClient\nfrom will_it_saturate.servers import BaseServer\n\n\nclass Client(BaseClient):\n    measured: bool = False\n\n    def measure(self, benchmark_row):\n        self.measured = True\n        print(\"measure_benchmark_row: \", benchmark_row)\n        return 2.0\n\n\nclass Server(BaseServer):\n    started: bool = False\n    stopped: bool = False\n\n    def start(self):\n        self.started = True\n\n    def stop(self):\n        self.stopped = True\n\n\nrow_params = {\n    \"file_size\": 10 ** 6 * 10,\n    \"duration\": 30,\n    \"bandwidth\": 10 ** 9 / 8,\n    \"file_creator_name\": \"dummy\",\n}\nepoch = Epoch(**row_params)\n\n\nclient = Client(name=\"client\")\nserver = Server(name=\"server\")\n\nresult = Result.build_empty_result(epoch, server, client)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -418,8 +420,8 @@ var element = $('#7028b124-d663-4073-8e0a-4976488ec159');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">test_result</span><span class="o">.</span><span class="n">server</span> <span class="o">==</span> <span class="s2">&quot;server&quot;</span>
-<span class="k">assert</span> <span class="n">test_result</span><span class="o">.</span><span class="n">client</span> <span class="o">==</span> <span class="s2">&quot;client&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">server</span> <span class="o">==</span> <span class="n">server</span>
+<span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">client</span> <span class="o">==</span> <span class="n">client</span>
 </pre></div>
 
     </div>
@@ -434,15 +436,15 @@ var element = $('#7028b124-d663-4073-8e0a-4976488ec159');
 
 
 
-<div id="fda2c5c9-3032-4988-bf7e-99550bfb8319"></div>
+<div id="2eda9ce9-c5be-4da2-95dc-4102878aca63"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fda2c5c9-3032-4988-bf7e-99550bfb8319');
+var element = $('#2eda9ce9-c5be-4da2-95dc-4102878aca63');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "assert test_result.server == \"server\"\nassert test_result.client == \"client\"";
-                var nbb_formatted_code = "assert test_result.server == \"server\"\nassert test_result.client == \"client\"";
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "assert result.server == server\nassert result.client == client";
+                var nbb_formatted_code = "assert result.server == server\nassert result.client == client";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -499,16 +501,17 @@ Converted 01_fastapi_views.ipynb.
 Converted 01_file.ipynb.
 Converted 05_epochs.ipynb.
 Converted 06_results.ipynb.
-Converted 07_repositories.ipynb.
 Converted 25_core.ipynb.
 Converted 27_control_server.ipynb.
 Converted 28_control_client.ipynb.
+Converted 29_control_cli.ipynb.
 Converted 30_servers.ipynb.
 Converted 31_local_servers.ipynb.
 Converted 32_docker_servers.ipynb.
 Converted 40_clients.ipynb.
-Converted 40_persistence.ipynb.
 Converted 41_benchmark_clients.ipynb.
+Converted 70_repositories.ipynb.
+Converted 71_sqlite_repository.ipynb.
 Converted 90_benchmark_without_benchmark.ipynb.
 Converted 98_run_benchmark.ipynb.
 Converted index.ipynb.
@@ -521,13 +524,13 @@ Converted index.ipynb.
 
 
 
-<div id="54f90f30-c7a3-444c-aae1-952bdddc5986"></div>
+<div id="424877a9-4daa-4e3b-aae3-916d7a0cffec"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#54f90f30-c7a3-444c-aae1-952bdddc5986');
+var element = $('#424877a9-4daa-4e3b-aae3-916d7a0cffec');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 15;
                 var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();

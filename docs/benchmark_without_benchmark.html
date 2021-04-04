@@ -51,10 +51,10 @@ nb_path: "90_benchmark_without_benchmark.ipynb"
 
 
 
-<div id="6c62f12e-545e-4dff-ba2c-f4988a7495b2"></div>
+<div id="45b3c23f-5d89-4fb3-833e-31fd614162c1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6c62f12e-545e-4dff-ba2c-f4988a7495b2');
+var element = $('#45b3c23f-5d89-4fb3-833e-31fd614162c1');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -126,10 +126,10 @@ var element = $('#6c62f12e-545e-4dff-ba2c-f4988a7495b2');
 
 
 
-<div id="a938c792-b971-4d95-a8f4-3d48191c47e8"></div>
+<div id="95f51565-9f6e-47ce-819f-1c15bdaec82b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a938c792-b971-4d95-a8f4-3d48191c47e8');
+var element = $('#95f51565-9f6e-47ce-819f-1c15bdaec82b');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -185,8 +185,8 @@ var element = $('#a938c792-b971-4d95-a8f4-3d48191c47e8');
 
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
-    <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-    <span class="n">client</span><span class="o">=</span><span class="n">benchmark_client</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+    <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
+    <span class="n">client</span><span class="o">=</span><span class="n">benchmark_client</span><span class="p">,</span>
     <span class="n">file_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">file_size</span><span class="p">,</span>
     <span class="n">complete_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">complete_size</span><span class="p">,</span>
 <span class="p">)</span>
@@ -213,15 +213,15 @@ var element = $('#a938c792-b971-4d95-a8f4-3d48191c47e8');
 
 
 
-<div id="4473e5da-40dd-4210-bd6a-74dcee8efd47"></div>
+<div id="4987fef3-4dd2-431d-9380-a8b03616313b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4473e5da-40dd-4210-bd6a-74dcee8efd47');
+var element = $('#4987fef3-4dd2-431d-9380-a8b03616313b');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server.name,\n    client=benchmark_client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
-                var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server.name,\n    client=benchmark_client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
+                var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
+                var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -267,7 +267,7 @@ var element = $('#4473e5da-40dd-4210-bd6a-74dcee8efd47');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.2486642500000005
+<pre>3.295147584
 </pre>
 </div>
 </div>
@@ -277,13 +277,13 @@ var element = $('#4473e5da-40dd-4210-bd6a-74dcee8efd47');
 
 
 
-<div id="2b35ca99-3c95-4416-99cf-b65eec7df362"></div>
+<div id="6b1ef6b2-ce27-45bf-9338-0796fd5fc3c1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2b35ca99-3c95-4416-99cf-b65eec7df362');
+var element = $('#6b1ef6b2-ce27-45bf-9338-0796fd5fc3c1');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(client_params, epoch)\nprint(result.elapsed)\n\n# result.elapsed = benchmark_client.measure(epoch)";
                 var nbb_formatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(client_params, epoch)\nprint(result.elapsed)\n\n# result.elapsed = benchmark_client.measure(epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -330,7 +330,7 @@ var element = $('#2b35ca99-3c95-4416-99cf-b65eec7df362');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>115432057.9604371</pre>
+<pre>113803703.9132509</pre>
 </div>
 
 </div>
@@ -340,13 +340,13 @@ var element = $('#2b35ca99-3c95-4416-99cf-b65eec7df362');
 
 
 
-<div id="14e93943-1dff-4427-9878-931ba349e8ef"></div>
+<div id="664589db-1fe8-419d-a869-415078e749b9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#14e93943-1dff-4427-9878-931ba349e8ef');
+var element = $('#664589db-1fe8-419d-a869-415078e749b9');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# dont_test\n\nresult.bytes_per_second";
                 var nbb_formatted_code = "# dont_test\n\nresult.bytes_per_second";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -434,10 +434,10 @@ var element = $('#14e93943-1dff-4427-9878-931ba349e8ef');
 
 
 
-<div id="d97a72e9-ebd8-4b09-a3b5-ed38ccbf51da"></div>
+<div id="263a024d-0fe6-4992-840c-328a07fe0cb2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d97a72e9-ebd8-4b09-a3b5-ed38ccbf51da');
+var element = $('#263a024d-0fe6-4992-840c-328a07fe0cb2');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -488,10 +488,10 @@ var element = $('#d97a72e9-ebd8-4b09-a3b5-ed38ccbf51da');
 
 
 
-<div id="ae4f4a0e-ded7-465e-b9da-849de9dd3e8e"></div>
+<div id="c6da2b7a-750a-4fc3-a8aa-f3c6dd0171f0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ae4f4a0e-ded7-465e-b9da-849de9dd3e8e');
+var element = $('#c6da2b7a-750a-4fc3-a8aa-f3c6dd0171f0');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -549,10 +549,10 @@ var element = $('#ae4f4a0e-ded7-465e-b9da-849de9dd3e8e');
 
 
 
-<div id="4735400c-7bc9-47fb-a92b-2e0887006a14"></div>
+<div id="9a81d2ad-50da-4746-be20-72f12ce86cf0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4735400c-7bc9-47fb-a92b-2e0887006a14');
+var element = $('#9a81d2ad-50da-4746-be20-72f12ce86cf0');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -612,10 +612,10 @@ var element = $('#4735400c-7bc9-47fb-a92b-2e0887006a14');
 
 
 
-<div id="2698bbf4-a79d-4309-8c21-76d499ebe028"></div>
+<div id="21cd239e-32bd-407c-87fd-42add9c37000"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2698bbf4-a79d-4309-8c21-76d499ebe028');
+var element = $('#21cd239e-32bd-407c-87fd-42add9c37000');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -719,10 +719,10 @@ var element = $('#2698bbf4-a79d-4309-8c21-76d499ebe028');
 
 
 
-<div id="ca045e60-06c4-4917-898c-4dee561b2293"></div>
+<div id="1ded92c4-8eaa-481e-a7f5-9996ee59fe76"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ca045e60-06c4-4917-898c-4dee561b2293');
+var element = $('#1ded92c4-8eaa-481e-a7f5-9996ee59fe76');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -782,10 +782,10 @@ var element = $('#ca045e60-06c4-4917-898c-4dee561b2293');
 
 
 
-<div id="90984424-81f2-46e2-b37a-8e4ca945aa15"></div>
+<div id="5630909c-6244-48d0-80ef-a5a8effed4d9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#90984424-81f2-46e2-b37a-8e4ca945aa15');
+var element = $('#5630909c-6244-48d0-80ef-a5a8effed4d9');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -933,10 +933,10 @@ The above exception was the direct cause of the following exception:
 
 
 
-<div id="e3955761-3af2-4299-9b38-1c90d2d44c9d"></div>
+<div id="32c72334-3929-4122-bb55-4916da20e8ae"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e3955761-3af2-4299-9b38-1c90d2d44c9d');
+var element = $('#32c72334-3929-4122-bb55-4916da20e8ae');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;

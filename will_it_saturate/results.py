@@ -10,6 +10,8 @@ from typing import Optional
 from pydantic import BaseModel
 
 from .epochs import Epoch
+from .servers import BaseServer
+from .clients import BaseClient
 
 # Cell
 
@@ -25,8 +27,8 @@ def convert_size(size_bytes):
 
 
 class Result(BaseModel):
-    server: str
-    client: str
+    server: BaseServer
+    client: BaseClient
     file_size: int
     elapsed: Optional[float] = None
     complete_size: int
@@ -43,8 +45,8 @@ class Result(BaseModel):
     @classmethod
     def build_empty_result(cls, row, server, client):
         return cls(
-            server=server.name,
-            client=client.name,
+            server=server,
+            client=client,
             file_size=row.file_size,
             complete_size=row.complete_size,
         )
