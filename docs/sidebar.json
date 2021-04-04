@@ -14,7 +14,7 @@
     "Servers": "servers.html",
     "FastAPIUvicornServer": "local_servers.html",
     "Nginx Docker Server": "docker_servers.html",
-    "Clients": "clients.html",
+    "Client Registry": "clients.html",
     "Caveats": "benchmark_clients.html",
     "module Repositories": "repositories.html",
     "Usage": "sqlite_repository.html",

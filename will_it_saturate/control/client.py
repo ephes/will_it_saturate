@@ -38,3 +38,10 @@ class ControlClient(BaseModel):
         r = httpx.post(url, json=server.dict())
         r.raise_for_status()
         return server.__class__(**r.json())
+
+    def measure(self, client_params, epoch):
+        url = urljoin(self.base_url, "measure")
+        data = {"client_params": client_params.dict(), "epoch": epoch.dict()}
+        r = httpx.post(url, json=data, timeout=None)
+        r.raise_for_status()
+        return r.json()

@@ -49,7 +49,7 @@ entries:
       title: Nginx Docker Server
       url: docker_servers.html
     - output: web,pdf
-      title: Clients
+      title: Client Registry
       url: clients.html
     - output: web,pdf
       title: Caveats
