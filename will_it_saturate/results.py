@@ -10,6 +10,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 from .epochs import Epoch
+from .hosts import HostDetails
 from .servers import BaseServer
 from .clients import BaseClient
 
@@ -29,6 +30,8 @@ def convert_size(size_bytes):
 class Result(BaseModel):
     server: BaseServer
     client: BaseClient
+    server_details: Optional[HostDetails]
+    client_details: Optional[HostDetails]
     file_size: int
     elapsed: Optional[float] = None
     complete_size: int
