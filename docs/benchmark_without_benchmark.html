@@ -51,10 +51,10 @@ nb_path: "90_benchmark_without_benchmark.ipynb"
 
 
 
-<div id="958a1b0e-08c4-46f7-96cb-87b9362f2e8a"></div>
+<div id="13668d6c-9222-4e08-820b-3c089012c66f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#958a1b0e-08c4-46f7-96cb-87b9362f2e8a');
+var element = $('#13668d6c-9222-4e08-820b-3c089012c66f');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -98,8 +98,8 @@ var element = $('#958a1b0e-08c4-46f7-96cb-87b9362f2e8a');
     <span class="n">NginxDockerServer</span><span class="p">,</span>
     <span class="n">DjangoGunicornWSGIServer</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.hosts</span> <span class="kn">import</span> <span class="n">Host</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.epochs</span> <span class="kn">import</span> <span class="n">Epoch</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate.hosts</span> <span class="kn">import</span> <span class="n">Host</span><span class="p">,</span> <span class="n">HostDetails</span>
 
 <span class="kn">from</span> <span class="nn">will_it_saturate.results</span> <span class="kn">import</span> <span class="n">Result</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.files</span> <span class="kn">import</span> <span class="n">BenchmarkFile</span>
@@ -126,15 +126,15 @@ var element = $('#958a1b0e-08c4-46f7-96cb-87b9362f2e8a');
 
 
 
-<div id="2cd0aaec-2bd5-4e6b-875b-5ebdfc52067c"></div>
+<div id="0a461647-7792-4d47-b0c9-f45f752291be"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2cd0aaec-2bd5-4e6b-875b-5ebdfc52067c');
+var element = $('#0a461647-7792-4d47-b0c9-f45f752291be');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.hosts import Host\nfrom will_it_saturate.epochs import Epoch\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
-                var nbb_formatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.hosts import Host\nfrom will_it_saturate.epochs import Epoch\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
+                var nbb_unformatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
+                var nbb_formatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -167,6 +167,7 @@ var element = $('#2cd0aaec-2bd5-4e6b-875b-5ebdfc52067c');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create server control client + server (needed for turning files into urls)</span>
 <span class="n">server_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
 <span class="n">server_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_control_host</span><span class="p">)</span>
+<span class="n">server_details</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
 <span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span><span class="n">FastAPIUvicornServer</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
 
@@ -213,15 +214,78 @@ var element = $('#2cd0aaec-2bd5-4e6b-875b-5ebdfc52067c');
 
 
 
-<div id="89d70748-9c8b-4ad2-a555-6521031f3a7d"></div>
+<div id="f222ccb4-68ab-419c-8409-3ea34a4b8617"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#89d70748-9c8b-4ad2-a555-6521031f3a7d');
+var element = $('#f222ccb4-68ab-419c-8409-3ea34a4b8617');
 
             setTimeout(function() {
-                var nbb_cell_id = 3;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000077583, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]})</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="6d271a72-6c86-4762-a655-34384b76e864"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#6d271a72-6c86-4762-a655-34384b76e864');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "server_control_client.get_host_details()";
+                var nbb_formatted_code = "server_control_client.get_host_details()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -277,10 +341,10 @@ var element = $('#89d70748-9c8b-4ad2-a555-6521031f3a7d');
 
 
 
-<div id="84c309ab-8313-4c75-8691-065372f4a6c2"></div>
+<div id="3265fdb5-01eb-4151-965d-3c000fa9eb70"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#84c309ab-8313-4c75-8691-065372f4a6c2');
+var element = $('#3265fdb5-01eb-4151-965d-3c000fa9eb70');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -340,10 +404,10 @@ var element = $('#84c309ab-8313-4c75-8691-065372f4a6c2');
 
 
 
-<div id="1276be38-cc35-4146-9e00-3ac515d28ece"></div>
+<div id="fe77bb8d-d168-466b-80f0-6d1a799ad4c8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1276be38-cc35-4146-9e00-3ac515d28ece');
+var element = $('#fe77bb8d-d168-466b-80f0-6d1a799ad4c8');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -434,10 +498,10 @@ var element = $('#1276be38-cc35-4146-9e00-3ac515d28ece');
 
 
 
-<div id="421fd38e-2498-4902-be87-dd966202a6a2"></div>
+<div id="da904f87-89ca-43da-804e-d54ad7763e01"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#421fd38e-2498-4902-be87-dd966202a6a2');
+var element = $('#da904f87-89ca-43da-804e-d54ad7763e01');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -488,10 +552,10 @@ var element = $('#421fd38e-2498-4902-be87-dd966202a6a2');
 
 
 
-<div id="a0ab6f98-1dd4-494a-91d1-24d91ffbdaf3"></div>
+<div id="39d7efd9-0f1b-4b42-8394-39f14244ba54"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a0ab6f98-1dd4-494a-91d1-24d91ffbdaf3');
+var element = $('#39d7efd9-0f1b-4b42-8394-39f14244ba54');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -549,10 +613,10 @@ var element = $('#a0ab6f98-1dd4-494a-91d1-24d91ffbdaf3');
 
 
 
-<div id="39bbdce4-8bb3-4cfa-bcd1-859fd9149d96"></div>
+<div id="21a9eb54-d8a5-4880-b7b1-fa1c7c5afdcb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#39bbdce4-8bb3-4cfa-bcd1-859fd9149d96');
+var element = $('#21a9eb54-d8a5-4880-b7b1-fa1c7c5afdcb');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -612,10 +676,10 @@ var element = $('#39bbdce4-8bb3-4cfa-bcd1-859fd9149d96');
 
 
 
-<div id="900da1fe-42ba-4e38-8ebf-81a7d983aabd"></div>
+<div id="d785caa4-87da-441b-b11d-31d0e40f51f3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#900da1fe-42ba-4e38-8ebf-81a7d983aabd');
+var element = $('#d785caa4-87da-441b-b11d-31d0e40f51f3');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -719,10 +783,10 @@ var element = $('#900da1fe-42ba-4e38-8ebf-81a7d983aabd');
 
 
 
-<div id="3b328495-393a-4b97-b0e8-c977800fcf49"></div>
+<div id="809d6293-76fc-4ae5-adaf-687648eefbca"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3b328495-393a-4b97-b0e8-c977800fcf49');
+var element = $('#809d6293-76fc-4ae5-adaf-687648eefbca');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -782,10 +846,10 @@ var element = $('#3b328495-393a-4b97-b0e8-c977800fcf49');
 
 
 
-<div id="007dffdd-aaa2-4b3f-94f6-683196bc3913"></div>
+<div id="542c1fe5-ad4d-4e3c-b73d-f0a9194c6308"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#007dffdd-aaa2-4b3f-94f6-683196bc3913');
+var element = $('#542c1fe5-ad4d-4e3c-b73d-f0a9194c6308');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -933,10 +997,10 @@ The above exception was the direct cause of the following exception:
 
 
 
-<div id="4208ea3e-e096-4c86-bdc9-7e9aa34ce356"></div>
+<div id="c0b17fcc-66f3-4c75-9f0c-2c16b0a41453"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4208ea3e-e096-4c86-bdc9-7e9aa34ce356');
+var element = $('#c0b17fcc-66f3-4c75-9f0c-2c16b0a41453');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;

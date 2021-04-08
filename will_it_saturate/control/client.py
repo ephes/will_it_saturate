@@ -9,8 +9,8 @@ import httpx
 from pydantic import BaseModel
 from urllib.parse import urljoin
 
-from ..hosts import Host
 from ..files import BenchmarkFile
+from ..hosts import Host, HostDetails
 
 
 class ControlClient(BaseModel):
@@ -20,12 +20,11 @@ class ControlClient(BaseModel):
     def base_url(self):
         return f"http://{self.host.name}:{self.host.port}/"
 
-    @property
-    def machine(self):
-        url = urljoin(self.base_url, "machine")
+    def get_host_details(self):
+        url = urljoin(self.base_url, "host-details")
         r = httpx.get(url)
         r.raise_for_status()
-        return r.json()
+        return HostDetails(**r.json())
 
     def get_or_create_files(self, epoch):
         url = urljoin(self.base_url, "epochs")
