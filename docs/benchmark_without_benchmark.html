@@ -51,10 +51,10 @@ nb_path: "90_benchmark_without_benchmark.ipynb"
 
 
 
-<div id="13668d6c-9222-4e08-820b-3c089012c66f"></div>
+<div id="e0f27ca0-04df-418a-a72d-9109ed5378b6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#13668d6c-9222-4e08-820b-3c089012c66f');
+var element = $('#e0f27ca0-04df-418a-a72d-9109ed5378b6');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -126,10 +126,10 @@ var element = $('#13668d6c-9222-4e08-820b-3c089012c66f');
 
 
 
-<div id="0a461647-7792-4d47-b0c9-f45f752291be"></div>
+<div id="cd8b1fc4-ea94-48e1-a764-ebb75c233518"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0a461647-7792-4d47-b0c9-f45f752291be');
+var element = $('#cd8b1fc4-ea94-48e1-a764-ebb75c233518');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -181,6 +181,7 @@ var element = $('#0a461647-7792-4d47-b0c9-f45f752291be');
 <span class="c1"># create control client + measure server</span>
 <span class="n">client_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
 <span class="n">client_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">client_control_host</span><span class="p">)</span>
+<span class="n">client_details</span> <span class="o">=</span> <span class="n">client_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
 <span class="n">benchmark_client</span> <span class="o">=</span> <span class="n">HttpxClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">)</span>
 <span class="n">client_params</span> <span class="o">=</span> <span class="n">ClientParameters</span><span class="p">(</span><span class="o">**</span><span class="n">benchmark_client</span><span class="o">.</span><span class="n">params</span><span class="p">())</span>
 
@@ -188,6 +189,8 @@ var element = $('#0a461647-7792-4d47-b0c9-f45f752291be');
 <span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
     <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
     <span class="n">client</span><span class="o">=</span><span class="n">benchmark_client</span><span class="p">,</span>
+    <span class="n">server_details</span><span class="o">=</span><span class="n">server_details</span><span class="p">,</span>
+    <span class="n">client_details</span><span class="o">=</span><span class="n">client_details</span><span class="p">,</span>
     <span class="n">file_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">file_size</span><span class="p">,</span>
     <span class="n">complete_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">complete_size</span><span class="p">,</span>
 <span class="p">)</span>
@@ -214,78 +217,15 @@ var element = $('#0a461647-7792-4d47-b0c9-f45f752291be');
 
 
 
-<div id="f222ccb4-68ab-419c-8409-3ea34a4b8617"></div>
+<div id="559b4c8e-5d4d-4fe5-bc10-557ca1e89977"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f222ccb4-68ab-419c-8409-3ea34a4b8617');
+var element = $('#559b4c8e-5d4d-4fe5-bc10-557ca1e89977');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
-                var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000077583, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]})</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="6d271a72-6c86-4762-a655-34384b76e864"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#6d271a72-6c86-4762-a655-34384b76e864');
-
-            setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "server_control_client.get_host_details()";
-                var nbb_formatted_code = "server_control_client.get_host_details()";
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
+                var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"localhost\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer())\nprint(server)\n\n# create files and urls\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nprint(files[:10])\nepoch.urls = [server.file_to_url(file) for file in files]\n\n# create control client + measure server\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_client = HttpxClient(name=\"httpx\")\nclient_params = ClientParameters(**benchmark_client.params())\n\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -331,7 +271,7 @@ var element = $('#6d271a72-6c86-4762-a655-34384b76e864');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.295147584
+<pre>3.225667333
 </pre>
 </div>
 </div>
@@ -341,10 +281,10 @@ var element = $('#6d271a72-6c86-4762-a655-34384b76e864');
 
 
 
-<div id="3265fdb5-01eb-4151-965d-3c000fa9eb70"></div>
+<div id="4b08c664-9d29-40b7-95c5-60e0327c839a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3265fdb5-01eb-4151-965d-3c000fa9eb70');
+var element = $('#4b08c664-9d29-40b7-95c5-60e0327c839a');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -394,7 +334,7 @@ var element = $('#3265fdb5-01eb-4151-965d-3c000fa9eb70');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>113803703.9132509</pre>
+<pre>116255013.70323732</pre>
 </div>
 
 </div>
@@ -404,15 +344,131 @@ var element = $('#3265fdb5-01eb-4151-965d-3c000fa9eb70');
 
 
 
-<div id="fe77bb8d-d168-466b-80f0-6d1a799ad4c8"></div>
+<div id="6153c91f-ffce-4088-963b-3881a17f9e88"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fe77bb8d-d168-466b-80f0-6d1a799ad4c8');
+var element = $('#6153c91f-ffce-4088-963b-3881a17f9e88');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# dont_test\n\nresult.bytes_per_second";
                 var nbb_formatted_code = "# dont_test\n\nresult.bytes_per_second";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;test.db&quot;</span><span class="p">)</span>
+<span class="n">affected</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">affected</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="f6c3d3e0-88e2-4b02-a4d4-d1405cace76a"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#f6c3d3e0-88e2-4b02-a4d4-d1405cace76a');
+
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "repo = SqliteRepository.build_repository(\"test.db\")\naffected = repo.add_result(result)\nprint(affected)";
+                var nbb_formatted_code = "repo = SqliteRepository.build_repository(\"test.db\")\naffected = repo.add_result(result)\nprint(affected)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;foobar.sqlite&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="54eca66d-e297-4df5-ad2e-44bb5d8e9502"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#54eca66d-e297-4df5-ad2e-44bb5d8e9502');
+
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "repo = SqliteRepository.build_repository(\"foobar.sqlite\")";
+                var nbb_formatted_code = "repo = SqliteRepository.build_repository(\"foobar.sqlite\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -498,10 +554,10 @@ var element = $('#fe77bb8d-d168-466b-80f0-6d1a799ad4c8');
 
 
 
-<div id="da904f87-89ca-43da-804e-d54ad7763e01"></div>
+<div id="736cd06a-a115-4358-bef9-913a1cf5cf97"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#da904f87-89ca-43da-804e-d54ad7763e01');
+var element = $('#736cd06a-a115-4358-bef9-913a1cf5cf97');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -552,10 +608,10 @@ var element = $('#da904f87-89ca-43da-804e-d54ad7763e01');
 
 
 
-<div id="39d7efd9-0f1b-4b42-8394-39f14244ba54"></div>
+<div id="238a226e-2ea1-46ac-b26f-0f7bc9334880"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#39d7efd9-0f1b-4b42-8394-39f14244ba54');
+var element = $('#238a226e-2ea1-46ac-b26f-0f7bc9334880');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -613,10 +669,10 @@ var element = $('#39d7efd9-0f1b-4b42-8394-39f14244ba54');
 
 
 
-<div id="21a9eb54-d8a5-4880-b7b1-fa1c7c5afdcb"></div>
+<div id="299c7eb8-aca3-4fca-9471-967eb44d9706"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#21a9eb54-d8a5-4880-b7b1-fa1c7c5afdcb');
+var element = $('#299c7eb8-aca3-4fca-9471-967eb44d9706');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -676,10 +732,10 @@ var element = $('#21a9eb54-d8a5-4880-b7b1-fa1c7c5afdcb');
 
 
 
-<div id="d785caa4-87da-441b-b11d-31d0e40f51f3"></div>
+<div id="cf3048c9-c4aa-45ca-b148-4314d53f634a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d785caa4-87da-441b-b11d-31d0e40f51f3');
+var element = $('#cf3048c9-c4aa-45ca-b148-4314d53f634a');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -783,10 +839,10 @@ var element = $('#d785caa4-87da-441b-b11d-31d0e40f51f3');
 
 
 
-<div id="809d6293-76fc-4ae5-adaf-687648eefbca"></div>
+<div id="78d3dc31-9231-487b-a2e7-a5c118f08539"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#809d6293-76fc-4ae5-adaf-687648eefbca');
+var element = $('#78d3dc31-9231-487b-a2e7-a5c118f08539');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -846,10 +902,10 @@ var element = $('#809d6293-76fc-4ae5-adaf-687648eefbca');
 
 
 
-<div id="542c1fe5-ad4d-4e3c-b73d-f0a9194c6308"></div>
+<div id="4f37138b-2f35-4b32-8236-28dd0ba42199"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#542c1fe5-ad4d-4e3c-b73d-f0a9194c6308');
+var element = $('#4f37138b-2f35-4b32-8236-28dd0ba42199');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -929,66 +985,24 @@ var element = $('#542c1fe5-ad4d-4e3c-b73d-f0a9194c6308');
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>measure
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">RemoteTraceback</span>                           Traceback (most recent call last)
-<span class="ansi-red-fg">RemoteTraceback</span>: 
-&#34;&#34;&#34;
-Traceback (most recent call last):
-  File &#34;/Users/wersdoerfer/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py&#34;, line 125, in worker
-    result = (True, func(*args, **kwds))
-  File &#34;/Users/wersdoerfer/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py&#34;, line 48, in mapstar
-    return list(map(*args))
-  File &#34;/Users/wersdoerfer/projects/will_it_saturate/will_it_saturate/client.py&#34;, line 49, in measure_in_new_process
-    elapsed, responses = asyncio.run(self.measure_server(epoch))
-  File &#34;/Users/wersdoerfer/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/asyncio/runners.py&#34;, line 44, in run
-    return loop.run_until_complete(main)
-  File &#34;/Users/wersdoerfer/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py&#34;, line 642, in run_until_complete
-    return future.result()
-  File &#34;/Users/wersdoerfer/projects/will_it_saturate/will_it_saturate/client.py&#34;, line 33, in measure_server
-    print(epoch.urls[0])
-IndexError: list index out of range
-&#34;&#34;&#34;
+<span class="ansi-red-fg">ValidationError</span>                           Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-9-bb6036e5e7cb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     18</span> epoch<span class="ansi-blue-fg">.</span>create_files<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     19</span> 
+<span class="ansi-green-fg">---&gt; 20</span><span class="ansi-red-fg"> result = Result(
+</span><span class="ansi-green-intense-fg ansi-bold">     21</span>     server<span class="ansi-blue-fg">=</span>server<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     22</span>     client<span class="ansi-blue-fg">=</span>client<span class="ansi-blue-fg">.</span>name<span class="ansi-blue-fg">,</span>
 
-The above exception was the direct cause of the following exception:
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/pydantic/main.cpython-39-darwin.so</span> in <span class="ansi-cyan-fg">pydantic.main.BaseModel.__init__</span><span class="ansi-blue-fg">()</span>
 
-<span class="ansi-red-fg">IndexError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-bb6036e5e7cb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     28</span>     server<span class="ansi-blue-fg">.</span>start
-<span class="ansi-green-intense-fg ansi-bold">     29</span> 
-<span class="ansi-green-fg">---&gt; 30</span><span class="ansi-red-fg"> </span>result<span class="ansi-blue-fg">.</span>elapsed <span class="ansi-blue-fg">=</span> client<span class="ansi-blue-fg">.</span>measure<span class="ansi-blue-fg">(</span>epoch<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/client.py</span> in <span class="ansi-cyan-fg">measure</span><span class="ansi-blue-fg">(self, epoch)</span>
-<span class="ansi-green-intense-fg ansi-bold">     54</span>         print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;measure&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     55</span>         <span class="ansi-green-fg">with</span> Pool<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> p<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">---&gt; 56</span><span class="ansi-red-fg">             </span><span class="ansi-blue-fg">[</span>result<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> p<span class="ansi-blue-fg">.</span>map<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>measure_in_new_process<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">[</span>epoch<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     57</span>         <span class="ansi-green-fg">return</span> result
-<span class="ansi-green-intense-fg ansi-bold">     58</span> 
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py</span> in <span class="ansi-cyan-fg">map</span><span class="ansi-blue-fg">(self, func, iterable, chunksize)</span>
-<span class="ansi-green-intense-fg ansi-bold">    362</span>         <span class="ansi-green-fg">in</span> a list that <span class="ansi-green-fg">is</span> returned<span class="ansi-blue-fg">.</span>
-<span class="ansi-green-intense-fg ansi-bold">    363</span>         &#39;&#39;&#39;
-<span class="ansi-green-fg">--&gt; 364</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_map_async<span class="ansi-blue-fg">(</span>func<span class="ansi-blue-fg">,</span> iterable<span class="ansi-blue-fg">,</span> mapstar<span class="ansi-blue-fg">,</span> chunksize<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    365</span> 
-<span class="ansi-green-intense-fg ansi-bold">    366</span>     <span class="ansi-green-fg">def</span> starmap<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> func<span class="ansi-blue-fg">,</span> iterable<span class="ansi-blue-fg">,</span> chunksize<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">~/.pyenv/versions/3.9.2/Python.framework/Versions/3.9/lib/python3.9/multiprocessing/pool.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-fg">(self, timeout)</span>
-<span class="ansi-green-intense-fg ansi-bold">    769</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_value
-<span class="ansi-green-intense-fg ansi-bold">    770</span>         <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 771</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> self<span class="ansi-blue-fg">.</span>_value
-<span class="ansi-green-intense-fg ansi-bold">    772</span> 
-<span class="ansi-green-intense-fg ansi-bold">    773</span>     <span class="ansi-green-fg">def</span> _set<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> i<span class="ansi-blue-fg">,</span> obj<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">IndexError</span>: list index out of range</pre>
+<span class="ansi-red-fg">ValidationError</span>: 2 validation errors for Result
+server
+  value is not a valid dict (type=type_error.dict)
+client
+  value is not a valid dict (type=type_error.dict)</pre>
 </div>
 </div>
 
@@ -997,13 +1011,13 @@ The above exception was the direct cause of the following exception:
 
 
 
-<div id="c0b17fcc-66f3-4c75-9f0c-2c16b0a41453"></div>
+<div id="6974aa65-5ed1-412e-92b1-300d8437006e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c0b17fcc-66f3-4c75-9f0c-2c16b0a41453');
+var element = $('#6974aa65-5ed1-412e-92b1-300d8437006e');
 
             setTimeout(function() {
-                var nbb_cell_id = 20;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\n\n# server = DjangoGunicornWSGIServer()\nserver = FastAPIUvicornServer()\n# client = AioHttpClient(name=\"aiohttp\")\nclient = HttpxClient(name=\"httpx\")\n# repository = SqliteRepository.build_repository(\"foo.db\")\n\nepoch = Epoch(file_size=file_size, duration=duration)\n\nepoch.create_files()\n\nresult = Result(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nif not server.started:\n    server.start\n\nresult.elapsed = client.measure(epoch)";
                 var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\nduration = 3\nfile_size = 10 ** 7\n\n\n# server = DjangoGunicornWSGIServer()\nserver = FastAPIUvicornServer()\n# client = AioHttpClient(name=\"aiohttp\")\nclient = HttpxClient(name=\"httpx\")\n# repository = SqliteRepository.build_repository(\"foo.db\")\n\nepoch = Epoch(file_size=file_size, duration=duration)\n\nepoch.create_files()\n\nresult = Result(\n    server=server.name,\n    client=client.name,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)\n\nif not server.started:\n    server.start\n\nresult.elapsed = client.measure(epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();

@@ -58,7 +58,7 @@ entries:
       title: module Repositories
       url: repositories.html
     - output: web,pdf
-      title: Usage
+      title: Export
       url: sqlite_repository.html
     - output: web,pdf
       title: Remote Benchmark

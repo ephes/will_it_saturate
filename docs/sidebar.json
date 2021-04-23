@@ -17,7 +17,7 @@
     "Client Registry": "clients.html",
     "Caveats": "benchmark_clients.html",
     "module Repositories": "repositories.html",
-    "Usage": "sqlite_repository.html",
+    "Export": "sqlite_repository.html",
     "Remote Benchmark": "benchmark_without_benchmark.html",
     "Title": "run_benchmark.html"
   }

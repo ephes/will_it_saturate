@@ -45,6 +45,7 @@ index = {"Host": "00_host.ipynb",
          "WrkClient": "41_benchmark_clients.ipynb",
          "BaseRepository": "70_repositories.ipynb",
          "InMemoryRepository": "70_repositories.ipynb",
+         "dict_factory": "71_sqlite_repository.ipynb",
          "SqliteRepository": "71_sqlite_repository.ipynb"}
 
 modules = ["hosts.py",
