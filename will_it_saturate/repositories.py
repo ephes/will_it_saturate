@@ -33,6 +33,8 @@ class InMemoryRepository(BaseRepository):
 import json
 import sqlite3
 
+from .hosts import HostDetails
+
 
 def dict_factory(cursor, row):
     d = {}
@@ -189,6 +191,27 @@ class SqliteRepository(BaseRepository):
             return result
         result.elapsed = row[7]
         return result
+
+    def get_host_id_to_host_details(self, host_ids):
+        # fetch matching host details from database
+        question_marks = ", ".join(["?" for _ in host_ids])
+        stmt = f"""
+            select *
+              from host
+             where host_id in ({question_marks})
+        """
+        cursor = self.connection.cursor()
+        cursor.execute(stmt, host_ids)
+        rows = cursor.fetchall()
+        if len(rows) == 0:
+            return []
+
+        # build host_id_to_host_details lookup
+        host_id_to_host_details = {}
+        for row in rows:
+            kwargs = json.loads(row["data"])
+            host_id_to_host_details[row["host_id"]] = HostDetails(**kwargs)
+        return host_id_to_host_details
 
     def get_results(self):
         stmt = """
