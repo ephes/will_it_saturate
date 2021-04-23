@@ -51,10 +51,10 @@ nb_path: "71_sqlite_repository.ipynb"
 
 
 
-<div id="39f30dc2-28e3-4fda-aa0d-c9fc2c17fa6f"></div>
+<div id="42e5d72c-7e00-4068-b40a-1187d7ea03f6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#39f30dc2-28e3-4fda-aa0d-c9fc2c17fa6f');
+var element = $('#42e5d72c-7e00-4068-b40a-1187d7ea03f6');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -104,10 +104,10 @@ var element = $('#39f30dc2-28e3-4fda-aa0d-c9fc2c17fa6f');
 
 
 
-<div id="a24143ba-1216-4716-99a5-ba64852fd020"></div>
+<div id="5c01a871-d6b2-4e2b-be11-571c3956b912"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a24143ba-1216-4716-99a5-ba64852fd020');
+var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -218,13 +218,13 @@ var element = $('#a24143ba-1216-4716-99a5-ba64852fd020');
 
 
 
-<div id="ce7ba70a-594b-443c-b613-283a489d3fd1"></div>
+<div id="b791d21b-bbcd-4ecd-af26-06bc2c41d009"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ce7ba70a-594b-443c-b613-283a489d3fd1');
+var element = $('#b791d21b-bbcd-4ecd-af26-06bc2c41d009');
 
             setTimeout(function() {
-                var nbb_cell_id = 59;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "from will_it_saturate.results import Result";
                 var nbb_formatted_code = "from will_it_saturate.results import Result";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -279,13 +279,13 @@ var element = $('#ce7ba70a-594b-443c-b613-283a489d3fd1');
 
 
 
-<div id="648616e8-6aab-4f9f-aef6-56ee4bc8031d"></div>
+<div id="4617bd7c-602b-4a0f-942c-39a80ce95be7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#648616e8-6aab-4f9f-aef6-56ee4bc8031d');
+var element = $('#4617bd7c-602b-4a0f-942c-39a80ce95be7');
 
             setTimeout(function() {
-                var nbb_cell_id = 60;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "repo = SqliteRepository.build_repository(\":memory:\")\nmachine_to_host_id = repo.get_machine_to_host_id([\"asdf\"])\nassert len(machine_to_host_id) == 0";
                 var nbb_formatted_code = "repo = SqliteRepository.build_repository(\":memory:\")\nmachine_to_host_id = repo.get_machine_to_host_id([\"asdf\"])\nassert len(machine_to_host_id) == 0";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -345,13 +345,13 @@ var element = $('#648616e8-6aab-4f9f-aef6-56ee4bc8031d');
 
 
 
-<div id="ef24ad73-e26b-4915-9759-22ba93165808"></div>
+<div id="79f5d53c-024f-4aa6-b7f6-ab4c41645681"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ef24ad73-e26b-4915-9759-22ba93165808');
+var element = $('#79f5d53c-024f-4aa6-b7f6-ab4c41645681');
 
             setTimeout(function() {
-                var nbb_cell_id = 61;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "machine_id1, cpuinfo = \"asdf\", {\"arch\": \"X86_64\"}\nhost_details = HostDetails(machine_id=machine_id1, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_details)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1])\nassert machine_to_host_id == {machine_id1: 1}";
                 var nbb_formatted_code = "machine_id1, cpuinfo = \"asdf\", {\"arch\": \"X86_64\"}\nhost_details = HostDetails(machine_id=machine_id1, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_details)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1])\nassert machine_to_host_id == {machine_id1: 1}";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -411,13 +411,13 @@ var element = $('#ef24ad73-e26b-4915-9759-22ba93165808');
 
 
 
-<div id="ee116156-1458-40dd-a5a1-f31d60934512"></div>
+<div id="9b20f567-4468-4f79-8bca-4466c5ce0954"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ee116156-1458-40dd-a5a1-f31d60934512');
+var element = $('#9b20f567-4468-4f79-8bca-4466c5ce0954');
 
             setTimeout(function() {
-                var nbb_cell_id = 63;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "machine_id2 = \"bsdf\"\nhost_detail = HostDetails(machine_id=machine_id2, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_detail)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1, machine_id2, \"csdf\"])\nassert machine_to_host_id == {machine_id1: 1, machine_id2: 2}";
                 var nbb_formatted_code = "machine_id2 = \"bsdf\"\nhost_detail = HostDetails(machine_id=machine_id2, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_detail)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1, machine_id2, \"csdf\"])\nassert machine_to_host_id == {machine_id1: 1, machine_id2: 2}";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -487,13 +487,13 @@ var element = $('#ee116156-1458-40dd-a5a1-f31d60934512');
 
 
 
-<div id="e0bd27f9-c34e-4e2a-bf94-0d69a370ee22"></div>
+<div id="0f009daf-5264-4e60-842b-92f32d487667"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e0bd27f9-c34e-4e2a-bf94-0d69a370ee22');
+var element = $('#0f009daf-5264-4e60-842b-92f32d487667');
 
             setTimeout(function() {
-                var nbb_cell_id = 71;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "dummy_result_data = {\n    \"server\": {\"name\": \"server\"},\n    \"client\": {\"name\": \"client\"},\n    \"file_size\": 10,\n    \"complete_size\": 100,\n}\n\nkwargs = {\n    **dummy_result_data,\n    \"server_details\": HostDetails(machine_id=\"dsdf\", cpuinfo={}),\n    \"client_details\": HostDetails(machine_id=\"esdf\", cpuinfo={}),\n}\nresult = Result(**kwargs)\nmachine_to_host_id = repo.get_or_create_hosts_from_result(result)\nassert machine_to_host_id == {\n    result.server_details.machine_id: 3,\n    result.client_details.machine_id: 4,\n}";
                 var nbb_formatted_code = "dummy_result_data = {\n    \"server\": {\"name\": \"server\"},\n    \"client\": {\"name\": \"client\"},\n    \"file_size\": 10,\n    \"complete_size\": 100,\n}\n\nkwargs = {\n    **dummy_result_data,\n    \"server_details\": HostDetails(machine_id=\"dsdf\", cpuinfo={}),\n    \"client_details\": HostDetails(machine_id=\"esdf\", cpuinfo={}),\n}\nresult = Result(**kwargs)\nmachine_to_host_id = repo.get_or_create_hosts_from_result(result)\nassert machine_to_host_id == {\n    result.server_details.machine_id: 3,\n    result.client_details.machine_id: 4,\n}";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -550,13 +550,13 @@ var element = $('#e0bd27f9-c34e-4e2a-bf94-0d69a370ee22');
 
 
 
-<div id="a8483b77-aa8c-4ae3-ae44-93c18d2f9919"></div>
+<div id="723b8306-884e-4c0b-9ccc-d680ba5c8ec3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a8483b77-aa8c-4ae3-ae44-93c18d2f9919');
+var element = $('#723b8306-884e-4c0b-9ccc-d680ba5c8ec3');
 
             setTimeout(function() {
-                var nbb_cell_id = 72;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "assert (\n    []\n    == repo.get_host_id_to_host_details([])\n    == repo.get_host_id_to_host_details([1337])\n)";
                 var nbb_formatted_code = "assert (\n    []\n    == repo.get_host_id_to_host_details([])\n    == repo.get_host_id_to_host_details([1337])\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -606,13 +606,13 @@ var element = $('#a8483b77-aa8c-4ae3-ae44-93c18d2f9919');
 
 
 
-<div id="6c19efce-75ab-4e85-9cc2-b4aaea11f5a0"></div>
+<div id="490b6168-07bf-4edf-bc38-5c632a7710f7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6c19efce-75ab-4e85-9cc2-b4aaea11f5a0');
+var element = $('#490b6168-07bf-4edf-bc38-5c632a7710f7');
 
             setTimeout(function() {
-                var nbb_cell_id = 73;
+                var nbb_cell_id = 11;
                 var nbb_unformatted_code = "existing_host_ids = list(machine_to_host_id.values())\nhost_id_to_host_details = repo.get_host_id_to_host_details(existing_host_ids)\nfor machine_id, host_id in machine_to_host_id.items():\n    assert machine_id == host_id_to_host_details[host_id].machine_id";
                 var nbb_formatted_code = "existing_host_ids = list(machine_to_host_id.values())\nhost_id_to_host_details = repo.get_host_id_to_host_details(existing_host_ids)\nfor machine_id, host_id in machine_to_host_id.items():\n    assert machine_id == host_id_to_host_details[host_id].machine_id";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -669,6 +669,7 @@ var element = $('#6c19efce-75ab-4e85-9cc2-b4aaea11f5a0');
     <span class="n">elapsed</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">inserted_rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">inserted_rows</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 
     </div>
@@ -683,15 +684,15 @@ var element = $('#6c19efce-75ab-4e85-9cc2-b4aaea11f5a0');
 
 
 
-<div id="2acbb28c-cd7c-415e-80d6-e0defb3b6b3d"></div>
+<div id="b0679dc6-1ed4-4264-8a90-9241f0000155"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2acbb28c-cd7c-415e-80d6-e0defb3b6b3d');
+var element = $('#b0679dc6-1ed4-4264-8a90-9241f0000155');
 
             setTimeout(function() {
-                var nbb_cell_id = 13;
-                var nbb_unformatted_code = "from will_it_saturate.results import Result\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.clients import BaseClient\n\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)";
-                var nbb_formatted_code = "from will_it_saturate.results import Result\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.clients import BaseClient\n\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)";
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "from will_it_saturate.results import Result\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.clients import BaseClient\n\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)\nassert inserted_rows == 1";
+                var nbb_formatted_code = "from will_it_saturate.results import Result\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.clients import BaseClient\n\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)\nassert inserted_rows == 1";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -741,7 +742,7 @@ var element = $('#2acbb28c-cd7c-415e-80d6-e0defb3b6b3d');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>[{&#39;result_id&#39;: 1, &#39;server_host_id&#39;: 5, &#39;client_host_id&#39;: 6, &#39;created&#39;: &#39;2021-04-21 08:08:35&#39;, &#39;server&#39;: &#39;{&#34;protocol&#34;: &#34;http&#34;, &#34;name&#34;: &#34;server&#34;, &#34;host&#34;: &#34;127.0.0.1&#34;, &#34;port&#34;: 8000}&#39;, &#39;client&#39;: &#39;{&#34;name&#34;: &#34;fake client&#34;}&#39;, &#39;file_size&#39;: 100000, &#39;complete_size&#39;: 100000000, &#39;elapsed&#39;: 400.0}]
+<pre>[{&#39;result_id&#39;: 1, &#39;server_host_id&#39;: 5, &#39;client_host_id&#39;: 6, &#39;created&#39;: &#39;2021-04-23 08:34:39&#39;, &#39;server&#39;: &#39;{&#34;protocol&#34;: &#34;http&#34;, &#34;name&#34;: &#34;server&#34;, &#34;host&#34;: &#34;127.0.0.1&#34;, &#34;port&#34;: 8000}&#39;, &#39;client&#39;: &#39;{&#34;name&#34;: &#34;fake client&#34;}&#39;, &#39;file_size&#39;: 100000, &#39;complete_size&#39;: 100000000, &#39;elapsed&#39;: 400.0}]
 </pre>
 </div>
 </div>
@@ -751,13 +752,13 @@ var element = $('#2acbb28c-cd7c-415e-80d6-e0defb3b6b3d');
 
 
 
-<div id="928a870d-20a4-4726-ac2a-030fb8810465"></div>
+<div id="3fb05cce-9d1a-41e5-8382-f9f0fba0186c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#928a870d-20a4-4726-ac2a-030fb8810465');
+var element = $('#3fb05cce-9d1a-41e5-8382-f9f0fba0186c');
 
             setTimeout(function() {
-                var nbb_cell_id = 14;
+                var nbb_cell_id = 13;
                 var nbb_unformatted_code = "results = repo.get_results()\nprint(results)";
                 var nbb_formatted_code = "results = repo.get_results()\nprint(results)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -810,10 +811,10 @@ var element = $('#928a870d-20a4-4726-ac2a-030fb8810465');
 
 
 
-<div id="91abfee2-5a0f-47bc-a90e-c078ceb685c4"></div>
+<div id="ef1ebcc6-3b56-44d2-ae0c-79fb53b05186"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#91abfee2-5a0f-47bc-a90e-c078ceb685c4');
+var element = $('#ef1ebcc6-3b56-44d2-ae0c-79fb53b05186');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -878,10 +879,10 @@ var element = $('#91abfee2-5a0f-47bc-a90e-c078ceb685c4');
 
 
 
-<div id="f7814d5c-8b83-4ae0-9c7f-bc7d7ae7f86b"></div>
+<div id="af6f5c7f-638a-4654-800b-cda3b4780bb9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f7814d5c-8b83-4ae0-9c7f-bc7d7ae7f86b');
+var element = $('#af6f5c7f-638a-4654-800b-cda3b4780bb9');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -931,10 +932,10 @@ var element = $('#f7814d5c-8b83-4ae0-9c7f-bc7d7ae7f86b');
 
 
 
-<div id="a421e563-756d-41ed-8881-54f66169c7be"></div>
+<div id="d1de6634-4baa-48e5-8318-75b1cfb80b1b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a421e563-756d-41ed-8881-54f66169c7be');
+var element = $('#d1de6634-4baa-48e5-8318-75b1cfb80b1b');
 
             setTimeout(function() {
                 var nbb_cell_id = 14;
@@ -984,10 +985,10 @@ var element = $('#a421e563-756d-41ed-8881-54f66169c7be');
 
 
 
-<div id="d10fc186-b52c-42e0-a4e5-f7eea2e6d890"></div>
+<div id="c0c3511a-5fcd-4454-9995-dbd42d11361f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d10fc186-b52c-42e0-a4e5-f7eea2e6d890');
+var element = $('#c0c3511a-5fcd-4454-9995-dbd42d11361f');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -1037,10 +1038,10 @@ var element = $('#d10fc186-b52c-42e0-a4e5-f7eea2e6d890');
 
 
 
-<div id="d4e46f8b-3a72-449c-90f3-e96f86642926"></div>
+<div id="b30f8340-3704-435c-896f-a1234334b74e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d4e46f8b-3a72-449c-90f3-e96f86642926');
+var element = $('#b30f8340-3704-435c-896f-a1234334b74e');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -1090,10 +1091,10 @@ var element = $('#d4e46f8b-3a72-449c-90f3-e96f86642926');
 
 
 
-<div id="d145b65d-6402-40a3-afdc-c3e3667de39c"></div>
+<div id="aa26865a-c79d-4dd5-8ce5-5235b301a627"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d145b65d-6402-40a3-afdc-c3e3667de39c');
+var element = $('#aa26865a-c79d-4dd5-8ce5-5235b301a627');
 
             setTimeout(function() {
                 var nbb_cell_id = 17;
@@ -1152,10 +1153,10 @@ var element = $('#d145b65d-6402-40a3-afdc-c3e3667de39c');
 
 
 
-<div id="3cf2dbfa-50ea-4d93-8250-895852082b81"></div>
+<div id="99bc9353-f836-4bbb-94db-4c46c32d3b29"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3cf2dbfa-50ea-4d93-8250-895852082b81');
+var element = $('#99bc9353-f836-4bbb-94db-4c46c32d3b29');
 
             setTimeout(function() {
                 var nbb_cell_id = 18;
@@ -1214,10 +1215,10 @@ var element = $('#3cf2dbfa-50ea-4d93-8250-895852082b81');
 
 
 
-<div id="fd69eccb-8c82-49d4-841a-ec182a5a758c"></div>
+<div id="bd5915fb-157d-4194-b20a-35625b6246a2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fd69eccb-8c82-49d4-841a-ec182a5a758c');
+var element = $('#bd5915fb-157d-4194-b20a-35625b6246a2');
 
             setTimeout(function() {
                 var nbb_cell_id = 19;
@@ -1267,10 +1268,10 @@ var element = $('#fd69eccb-8c82-49d4-841a-ec182a5a758c');
 
 
 
-<div id="d46b4be0-b63b-474f-831e-afbe248fdb9d"></div>
+<div id="6101e80c-8252-4e7e-95c5-bc11163cd763"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d46b4be0-b63b-474f-831e-afbe248fdb9d');
+var element = $('#6101e80c-8252-4e7e-95c5-bc11163cd763');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;
@@ -1349,10 +1350,10 @@ Converted index.ipynb.
 
 
 
-<div id="71a8ff42-b6ae-4973-a52a-34ce1286db39"></div>
+<div id="8da2d7e3-106c-4f94-b49b-6f171e828b1f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#71a8ff42-b6ae-4973-a52a-34ce1286db39');
+var element = $('#8da2d7e3-106c-4f94-b49b-6f171e828b1f');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;

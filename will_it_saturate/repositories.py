@@ -57,18 +57,6 @@ class SqliteRepository(BaseRepository):
             if not ignore_error:
                 raise (exc)
 
-    def create_benchmark_table(self):
-        stmt = """
-            create table benchmark (
-                benchmark_id INTEGER PRIMARY KEY,
-                created DATE DEFAULT (datetime('now','localtime')),
-                machine_id TEXT NOT NULL UNIQUE,
-                uname TEXT NOT NULL,
-                data TEXT NOT NULL
-            )
-        """
-        self.execute_stmt(stmt, ignore_error=True)
-
     def create_host_table(self):
         stmt = """
             create table host (
@@ -102,37 +90,6 @@ class SqliteRepository(BaseRepository):
         self.create_host_table()
         self.create_result_table()
 
-    def add_benchmark(self, benchmark):
-        stmt = """
-            insert into benchmark (machine_id, uname, data)
-            values (?, ?, ?)
-        """
-        cursor = self.connection.cursor()
-        machine_id = benchmark.machine_id
-        uname = benchmark.uname_json
-        data = benchmark.json()
-        try:
-            cursor = cursor.execute(stmt, [machine_id, uname, data])
-        except sqlite3.IntegrityError as e:
-            pass
-        self.connection.commit()
-
-    def get_benchmark(self, benchmark):
-        stmt = """
-            select *
-              from benchmark
-             where machine_id=?
-        """
-        cursor = self.connection.cursor()
-        cursor.execute(stmt, [benchmark.machine_id])
-        return cursor.fetchone()
-
-    def get_benchmark_id(self, benchmark):
-        row = self.get_benchmark(benchmark)
-        if row is None:
-            return row
-        return row[0]
-
     def get_machine_to_host_id(self, machine_ids):
         question_marks = ", ".join(["?" for _ in machine_ids])
         stmt = f"""
@@ -159,38 +116,6 @@ class SqliteRepository(BaseRepository):
             pass
         self.connection.commit()
         return cursor.rowcount
-
-    def get_result(self, benchmark, result):
-        benchmark_id = self.get_benchmark_id(benchmark)
-        if benchmark_id is None:
-            self.add_benchmark(benchmark)
-        benchmark_id = self.get_benchmark_id(benchmark)
-        assert benchmark_id is not None
-        stmt = """
-            select *
-              from result
-             where benchmark_id=?
-               and server=?
-               and client=?
-               and file_size=?
-               and complete_size=?
-        """
-        cursor = self.connection.cursor()
-        cursor.execute(
-            stmt,
-            [
-                benchmark_id,
-                result.server,
-                result.client,
-                result.file_size,
-                result.complete_size,
-            ],
-        )
-        row = cursor.fetchone()
-        if row is None:
-            return result
-        result.elapsed = row[7]
-        return result
 
     def get_host_id_to_host_details(self, host_ids):
         # fetch matching host details from database
