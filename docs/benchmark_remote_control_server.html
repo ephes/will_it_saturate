@@ -51,10 +51,10 @@ nb_path: "100_benchmark_remote_control_server.ipynb"
 
 
 
-<div id="1a17b3e1-4484-46ef-8664-1cd98c53c0c1"></div>
+<div id="ddf887d2-9390-4ff4-926c-00c6c30dfef7"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1a17b3e1-4484-46ef-8664-1cd98c53c0c1');
+var element = $('#ddf887d2-9390-4ff4-926c-00c6c30dfef7');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -127,10 +127,10 @@ var element = $('#1a17b3e1-4484-46ef-8664-1cd98c53c0c1');
 
 
 
-<div id="7d82a84e-b11f-43bd-a110-2ec60073430b"></div>
+<div id="adf26635-2c5a-4033-9e7b-d57ecf2003c0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7d82a84e-b11f-43bd-a110-2ec60073430b');
+var element = $('#adf26635-2c5a-4033-9e7b-d57ecf2003c0');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -169,7 +169,202 @@ var element = $('#7d82a84e-b11f-43bd-a110-2ec60073430b');
 <span class="n">server_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
 <span class="n">server_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_control_host</span><span class="p">)</span>
 <span class="n">server_details</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
-<span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span><span class="n">FastAPIUvicornServer</span><span class="p">())</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span><span class="n">FastAPIUvicornServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ConnectError</span>                              Traceback (most recent call last)
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_exceptions.py</span> in <span class="ansi-cyan-fg">map_exceptions</span><span class="ansi-blue-fg">(mapping, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    325</span>     <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 326</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">yield</span>
+<span class="ansi-green-intense-fg ansi-bold">    327</span>     <span class="ansi-green-fg">except</span> Exception <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_single_request</span><span class="ansi-blue-fg">(self, request, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    855</span>         <span class="ansi-green-fg">with</span> map_exceptions<span class="ansi-blue-fg">(</span>HTTPCORE_EXC_MAP<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 856</span><span class="ansi-red-fg">             (status_code, headers, stream, ext) = transport.request(
+</span><span class="ansi-green-intense-fg ansi-bold">    857</span>                 request<span class="ansi-blue-fg">.</span>method<span class="ansi-blue-fg">.</span>encode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_transports/default.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">    101</span>     ) -&gt; typing.Tuple[int, Headers, httpcore.SyncByteStream, dict]:
+<span class="ansi-green-fg">--&gt; 102</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_pool<span class="ansi-blue-fg">.</span>request<span class="ansi-blue-fg">(</span>method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">=</span>stream<span class="ansi-blue-fg">,</span> ext<span class="ansi-blue-fg">=</span>ext<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    103</span> 
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/connection_pool.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">    217</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 218</span><span class="ansi-red-fg">                 response = connection.request(
+</span><span class="ansi-green-intense-fg ansi-bold">    219</span>                     method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">=</span>stream<span class="ansi-blue-fg">,</span> ext<span class="ansi-blue-fg">=</span>ext
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/connection.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">     92</span>                     )
+<span class="ansi-green-fg">---&gt; 93</span><span class="ansi-red-fg">                     </span>self<span class="ansi-blue-fg">.</span>socket <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_open_socket<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     94</span>                 self<span class="ansi-blue-fg">.</span>_create_connection<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>socket<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/connection.py</span> in <span class="ansi-cyan-fg">_open_socket</span><span class="ansi-blue-fg">(self, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    118</span>                 <span class="ansi-green-fg">if</span> self<span class="ansi-blue-fg">.</span>uds <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 119</span><span class="ansi-red-fg">                     return self.backend.open_tcp_stream(
+</span><span class="ansi-green-intense-fg ansi-bold">    120</span>                         hostname<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_backends/sync.py</span> in <span class="ansi-cyan-fg">open_tcp_stream</span><span class="ansi-blue-fg">(self, hostname, port, ssl_context, timeout, local_address)</span>
+<span class="ansi-green-intense-fg ansi-bold">    142</span>                 )
+<span class="ansi-green-fg">--&gt; 143</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">return</span> SyncSocketStream<span class="ansi-blue-fg">(</span>sock<span class="ansi-blue-fg">=</span>sock<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    144</span> 
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.4/Python.framework/Versions/3.9/lib/python3.9/contextlib.py</span> in <span class="ansi-cyan-fg">__exit__</span><span class="ansi-blue-fg">(self, type, value, traceback)</span>
+<span class="ansi-green-intense-fg ansi-bold">    134</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 135</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>gen<span class="ansi-blue-fg">.</span>throw<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">,</span> traceback<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    136</span>             <span class="ansi-green-fg">except</span> StopIteration <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_exceptions.py</span> in <span class="ansi-cyan-fg">map_exceptions</span><span class="ansi-blue-fg">(map)</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>             <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>exc<span class="ansi-blue-fg">,</span> from_exc<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 12</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">raise</span> to_exc<span class="ansi-blue-fg">(</span>exc<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
+<span class="ansi-green-intense-fg ansi-bold">     13</span>         <span class="ansi-green-fg">raise</span>
+
+<span class="ansi-red-fg">ConnectError</span>: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+<span class="ansi-red-fg">ConnectError</span>                              Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-3-11cd6e399ee2&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> server_control_host <span class="ansi-blue-fg">=</span> Host<span class="ansi-blue-fg">(</span>name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;macmini.fritz.box&#34;</span><span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">8001</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> server_control_client <span class="ansi-blue-fg">=</span> ControlClient<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">=</span>server_control_host<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>server_details <span class="ansi-blue-fg">=</span> server_control_client<span class="ansi-blue-fg">.</span>get_host_details<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> server <span class="ansi-blue-fg">=</span> server_control_client<span class="ansi-blue-fg">.</span>get_or_create_server<span class="ansi-blue-fg">(</span>FastAPIUvicornServer<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;macmini.fritz.box&#34;</span><span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">5001</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      8</span> print<span class="ansi-blue-fg">(</span>server<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/control/client.py</span> in <span class="ansi-cyan-fg">get_host_details</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">     23</span>     <span class="ansi-green-fg">def</span> get_host_details<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     24</span>         url <span class="ansi-blue-fg">=</span> urljoin<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>base_url<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;host-details&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 25</span><span class="ansi-red-fg">         </span>r <span class="ansi-blue-fg">=</span> httpx<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     26</span>         r<span class="ansi-blue-fg">.</span>raise_for_status<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     27</span>         <span class="ansi-green-fg">return</span> HostDetails<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>r<span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_api.py</span> in <span class="ansi-cyan-fg">get</span><span class="ansi-blue-fg">(url, params, headers, cookies, auth, proxies, allow_redirects, cert, verify, timeout, trust_env)</span>
+<span class="ansi-green-intense-fg ansi-bold">    179</span>     this function<span class="ansi-blue-fg">,</span> <span class="ansi-green-fg">as</span><span class="ansi-red-fg"> </span><span class="ansi-red-fg">`</span>GET<span class="ansi-red-fg">`</span> requests should <span class="ansi-green-fg">not</span> include a request body<span class="ansi-blue-fg">.</span>
+<span class="ansi-green-intense-fg ansi-bold">    180</span>     &#34;&#34;&#34;
+<span class="ansi-green-fg">--&gt; 181</span><span class="ansi-red-fg">     return request(
+</span><span class="ansi-green-intense-fg ansi-bold">    182</span>         <span class="ansi-blue-fg">&#34;GET&#34;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    183</span>         url<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_api.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(method, url, params, content, data, files, json, headers, cookies, auth, proxies, timeout, allow_redirects, verify, cert, trust_env)</span>
+<span class="ansi-green-intense-fg ansi-bold">     91</span>         proxies<span class="ansi-blue-fg">=</span>proxies<span class="ansi-blue-fg">,</span> cert<span class="ansi-blue-fg">=</span>cert<span class="ansi-blue-fg">,</span> verify<span class="ansi-blue-fg">=</span>verify<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">,</span> trust_env<span class="ansi-blue-fg">=</span>trust_env
+<span class="ansi-green-intense-fg ansi-bold">     92</span>     ) as client:
+<span class="ansi-green-fg">---&gt; 93</span><span class="ansi-red-fg">         return client.request(
+</span><span class="ansi-green-intense-fg ansi-bold">     94</span>             method<span class="ansi-blue-fg">=</span>method<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     95</span>             url<span class="ansi-blue-fg">=</span>url<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, content, data, files, json, params, headers, cookies, auth, allow_redirects, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    726</span>             cookies<span class="ansi-blue-fg">=</span>cookies<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    727</span>         )
+<span class="ansi-green-fg">--&gt; 728</span><span class="ansi-red-fg">         return self.send(
+</span><span class="ansi-green-intense-fg ansi-bold">    729</span>             request<span class="ansi-blue-fg">,</span> auth<span class="ansi-blue-fg">=</span>auth<span class="ansi-blue-fg">,</span> allow_redirects<span class="ansi-blue-fg">=</span>allow_redirects<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout
+<span class="ansi-green-intense-fg ansi-bold">    730</span>         )
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, request, stream, auth, allow_redirects, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    760</span>         auth <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_build_request_auth<span class="ansi-blue-fg">(</span>request<span class="ansi-blue-fg">,</span> auth<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    761</span> 
+<span class="ansi-green-fg">--&gt; 762</span><span class="ansi-red-fg">         response = self._send_handling_auth(
+</span><span class="ansi-green-intense-fg ansi-bold">    763</span>             request<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    764</span>             auth<span class="ansi-blue-fg">=</span>auth<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_handling_auth</span><span class="ansi-blue-fg">(self, request, auth, timeout, allow_redirects, history)</span>
+<span class="ansi-green-intense-fg ansi-bold">    798</span> 
+<span class="ansi-green-intense-fg ansi-bold">    799</span>         <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 800</span><span class="ansi-red-fg">             response = self._send_handling_redirects(
+</span><span class="ansi-green-intense-fg ansi-bold">    801</span>                 request<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    802</span>                 timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_handling_redirects</span><span class="ansi-blue-fg">(self, request, timeout, allow_redirects, history)</span>
+<span class="ansi-green-intense-fg ansi-bold">    830</span>                 )
+<span class="ansi-green-intense-fg ansi-bold">    831</span> 
+<span class="ansi-green-fg">--&gt; 832</span><span class="ansi-red-fg">             </span>response <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_send_single_request<span class="ansi-blue-fg">(</span>request<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    833</span>             response<span class="ansi-blue-fg">.</span>history <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>history<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    834</span> 
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_single_request</span><span class="ansi-blue-fg">(self, request, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    854</span> 
+<span class="ansi-green-intense-fg ansi-bold">    855</span>         <span class="ansi-green-fg">with</span> map_exceptions<span class="ansi-blue-fg">(</span>HTTPCORE_EXC_MAP<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 856</span><span class="ansi-red-fg">             (status_code, headers, stream, ext) = transport.request(
+</span><span class="ansi-green-intense-fg ansi-bold">    857</span>                 request<span class="ansi-blue-fg">.</span>method<span class="ansi-blue-fg">.</span>encode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    858</span>                 request<span class="ansi-blue-fg">.</span>url<span class="ansi-blue-fg">.</span>raw<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.pyenv/versions/3.9.4/Python.framework/Versions/3.9/lib/python3.9/contextlib.py</span> in <span class="ansi-cyan-fg">__exit__</span><span class="ansi-blue-fg">(self, type, value, traceback)</span>
+<span class="ansi-green-intense-fg ansi-bold">    133</span>                 value <span class="ansi-blue-fg">=</span> type<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    134</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 135</span><span class="ansi-red-fg">                 </span>self<span class="ansi-blue-fg">.</span>gen<span class="ansi-blue-fg">.</span>throw<span class="ansi-blue-fg">(</span>type<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">,</span> traceback<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    136</span>             <span class="ansi-green-fg">except</span> StopIteration <span class="ansi-green-fg">as</span> exc<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    137</span>                 <span class="ansi-red-fg"># Suppress StopIteration *unless* it&#39;s the same exception that</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_exceptions.py</span> in <span class="ansi-cyan-fg">map_exceptions</span><span class="ansi-blue-fg">(mapping, **kwargs)</span>
+<span class="ansi-green-intense-fg ansi-bold">    341</span> 
+<span class="ansi-green-intense-fg ansi-bold">    342</span>         message <span class="ansi-blue-fg">=</span> str<span class="ansi-blue-fg">(</span>exc<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">--&gt; 343</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">raise</span> mapped_exc<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> exc  <span class="ansi-red-fg"># type: ignore</span>
+<span class="ansi-green-intense-fg ansi-bold">    344</span> 
+<span class="ansi-green-intense-fg ansi-bold">    345</span> 
+
+<span class="ansi-red-fg">ConnectError</span>: [Errno 61] Connection refused</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="ebe28c69-70ad-4606-a493-292bcc890af4"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#ebe28c69-70ad-4606-a493-292bcc890af4');
+
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"macmini.fritz.box\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer(host=\"macmini.fritz.box\", port=5001))\nprint(server)";
+                var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"macmini.fritz.box\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver = server_control_client.get_or_create_server(\n    FastAPIUvicornServer(host=\"macmini.fritz.box\", port=5001)\n)\nprint(server)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create server control client + server (needed for turning files into urls)</span>
+<span class="n">server_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
+<span class="n">server_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_control_host</span><span class="p">)</span>
+<span class="n">server_details</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span><span class="n">FastAPIUvicornServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;macmini.&quot;</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
 
 <span class="c1"># create files and urls</span>
@@ -208,51 +403,20 @@ var element = $('#7d82a84e-b11f-43bd-a110-2ec60073430b');
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>protocol=&#39;http&#39; name=&#39;fastAPI/uvicorn&#39; host=&#39;localhost&#39; port=5001
+[BenchmarkFile(number=0, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;d41d8cd98f00b204e9800998ecf8427e&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=1, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;c2b87744cfbdf5a1bb0c3b691ca40e66&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=2, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;b197317f87369090fe0ae4bbfe90ddf3&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=3, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;0830427b0a6a8e5831fafa2babef13c1&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=4, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;46d44b3d9b086e224f1abb4133ab15ec&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=5, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;459c9b7f167385cd061dcef9dc20a8d2&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=6, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;5623f8aec6dbe2693f19d9e240dd6cc7&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=7, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;a888ed854c5e311da29873670ecbed41&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=8, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;6a35fe2cc7ac40a8951216fe4098b11f&#39;, creator_name=&#39;filesystem&#39;), BenchmarkFile(number=9, base_path=&#39;10000000_3_125000000&#39;, size=10000000, data_root=&#39;data&#39;, hostname=&#39;localhost&#39;, port=8000, checksum=&#39;f69faca1a12e612029ca29ed6ed069d0&#39;, creator_name=&#39;filesystem&#39;)]
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">HTTPStatusError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-3-c2b370b86999&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> byte<span class="ansi-blue-fg">,</span> file_size<span class="ansi-blue-fg">,</span> duration <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">8</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">10</span> <span class="ansi-blue-fg">**</span> <span class="ansi-cyan-fg">7</span><span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">3</span>
-<span class="ansi-green-intense-fg ansi-bold">     12</span> epoch <span class="ansi-blue-fg">=</span> Epoch<span class="ansi-blue-fg">(</span>file_size<span class="ansi-blue-fg">=</span>file_size<span class="ansi-blue-fg">,</span> duration<span class="ansi-blue-fg">=</span>duration<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg"> </span>files <span class="ansi-blue-fg">=</span> server_control_client<span class="ansi-blue-fg">.</span>get_or_create_files<span class="ansi-blue-fg">(</span>epoch<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     14</span> print<span class="ansi-blue-fg">(</span>files<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">:</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     15</span> epoch<span class="ansi-blue-fg">.</span>urls <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>server<span class="ansi-blue-fg">.</span>file_to_url<span class="ansi-blue-fg">(</span>file<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> file <span class="ansi-green-fg">in</span> files<span class="ansi-blue-fg">]</span>
-
-<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/control/client.py</span> in <span class="ansi-cyan-fg">get_or_create_files</span><span class="ansi-blue-fg">(self, epoch)</span>
-<span class="ansi-green-intense-fg ansi-bold">     30</span>         url <span class="ansi-blue-fg">=</span> urljoin<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>base_url<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;epochs&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span>         r <span class="ansi-blue-fg">=</span> httpx<span class="ansi-blue-fg">.</span>post<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> json<span class="ansi-blue-fg">=</span>epoch<span class="ansi-blue-fg">.</span>dict<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 32</span><span class="ansi-red-fg">         </span>r<span class="ansi-blue-fg">.</span>raise_for_status<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     33</span>         <span class="ansi-green-fg">return</span> <span class="ansi-blue-fg">[</span>BenchmarkFile<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>file<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> file <span class="ansi-green-fg">in</span> r<span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;files&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span> 
-
-<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_models.py</span> in <span class="ansi-cyan-fg">raise_for_status</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1106</span>         <span class="ansi-green-fg">elif</span> codes<span class="ansi-blue-fg">.</span>is_server_error<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>status_code<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1107</span>             message <span class="ansi-blue-fg">=</span> message<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> error_type<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;Server Error&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1108</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> HTTPStatusError<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">,</span> response<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1109</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1110</span>     <span class="ansi-green-fg">def</span> json<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">:</span> typing<span class="ansi-blue-fg">.</span>Any<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> typing<span class="ansi-blue-fg">.</span>Any<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">HTTPStatusError</span>: 500 Server Error: Internal Server Error for url: http://macmini.fritz.box:8001/epochs/
-For more information check: https://httpstatuses.com/500</pre>
-</div>
-</div>
-
-<div class="output_area">
 
 
 
-
-<div id="1f17f39f-3122-4d62-bf92-a4fe66860436"></div>
+<div id="4c4b2b2f-9286-40e5-a9fd-61ddde960e05"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
+var element = $('#4c4b2b2f-9286-40e5-a9fd-61ddde960e05');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -297,6 +461,50 @@ var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3.159423792
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="7f8ca804-b2bc-4dd3-8d41-68190b5d837a"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#7f8ca804-b2bc-4dd3-8d41-68190b5d837a');
+
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(client_params, epoch)\nprint(result.elapsed)\n\n# result.elapsed = benchmark_client.measure(epoch)";
+                var nbb_formatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(client_params, epoch)\nprint(result.elapsed)\n\n# result.elapsed = benchmark_client.measure(epoch)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -311,6 +519,52 @@ var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>118850051.28710909</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="8dc8b456-4a77-4b9c-94b8-0e877a457a05"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#8dc8b456-4a77-4b9c-94b8-0e877a457a05');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# dont_test\n\nresult.bytes_per_second";
+                var nbb_formatted_code = "# dont_test\n\nresult.bytes_per_second";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -330,12 +584,48 @@ var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;test.db&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;results.db&quot;</span><span class="p">)</span>
 <span class="n">register_default_tables</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
 <span class="n">results</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="2700905b-f8a3-49b7-b6c6-9afda480574c"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#2700905b-f8a3-49b7-b6c6-9afda480574c');
+
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"results.db\")\nregister_default_tables(repository)\nresults = repository.tables[\"result\"]";
+                var nbb_formatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"results.db\")\nregister_default_tables(repository)\nresults = repository.tables[\"result\"]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -357,6 +647,50 @@ var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="2ef77312-a3a3-4dbb-a137-3aec8b1c44d4"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#2ef77312-a3a3-4dbb-a137-3aec8b1c44d4');
+
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "# dont_test\n\nresult_id = results.add_result(result)\nprint(result_id)";
+                var nbb_formatted_code = "# dont_test\n\nresult_id = results.add_result(result)\nprint(result_id)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -374,6 +708,52 @@ var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[Result(server=FastAPIUvicornServer(protocol=&#39;http&#39;, name=&#39;fastAPI/uvicorn&#39;, host=&#39;localhost&#39;, port=5001), client=HttpxClient(name=&#39;httpx&#39;), server_details=HostDetails(machine_id=&#39;C07XJ1E5JYVX&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [8, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;8.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 6, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;Intel(R) Core(TM) i5-8500B CPU @ 3.00GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;3.0000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;3.0000 GHz&#39;, &#39;hz_advertised&#39;: [3000000000, 0], &#39;hz_actual&#39;: [3000000000, 0], &#39;l2_cache_size&#39;: 262144, &#39;stepping&#39;: 10, &#39;model&#39;: 158, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;1gbpage&#39;, &#39;3dnowprefetch&#39;, &#39;abm&#39;, &#39;acpi&#39;, &#39;adx&#39;, &#39;aes&#39;, &#39;apic&#39;, &#39;avx&#39;, &#39;avx1.0&#39;, &#39;avx2&#39;, &#39;bmi1&#39;, &#39;bmi2&#39;, &#39;clflush&#39;, &#39;clflushopt&#39;, &#39;clfsh&#39;, &#39;clfsopt&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;ds&#39;, &#39;ds_cpl&#39;, &#39;dscpl&#39;, &#39;dtes64&#39;, &#39;dts&#39;, &#39;em64t&#39;, &#39;erms&#39;, &#39;est&#39;, &#39;f16c&#39;, &#39;fma&#39;, &#39;fpu&#39;, &#39;fpu_csds&#39;, &#39;fxsr&#39;, &#39;hle&#39;, &#39;ht&#39;, &#39;htt&#39;, &#39;ibrs&#39;, &#39;intel_pt&#39;, &#39;invpcid&#39;, &#39;ipt&#39;, &#39;l1df&#39;, &#39;lahf&#39;, &#39;lahf_lm&#39;, &#39;lzcnt&#39;, &#39;mca&#39;, &#39;mce&#39;, &#39;mdclear&#39;, &#39;mmx&#39;, &#39;mon&#39;, &#39;monitor&#39;, &#39;movbe&#39;, &#39;mpx&#39;, &#39;msr&#39;, &#39;mtrr&#39;, &#39;osxsave&#39;, &#39;pae&#39;, &#39;pat&#39;, &#39;pbe&#39;, &#39;pcid&#39;, &#39;pclmulqdq&#39;, &#39;pdcm&#39;, &#39;pge&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;prefetchw&#39;, &#39;pse&#39;, &#39;pse36&#39;, &#39;rdrand&#39;, &#39;rdrnd&#39;, &#39;rdseed&#39;, &#39;rdtscp&#39;, &#39;rdwrfsgs&#39;, &#39;rtm&#39;, &#39;seglim64&#39;, &#39;sep&#39;, &#39;sgx&#39;, &#39;sgx_lc&#39;, &#39;sgxlc&#39;, &#39;smap&#39;, &#39;smep&#39;, &#39;smx&#39;, &#39;ss&#39;, &#39;ssbd&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse3&#39;, &#39;sse4.1&#39;, &#39;sse4.2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;stibp&#39;, &#39;syscall&#39;, &#39;tm&#39;, &#39;tm2&#39;, &#39;tpr&#39;, &#39;tsc&#39;, &#39;tsc_thread_offset&#39;, &#39;tscdeadline&#39;, &#39;tsci&#39;, &#39;tsctmr&#39;, &#39;tsxfa&#39;, &#39;vme&#39;, &#39;vmx&#39;, &#39;x2apic&#39;, &#39;xd&#39;, &#39;xsave&#39;, &#39;xtpr&#39;], &#39;l2_cache_line_size&#39;: 256, &#39;l2_cache_associativity&#39;: 6}), client_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0050 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1005035792, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), file_size=10000000, elapsed=3.1393565829999996, complete_size=375000000)]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="1a1ab842-33d4-4ca4-be55-8b614f45c4c6"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#1a1ab842-33d4-4ca4-be55-8b614f45c4c6');
+
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "# dont_test\n\nresults.get_results()";
+                var nbb_formatted_code = "# dont_test\n\nresults.get_results()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -388,6 +768,97 @@ var element = $('#1f17f39f-3122-4d62-bf92-a4fe66860436');
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>server</th>
+      <th>client</th>
+      <th>server_host</th>
+      <th>client_host</th>
+      <th>elapsed</th>
+      <th>file_size</th>
+      <th>file_size_h</th>
+      <th>complete_size</th>
+      <th>bytes_per_second</th>
+      <th>bytes_per_second_h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>C07XJ1E5JYVX</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>3.139357</td>
+      <td>10000000</td>
+      <td>9.54MB</td>
+      <td>375000000</td>
+      <td>1.194512e+08</td>
+      <td>113.92MB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="6afca2a6-1dba-43b8-a603-c1fe703b86aa"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#6afca2a6-1dba-43b8-a603-c1fe703b86aa');
+
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "# dont_test\n\npd.DataFrame([r.dict_for_pandas() for r in results.get_results()])";
+                var nbb_formatted_code = "# dont_test\n\npd.DataFrame([r.dict_for_pandas() for r in results.get_results()])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
