@@ -51,10 +51,10 @@ nb_path: "90_benchmark_without_benchmark.ipynb"
 
 
 
-<div id="4c6bafe7-e7ee-4064-acba-9628b399ea91"></div>
+<div id="71bb36da-6d48-4ce7-9f02-730a4319de7f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4c6bafe7-e7ee-4064-acba-9628b399ea91');
+var element = $('#71bb36da-6d48-4ce7-9f02-730a4319de7f');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -90,6 +90,7 @@ var element = $('#4c6bafe7-e7ee-4064-acba-9628b399ea91');
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">httpx</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urljoin</span>
 
@@ -104,7 +105,7 @@ var element = $('#4c6bafe7-e7ee-4064-acba-9628b399ea91');
 <span class="kn">from</span> <span class="nn">will_it_saturate.results</span> <span class="kn">import</span> <span class="n">Result</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.files</span> <span class="kn">import</span> <span class="n">BenchmarkFile</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.control.client</span> <span class="kn">import</span> <span class="n">ControlClient</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.repositories</span> <span class="kn">import</span> <span class="n">SqliteRepository</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate.repositories</span> <span class="kn">import</span> <span class="n">SqliteRepository</span><span class="p">,</span> <span class="n">register_default_tables</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.clients</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">HttpxClient</span><span class="p">,</span>
     <span class="n">AioHttpClient</span><span class="p">,</span>
@@ -126,15 +127,15 @@ var element = $('#4c6bafe7-e7ee-4064-acba-9628b399ea91');
 
 
 
-<div id="67e027f0-cd5d-4b33-9606-329183d0e4dc"></div>
+<div id="ab5f0506-2dd6-45a7-96cc-b59928da646c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#67e027f0-cd5d-4b33-9606-329183d0e4dc');
+var element = $('#ab5f0506-2dd6-45a7-96cc-b59928da646c');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
-                var nbb_unformatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
-                var nbb_formatted_code = "import httpx\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
+                var nbb_unformatted_code = "import httpx\nimport pandas as pd\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository, register_default_tables\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
+                var nbb_formatted_code = "import httpx\nimport pandas as pd\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository, register_default_tables\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n    ClientParameters,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -217,10 +218,10 @@ var element = $('#67e027f0-cd5d-4b33-9606-329183d0e4dc');
 
 
 
-<div id="0419f05f-20dc-4fb1-87ec-d8d309e2c53e"></div>
+<div id="78d884a2-8d78-48f7-97ae-1156ecda4e97"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0419f05f-20dc-4fb1-87ec-d8d309e2c53e');
+var element = $('#78d884a2-8d78-48f7-97ae-1156ecda4e97');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -271,7 +272,7 @@ var element = $('#0419f05f-20dc-4fb1-87ec-d8d309e2c53e');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>3.225667333
+<pre>3.183605375
 </pre>
 </div>
 </div>
@@ -281,10 +282,10 @@ var element = $('#0419f05f-20dc-4fb1-87ec-d8d309e2c53e');
 
 
 
-<div id="0176127b-41d5-4c7d-ba3f-ed9ac5770220"></div>
+<div id="d020a19a-81ab-43eb-9e67-b87b3fb7f422"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0176127b-41d5-4c7d-ba3f-ed9ac5770220');
+var element = $('#d020a19a-81ab-43eb-9e67-b87b3fb7f422');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -334,7 +335,7 @@ var element = $('#0176127b-41d5-4c7d-ba3f-ed9ac5770220');
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>116255013.70323732</pre>
+<pre>117790980.9252034</pre>
 </div>
 
 </div>
@@ -344,10 +345,10 @@ var element = $('#0176127b-41d5-4c7d-ba3f-ed9ac5770220');
 
 
 
-<div id="a5d7acc2-d6bc-4b7c-b2b3-7a2d2ec3b599"></div>
+<div id="482b5403-2862-4189-9464-ff62ae4046c2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a5d7acc2-d6bc-4b7c-b2b3-7a2d2ec3b599');
+var element = $('#482b5403-2862-4189-9464-ff62ae4046c2');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -382,9 +383,63 @@ var element = $('#a5d7acc2-d6bc-4b7c-b2b3-7a2d2ec3b599');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;test.db&quot;</span><span class="p">)</span>
-<span class="n">affected</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">affected</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;test.db&quot;</span><span class="p">)</span>
+<span class="n">register_default_tables</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="88eb7ba4-6822-480d-b93b-e44a401fbc18"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#88eb7ba4-6822-480d-b93b-e44a401fbc18');
+
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"test.db\")\nregister_default_tables(repository)\nresults = repository.tables[\"result\"]";
+                var nbb_formatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"test.db\")\nregister_default_tables(repository)\nresults = repository.tables[\"result\"]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result_id</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_id</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -397,7 +452,7 @@ var element = $('#a5d7acc2-d6bc-4b7c-b2b3-7a2d2ec3b599');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
+<pre>4
 </pre>
 </div>
 </div>
@@ -407,15 +462,362 @@ var element = $('#a5d7acc2-d6bc-4b7c-b2b3-7a2d2ec3b599');
 
 
 
-<div id="36fb0039-732d-43fc-a544-d271114e3474"></div>
+<div id="25b8650a-a460-4991-98c0-83e4c909fefc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#36fb0039-732d-43fc-a544-d271114e3474');
+var element = $('#25b8650a-a460-4991-98c0-83e4c909fefc');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
-                var nbb_unformatted_code = "repo = SqliteRepository.build_repository(\"test.db\")\naffected = repo.add_result(result)\nprint(affected)";
-                var nbb_formatted_code = "repo = SqliteRepository.build_repository(\"test.db\")\naffected = repo.add_result(result)\nprint(affected)";
+                var nbb_unformatted_code = "# dont_test\n\nresult_id = results.add_result(result)\nprint(result_id)";
+                var nbb_formatted_code = "# dont_test\n\nresult_id = results.add_result(result)\nprint(result_id)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[Result(server=FastAPIUvicornServer(protocol=&#39;http&#39;, name=&#39;fastAPI/uvicorn&#39;, host=&#39;localhost&#39;, port=5001), client=HttpxClient(name=&#39;httpx&#39;), server_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), client_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), file_size=10000000, elapsed=3.144974375, complete_size=375000000),
+ Result(server=FastAPIUvicornServer(protocol=&#39;http&#39;, name=&#39;fastAPI/uvicorn&#39;, host=&#39;localhost&#39;, port=5001), client=HttpxClient(name=&#39;httpx&#39;), server_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), client_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), file_size=10000000, elapsed=3.192158833, complete_size=375000000),
+ Result(server=FastAPIUvicornServer(protocol=&#39;http&#39;, name=&#39;fastAPI/uvicorn&#39;, host=&#39;localhost&#39;, port=5001), client=HttpxClient(name=&#39;httpx&#39;), server_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), client_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), file_size=10000000, elapsed=3.143216292, complete_size=375000000),
+ Result(server=FastAPIUvicornServer(protocol=&#39;http&#39;, name=&#39;fastAPI/uvicorn&#39;, host=&#39;localhost&#39;, port=5001), client=HttpxClient(name=&#39;httpx&#39;), server_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), client_details=HostDetails(machine_id=&#39;C02DR0MZQ6LT&#39;, cpuinfo={&#39;python_version&#39;: &#39;3.9.4.final.0 (64 bit)&#39;, &#39;cpuinfo_version&#39;: [7, 0, 0], &#39;cpuinfo_version_string&#39;: &#39;7.0.0&#39;, &#39;arch&#39;: &#39;X86_64&#39;, &#39;bits&#39;: 64, &#39;count&#39;: 8, &#39;arch_string_raw&#39;: &#39;x86_64&#39;, &#39;vendor_id_raw&#39;: &#39;GenuineIntel&#39;, &#39;brand_raw&#39;: &#39;VirtualApple @ 2.50GHz&#39;, &#39;hz_advertised_friendly&#39;: &#39;2.5000 GHz&#39;, &#39;hz_actual_friendly&#39;: &#39;1.0001 GHz&#39;, &#39;hz_advertised&#39;: [2500000000, 0], &#39;hz_actual&#39;: [1000050083, 0], &#39;l2_cache_size&#39;: 65536, &#39;l2_cache_line_size&#39;: 8192, &#39;l2_cache_associativity&#39;: 8, &#39;model&#39;: 44, &#39;family&#39;: 6, &#39;flags&#39;: [&#39;aes&#39;, &#39;apic&#39;, &#39;clflush&#39;, &#39;cmov&#39;, &#39;cx16&#39;, &#39;cx8&#39;, &#39;de&#39;, &#39;dtes64&#39;, &#39;fpu&#39;, &#39;fxsr&#39;, &#39;lahf_lm&#39;, &#39;mmx&#39;, &#39;monitor&#39;, &#39;pat&#39;, &#39;pclmulqdq&#39;, &#39;pni&#39;, &#39;popcnt&#39;, &#39;pse36&#39;, &#39;sep&#39;, &#39;ss&#39;, &#39;sse&#39;, &#39;sse2&#39;, &#39;sse4_1&#39;, &#39;sse4_2&#39;, &#39;ssse3&#39;, &#39;tsc&#39;]}), file_size=10000000, elapsed=3.183605375, complete_size=375000000)]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="e74a1d48-8b8e-4350-aef7-ec628dd7b169"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#e74a1d48-8b8e-4350-aef7-ec628dd7b169');
+
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "# dont_test\n\nresults.get_results()";
+                var nbb_formatted_code = "# dont_test\n\nresults.get_results()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">dict_with_properties</span><span class="p">()</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>server</th>
+      <th>client</th>
+      <th>server_details</th>
+      <th>client_details</th>
+      <th>file_size</th>
+      <th>elapsed</th>
+      <th>complete_size</th>
+      <th>file_size_h</th>
+      <th>bytes_per_second</th>
+      <th>bytes_per_second_h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>{'protocol': 'http', 'name': 'fastAPI/uvicorn'...</td>
+      <td>{'name': 'httpx'}</td>
+      <td>{'machine_id': 'C02DR0MZQ6LT', 'cpuinfo': {'py...</td>
+      <td>{'machine_id': 'C02DR0MZQ6LT', 'cpuinfo': {'py...</td>
+      <td>10000000</td>
+      <td>3.144974</td>
+      <td>375000000</td>
+      <td>9.54MB</td>
+      <td>1.192379e+08</td>
+      <td>113.71MB</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>{'protocol': 'http', 'name': 'fastAPI/uvicorn'...</td>
+      <td>{'name': 'httpx'}</td>
+      <td>{'machine_id': 'C02DR0MZQ6LT', 'cpuinfo': {'py...</td>
+      <td>{'machine_id': 'C02DR0MZQ6LT', 'cpuinfo': {'py...</td>
+      <td>10000000</td>
+      <td>3.192159</td>
+      <td>375000000</td>
+      <td>9.54MB</td>
+      <td>1.174754e+08</td>
+      <td>112.03MB</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>{'protocol': 'http', 'name': 'fastAPI/uvicorn'...</td>
+      <td>{'name': 'httpx'}</td>
+      <td>{'machine_id': 'C02DR0MZQ6LT', 'cpuinfo': {'py...</td>
+      <td>{'machine_id': 'C02DR0MZQ6LT', 'cpuinfo': {'py...</td>
+      <td>10000000</td>
+      <td>3.143216</td>
+      <td>375000000</td>
+      <td>9.54MB</td>
+      <td>1.193045e+08</td>
+      <td>113.78MB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="aa128e23-c56f-42fe-8f14-061ae13fdc6e"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#aa128e23-c56f-42fe-8f14-061ae13fdc6e');
+
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "pd.DataFrame([r.dict_with_properties() for r in results.get_results()])";
+                var nbb_formatted_code = "pd.DataFrame([r.dict_with_properties() for r in results.get_results()])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">r</span><span class="o">.</span><span class="n">dict_for_pandas</span><span class="p">()</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>server</th>
+      <th>client</th>
+      <th>server_host</th>
+      <th>client_host</th>
+      <th>elapsed</th>
+      <th>file_size</th>
+      <th>file_size_h</th>
+      <th>complete_size</th>
+      <th>bytes_per_second</th>
+      <th>bytes_per_second_h</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>3.144974</td>
+      <td>10000000</td>
+      <td>9.54MB</td>
+      <td>375000000</td>
+      <td>1.192379e+08</td>
+      <td>113.71MB</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>3.192159</td>
+      <td>10000000</td>
+      <td>9.54MB</td>
+      <td>375000000</td>
+      <td>1.174754e+08</td>
+      <td>112.03MB</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>3.143216</td>
+      <td>10000000</td>
+      <td>9.54MB</td>
+      <td>375000000</td>
+      <td>1.193045e+08</td>
+      <td>113.78MB</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>fastAPI/uvicorn</td>
+      <td>httpx</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>C02DR0MZQ6LT</td>
+      <td>3.183605</td>
+      <td>10000000</td>
+      <td>9.54MB</td>
+      <td>375000000</td>
+      <td>1.177910e+08</td>
+      <td>112.33MB</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="28b9c874-e9d5-46da-ad72-b2b2b495b4b3"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#28b9c874-e9d5-46da-ad72-b2b2b495b4b3');
+
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "pd.DataFrame([r.dict_for_pandas() for r in results.get_results()])";
+                var nbb_formatted_code = "pd.DataFrame([r.dict_for_pandas() for r in results.get_results()])";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -460,10 +862,10 @@ var element = $('#36fb0039-732d-43fc-a544-d271114e3474');
 
 
 
-<div id="e312cba1-edbc-4484-ab62-dd060259ec06"></div>
+<div id="404b4a46-628b-49b9-a174-27b31dbc96d6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e312cba1-edbc-4484-ab62-dd060259ec06');
+var element = $('#404b4a46-628b-49b9-a174-27b31dbc96d6');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -554,10 +956,10 @@ var element = $('#e312cba1-edbc-4484-ab62-dd060259ec06');
 
 
 
-<div id="9559650c-a7b7-4de9-b1d1-7d7744fe7722"></div>
+<div id="5875c515-c2df-4303-a77b-bca749d19f3d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9559650c-a7b7-4de9-b1d1-7d7744fe7722');
+var element = $('#5875c515-c2df-4303-a77b-bca749d19f3d');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -608,10 +1010,10 @@ var element = $('#9559650c-a7b7-4de9-b1d1-7d7744fe7722');
 
 
 
-<div id="7fc33845-f7b0-43e4-b781-ee04fb5be5db"></div>
+<div id="2fadda01-9450-499a-8f27-4824f3751ccc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7fc33845-f7b0-43e4-b781-ee04fb5be5db');
+var element = $('#2fadda01-9450-499a-8f27-4824f3751ccc');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -669,10 +1071,10 @@ var element = $('#7fc33845-f7b0-43e4-b781-ee04fb5be5db');
 
 
 
-<div id="bb9ea2db-a207-4bb5-9ed1-e0883e25dee2"></div>
+<div id="84f944a3-5f38-4f8a-a6b3-710a23759243"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bb9ea2db-a207-4bb5-9ed1-e0883e25dee2');
+var element = $('#84f944a3-5f38-4f8a-a6b3-710a23759243');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -732,10 +1134,10 @@ var element = $('#bb9ea2db-a207-4bb5-9ed1-e0883e25dee2');
 
 
 
-<div id="f61803d4-fddd-4d61-bc40-13bebed57cf1"></div>
+<div id="99a18a24-5a02-4d97-a609-86e6b43333ec"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f61803d4-fddd-4d61-bc40-13bebed57cf1');
+var element = $('#99a18a24-5a02-4d97-a609-86e6b43333ec');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -839,10 +1241,10 @@ var element = $('#f61803d4-fddd-4d61-bc40-13bebed57cf1');
 
 
 
-<div id="b8e71c50-8bdf-4bc3-8f2a-734fc1847eec"></div>
+<div id="b4409f7f-9991-42cb-840d-df681094d13d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b8e71c50-8bdf-4bc3-8f2a-734fc1847eec');
+var element = $('#b4409f7f-9991-42cb-840d-df681094d13d');
 
             setTimeout(function() {
                 var nbb_cell_id = 15;
@@ -902,10 +1304,10 @@ var element = $('#b8e71c50-8bdf-4bc3-8f2a-734fc1847eec');
 
 
 
-<div id="cad31976-11de-4906-958a-44dccb06807d"></div>
+<div id="335fec1b-9fee-4960-b778-d476a85344ec"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#cad31976-11de-4906-958a-44dccb06807d');
+var element = $('#335fec1b-9fee-4960-b778-d476a85344ec');
 
             setTimeout(function() {
                 var nbb_cell_id = 16;
@@ -1011,10 +1413,10 @@ client
 
 
 
-<div id="da2eb3d9-2313-44fc-b0f1-3002fa906e2b"></div>
+<div id="4ed56fde-4d8a-40eb-aefc-b937f92d6a3c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#da2eb3d9-2313-44fc-b0f1-3002fa906e2b');
+var element = $('#4ed56fde-4d8a-40eb-aefc-b937f92d6a3c');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;

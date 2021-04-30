@@ -40,7 +40,7 @@ entries:
       title: Control Server Command Line Interface
       url: control_cli.html
     - output: web,pdf
-      title: Servers
+      title: Server Registry
       url: servers.html
     - output: web,pdf
       title: FastAPIUvicornServer

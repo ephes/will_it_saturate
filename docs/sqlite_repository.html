@@ -51,10 +51,10 @@ nb_path: "71_sqlite_repository.ipynb"
 
 
 
-<div id="42e5d72c-7e00-4068-b40a-1187d7ea03f6"></div>
+<div id="10c733d6-0034-4722-9d80-afa3a4ff7c1e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#42e5d72c-7e00-4068-b40a-1187d7ea03f6');
+var element = $('#10c733d6-0034-4722-9d80-afa3a4ff7c1e');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -104,10 +104,10 @@ var element = $('#42e5d72c-7e00-4068-b40a-1187d7ea03f6');
 
 
 
-<div id="5c01a871-d6b2-4e2b-be11-571c3956b912"></div>
+<div id="90145679-33be-4184-bdfb-bb313bb7b582"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
+var element = $('#90145679-33be-4184-bdfb-bb313bb7b582');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -146,7 +146,7 @@ var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="dict_factory" class="doc_header"><code>dict_factory</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L39" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>dict_factory</code>(<strong><code>cursor</code></strong>, <strong><code>row</code></strong>)</p>
+<h4 id="dict_factory" class="doc_header"><code>dict_factory</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L40" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>dict_factory</code>(<strong><code>cursor</code></strong>, <strong><code>row</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -170,7 +170,62 @@ var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="SqliteRepository" class="doc_header"><code>class</code> <code>SqliteRepository</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L46" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SqliteRepository</code>(<strong><code>session</code></strong>:<code>Any</code>=<em><code>None</code></em>, <strong><code>connection</code></strong>:<code>Connection</code>) :: <a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a></p>
+<h2 id="SqliteRepository" class="doc_header"><code>class</code> <code>SqliteRepository</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L47" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>SqliteRepository</code>(<strong><code>session</code></strong>:<code>Any</code>=<em><code>None</code></em>, <strong><code>connection</code></strong>:<code>Connection</code>, <strong><code>tables</code></strong>:<code>dict</code>=<em><code>{}</code></em>) :: <a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="BaseTable" class="doc_header"><code>class</code> <code>BaseTable</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L66" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseTable</code>(<strong>*<code>args</code></strong>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a>) :: <code>BaseModel</code></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="HostTable" class="doc_header"><code>class</code> <code>HostTable</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L93" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HostTable</code>(<strong>*<code>args</code></strong>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a>, <strong><code>table_name</code></strong>:<code>str</code>=<em><code>'host'</code></em>, <strong><code>create_statement</code></strong>:<code>str</code>=<em><code>"\n        create table host (\n            host_id INTEGER PRIMARY KEY,\n            created DATE DEFAULT (datetime('now','localtime')),\n            machine_id TEXT NOT NULL UNIQUE,\n            details TEXT NOT NULL\n        )\n    "</code></em>) :: <a href="/will_it_saturate/sqlite_repository.html#BaseTable"><code>BaseTable</code></a></p>
 </blockquote>
 
 </div>
@@ -192,7 +247,7 @@ var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tests">Tests<a class="anchor-link" href="#Tests"> </a></h2>
+<h2 id="Tests-HostTable">Tests HostTable<a class="anchor-link" href="#Tests-HostTable"> </a></h2>
 </div>
 </div>
 </div>
@@ -203,7 +258,9 @@ var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.results</span> <span class="kn">import</span> <span class="n">Result</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<span class="n">host_table</span> <span class="o">=</span> <span class="n">HostTable</span><span class="p">(</span><span class="n">repository</span><span class="o">=</span><span class="n">repository</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">create_table</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -218,15 +275,15 @@ var element = $('#5c01a871-d6b2-4e2b-be11-571c3956b912');
 
 
 
-<div id="b791d21b-bbcd-4ecd-af26-06bc2c41d009"></div>
+<div id="b66390c8-5bf3-4bb5-9f71-8d149dc12e77"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b791d21b-bbcd-4ecd-af26-06bc2c41d009');
+var element = $('#b66390c8-5bf3-4bb5-9f71-8d149dc12e77');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "from will_it_saturate.results import Result";
-                var nbb_formatted_code = "from will_it_saturate.results import Result";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "repository = SqliteRepository.build_repository(\":memory:\")\nhost_table = HostTable(repository=repository)\n_ = host_table.create_table()";
+                var nbb_formatted_code = "repository = SqliteRepository.build_repository(\":memory:\")\nhost_table = HostTable(repository=repository)\n_ = host_table.create_table()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -251,7 +308,7 @@ var element = $('#b791d21b-bbcd-4ecd-af26-06bc2c41d009');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Add-Host-to-Repository">Add Host to Repository<a class="anchor-link" href="#Add-Host-to-Repository"> </a></h3>
+<h3 id="Get-Machine-to-Host-Lookup">Get Machine to Host Lookup<a class="anchor-link" href="#Get-Machine-to-Host-Lookup"> </a></h3>
 </div>
 </div>
 </div>
@@ -262,8 +319,7 @@ var element = $('#b791d21b-bbcd-4ecd-af26-06bc2c41d009');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
-<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_machine_to_host_id</span><span class="p">([</span><span class="s2">&quot;asdf&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_machine_to_host_id</span><span class="p">([</span><span class="s2">&quot;asdf&quot;</span><span class="p">])</span>
 <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">machine_to_host_id</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 </pre></div>
 
@@ -279,15 +335,15 @@ var element = $('#b791d21b-bbcd-4ecd-af26-06bc2c41d009');
 
 
 
-<div id="4617bd7c-602b-4a0f-942c-39a80ce95be7"></div>
+<div id="aad14269-3444-4d9d-9f78-c3023c1426b5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4617bd7c-602b-4a0f-942c-39a80ce95be7');
+var element = $('#aad14269-3444-4d9d-9f78-c3023c1426b5');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
-                var nbb_unformatted_code = "repo = SqliteRepository.build_repository(\":memory:\")\nmachine_to_host_id = repo.get_machine_to_host_id([\"asdf\"])\nassert len(machine_to_host_id) == 0";
-                var nbb_formatted_code = "repo = SqliteRepository.build_repository(\":memory:\")\nmachine_to_host_id = repo.get_machine_to_host_id([\"asdf\"])\nassert len(machine_to_host_id) == 0";
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "machine_to_host_id = host_table.get_machine_to_host_id([\"asdf\"])\nassert len(machine_to_host_id) == 0";
+                var nbb_formatted_code = "machine_to_host_id = host_table.get_machine_to_host_id([\"asdf\"])\nassert len(machine_to_host_id) == 0";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -312,7 +368,7 @@ var element = $('#4617bd7c-602b-4a0f-942c-39a80ce95be7');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Add-HostDetails-to-Repository">Add HostDetails to Repository<a class="anchor-link" href="#Add-HostDetails-to-Repository"> </a></h3>
+<h3 id="Insert-HostDetails">Insert HostDetails<a class="anchor-link" href="#Insert-HostDetails"> </a></h3>
 </div>
 </div>
 </div>
@@ -326,10 +382,10 @@ var element = $('#4617bd7c-602b-4a0f-942c-39a80ce95be7');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">machine_id1</span><span class="p">,</span> <span class="n">cpuinfo</span> <span class="o">=</span> <span class="s2">&quot;asdf&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;arch&quot;</span><span class="p">:</span> <span class="s2">&quot;X86_64&quot;</span><span class="p">}</span>
 <span class="n">host_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="n">machine_id1</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="n">cpuinfo</span><span class="p">)</span>
 
-<span class="n">rowcount</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">insert_host_details</span><span class="p">(</span><span class="n">host_details</span><span class="p">)</span>
+<span class="n">rowcount</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">insert_host_details</span><span class="p">(</span><span class="n">host_details</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">rowcount</span> <span class="o">==</span> <span class="mi">1</span>
 
-<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_machine_to_host_id</span><span class="p">([</span><span class="n">machine_id1</span><span class="p">])</span>
+<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_machine_to_host_id</span><span class="p">([</span><span class="n">machine_id1</span><span class="p">])</span>
 <span class="k">assert</span> <span class="n">machine_to_host_id</span> <span class="o">==</span> <span class="p">{</span><span class="n">machine_id1</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
 </pre></div>
 
@@ -345,15 +401,15 @@ var element = $('#4617bd7c-602b-4a0f-942c-39a80ce95be7');
 
 
 
-<div id="79f5d53c-024f-4aa6-b7f6-ab4c41645681"></div>
+<div id="0381dd50-1f95-4732-a024-ad24261b7511"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#79f5d53c-024f-4aa6-b7f6-ab4c41645681');
+var element = $('#0381dd50-1f95-4732-a024-ad24261b7511');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "machine_id1, cpuinfo = \"asdf\", {\"arch\": \"X86_64\"}\nhost_details = HostDetails(machine_id=machine_id1, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_details)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1])\nassert machine_to_host_id == {machine_id1: 1}";
-                var nbb_formatted_code = "machine_id1, cpuinfo = \"asdf\", {\"arch\": \"X86_64\"}\nhost_details = HostDetails(machine_id=machine_id1, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_details)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1])\nassert machine_to_host_id == {machine_id1: 1}";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "machine_id1, cpuinfo = \"asdf\", {\"arch\": \"X86_64\"}\nhost_details = HostDetails(machine_id=machine_id1, cpuinfo=cpuinfo)\n\nrowcount = host_table.insert_host_details(host_details)\nassert rowcount == 1\n\nmachine_to_host_id = host_table.get_machine_to_host_id([machine_id1])\nassert machine_to_host_id == {machine_id1: 1}";
+                var nbb_formatted_code = "machine_id1, cpuinfo = \"asdf\", {\"arch\": \"X86_64\"}\nhost_details = HostDetails(machine_id=machine_id1, cpuinfo=cpuinfo)\n\nrowcount = host_table.insert_host_details(host_details)\nassert rowcount == 1\n\nmachine_to_host_id = host_table.get_machine_to_host_id([machine_id1])\nassert machine_to_host_id == {machine_id1: 1}";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -378,7 +434,7 @@ var element = $('#79f5d53c-024f-4aa6-b7f6-ab4c41645681');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Add-two-HostDetails-to-Repository-with-one-Already-Existing">Add two HostDetails to Repository with one Already Existing<a class="anchor-link" href="#Add-two-HostDetails-to-Repository-with-one-Already-Existing"> </a></h3>
+<h3 id="Insert-two-HostDetails-with-one-Already-Existing">Insert two HostDetails with one Already Existing<a class="anchor-link" href="#Insert-two-HostDetails-with-one-Already-Existing"> </a></h3>
 </div>
 </div>
 </div>
@@ -392,10 +448,12 @@ var element = $('#79f5d53c-024f-4aa6-b7f6-ab4c41645681');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">machine_id2</span> <span class="o">=</span> <span class="s2">&quot;bsdf&quot;</span>
 <span class="n">host_detail</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="n">machine_id2</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="n">cpuinfo</span><span class="p">)</span>
 
-<span class="n">rowcount</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">insert_host_details</span><span class="p">(</span><span class="n">host_detail</span><span class="p">)</span>
+<span class="n">rowcount</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">insert_host_details</span><span class="p">(</span><span class="n">host_detail</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">rowcount</span> <span class="o">==</span> <span class="mi">1</span>
 
-<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_machine_to_host_id</span><span class="p">([</span><span class="n">machine_id1</span><span class="p">,</span> <span class="n">machine_id2</span><span class="p">,</span> <span class="s2">&quot;csdf&quot;</span><span class="p">])</span>
+<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_machine_to_host_id</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">machine_id1</span><span class="p">,</span> <span class="n">machine_id2</span><span class="p">,</span> <span class="s2">&quot;csdf&quot;</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="k">assert</span> <span class="n">machine_to_host_id</span> <span class="o">==</span> <span class="p">{</span><span class="n">machine_id1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">machine_id2</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 </pre></div>
 
@@ -411,15 +469,15 @@ var element = $('#79f5d53c-024f-4aa6-b7f6-ab4c41645681');
 
 
 
-<div id="9b20f567-4468-4f79-8bca-4466c5ce0954"></div>
+<div id="796b7593-87f3-45d0-8d87-be0fcf73b031"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9b20f567-4468-4f79-8bca-4466c5ce0954');
+var element = $('#796b7593-87f3-45d0-8d87-be0fcf73b031');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "machine_id2 = \"bsdf\"\nhost_detail = HostDetails(machine_id=machine_id2, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_detail)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1, machine_id2, \"csdf\"])\nassert machine_to_host_id == {machine_id1: 1, machine_id2: 2}";
-                var nbb_formatted_code = "machine_id2 = \"bsdf\"\nhost_detail = HostDetails(machine_id=machine_id2, cpuinfo=cpuinfo)\n\nrowcount = repo.insert_host_details(host_detail)\nassert rowcount == 1\n\nmachine_to_host_id = repo.get_machine_to_host_id([machine_id1, machine_id2, \"csdf\"])\nassert machine_to_host_id == {machine_id1: 1, machine_id2: 2}";
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "machine_id2 = \"bsdf\"\nhost_detail = HostDetails(machine_id=machine_id2, cpuinfo=cpuinfo)\n\nrowcount = host_table.insert_host_details(host_detail)\nassert rowcount == 1\n\nmachine_to_host_id = host_table.get_machine_to_host_id(\n    [machine_id1, machine_id2, \"csdf\"]\n)\nassert machine_to_host_id == {machine_id1: 1, machine_id2: 2}";
+                var nbb_formatted_code = "machine_id2 = \"bsdf\"\nhost_detail = HostDetails(machine_id=machine_id2, cpuinfo=cpuinfo)\n\nrowcount = host_table.insert_host_details(host_detail)\nassert rowcount == 1\n\nmachine_to_host_id = host_table.get_machine_to_host_id(\n    [machine_id1, machine_id2, \"csdf\"]\n)\nassert machine_to_host_id == {machine_id1: 1, machine_id2: 2}";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -444,7 +502,7 @@ var element = $('#9b20f567-4468-4f79-8bca-4466c5ce0954');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Add-all-Hosts-Needed-for-Result">Add all Hosts Needed for Result<a class="anchor-link" href="#Add-all-Hosts-Needed-for-Result"> </a></h3>
+<h3 id="Add-all-Hosts-Needed-for-Result-(get_or_create_hosts_from_result)">Add all Hosts Needed for Result (get_or_create_hosts_from_result)<a class="anchor-link" href="#Add-all-Hosts-Needed-for-Result-(get_or_create_hosts_from_result)"> </a></h3>
 </div>
 </div>
 </div>
@@ -455,7 +513,9 @@ var element = $('#9b20f567-4468-4f79-8bca-4466c5ce0954');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dummy_result_data</span> <span class="o">=</span> <span class="p">{</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.results</span> <span class="kn">import</span> <span class="n">Result</span>
+
+<span class="n">dummy_result_data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;server&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;server&quot;</span><span class="p">},</span>
     <span class="s2">&quot;client&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;client&quot;</span><span class="p">},</span>
     <span class="s2">&quot;file_size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -468,7 +528,7 @@ var element = $('#9b20f567-4468-4f79-8bca-4466c5ce0954');
     <span class="s2">&quot;client_details&quot;</span><span class="p">:</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;esdf&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{}),</span>
 <span class="p">}</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_or_create_hosts_from_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">machine_to_host_id</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_or_create_hosts_from_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="k">assert</span> <span class="n">machine_to_host_id</span> <span class="o">==</span> <span class="p">{</span>
     <span class="n">result</span><span class="o">.</span><span class="n">server_details</span><span class="o">.</span><span class="n">machine_id</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
     <span class="n">result</span><span class="o">.</span><span class="n">client_details</span><span class="o">.</span><span class="n">machine_id</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
@@ -487,15 +547,15 @@ var element = $('#9b20f567-4468-4f79-8bca-4466c5ce0954');
 
 
 
-<div id="0f009daf-5264-4e60-842b-92f32d487667"></div>
+<div id="e695d0b2-d5d9-4c92-93b8-ff601c1b95a8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0f009daf-5264-4e60-842b-92f32d487667');
+var element = $('#e695d0b2-d5d9-4c92-93b8-ff601c1b95a8');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
-                var nbb_unformatted_code = "dummy_result_data = {\n    \"server\": {\"name\": \"server\"},\n    \"client\": {\"name\": \"client\"},\n    \"file_size\": 10,\n    \"complete_size\": 100,\n}\n\nkwargs = {\n    **dummy_result_data,\n    \"server_details\": HostDetails(machine_id=\"dsdf\", cpuinfo={}),\n    \"client_details\": HostDetails(machine_id=\"esdf\", cpuinfo={}),\n}\nresult = Result(**kwargs)\nmachine_to_host_id = repo.get_or_create_hosts_from_result(result)\nassert machine_to_host_id == {\n    result.server_details.machine_id: 3,\n    result.client_details.machine_id: 4,\n}";
-                var nbb_formatted_code = "dummy_result_data = {\n    \"server\": {\"name\": \"server\"},\n    \"client\": {\"name\": \"client\"},\n    \"file_size\": 10,\n    \"complete_size\": 100,\n}\n\nkwargs = {\n    **dummy_result_data,\n    \"server_details\": HostDetails(machine_id=\"dsdf\", cpuinfo={}),\n    \"client_details\": HostDetails(machine_id=\"esdf\", cpuinfo={}),\n}\nresult = Result(**kwargs)\nmachine_to_host_id = repo.get_or_create_hosts_from_result(result)\nassert machine_to_host_id == {\n    result.server_details.machine_id: 3,\n    result.client_details.machine_id: 4,\n}";
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "from will_it_saturate.results import Result\n\ndummy_result_data = {\n    \"server\": {\"name\": \"server\"},\n    \"client\": {\"name\": \"client\"},\n    \"file_size\": 10,\n    \"complete_size\": 100,\n}\n\nkwargs = {\n    **dummy_result_data,\n    \"server_details\": HostDetails(machine_id=\"dsdf\", cpuinfo={}),\n    \"client_details\": HostDetails(machine_id=\"esdf\", cpuinfo={}),\n}\nresult = Result(**kwargs)\nmachine_to_host_id = host_table.get_or_create_hosts_from_result(result)\nassert machine_to_host_id == {\n    result.server_details.machine_id: 3,\n    result.client_details.machine_id: 4,\n}";
+                var nbb_formatted_code = "from will_it_saturate.results import Result\n\ndummy_result_data = {\n    \"server\": {\"name\": \"server\"},\n    \"client\": {\"name\": \"client\"},\n    \"file_size\": 10,\n    \"complete_size\": 100,\n}\n\nkwargs = {\n    **dummy_result_data,\n    \"server_details\": HostDetails(machine_id=\"dsdf\", cpuinfo={}),\n    \"client_details\": HostDetails(machine_id=\"esdf\", cpuinfo={}),\n}\nresult = Result(**kwargs)\nmachine_to_host_id = host_table.get_or_create_hosts_from_result(result)\nassert machine_to_host_id == {\n    result.server_details.machine_id: 3,\n    result.client_details.machine_id: 4,\n}";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -520,7 +580,7 @@ var element = $('#0f009daf-5264-4e60-842b-92f32d487667');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Get-HostDetails-from-Repository">Get HostDetails from Repository<a class="anchor-link" href="#Get-HostDetails-from-Repository"> </a></h3>
+<h3 id="Fetch-HostDetails-by-host_id">Fetch HostDetails by host_id<a class="anchor-link" href="#Fetch-HostDetails-by-host_id"> </a></h3>
 </div>
 </div>
 </div>
@@ -532,9 +592,9 @@ var element = $('#0f009daf-5264-4e60-842b-92f32d487667');
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">(</span>
-    <span class="p">[]</span>
-    <span class="o">==</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_host_id_to_host_details</span><span class="p">([])</span>
-    <span class="o">==</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_host_id_to_host_details</span><span class="p">([</span><span class="mi">1337</span><span class="p">])</span>
+    <span class="p">{}</span>
+    <span class="o">==</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_host_id_to_host_details</span><span class="p">([])</span>
+    <span class="o">==</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_host_id_to_host_details</span><span class="p">([</span><span class="mi">1337</span><span class="p">])</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -550,15 +610,15 @@ var element = $('#0f009daf-5264-4e60-842b-92f32d487667');
 
 
 
-<div id="723b8306-884e-4c0b-9ccc-d680ba5c8ec3"></div>
+<div id="6c5242c4-ef66-4a7f-93f4-85b3b38f3aaf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#723b8306-884e-4c0b-9ccc-d680ba5c8ec3');
+var element = $('#6c5242c4-ef66-4a7f-93f4-85b3b38f3aaf');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "assert (\n    []\n    == repo.get_host_id_to_host_details([])\n    == repo.get_host_id_to_host_details([1337])\n)";
-                var nbb_formatted_code = "assert (\n    []\n    == repo.get_host_id_to_host_details([])\n    == repo.get_host_id_to_host_details([1337])\n)";
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "assert (\n    {}\n    == host_table.get_host_id_to_host_details([])\n    == host_table.get_host_id_to_host_details([1337])\n)";
+                var nbb_formatted_code = "assert (\n    {}\n    == host_table.get_host_id_to_host_details([])\n    == host_table.get_host_id_to_host_details([1337])\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -589,7 +649,7 @@ var element = $('#723b8306-884e-4c0b-9ccc-d680ba5c8ec3');
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">existing_host_ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">machine_to_host_id</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-<span class="n">host_id_to_host_details</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_host_id_to_host_details</span><span class="p">(</span><span class="n">existing_host_ids</span><span class="p">)</span>
+<span class="n">host_id_to_host_details</span> <span class="o">=</span> <span class="n">host_table</span><span class="o">.</span><span class="n">get_host_id_to_host_details</span><span class="p">(</span><span class="n">existing_host_ids</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">machine_id</span><span class="p">,</span> <span class="n">host_id</span> <span class="ow">in</span> <span class="n">machine_to_host_id</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">assert</span> <span class="n">machine_id</span> <span class="o">==</span> <span class="n">host_id_to_host_details</span><span class="p">[</span><span class="n">host_id</span><span class="p">]</span><span class="o">.</span><span class="n">machine_id</span>
 </pre></div>
@@ -606,15 +666,757 @@ var element = $('#723b8306-884e-4c0b-9ccc-d680ba5c8ec3');
 
 
 
-<div id="490b6168-07bf-4edf-bc38-5c632a7710f7"></div>
+<div id="6612ddae-3fea-446f-8835-66856b593b1f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#490b6168-07bf-4edf-bc38-5c632a7710f7');
+var element = $('#6612ddae-3fea-446f-8835-66856b593b1f');
 
             setTimeout(function() {
-                var nbb_cell_id = 11;
-                var nbb_unformatted_code = "existing_host_ids = list(machine_to_host_id.values())\nhost_id_to_host_details = repo.get_host_id_to_host_details(existing_host_ids)\nfor machine_id, host_id in machine_to_host_id.items():\n    assert machine_id == host_id_to_host_details[host_id].machine_id";
-                var nbb_formatted_code = "existing_host_ids = list(machine_to_host_id.values())\nhost_id_to_host_details = repo.get_host_id_to_host_details(existing_host_ids)\nfor machine_id, host_id in machine_to_host_id.items():\n    assert machine_id == host_id_to_host_details[host_id].machine_id";
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "existing_host_ids = list(machine_to_host_id.values())\nhost_id_to_host_details = host_table.get_host_id_to_host_details(existing_host_ids)\nfor machine_id, host_id in machine_to_host_id.items():\n    assert machine_id == host_id_to_host_details[host_id].machine_id";
+                var nbb_formatted_code = "existing_host_ids = list(machine_to_host_id.values())\nhost_id_to_host_details = host_table.get_host_id_to_host_details(existing_host_ids)\nfor machine_id, host_id in machine_to_host_id.items():\n    assert machine_id == host_id_to_host_details[host_id].machine_id";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="ClientServerBase" class="doc_header"><code>class</code> <code>ClientServerBase</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L171" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ClientServerBase</code>(<strong>*<code>args</code></strong>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a>) :: <a href="/will_it_saturate/sqlite_repository.html#BaseTable"><code>BaseTable</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="ServerTable" class="doc_header"><code>class</code> <code>ServerTable</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L237" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ServerTable</code>(<strong>*<code>args</code></strong>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a>, <strong><code>table_name</code></strong>:<code>str</code>=<em><code>'server'</code></em>) :: <a href="/will_it_saturate/sqlite_repository.html#ClientServerBase"><code>ClientServerBase</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="ClientTable" class="doc_header"><code>class</code> <code>ClientTable</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L247" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ClientTable</code>(<strong>*<code>args</code></strong>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a>, <strong><code>table_name</code></strong>:<code>str</code>=<em><code>'client'</code></em>) :: <a href="/will_it_saturate/sqlite_repository.html#ClientServerBase"><code>ClientServerBase</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tests-ServerTable">Tests ServerTable<a class="anchor-link" href="#Tests-ServerTable"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<span class="n">server_table</span> <span class="o">=</span> <span class="n">ServerTable</span><span class="p">(</span><span class="n">repository</span><span class="o">=</span><span class="n">repository</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">server_table</span><span class="o">.</span><span class="n">create_table</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="430889c9-3a2c-4233-a8a4-04c7e94b278c"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#430889c9-3a2c-4233-a8a4-04c7e94b278c');
+
+            setTimeout(function() {
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "repository = SqliteRepository.build_repository(\":memory:\")\nserver_table = ServerTable(repository=repository)\n_ = server_table.create_table()";
+                var nbb_formatted_code = "repository = SqliteRepository.build_repository(\":memory:\")\nserver_table = ServerTable(repository=repository)\n_ = server_table.create_table()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Get-id-to-Object-Lookup">Get id to Object Lookup<a class="anchor-link" href="#Get-id-to-Object-Lookup"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">id_to_model</span> <span class="o">=</span> <span class="n">server_table</span><span class="o">.</span><span class="n">get_id_to_model</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">id_to_model</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="839240b0-9f7a-4aa3-a61a-c1aa570d31f2"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#839240b0-9f7a-4aa3-a61a-c1aa570d31f2');
+
+            setTimeout(function() {
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "id_to_model = server_table.get_id_to_model()\nassert len(id_to_model) == 0";
+                var nbb_formatted_code = "id_to_model = server_table.get_id_to_model()\nassert len(id_to_model) == 0";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Insert-ServerDetail">Insert ServerDetail<a class="anchor-link" href="#Insert-ServerDetail"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">()</span>
+<span class="n">last_rowid</span> <span class="o">=</span> <span class="n">server_table</span><span class="o">.</span><span class="n">insert_model</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">last_rowid</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="240934a9-0a06-47c7-8814-552b40ac1ef3"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#240934a9-0a06-47c7-8814-552b40ac1ef3');
+
+            setTimeout(function() {
+                var nbb_cell_id = 16;
+                var nbb_unformatted_code = "server = BaseServer()\nlast_rowid = server_table.insert_model(server)\nassert last_rowid == 1";
+                var nbb_formatted_code = "server = BaseServer()\nlast_rowid = server_table.insert_model(server)\nassert last_rowid == 1";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">id_to_model</span> <span class="o">=</span> <span class="n">server_table</span><span class="o">.</span><span class="n">get_id_to_model</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">id_to_model</span> <span class="o">==</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="n">server</span><span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="486a0e97-0254-4c5d-8577-f0ae2b6a40d7"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#486a0e97-0254-4c5d-8577-f0ae2b6a40d7');
+
+            setTimeout(function() {
+                var nbb_cell_id = 17;
+                var nbb_unformatted_code = "id_to_model = server_table.get_id_to_model()\nassert id_to_model == {1: server}";
+                var nbb_formatted_code = "id_to_model = server_table.get_id_to_model()\nassert id_to_model == {1: server}";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Get-or-Create">Get or Create<a class="anchor-link" href="#Get-or-Create"> </a></h3>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server_id</span><span class="p">,</span> <span class="n">server</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">id_to_model</span><span class="o">.</span><span class="n">items</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">server_id</span> <span class="o">==</span> <span class="n">server_table</span><span class="o">.</span><span class="n">get_or_create_id</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="48a67ea2-a4b2-4736-acd0-45949fcfe47b"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#48a67ea2-a4b2-4736-acd0-45949fcfe47b');
+
+            setTimeout(function() {
+                var nbb_cell_id = 18;
+                var nbb_unformatted_code = "server_id, server = list(id_to_model.items())[0]\nassert server_id == server_table.get_or_create_id(server)";
+                var nbb_formatted_code = "server_id, server = list(id_to_model.items())[0]\nassert server_id == server_table.get_or_create_id(server)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">different_server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;different server&quot;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">server_id</span> <span class="o">!=</span> <span class="n">server_table</span><span class="o">.</span><span class="n">get_or_create_id</span><span class="p">(</span><span class="n">different_server</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="c1009581-8200-4635-b3ff-98abd6265efb"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#c1009581-8200-4635-b3ff-98abd6265efb');
+
+            setTimeout(function() {
+                var nbb_cell_id = 19;
+                var nbb_unformatted_code = "different_server = BaseServer(name=\"different server\")\nassert server_id != server_table.get_or_create_id(different_server)";
+                var nbb_formatted_code = "different_server = BaseServer(name=\"different server\")\nassert server_id != server_table.get_or_create_id(different_server)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="ResultTable" class="doc_header"><code>class</code> <code>ResultTable</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L258" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ResultTable</code>(<strong>*<code>args</code></strong>, <strong><code>repository</code></strong>:<a href="/will_it_saturate/repositories.html#BaseRepository"><code>BaseRepository</code></a>, <strong><code>table_name</code></strong>:<code>str</code>=<em><code>'result'</code></em>, <strong><code>create_statement</code></strong>:<code>str</code>=<em><code>"\n        create table result (\n            result_id INTEGER PRIMARY KEY,\n            server_host_id integer not NULL,\n            client_host_id integer not NULL,\n            created DATE DEFAULT (datetime('now','localtime')),\n            server_id integer not NULL,\n            client_id integer not NULL,\n            file_size integer not NULL,\n            complete_size integer not NULL,\n            elapsed real not NULL,\n            FOREIGN KEY(server_host_id) REFERENCES host(host_id)\n            FOREIGN KEY(client_host_id) REFERENCES host(host_id)\n            FOREIGN KEY(server_id) REFERENCES server(server_id)\n            FOREIGN KEY(client_id) REFERENCES client(client_id)\n        )\n    "</code></em>) :: <a href="/will_it_saturate/sqlite_repository.html#BaseTable"><code>BaseTable</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="register_default_tables" class="doc_header"><code>register_default_tables</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/repositories.py#L362" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>register_default_tables</code>(<strong><code>repository</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<span class="n">register_default_tables</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="d33e16c5-87cd-4a32-b20f-8f8b31a828ef"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#d33e16c5-87cd-4a32-b20f-8f8b31a828ef');
+
+            setTimeout(function() {
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\":memory:\")\nregister_default_tables(repository)\nresults = repository.tables[\"result\"]";
+                var nbb_formatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\":memory:\")\nregister_default_tables(repository)\nresults = repository.tables[\"result\"]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">BaseClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fake client&quot;</span><span class="p">)</span>
+<span class="n">server_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;server_1&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">})</span>
+<span class="n">client_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;client_1&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="s2">&quot;baz&quot;</span><span class="p">})</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
+    <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
+    <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+    <span class="n">server_details</span><span class="o">=</span><span class="n">server_details</span><span class="p">,</span>
+    <span class="n">client_details</span><span class="o">=</span><span class="n">client_details</span><span class="p">,</span>
+    <span class="n">file_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">,</span>
+    <span class="n">complete_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="n">elapsed</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">result_id</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result_id</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="a5ade4ca-68a0-489d-8281-a184dec33939"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#a5ade4ca-68a0-489d-8281-a184dec33939');
+
+            setTimeout(function() {
+                var nbb_cell_id = 22;
+                var nbb_unformatted_code = "# dont_test\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\nresult_id = results.add_result(result)\nprint(result_id)";
+                var nbb_formatted_code = "# dont_test\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\nresult_id = results.add_result(result)\nprint(result_id)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_results</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>server=BaseServer(protocol=&#39;http&#39;, name=&#39;server&#39;, host=&#39;127.0.0.1&#39;, port=8000) client=BaseClient(name=&#39;fake client&#39;) server_details=HostDetails(machine_id=&#39;server_1&#39;, cpuinfo={&#39;foo&#39;: &#39;bar&#39;}) client_details=HostDetails(machine_id=&#39;client_1&#39;, cpuinfo={&#39;bar&#39;: &#39;baz&#39;}) file_size=100000 elapsed=400.0 complete_size=100000000
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="75d7ea3f-728d-4e3d-8b8d-5408f66baa16"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#75d7ea3f-728d-4e3d-8b8d-5408f66baa16');
+
+            setTimeout(function() {
+                var nbb_cell_id = 23;
+                var nbb_unformatted_code = "# dont_test\n\nall_results = results.get_results()\nprint(all_results[0])";
+                var nbb_formatted_code = "# dont_test\n\nall_results = results.get_results()\nprint(all_results[0])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Test-ResultTable">Test ResultTable<a class="anchor-link" href="#Test-ResultTable"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<span class="n">register_default_tables</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="179b245a-0f93-410b-8015-e4fc32e16af0"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#179b245a-0f93-410b-8015-e4fc32e16af0');
+
+            setTimeout(function() {
+                var nbb_cell_id = 24;
+                var nbb_unformatted_code = "repository = SqliteRepository.build_repository(\":memory:\")\nregister_default_tables(repository)";
+                var nbb_formatted_code = "repository = SqliteRepository.build_repository(\":memory:\")\nregister_default_tables(repository)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -650,26 +1452,25 @@ var element = $('#490b6168-07bf-4edf-bc38-5c632a7710f7');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.results</span> <span class="kn">import</span> <span class="n">Result</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.servers</span> <span class="kn">import</span> <span class="n">BaseServer</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.clients</span> <span class="kn">import</span> <span class="n">BaseClient</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.servers</span> <span class="kn">import</span> <span class="n">BaseServer</span>
 
 
-<span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fake server&quot;</span><span class="p">)</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">BaseClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fake client&quot;</span><span class="p">)</span>
 <span class="n">server_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;server_1&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">})</span>
 <span class="n">client_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;client_1&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="s2">&quot;baz&quot;</span><span class="p">})</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
     <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
-    <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
+    <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="o">.</span><span class="n">params</span><span class="p">(),</span>
     <span class="n">server_details</span><span class="o">=</span><span class="n">server_details</span><span class="p">,</span>
     <span class="n">client_details</span><span class="o">=</span><span class="n">client_details</span><span class="p">,</span>
     <span class="n">file_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">,</span>
     <span class="n">complete_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span><span class="p">,</span>
     <span class="n">elapsed</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">inserted_rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">inserted_rows</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+<span class="n">result_id</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">result_id</span> <span class="o">==</span> <span class="mi">1</span>
 </pre></div>
 
     </div>
@@ -684,15 +1485,15 @@ var element = $('#490b6168-07bf-4edf-bc38-5c632a7710f7');
 
 
 
-<div id="b0679dc6-1ed4-4264-8a90-9241f0000155"></div>
+<div id="63037a27-78e7-4432-ba68-c632714e93be"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b0679dc6-1ed4-4264-8a90-9241f0000155');
+var element = $('#63037a27-78e7-4432-ba68-c632714e93be');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
-                var nbb_unformatted_code = "from will_it_saturate.results import Result\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.clients import BaseClient\n\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)\nassert inserted_rows == 1";
-                var nbb_formatted_code = "from will_it_saturate.results import Result\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.clients import BaseClient\n\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)\nassert inserted_rows == 1";
+                var nbb_cell_id = 25;
+                var nbb_unformatted_code = "from will_it_saturate.servers import BaseServer\n\n\nserver = BaseServer(name=\"fake server\")\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client.params(),\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\nresults = repository.tables[\"result\"]\nresult_id = results.add_result(result)\nassert result_id == 1";
+                var nbb_formatted_code = "from will_it_saturate.servers import BaseServer\n\n\nserver = BaseServer(name=\"fake server\")\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client.params(),\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\nresults = repository.tables[\"result\"]\nresult_id = results.add_result(result)\nassert result_id == 1";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -717,7 +1518,7 @@ var element = $('#b0679dc6-1ed4-4264-8a90-9241f0000155');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Get-Results-from-Repository">Get Results from Repository<a class="anchor-link" href="#Get-Results-from-Repository"> </a></h3>
+<h3 id="Get-Results">Get Results<a class="anchor-link" href="#Get-Results"> </a></h3>
 </div>
 </div>
 </div>
@@ -728,75 +1529,8 @@ var element = $('#b0679dc6-1ed4-4264-8a90-9241f0000155');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[{&#39;result_id&#39;: 1, &#39;server_host_id&#39;: 5, &#39;client_host_id&#39;: 6, &#39;created&#39;: &#39;2021-04-23 08:34:39&#39;, &#39;server&#39;: &#39;{&#34;protocol&#34;: &#34;http&#34;, &#34;name&#34;: &#34;server&#34;, &#34;host&#34;: &#34;127.0.0.1&#34;, &#34;port&#34;: 8000}&#39;, &#39;client&#39;: &#39;{&#34;name&#34;: &#34;fake client&#34;}&#39;, &#39;file_size&#39;: 100000, &#39;complete_size&#39;: 100000000, &#39;elapsed&#39;: 400.0}]
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="3fb05cce-9d1a-41e5-8382-f9f0fba0186c"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#3fb05cce-9d1a-41e5-8382-f9f0fba0186c');
-
-            setTimeout(function() {
-                var nbb_cell_id = 13;
-                var nbb_unformatted_code = "results = repo.get_results()\nprint(results)";
-                var nbb_formatted_code = "results = repo.get_results()\nprint(results)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h2>
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result_from_db</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">result_from_db</span>
 </pre></div>
 
     </div>
@@ -811,472 +1545,15 @@ var element = $('#3fb05cce-9d1a-41e5-8382-f9f0fba0186c');
 
 
 
-<div id="ef1ebcc6-3b56-44d2-ae0c-79fb53b05186"></div>
+<div id="38063e77-806d-4c70-9a71-0d42210afe1c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ef1ebcc6-3b56-44d2-ae0c-79fb53b05186');
+var element = $('#38063e77-806d-4c70-9a71-0d42210afe1c');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
-                var nbb_unformatted_code = "conn = sqlite3.connect(\":memory:\")\nrepo = SqliteRepository(connection=conn)\nrepo.create_tables()";
-                var nbb_formatted_code = "conn = sqlite3.connect(\":memory:\")\nrepo = SqliteRepository(connection=conn)\nrepo.create_tables()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.results</span> <span class="kn">import</span> <span class="n">Result</span>
-
-<span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;server&quot;</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8000</span><span class="p">)</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">BaseClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;fake client&quot;</span><span class="p">)</span>
-<span class="n">server_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;server_1&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">})</span>
-<span class="n">client_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="s2">&quot;client_1&quot;</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;bar&quot;</span><span class="p">:</span> <span class="s2">&quot;baz&quot;</span><span class="p">})</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
-    <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
-    <span class="n">client</span><span class="o">=</span><span class="n">client</span><span class="p">,</span>
-    <span class="n">server_details</span><span class="o">=</span><span class="n">server_details</span><span class="p">,</span>
-    <span class="n">client_details</span><span class="o">=</span><span class="n">client_details</span><span class="p">,</span>
-    <span class="n">file_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">,</span>
-    <span class="n">complete_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">8</span><span class="p">,</span>
-    <span class="n">elapsed</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">inserted_rows</span> <span class="o">=</span> <span class="n">repo</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="af6f5c7f-638a-4654-800b-cda3b4780bb9"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#af6f5c7f-638a-4654-800b-cda3b4780bb9');
-
-            setTimeout(function() {
-                var nbb_cell_id = 12;
-                var nbb_unformatted_code = "# dont_test\n\nfrom will_it_saturate.results import Result\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)\nassert inserted_rows == 1";
-                var nbb_formatted_code = "# dont_test\n\nfrom will_it_saturate.results import Result\n\nserver = BaseServer(name=\"server\", host=\"127.0.0.1\", port=8000)\nclient = BaseClient(name=\"fake client\")\nserver_details = HostDetails(machine_id=\"server_1\", cpuinfo={\"foo\": \"bar\"})\nclient_details = HostDetails(machine_id=\"client_1\", cpuinfo={\"bar\": \"baz\"})\nresult = Result(\n    server=server,\n    client=client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=10 ** 5,\n    complete_size=10 ** 8,\n    elapsed=400,\n)\ninserted_rows = repo.add_result(result)\nassert inserted_rows == 1";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="d1de6634-4baa-48e5-8318-75b1cfb80b1b"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#d1de6634-4baa-48e5-8318-75b1cfb80b1b');
-
-            setTimeout(function() {
-                var nbb_cell_id = 14;
-                var nbb_unformatted_code = "# repo.get_benchmark(benchmark)";
-                var nbb_formatted_code = "# repo.get_benchmark(benchmark)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="c0c3511a-5fcd-4454-9995-dbd42d11361f"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#c0c3511a-5fcd-4454-9995-dbd42d11361f');
-
-            setTimeout(function() {
-                var nbb_cell_id = 15;
-                var nbb_unformatted_code = "# benchmark.json()";
-                var nbb_formatted_code = "# benchmark.json()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="b30f8340-3704-435c-896f-a1234334b74e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#b30f8340-3704-435c-896f-a1234334b74e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 16;
-                var nbb_unformatted_code = "# repo.get_benchmark(benchmark)";
-                var nbb_formatted_code = "# repo.get_benchmark(benchmark)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="aa26865a-c79d-4dd5-8ce5-5235b301a627"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#aa26865a-c79d-4dd5-8ce5-5235b301a627');
-
-            setTimeout(function() {
-                var nbb_cell_id = 17;
-                var nbb_unformatted_code = "# benchmark.machine_id = \"foobar\"";
-                var nbb_formatted_code = "# benchmark.machine_id = \"foobar\"";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># complete_size = 100 * file_size</span>
-<span class="c1"># result = Result(</span>
-<span class="c1">#     server=&quot;nginx&quot;,</span>
-<span class="c1">#     client=&quot;httpx&quot;,</span>
-<span class="c1">#     file_size=file_size,</span>
-<span class="c1">#     complete_size=complete_size,</span>
-<span class="c1"># )</span>
-
-<span class="c1"># result = repo.get_result(benchmark, result)</span>
-<span class="c1"># print(result.elapsed)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="99bc9353-f836-4bbb-94db-4c46c32d3b29"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#99bc9353-f836-4bbb-94db-4c46c32d3b29');
-
-            setTimeout(function() {
-                var nbb_cell_id = 18;
-                var nbb_unformatted_code = "# file_size = 10 ** 6\n# complete_size = 100 * file_size\n# result = Result(\n#     server=\"nginx\",\n#     client=\"httpx\",\n#     file_size=file_size,\n#     complete_size=complete_size,\n# )\n\n# result = repo.get_result(benchmark, result)\n# print(result.elapsed)";
-                var nbb_formatted_code = "# file_size = 10 ** 6\n# complete_size = 100 * file_size\n# result = Result(\n#     server=\"nginx\",\n#     client=\"httpx\",\n#     file_size=file_size,\n#     complete_size=complete_size,\n# )\n\n# result = repo.get_result(benchmark, result)\n# print(result.elapsed)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># file_size = 10 ** 6</span>
-<span class="c1"># complete_size = 100 * file_size</span>
-<span class="c1"># result = Result(</span>
-<span class="c1">#     server=&quot;nginx&quot;,</span>
-<span class="c1">#     client=&quot;httpx&quot;,</span>
-<span class="c1">#     file_size=file_size,</span>
-<span class="c1">#     elapsed=3.0,</span>
-<span class="c1">#     complete_size=complete_size,</span>
-<span class="c1"># )</span>
-<span class="c1"># print(result.dict())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="bd5915fb-157d-4194-b20a-35625b6246a2"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#bd5915fb-157d-4194-b20a-35625b6246a2');
-
-            setTimeout(function() {
-                var nbb_cell_id = 19;
-                var nbb_unformatted_code = "# from will_it_saturate.core import Result\n\n# file_size = 10 ** 6\n# complete_size = 100 * file_size\n# result = Result(\n#     server=\"nginx\",\n#     client=\"httpx\",\n#     file_size=file_size,\n#     elapsed=3.0,\n#     complete_size=complete_size,\n# )\n# print(result.dict())";
-                var nbb_formatted_code = "# from will_it_saturate.core import Result\n\n# file_size = 10 ** 6\n# complete_size = 100 * file_size\n# result = Result(\n#     server=\"nginx\",\n#     client=\"httpx\",\n#     file_size=file_size,\n#     elapsed=3.0,\n#     complete_size=complete_size,\n# )\n# print(result.dict())";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="6101e80c-8252-4e7e-95c5-bc11163cd763"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#6101e80c-8252-4e7e-95c5-bc11163cd763');
-
-            setTimeout(function() {
-                var nbb_cell_id = 20;
-                var nbb_unformatted_code = "# repo.add_result(benchmark, result)";
-                var nbb_formatted_code = "# repo.add_result(benchmark, result)";
+                var nbb_cell_id = 26;
+                var nbb_unformatted_code = "result_from_db = results.get_results()[0]\nassert result == result_from_db";
+                var nbb_formatted_code = "result_from_db = results.get_results()[0]\nassert result == result_from_db";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -1350,13 +1627,13 @@ Converted index.ipynb.
 
 
 
-<div id="8da2d7e3-106c-4f94-b49b-6f171e828b1f"></div>
+<div id="a8990435-ebc0-462d-9aea-d65940c5fb13"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8da2d7e3-106c-4f94-b49b-6f171e828b1f');
+var element = $('#a8990435-ebc0-462d-9aea-d65940c5fb13');
 
             setTimeout(function() {
-                var nbb_cell_id = 16;
+                var nbb_cell_id = 29;
                 var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
                 var nbb_cells = Jupyter.notebook.get_cells();

@@ -77,3 +77,17 @@ class Result(BaseModel):
             "bytes_per_second": self.bytes_per_second,
             "bytes_per_second_h": self.readable_bytes_per_second,
         }
+
+    def dict_for_pandas(self):
+        return {
+            "server": self.server.name,
+            "client": self.client.name,
+            "server_host": self.server_details.machine_id,
+            "client_host": self.client_details.machine_id,
+            "elapsed": self.elapsed,
+            "file_size": self.file_size,
+            "file_size_h": self.readable_file_size,
+            "complete_size": self.complete_size,
+            "bytes_per_second": self.bytes_per_second,
+            "bytes_per_second_h": self.readable_bytes_per_second,
+        }
