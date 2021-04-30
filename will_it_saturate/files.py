@@ -4,6 +4,7 @@ __all__ = ['calculate_checksum', 'checksum_for_path', 'create_via_filesystem', '
 
 # Cell
 
+import os
 import hashlib
 
 from pathlib import Path

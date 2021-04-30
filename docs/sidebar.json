@@ -7,6 +7,7 @@
     "File": "file.html",
     "module Epochs": "epochs.html",
     "module Results": "results.html",
+    "Remote Benchmark": "benchmark_without_benchmark.html",
     "module Core": "core.html",
     "fastAPI Control Server": "control_server.html",
     "Control Client": "control_client.html",
@@ -18,7 +19,6 @@
     "Caveats": "benchmark_clients.html",
     "module Repositories": "repositories.html",
     "Export": "sqlite_repository.html",
-    "Remote Benchmark": "benchmark_without_benchmark.html",
     "Title": "run_benchmark.html"
   }
 }

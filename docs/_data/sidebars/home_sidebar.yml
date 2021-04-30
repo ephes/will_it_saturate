@@ -28,6 +28,9 @@ entries:
       title: module Results
       url: results.html
     - output: web,pdf
+      title: Remote Benchmark
+      url: benchmark_without_benchmark.html
+    - output: web,pdf
       title: module Core
       url: core.html
     - output: web,pdf
@@ -60,9 +63,6 @@ entries:
     - output: web,pdf
       title: Export
       url: sqlite_repository.html
-    - output: web,pdf
-      title: Remote Benchmark
-      url: benchmark_without_benchmark.html
     - output: web,pdf
       title: Title
       url: run_benchmark.html
