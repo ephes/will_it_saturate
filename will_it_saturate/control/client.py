@@ -39,6 +39,12 @@ class ControlClient(BaseModel):
         r.raise_for_status()
         return ModelParameters(**r.json()).to_model()
 
+    def stop_server(self, server):
+        url = urljoin(self.base_url, "server-stop")
+        r = httpx.post(url, json=server.params())
+        r.raise_for_status()
+        return r.json()
+
     def measure(self, client, epoch):
         url = urljoin(self.base_url, "measure")
         data = {"client_params": client.params(), "epoch": epoch.dict()}
