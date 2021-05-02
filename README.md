@@ -2,16 +2,6 @@
 > Just a test to see if we are abe to saturate 1Gbit with file responsens using just pure Python without nginx or something like that. 
 
 
-```python
-%load_ext nb_black
-```
-
-
-    <IPython.core.display.Javascript object>
-
-
-This file will become your README and also the index of your documentation.
-
 ## Install
 
 `pip install will_it_saturate`

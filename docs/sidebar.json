@@ -14,7 +14,8 @@
     "Results": "results.html",
     "Repositories": "repositories.html",
     "Sqlite Repository": "sqlite_repository.html",
-    "Remote Benchmark": "benchmark_remote_control_server.html",
+    "Remote Benchmark": "benchmark_without_benchmark.html",
+    "Benchmark Over Network": "benchmark_remote_control_server.html",
     "module Core": "legacy.html"
   }
 }

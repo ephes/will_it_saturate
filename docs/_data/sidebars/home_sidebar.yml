@@ -50,6 +50,9 @@ entries:
       url: sqlite_repository.html
     - output: web,pdf
       title: Remote Benchmark
+      url: benchmark_without_benchmark.html
+    - output: web,pdf
+      title: Benchmark Over Network
       url: benchmark_remote_control_server.html
     - output: web,pdf
       title: module Core

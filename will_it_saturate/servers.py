@@ -65,6 +65,8 @@ class FastAPIUvicornServer(BaseServer):
         subprocess.Popen(
             [
                 "uvicorn",
+                "--host",
+                str(self.host),
                 "--port",
                 str(self.port),
                 "--no-access-log",

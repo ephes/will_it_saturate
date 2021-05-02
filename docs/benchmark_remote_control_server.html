@@ -1,6 +1,6 @@
 ---
 
-title: Remote Benchmark
+title: Benchmark Over Network
 
 
 keywords: fastai
@@ -36,69 +36,13 @@ nb_path: "51_benchmark_remote_control_server.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="9b8c1933-6644-4ea2-b995-b0ed6b59d441"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#9b8c1933-6644-4ea2-b995-b0ed6b59d441');
-
-            setTimeout(function() {
-                var nbb_cell_id = 2;
-                var nbb_unformatted_code = "%load_ext nb_black";
-                var nbb_formatted_code = "%load_ext nb_black";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">httpx</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urljoin</span>
 
-<span class="kn">from</span> <span class="nn">will_it_saturate.servers</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">FastAPIUvicornServer</span><span class="p">,</span>
-    <span class="n">NginxDockerServer</span><span class="p">,</span>
-    <span class="n">DjangoGunicornWSGIServer</span><span class="p">,</span>
-<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate</span> <span class="kn">import</span> <span class="n">servers</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate</span> <span class="kn">import</span> <span class="n">clients</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.epochs</span> <span class="kn">import</span> <span class="n">Epoch</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.hosts</span> <span class="kn">import</span> <span class="n">Host</span><span class="p">,</span> <span class="n">HostDetails</span>
 
@@ -106,11 +50,186 @@ var element = $('#9b8c1933-6644-4ea2-b995-b0ed6b59d441');
 <span class="kn">from</span> <span class="nn">will_it_saturate.files</span> <span class="kn">import</span> <span class="n">BenchmarkFile</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.control.client</span> <span class="kn">import</span> <span class="n">ControlClient</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.repositories</span> <span class="kn">import</span> <span class="n">SqliteRepository</span><span class="p">,</span> <span class="n">register_default_tables</span>
-<span class="kn">from</span> <span class="nn">will_it_saturate.clients</span> <span class="kn">import</span> <span class="p">(</span>
-    <span class="n">HttpxClient</span><span class="p">,</span>
-    <span class="n">AioHttpClient</span><span class="p">,</span>
-    <span class="n">WrkClient</span><span class="p">,</span>
-    <span class="n">BaseClient</span><span class="p">,</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-Benchmark-Server">Create Benchmark Server<a class="anchor-link" href="#Create-Benchmark-Server"> </a></h2><p>create server control client + server (needed for turning files into urls)</p>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
+<span class="n">server_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_control_host</span><span class="p">)</span>
+<span class="n">server_details</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span><span class="n">servers</span><span class="o">.</span><span class="n">FastAPIUvicornServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-Files-and-Urls">Create Files and Urls<a class="anchor-link" href="#Create-Files-and-Urls"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span><span class="p">,</span> <span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">(</span><span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span>
+<span class="n">files</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_files</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+<span class="n">epoch</span><span class="o">.</span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">server</span><span class="o">.</span><span class="n">file_to_url</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="566cc0a5-d05e-474a-85a2-b78504977e22"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#566cc0a5-d05e-474a-85a2-b78504977e22');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in files]";
+                var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nfiles = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in files]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-Control-Client">Create Control Client<a class="anchor-link" href="#Create-Control-Client"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
+<span class="n">client_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">client_control_host</span><span class="p">)</span>
+<span class="n">client_details</span> <span class="o">=</span> <span class="n">client_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
+<span class="n">benchmark_client</span> <span class="o">=</span> <span class="n">clients</span><span class="o">.</span><span class="n">HttpxClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;httpx&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="cdf8e760-5cab-4edb-9fb4-82d1ef3a258e"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#cdf8e760-5cab-4edb-9fb4-82d1ef3a258e');
+
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_client = clients.HttpxClient(name=\"httpx\")";
+                var nbb_formatted_code = "# dont_test\n\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_client = clients.HttpxClient(name=\"httpx\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-Result">Create Result<a class="anchor-link" href="#Create-Result"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">Result</span><span class="p">(</span>
+    <span class="n">server</span><span class="o">=</span><span class="n">server</span><span class="p">,</span>
+    <span class="n">client</span><span class="o">=</span><span class="n">benchmark_client</span><span class="p">,</span>
+    <span class="n">server_details</span><span class="o">=</span><span class="n">server_details</span><span class="p">,</span>
+    <span class="n">client_details</span><span class="o">=</span><span class="n">client_details</span><span class="p">,</span>
+    <span class="n">file_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">file_size</span><span class="p">,</span>
+    <span class="n">complete_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">complete_size</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -126,15 +245,15 @@ var element = $('#9b8c1933-6644-4ea2-b995-b0ed6b59d441');
 
 
 
-<div id="c2b1d61e-4fdf-4a5e-b22c-a99eeeec4bc5"></div>
+<div id="1d6b005f-cab2-489d-a096-42032fc3493a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c2b1d61e-4fdf-4a5e-b22c-a99eeeec4bc5');
+var element = $('#1d6b005f-cab2-489d-a096-42032fc3493a');
 
             setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "import httpx\nimport pandas as pd\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository, register_default_tables\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n)";
-                var nbb_formatted_code = "import httpx\nimport pandas as pd\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate.servers import (\n    FastAPIUvicornServer,\n    NginxDockerServer,\n    DjangoGunicornWSGIServer,\n)\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository, register_default_tables\nfrom will_it_saturate.clients import (\n    HttpxClient,\n    AioHttpClient,\n    WrkClient,\n    BaseClient,\n)";
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "# dont_test\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
+                var nbb_formatted_code = "# dont_test\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -164,12 +283,7 @@ var element = $('#c2b1d61e-4fdf-4a5e-b22c-a99eeeec4bc5');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create server control client + server (needed for turning files into urls)</span>
-<span class="n">server_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8001</span><span class="p">)</span>
-<span class="n">server_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_control_host</span><span class="p">)</span>
-<span class="n">server_details</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_host_details</span><span class="p">()</span>
-<span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span><span class="n">FastAPIUvicornServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;macmini.fritz.box&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epoch</span><span class="o">.</span><span class="n">urls</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -181,9 +295,194 @@ var element = $('#c2b1d61e-4fdf-4a5e-b22c-a99eeeec4bc5');
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>protocol=&#39;http&#39; name=&#39;fastAPI/uvicorn&#39; host=&#39;localhost&#39; port=5001
-</pre>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;http://macmini.fritz.box:5001/data/10000000_3_125000000/0&#39;,
+ &#39;http://macmini.fritz.box:5001/data/10000000_3_125000000/1&#39;,
+ &#39;http://macmini.fritz.box:5001/data/10000000_3_125000000/2&#39;,
+ &#39;http://macmini.fritz.box:5001/data/10000000_3_125000000/3&#39;,
+ &#39;http://macmini.fritz.box:5001/data/10000000_3_125000000/4&#39;]</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="1f70199c-632a-49cb-8817-93c2fbf26b87"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#1f70199c-632a-49cb-8817-93c2fbf26b87');
+
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "epoch.urls[:5]";
+                var nbb_formatted_code = "epoch.urls[:5]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Measure-Server-with-Client">Measure Server with Client<a class="anchor-link" href="#Measure-Server-with-Client"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">client_control_client</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">benchmark_client</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-8-feaa15c2887b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># dont_test</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>result<span class="ansi-blue-fg">.</span>elapsed <span class="ansi-blue-fg">=</span> client_control_client<span class="ansi-blue-fg">.</span>measure<span class="ansi-blue-fg">(</span>benchmark_client<span class="ansi-blue-fg">,</span> epoch<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/control/client.py</span> in <span class="ansi-cyan-fg">measure</span><span class="ansi-blue-fg">(self, client, epoch)</span>
+<span class="ansi-green-intense-fg ansi-bold">     43</span>         url <span class="ansi-blue-fg">=</span> urljoin<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>base_url<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;measure&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     44</span>         data <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;client_params&#34;</span><span class="ansi-blue-fg">:</span> client<span class="ansi-blue-fg">.</span>params<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;epoch&#34;</span><span class="ansi-blue-fg">:</span> epoch<span class="ansi-blue-fg">.</span>dict<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span>
+<span class="ansi-green-fg">---&gt; 45</span><span class="ansi-red-fg">         </span>r <span class="ansi-blue-fg">=</span> httpx<span class="ansi-blue-fg">.</span>post<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> json<span class="ansi-blue-fg">=</span>data<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     46</span>         r<span class="ansi-blue-fg">.</span>raise_for_status<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     47</span>         <span class="ansi-green-fg">return</span> r<span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_api.py</span> in <span class="ansi-cyan-fg">post</span><span class="ansi-blue-fg">(url, content, data, files, json, params, headers, cookies, auth, proxies, allow_redirects, cert, verify, timeout, trust_env)</span>
+<span class="ansi-green-intense-fg ansi-bold">    294</span>     <span class="ansi-blue-fg">**</span>Parameters<span class="ansi-blue-fg">**</span><span class="ansi-blue-fg">:</span> See<span class="ansi-red-fg"> </span><span class="ansi-red-fg">`</span>httpx<span class="ansi-blue-fg">.</span>request<span class="ansi-red-fg">`</span><span class="ansi-blue-fg">.</span>
+<span class="ansi-green-intense-fg ansi-bold">    295</span>     &#34;&#34;&#34;
+<span class="ansi-green-fg">--&gt; 296</span><span class="ansi-red-fg">     return request(
+</span><span class="ansi-green-intense-fg ansi-bold">    297</span>         <span class="ansi-blue-fg">&#34;POST&#34;</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    298</span>         url<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_api.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(method, url, params, content, data, files, json, headers, cookies, auth, proxies, timeout, allow_redirects, verify, cert, trust_env)</span>
+<span class="ansi-green-intense-fg ansi-bold">     91</span>         proxies<span class="ansi-blue-fg">=</span>proxies<span class="ansi-blue-fg">,</span> cert<span class="ansi-blue-fg">=</span>cert<span class="ansi-blue-fg">,</span> verify<span class="ansi-blue-fg">=</span>verify<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">,</span> trust_env<span class="ansi-blue-fg">=</span>trust_env
+<span class="ansi-green-intense-fg ansi-bold">     92</span>     ) as client:
+<span class="ansi-green-fg">---&gt; 93</span><span class="ansi-red-fg">         return client.request(
+</span><span class="ansi-green-intense-fg ansi-bold">     94</span>             method<span class="ansi-blue-fg">=</span>method<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     95</span>             url<span class="ansi-blue-fg">=</span>url<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, content, data, files, json, params, headers, cookies, auth, allow_redirects, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    726</span>             cookies<span class="ansi-blue-fg">=</span>cookies<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    727</span>         )
+<span class="ansi-green-fg">--&gt; 728</span><span class="ansi-red-fg">         return self.send(
+</span><span class="ansi-green-intense-fg ansi-bold">    729</span>             request<span class="ansi-blue-fg">,</span> auth<span class="ansi-blue-fg">=</span>auth<span class="ansi-blue-fg">,</span> allow_redirects<span class="ansi-blue-fg">=</span>allow_redirects<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span>timeout
+<span class="ansi-green-intense-fg ansi-bold">    730</span>         )
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">send</span><span class="ansi-blue-fg">(self, request, stream, auth, allow_redirects, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    760</span>         auth <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_build_request_auth<span class="ansi-blue-fg">(</span>request<span class="ansi-blue-fg">,</span> auth<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    761</span> 
+<span class="ansi-green-fg">--&gt; 762</span><span class="ansi-red-fg">         response = self._send_handling_auth(
+</span><span class="ansi-green-intense-fg ansi-bold">    763</span>             request<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    764</span>             auth<span class="ansi-blue-fg">=</span>auth<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_handling_auth</span><span class="ansi-blue-fg">(self, request, auth, timeout, allow_redirects, history)</span>
+<span class="ansi-green-intense-fg ansi-bold">    798</span> 
+<span class="ansi-green-intense-fg ansi-bold">    799</span>         <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 800</span><span class="ansi-red-fg">             response = self._send_handling_redirects(
+</span><span class="ansi-green-intense-fg ansi-bold">    801</span>                 request<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    802</span>                 timeout<span class="ansi-blue-fg">=</span>timeout<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_handling_redirects</span><span class="ansi-blue-fg">(self, request, timeout, allow_redirects, history)</span>
+<span class="ansi-green-intense-fg ansi-bold">    830</span>                 )
+<span class="ansi-green-intense-fg ansi-bold">    831</span> 
+<span class="ansi-green-fg">--&gt; 832</span><span class="ansi-red-fg">             </span>response <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_send_single_request<span class="ansi-blue-fg">(</span>request<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    833</span>             response<span class="ansi-blue-fg">.</span>history <span class="ansi-blue-fg">=</span> list<span class="ansi-blue-fg">(</span>history<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    834</span> 
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_client.py</span> in <span class="ansi-cyan-fg">_send_single_request</span><span class="ansi-blue-fg">(self, request, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    854</span> 
+<span class="ansi-green-intense-fg ansi-bold">    855</span>         <span class="ansi-green-fg">with</span> map_exceptions<span class="ansi-blue-fg">(</span>HTTPCORE_EXC_MAP<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 856</span><span class="ansi-red-fg">             (status_code, headers, stream, ext) = transport.request(
+</span><span class="ansi-green-intense-fg ansi-bold">    857</span>                 request<span class="ansi-blue-fg">.</span>method<span class="ansi-blue-fg">.</span>encode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    858</span>                 request<span class="ansi-blue-fg">.</span>url<span class="ansi-blue-fg">.</span>raw<span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_transports/default.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">    100</span>         ext<span class="ansi-blue-fg">:</span> dict <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">    101</span>     ) -&gt; typing.Tuple[int, Headers, httpcore.SyncByteStream, dict]:
+<span class="ansi-green-fg">--&gt; 102</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_pool<span class="ansi-blue-fg">.</span>request<span class="ansi-blue-fg">(</span>method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">=</span>stream<span class="ansi-blue-fg">,</span> ext<span class="ansi-blue-fg">=</span>ext<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    103</span> 
+<span class="ansi-green-intense-fg ansi-bold">    104</span>     <span class="ansi-green-fg">def</span> close<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/connection_pool.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">    216</span> 
+<span class="ansi-green-intense-fg ansi-bold">    217</span>             <span class="ansi-green-fg">try</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 218</span><span class="ansi-red-fg">                 response = connection.request(
+</span><span class="ansi-green-intense-fg ansi-bold">    219</span>                     method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">=</span>headers<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">=</span>stream<span class="ansi-blue-fg">,</span> ext<span class="ansi-blue-fg">=</span>ext
+<span class="ansi-green-intense-fg ansi-bold">    220</span>                 )
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/connection.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">    104</span>             <span class="ansi-blue-fg">&#34;connection.request method=%r url=%r headers=%r&#34;</span><span class="ansi-blue-fg">,</span> method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers
+<span class="ansi-green-intense-fg ansi-bold">    105</span>         )
+<span class="ansi-green-fg">--&gt; 106</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>connection<span class="ansi-blue-fg">.</span>request<span class="ansi-blue-fg">(</span>method<span class="ansi-blue-fg">,</span> url<span class="ansi-blue-fg">,</span> headers<span class="ansi-blue-fg">,</span> stream<span class="ansi-blue-fg">,</span> ext<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    107</span> 
+<span class="ansi-green-intense-fg ansi-bold">    108</span>     <span class="ansi-green-fg">def</span> _open_socket<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">:</span> TimeoutDict <span class="ansi-blue-fg">=</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> SyncSocketStream<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/http11.py</span> in <span class="ansi-cyan-fg">request</span><span class="ansi-blue-fg">(self, method, url, headers, stream, ext)</span>
+<span class="ansi-green-intense-fg ansi-bold">     70</span>             reason_phrase<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-intense-fg ansi-bold">     71</span>             headers<span class="ansi-blue-fg">,</span>
+<span class="ansi-green-fg">---&gt; 72</span><span class="ansi-red-fg">         ) = self._receive_response(timeout)
+</span><span class="ansi-green-intense-fg ansi-bold">     73</span>         response_stream = IteratorByteStream(
+<span class="ansi-green-intense-fg ansi-bold">     74</span>             iterator<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">.</span>_receive_response_data<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/http11.py</span> in <span class="ansi-cyan-fg">_receive_response</span><span class="ansi-blue-fg">(self, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    131</span>         &#34;&#34;&#34;
+<span class="ansi-green-intense-fg ansi-bold">    132</span>         <span class="ansi-green-fg">while</span> <span class="ansi-green-fg">True</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 133</span><span class="ansi-red-fg">             </span>event <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_receive_event<span class="ansi-blue-fg">(</span>timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    134</span>             <span class="ansi-green-fg">if</span> isinstance<span class="ansi-blue-fg">(</span>event<span class="ansi-blue-fg">,</span> h11<span class="ansi-blue-fg">.</span>Response<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">    135</span>                 <span class="ansi-green-fg">break</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_sync/http11.py</span> in <span class="ansi-cyan-fg">_receive_event</span><span class="ansi-blue-fg">(self, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">    170</span> 
+<span class="ansi-green-intense-fg ansi-bold">    171</span>             <span class="ansi-green-fg">if</span> event <span class="ansi-green-fg">is</span> h11<span class="ansi-blue-fg">.</span>NEED_DATA<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">--&gt; 172</span><span class="ansi-red-fg">                 </span>data <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>socket<span class="ansi-blue-fg">.</span>read<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>READ_NUM_BYTES<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    173</span>                 self<span class="ansi-blue-fg">.</span>h11_state<span class="ansi-blue-fg">.</span>receive_data<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">    174</span>             <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpcore/_backends/sync.py</span> in <span class="ansi-cyan-fg">read</span><span class="ansi-blue-fg">(self, n, timeout)</span>
+<span class="ansi-green-intense-fg ansi-bold">     60</span>             <span class="ansi-green-fg">with</span> map_exceptions<span class="ansi-blue-fg">(</span>exc_map<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     61</span>                 self<span class="ansi-blue-fg">.</span>sock<span class="ansi-blue-fg">.</span>settimeout<span class="ansi-blue-fg">(</span>read_timeout<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 62</span><span class="ansi-red-fg">                 </span><span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>sock<span class="ansi-blue-fg">.</span>recv<span class="ansi-blue-fg">(</span>n<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     63</span> 
+<span class="ansi-green-intense-fg ansi-bold">     64</span>     <span class="ansi-green-fg">def</span> write<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> data<span class="ansi-blue-fg">:</span> bytes<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">:</span> TimeoutDict<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">KeyboardInterrupt</span>: </pre>
 </div>
 </div>
 
@@ -192,15 +491,15 @@ var element = $('#c2b1d61e-4fdf-4a5e-b22c-a99eeeec4bc5');
 
 
 
-<div id="bf8509cc-0ec1-4c88-8467-f463c683bd07"></div>
+<div id="ca846645-83d8-424e-a34f-1f780f2861fb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bf8509cc-0ec1-4c88-8467-f463c683bd07');
+var element = $('#ca846645-83d8-424e-a34f-1f780f2861fb');
 
             setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"macmini.fritz.box\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver = server_control_client.get_or_create_server(FastAPIUvicornServer(host=\"macmini.fritz.box\", port=5001))\nprint(server)";
-                var nbb_formatted_code = "# dont_test\n\n# create server control client + server (needed for turning files into urls)\nserver_control_host = Host(name=\"macmini.fritz.box\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver = server_control_client.get_or_create_server(\n    FastAPIUvicornServer(host=\"macmini.fritz.box\", port=5001)\n)\nprint(server)";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(benchmark_client, epoch)";
+                var nbb_formatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(benchmark_client, epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -281,10 +580,10 @@ var element = $('#bf8509cc-0ec1-4c88-8467-f463c683bd07');
 
 
 
-<div id="bd0af0ed-63f9-4587-bef8-9e5530f8bd26"></div>
+<div id="fdeef67e-ecb9-4173-a374-ae560060d451"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bd0af0ed-63f9-4587-bef8-9e5530f8bd26');
+var element = $('#fdeef67e-ecb9-4173-a374-ae560060d451');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -345,10 +644,10 @@ var element = $('#bd0af0ed-63f9-4587-bef8-9e5530f8bd26');
 
 
 
-<div id="fcc38b1b-d5fd-48ec-9c05-9d33b0718b78"></div>
+<div id="8a65df0a-a67c-4019-a06e-0ff13ec249b2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fcc38b1b-d5fd-48ec-9c05-9d33b0718b78');
+var element = $('#8a65df0a-a67c-4019-a06e-0ff13ec249b2');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -408,10 +707,10 @@ var element = $('#fcc38b1b-d5fd-48ec-9c05-9d33b0718b78');
 
 
 
-<div id="19ae5e6e-922f-4aeb-8a51-c5b0217f1158"></div>
+<div id="4334a657-2ef5-4715-8967-1a9f9173eb83"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#19ae5e6e-922f-4aeb-8a51-c5b0217f1158');
+var element = $('#4334a657-2ef5-4715-8967-1a9f9173eb83');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -469,10 +768,10 @@ var element = $('#19ae5e6e-922f-4aeb-8a51-c5b0217f1158');
 
 
 
-<div id="371fd57b-87bd-4938-a8a9-48960520f62c"></div>
+<div id="211ccba5-b40d-4982-a843-c3e4d15f1b23"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#371fd57b-87bd-4938-a8a9-48960520f62c');
+var element = $('#211ccba5-b40d-4982-a843-c3e4d15f1b23');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -531,10 +830,10 @@ var element = $('#371fd57b-87bd-4938-a8a9-48960520f62c');
 
 
 
-<div id="26eff67d-7237-4ea7-9fcc-f0ad0cc8ddc7"></div>
+<div id="be15ef04-1d22-438c-94c1-9f064464383f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#26eff67d-7237-4ea7-9fcc-f0ad0cc8ddc7');
+var element = $('#be15ef04-1d22-438c-94c1-9f064464383f');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -594,10 +893,10 @@ var element = $('#26eff67d-7237-4ea7-9fcc-f0ad0cc8ddc7');
 
 
 
-<div id="b790b14a-ccfd-47a8-96db-7df286a3f9be"></div>
+<div id="80998e81-4b94-4f17-bdc9-c975e8c4e52a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b790b14a-ccfd-47a8-96db-7df286a3f9be');
+var element = $('#80998e81-4b94-4f17-bdc9-c975e8c4e52a');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -702,10 +1001,10 @@ var element = $('#b790b14a-ccfd-47a8-96db-7df286a3f9be');
 
 
 
-<div id="74d931f1-3c52-4365-8653-e16d81460efc"></div>
+<div id="fa7e482d-83a5-4ad5-a0ed-7f8ec7c3df01"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#74d931f1-3c52-4365-8653-e16d81460efc');
+var element = $('#fa7e482d-83a5-4ad5-a0ed-7f8ec7c3df01');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
