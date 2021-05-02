@@ -51,13 +51,13 @@ nb_path: "01_host.ipynb"
 
 
 
-<div id="562295f9-3d4b-494d-9d7b-7039d69daa97"></div>
+<div id="bdcea328-248a-4849-9df5-540199b50442"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#562295f9-3d4b-494d-9d7b-7039d69daa97');
+var element = $('#bdcea328-248a-4849-9df5-540199b50442');
 
             setTimeout(function() {
-                var nbb_cell_id = 2;
+                var nbb_cell_id = 1;
                 var nbb_unformatted_code = "%load_ext nb_black";
                 var nbb_formatted_code = "%load_ext nb_black";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -222,13 +222,13 @@ var element = $('#562295f9-3d4b-494d-9d7b-7039d69daa97');
 
 
 
-<div id="009c1a17-e7f4-4d8a-83ee-ef6a307a724e"></div>
+<div id="2b545fae-7ff9-43e8-b3cd-78462a73300f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#009c1a17-e7f4-4d8a-83ee-ef6a307a724e');
+var element = $('#2b545fae-7ff9-43e8-b3cd-78462a73300f');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "# dont_test\n\nhost = Host(name=\"localhost\", port=8001)\nprint(host.port)";
                 var nbb_formatted_code = "# dont_test\n\nhost = Host(name=\"localhost\", port=8001)\nprint(host.port)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -283,13 +283,13 @@ var element = $('#009c1a17-e7f4-4d8a-83ee-ef6a307a724e');
 
 
 
-<div id="9a7b1a28-fcd6-4651-832e-1261d31d1b05"></div>
+<div id="b1928d5f-8846-450b-88af-6a999e9600d5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9a7b1a28-fcd6-4651-832e-1261d31d1b05');
+var element = $('#b1928d5f-8846-450b-88af-6a999e9600d5');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "host = Host(name=\"foobar\", port=8001)\nassert host.name == \"foobar\"\nassert host.port == 8001";
                 var nbb_formatted_code = "host = Host(name=\"foobar\", port=8001)\nassert host.name == \"foobar\"\nassert host.port == 8001";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -356,13 +356,13 @@ var element = $('#9a7b1a28-fcd6-4651-832e-1261d31d1b05');
 
 
 
-<div id="bba16bab-b569-46de-8c98-c29fb3415aba"></div>
+<div id="e734cd48-b87d-46f9-ac37-bf05f28aea66"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bba16bab-b569-46de-8c98-c29fb3415aba');
+var element = $('#e734cd48-b87d-46f9-ac37-bf05f28aea66');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "# export\n\n\nclass HostDetails(BaseModel):\n    machine_id: str\n    cpuinfo: dict\n\n    @classmethod\n    def build_details_from_localhost(cls):\n        kwargs = {\n            \"machine_id\": get_machine_id(),\n            \"cpuinfo\": cpuinfo.get_cpu_info(),\n        }\n        return cls(**kwargs)";
                 var nbb_formatted_code = "# export\n\n\nclass HostDetails(BaseModel):\n    machine_id: str\n    cpuinfo: dict\n\n    @classmethod\n    def build_details_from_localhost(cls):\n        kwargs = {\n            \"machine_id\": get_machine_id(),\n            \"cpuinfo\": cpuinfo.get_cpu_info(),\n        }\n        return cls(**kwargs)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -400,57 +400,15 @@ var element = $('#bba16bab-b569-46de-8c98-c29fb3415aba');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">host_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="o">.</span><span class="n">build_details_from_localhost</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># dont_test</span>
+
+<span class="n">host_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="o">.</span><span class="n">build_details_from_localhost</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;machine id: &quot;</span><span class="p">,</span> <span class="n">host_details</span><span class="o">.</span><span class="n">machine_id</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cpuinfo arch: &quot;</span><span class="p">,</span> <span class="n">host_details</span><span class="o">.</span><span class="n">cpuinfo</span><span class="p">[</span><span class="s2">&quot;arch&quot;</span><span class="p">])</span>
+<span class="k">assert</span> <span class="kc">False</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>machine id:  C02DR0MZQ6LT
-cpuinfo arch:  X86_64
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="2cba5b74-8357-416f-b51d-388d3ae9619a"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#2cba5b74-8357-416f-b51d-388d3ae9619a');
-
-            setTimeout(function() {
-                var nbb_cell_id = 17;
-                var nbb_unformatted_code = "# dont_test\n\nhost_details = HostDetails.build_details_from_localhost()\nprint(\"machine id: \", host_details.machine_id)\nprint(\"cpuinfo arch: \", host_details.cpuinfo[\"arch\"])";
-                var nbb_formatted_code = "# dont_test\n\nhost_details = HostDetails.build_details_from_localhost()\nprint(\"machine id: \", host_details.machine_id)\nprint(\"cpuinfo arch: \", host_details.cpuinfo[\"arch\"])";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -489,13 +447,13 @@ var element = $('#2cba5b74-8357-416f-b51d-388d3ae9619a');
 
 
 
-<div id="d131bc27-5af8-4404-b480-0a75bcbb7cb1"></div>
+<div id="67276fbc-e636-4a74-80a0-c747c63df223"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d131bc27-5af8-4404-b480-0a75bcbb7cb1');
+var element = $('#67276fbc-e636-4a74-80a0-c747c63df223');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "machine_id, cpuinfo = \"asdf\", {\"some\": \"info\"}\nhost_details = HostDetails(machine_id=machine_id, cpuinfo=cpuinfo)\n\nassert machine_id == host_details.machine_id\nassert cpuinfo == host_details.cpuinfo";
                 var nbb_formatted_code = "machine_id, cpuinfo = \"asdf\", {\"some\": \"info\"}\nhost_details = HostDetails(machine_id=machine_id, cpuinfo=cpuinfo)\n\nassert machine_id == host_details.machine_id\nassert cpuinfo == host_details.cpuinfo";
                 var nbb_cells = Jupyter.notebook.get_cells();
