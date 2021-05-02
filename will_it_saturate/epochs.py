@@ -3,13 +3,12 @@
 __all__ = ['Epoch']
 
 # Cell
+
 import math
 
 from pydantic import BaseModel
 
 from .files import BenchmarkFile, FILE_CREATORS
-
-# Cell
 
 
 class Epoch(BaseModel):

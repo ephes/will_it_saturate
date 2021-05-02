@@ -16,10 +16,10 @@ entries:
       title: File
       url: file.html
     - output: web,pdf
-      title: Model Registry
+      title: Registry
       url: registry.html
     - output: web,pdf
-      title: module Epochs
+      title: Epoch
       url: epochs.html
     - output: web,pdf
       title: Servers
