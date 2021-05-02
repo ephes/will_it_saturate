@@ -69,7 +69,7 @@ class FastAPIUvicornServer(BaseServer):
                 str(self.host),
                 "--port",
                 str(self.port),
-                "--no-access-log",
+                # "--no-access-log",
                 "will_it_saturate.fastapi.main:app",
             ]
         )
