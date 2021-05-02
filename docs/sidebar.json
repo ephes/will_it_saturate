@@ -17,9 +17,8 @@
     "Control Server Command Line Interface": "control_cli.html",
     "module Results": "results.html",
     "module Repositories": "repositories.html",
-    "Export": "sqlite_repository.html",
+    "Title": "run_benchmark.html",
     "Remote Benchmark": "benchmark_remote_control_server.html",
-    "module Core": "legacy.html",
-    "Title": "run_benchmark.html"
+    "module Core": "legacy.html"
   }
 }

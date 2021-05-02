@@ -53,12 +53,12 @@ def get_machine_id():
 
 class HostDetails(BaseModel):
     machine_id: str
-    cpuinfo: dict
+    cpu_info: dict
 
     @classmethod
     def build_details_from_localhost(cls):
         kwargs = {
             "machine_id": get_machine_id(),
-            "cpuinfo": cpuinfo.get_cpu_info(),
+            "cpu_info": cpuinfo.get_cpu_info(),
         }
         return cls(**kwargs)

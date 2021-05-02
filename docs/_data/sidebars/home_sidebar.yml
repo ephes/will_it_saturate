@@ -58,17 +58,14 @@ entries:
       title: module Repositories
       url: repositories.html
     - output: web,pdf
-      title: Export
-      url: sqlite_repository.html
+      title: Title
+      url: run_benchmark.html
     - output: web,pdf
       title: Remote Benchmark
       url: benchmark_remote_control_server.html
     - output: web,pdf
       title: module Core
       url: legacy.html
-    - output: web,pdf
-      title: Title
-      url: run_benchmark.html
     output: web
     title: will_it_saturate
   output: web

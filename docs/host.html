@@ -51,10 +51,10 @@ nb_path: "01_host.ipynb"
 
 
 
-<div id="bdcea328-248a-4849-9df5-540199b50442"></div>
+<div id="8d001565-f643-4de6-8b92-8a124e7d9efb"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bdcea328-248a-4849-9df5-540199b50442');
+var element = $('#8d001565-f643-4de6-8b92-8a124e7d9efb');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -222,10 +222,10 @@ var element = $('#bdcea328-248a-4849-9df5-540199b50442');
 
 
 
-<div id="2b545fae-7ff9-43e8-b3cd-78462a73300f"></div>
+<div id="1fe86184-d70f-4e2c-b10d-281bed94e8dd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#2b545fae-7ff9-43e8-b3cd-78462a73300f');
+var element = $('#1fe86184-d70f-4e2c-b10d-281bed94e8dd');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -283,10 +283,10 @@ var element = $('#2b545fae-7ff9-43e8-b3cd-78462a73300f');
 
 
 
-<div id="b1928d5f-8846-450b-88af-6a999e9600d5"></div>
+<div id="4fd42adf-645a-4a28-a539-a34b518f244b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b1928d5f-8846-450b-88af-6a999e9600d5');
+var element = $('#4fd42adf-645a-4a28-a539-a34b518f244b');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -331,7 +331,7 @@ var element = $('#b1928d5f-8846-450b-88af-6a999e9600d5');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="HostDetails" class="doc_header"><code>class</code> <code>HostDetails</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/hosts.py#L54" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HostDetails</code>(<strong><code>machine_id</code></strong>:<code>str</code>, <strong><code>cpuinfo</code></strong>:<code>dict</code>) :: <code>BaseModel</code></p>
+<h2 id="HostDetails" class="doc_header"><code>class</code> <code>HostDetails</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/hosts.py#L54" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>HostDetails</code>(<strong><code>machine_id</code></strong>:<code>str</code>, <strong><code>cpu_info</code></strong>:<code>dict</code>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -356,15 +356,15 @@ var element = $('#b1928d5f-8846-450b-88af-6a999e9600d5');
 
 
 
-<div id="e734cd48-b87d-46f9-ac37-bf05f28aea66"></div>
+<div id="cf5dfcdf-1e4f-4edc-a7aa-148ad639eb25"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e734cd48-b87d-46f9-ac37-bf05f28aea66');
+var element = $('#cf5dfcdf-1e4f-4edc-a7aa-148ad639eb25');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
-                var nbb_unformatted_code = "# export\n\n\nclass HostDetails(BaseModel):\n    machine_id: str\n    cpuinfo: dict\n\n    @classmethod\n    def build_details_from_localhost(cls):\n        kwargs = {\n            \"machine_id\": get_machine_id(),\n            \"cpuinfo\": cpuinfo.get_cpu_info(),\n        }\n        return cls(**kwargs)";
-                var nbb_formatted_code = "# export\n\n\nclass HostDetails(BaseModel):\n    machine_id: str\n    cpuinfo: dict\n\n    @classmethod\n    def build_details_from_localhost(cls):\n        kwargs = {\n            \"machine_id\": get_machine_id(),\n            \"cpuinfo\": cpuinfo.get_cpu_info(),\n        }\n        return cls(**kwargs)";
+                var nbb_unformatted_code = "# export\n\n\nclass HostDetails(BaseModel):\n    machine_id: str\n    cpu_info: dict\n\n    @classmethod\n    def build_details_from_localhost(cls):\n        kwargs = {\n            \"machine_id\": get_machine_id(),\n            \"cpu_info\": cpuinfo.get_cpu_info(),\n        }\n        return cls(**kwargs)";
+                var nbb_formatted_code = "# export\n\n\nclass HostDetails(BaseModel):\n    machine_id: str\n    cpu_info: dict\n\n    @classmethod\n    def build_details_from_localhost(cls):\n        kwargs = {\n            \"machine_id\": get_machine_id(),\n            \"cpu_info\": cpuinfo.get_cpu_info(),\n        }\n        return cls(**kwargs)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -404,8 +404,7 @@ var element = $('#e734cd48-b87d-46f9-ac37-bf05f28aea66');
 
 <span class="n">host_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="o">.</span><span class="n">build_details_from_localhost</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;machine id: &quot;</span><span class="p">,</span> <span class="n">host_details</span><span class="o">.</span><span class="n">machine_id</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cpuinfo arch: &quot;</span><span class="p">,</span> <span class="n">host_details</span><span class="o">.</span><span class="n">cpuinfo</span><span class="p">[</span><span class="s2">&quot;arch&quot;</span><span class="p">])</span>
-<span class="k">assert</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;cpuinfo arch: &quot;</span><span class="p">,</span> <span class="n">host_details</span><span class="o">.</span><span class="n">cpu_info</span><span class="p">[</span><span class="s2">&quot;arch&quot;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -428,11 +427,11 @@ var element = $('#e734cd48-b87d-46f9-ac37-bf05f28aea66');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">machine_id</span><span class="p">,</span> <span class="n">cpuinfo</span> <span class="o">=</span> <span class="s2">&quot;asdf&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;some&quot;</span><span class="p">:</span> <span class="s2">&quot;info&quot;</span><span class="p">}</span>
-<span class="n">host_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="n">machine_id</span><span class="p">,</span> <span class="n">cpuinfo</span><span class="o">=</span><span class="n">cpuinfo</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">machine_id</span><span class="p">,</span> <span class="n">cpu_info</span> <span class="o">=</span> <span class="s2">&quot;asdf&quot;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;some&quot;</span><span class="p">:</span> <span class="s2">&quot;info&quot;</span><span class="p">}</span>
+<span class="n">host_details</span> <span class="o">=</span> <span class="n">HostDetails</span><span class="p">(</span><span class="n">machine_id</span><span class="o">=</span><span class="n">machine_id</span><span class="p">,</span> <span class="n">cpu_info</span><span class="o">=</span><span class="n">cpu_info</span><span class="p">)</span>
 
 <span class="k">assert</span> <span class="n">machine_id</span> <span class="o">==</span> <span class="n">host_details</span><span class="o">.</span><span class="n">machine_id</span>
-<span class="k">assert</span> <span class="n">cpuinfo</span> <span class="o">==</span> <span class="n">host_details</span><span class="o">.</span><span class="n">cpuinfo</span>
+<span class="k">assert</span> <span class="n">cpu_info</span> <span class="o">==</span> <span class="n">host_details</span><span class="o">.</span><span class="n">cpu_info</span>
 </pre></div>
 
     </div>
@@ -447,15 +446,15 @@ var element = $('#e734cd48-b87d-46f9-ac37-bf05f28aea66');
 
 
 
-<div id="67276fbc-e636-4a74-80a0-c747c63df223"></div>
+<div id="076047f0-2423-4c20-b2f9-1b60eb2f2fbe"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#67276fbc-e636-4a74-80a0-c747c63df223');
+var element = $('#076047f0-2423-4c20-b2f9-1b60eb2f2fbe');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
-                var nbb_unformatted_code = "machine_id, cpuinfo = \"asdf\", {\"some\": \"info\"}\nhost_details = HostDetails(machine_id=machine_id, cpuinfo=cpuinfo)\n\nassert machine_id == host_details.machine_id\nassert cpuinfo == host_details.cpuinfo";
-                var nbb_formatted_code = "machine_id, cpuinfo = \"asdf\", {\"some\": \"info\"}\nhost_details = HostDetails(machine_id=machine_id, cpuinfo=cpuinfo)\n\nassert machine_id == host_details.machine_id\nassert cpuinfo == host_details.cpuinfo";
+                var nbb_unformatted_code = "machine_id, cpu_info = \"asdf\", {\"some\": \"info\"}\nhost_details = HostDetails(machine_id=machine_id, cpu_info=cpu_info)\n\nassert machine_id == host_details.machine_id\nassert cpu_info == host_details.cpu_info";
+                var nbb_formatted_code = "machine_id, cpu_info = \"asdf\", {\"some\": \"info\"}\nhost_details = HostDetails(machine_id=machine_id, cpu_info=cpu_info)\n\nassert machine_id == host_details.machine_id\nassert cpu_info == host_details.cpu_info";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
