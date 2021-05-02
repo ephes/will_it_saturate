@@ -1,6 +1,6 @@
 ---
 
-title: Caveats
+title: Title
 
 
 keywords: fastai
@@ -52,10 +52,10 @@ nb_path: "21_benchmark_client_implementations.ipynb"
 
 
 
-<div id="4aafebc8-f036-4e1a-93f1-f3223d247d28"></div>
+<div id="cb659b48-30f6-4427-b63b-fd17d1ebde34"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4aafebc8-f036-4e1a-93f1-f3223d247d28');
+var element = $('#cb659b48-30f6-4427-b63b-fd17d1ebde34');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -113,10 +113,10 @@ var element = $('#4aafebc8-f036-4e1a-93f1-f3223d247d28');
 
 
 
-<div id="3da8537d-2133-4bb6-9c47-04580e4dc2b2"></div>
+<div id="1cdc0059-01e7-4335-a986-a38b4c381744"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3da8537d-2133-4bb6-9c47-04580e4dc2b2');
+var element = $('#1cdc0059-01e7-4335-a986-a38b4c381744');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -144,6 +144,19 @@ var element = $('#3da8537d-2133-4bb6-9c47-04580e4dc2b2');
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Caveats">Caveats<a class="anchor-link" href="#Caveats"> </a></h2><p>On macOS increase open file limit with:</p>
+
+<pre><code>ulimit -n 2048</code></pre>
+<p>Before starting the fastAPI Server with:</p>
+
+<pre><code>uvicorn will_it_saturate.fastapi.main:app --reload</code></pre>
+<p>It's not really possible to test forked client from this notebook. I don't know why. It works in the 03_run_benchmark script. Here I have to set_start_method("fork") and other ugly stuff.</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -179,10 +192,10 @@ var element = $('#3da8537d-2133-4bb6-9c47-04580e4dc2b2');
 
 
 
-<div id="778e07b5-78f7-4383-8501-2e46483cbcc6"></div>
+<div id="ee6ced5a-c787-4041-b04e-c7da306780c5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#778e07b5-78f7-4383-8501-2e46483cbcc6');
+var element = $('#ee6ced5a-c787-4041-b04e-c7da306780c5');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -246,10 +259,10 @@ var element = $('#778e07b5-78f7-4383-8501-2e46483cbcc6');
 
 
 
-<div id="7aa6e32c-c7b1-4a0e-81f8-ac2f01ecaa8b"></div>
+<div id="88c855c6-7ddc-4b20-8a60-96f3383995ff"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7aa6e32c-c7b1-4a0e-81f8-ac2f01ecaa8b');
+var element = $('#88c855c6-7ddc-4b20-8a60-96f3383995ff');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -301,10 +314,10 @@ var element = $('#7aa6e32c-c7b1-4a0e-81f8-ac2f01ecaa8b');
 
 
 
-<div id="15252903-001c-48f9-bbaf-2ae0e354d0d6"></div>
+<div id="a879569d-aa91-4bfc-8501-f7776ab04ba3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#15252903-001c-48f9-bbaf-2ae0e354d0d6');
+var element = $('#a879569d-aa91-4bfc-8501-f7776ab04ba3');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -334,7 +347,7 @@ var element = $('#15252903-001c-48f9-bbaf-2ae0e354d0d6');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="aiohttp">aiohttp<a class="anchor-link" href="#aiohttp"> </a></h1>
+<h2 id="aiohttp">aiohttp<a class="anchor-link" href="#aiohttp"> </a></h2>
 </div>
 </div>
 </div>
@@ -398,10 +411,10 @@ var element = $('#15252903-001c-48f9-bbaf-2ae0e354d0d6');
 
 
 
-<div id="1e01be65-a387-4b53-96bb-7131c423b908"></div>
+<div id="bec84375-8700-41b6-84b6-3f4781757249"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1e01be65-a387-4b53-96bb-7131c423b908');
+var element = $('#bec84375-8700-41b6-84b6-3f4781757249');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -450,7 +463,7 @@ var element = $('#1e01be65-a387-4b53-96bb-7131c423b908');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="wrk">wrk<a class="anchor-link" href="#wrk"> </a></h1>
+<h2 id="wrk">wrk<a class="anchor-link" href="#wrk"> </a></h2>
 </div>
 </div>
 </div>
@@ -490,10 +503,10 @@ var element = $('#1e01be65-a387-4b53-96bb-7131c423b908');
 
 
 
-<div id="0e4a6e58-5c7c-4d73-a573-3452bdffc0ba"></div>
+<div id="e5622ca1-8fb6-4734-9d7a-b01a53c86c5e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0e4a6e58-5c7c-4d73-a573-3452bdffc0ba');
+var element = $('#e5622ca1-8fb6-4734-9d7a-b01a53c86c5e');
 
             setTimeout(function() {
                 var nbb_cell_id = 13;

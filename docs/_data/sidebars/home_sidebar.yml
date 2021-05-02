@@ -25,25 +25,13 @@ entries:
       title: Servers
       url: servers.html
     - output: web,pdf
-      title: fastAPI Application Views
-      url: views_for_fastapi_server.html
-    - output: web,pdf
-      title: Django Views
-      url: views_for_django_server.html
-    - output: web,pdf
-      title: FastAPIUvicornServer
-      url: servers_started_locally.html
-    - output: web,pdf
-      title: Nginx Docker Server
-      url: servers_started_via_docker.html
+      title: Title
+      url: run_benchmark.html
     - output: web,pdf
       title: Clients
       url: clients.html
     - output: web,pdf
-      title: Caveats
-      url: benchmark_client_implementations.html
-    - output: web,pdf
-      title: fastAPI Control Server
+      title: Control Server
       url: control_server.html
     - output: web,pdf
       title: Control Client
@@ -52,14 +40,14 @@ entries:
       title: Control Server Command Line Interface
       url: control_cli.html
     - output: web,pdf
-      title: module Results
+      title: Results
       url: results.html
     - output: web,pdf
-      title: module Repositories
+      title: Repositories
       url: repositories.html
     - output: web,pdf
-      title: Title
-      url: run_benchmark.html
+      title: Sqlite Repository
+      url: sqlite_repository.html
     - output: web,pdf
       title: Remote Benchmark
       url: benchmark_remote_control_server.html
