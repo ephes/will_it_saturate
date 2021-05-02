@@ -153,7 +153,14 @@ result_id = results.add_result(result)
 # dont_test
 
 results_from_database = results.get_results()
-pd.DataFrame([r.dict_for_pandas() for r in results_from_database])
+
+cols = set(["server", "client", "elapsed", "file_size_h", "bytes_per_second_h"])
+pd.DataFrame(
+    [
+        {k: v for k, v in r.dict_for_pandas().items() if k in cols}
+        for r in results_from_database
+    ]
+)
 ```
 
 
@@ -179,13 +186,8 @@ pd.DataFrame([r.dict_for_pandas() for r in results_from_database])
       <th></th>
       <th>server</th>
       <th>client</th>
-      <th>server_host</th>
-      <th>client_host</th>
       <th>elapsed</th>
-      <th>file_size</th>
       <th>file_size_h</th>
-      <th>complete_size</th>
-      <th>bytes_per_second</th>
       <th>bytes_per_second_h</th>
     </tr>
   </thead>
@@ -194,26 +196,16 @@ pd.DataFrame([r.dict_for_pandas() for r in results_from_database])
       <th>0</th>
       <td>fastAPI/uvicorn</td>
       <td>httpx</td>
-      <td>C02DR0MZQ6LT</td>
-      <td>C02DR0MZQ6LT</td>
       <td>4.318646</td>
-      <td>10000000</td>
       <td>9.54MB</td>
-      <td>375000000</td>
-      <td>8.683277e+07</td>
       <td>82.81MB</td>
     </tr>
     <tr>
       <th>1</th>
       <td>fastAPI/uvicorn</td>
       <td>httpx</td>
-      <td>C02DR0MZQ6LT</td>
-      <td>C02DR0MZQ6LT</td>
       <td>3.168980</td>
-      <td>10000000</td>
       <td>9.54MB</td>
-      <td>375000000</td>
-      <td>1.183346e+08</td>
       <td>112.85MB</td>
     </tr>
   </tbody>

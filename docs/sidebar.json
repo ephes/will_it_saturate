@@ -10,7 +10,7 @@
     "Clients": "clients.html",
     "Control Server": "control_server.html",
     "Control Client": "control_client.html",
-    "Control Server Command Line Interface": "control_cli.html",
+    "Control Server CLI": "control_cli.html",
     "Results": "results.html",
     "Repositories": "repositories.html",
     "Sqlite Repository": "sqlite_repository.html",
