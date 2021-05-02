@@ -14,14 +14,8 @@ from fastapi import FastAPI
 from ..epochs import Epoch
 from ..hosts import HostDetails
 
-from ..servers import (
-    BaseServer,
-    FastAPIUvicornServer,
-    NginxDockerServer,
-    DjangoGunicornWSGIServer,
-)
-
-# needed for clients to be registered in CLASS_REGISTRY
+# needed for servers/clients to be registered in CLASS_REGISTRY
+from ..servers import BaseServer
 from ..clients import BaseClient
 
 from ..registry import ModelParameters
