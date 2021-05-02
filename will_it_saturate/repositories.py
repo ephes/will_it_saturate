@@ -167,6 +167,8 @@ class HostTable(BaseTable):
 
 # Cell
 
+from .registry import ModelParameters
+
 
 class ClientServerBase(BaseTable):
     @property
@@ -195,9 +197,8 @@ class ClientServerBase(BaseTable):
     def get_id_to_model(self):
         id_to_model = {}
         for row in self.fetch_all_rows():
-            parameters = json.loads(row["parameters"])
-            model_class = self.get_class_by_name(parameters["class_name"])
-            id_to_model[row[self.pk_name]] = model_class(**parameters)
+            model_parameters = ModelParameters(**json.loads(row["parameters"]))
+            id_to_model[row[self.pk_name]] = model_parameters.to_model()
         return id_to_model
 
     def get_model_to_id(self):
@@ -231,24 +232,12 @@ class ClientServerBase(BaseTable):
         return model_to_id[parameters_json]
 
 
-from .servers import BaseServer, get_server_from_registry
-
-
 class ServerTable(ClientServerBase):
     table_name = "server"
-
-    def get_class_by_name(self, name):
-        return get_server_from_registry(name)
-
-
-from .clients import BaseClient, get_client_from_registry
 
 
 class ClientTable(ClientServerBase):
     table_name = "client"
-
-    def get_class_by_name(self, name):
-        return get_client_from_registry(name)
 
 # Cell
 

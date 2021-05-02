@@ -1,6 +1,6 @@
 ---
 
-title: Client Registry
+title: Clients
 
 
 keywords: fastai
@@ -51,10 +51,10 @@ nb_path: "40_clients.ipynb"
 
 
 
-<div id="e18ebd5f-54dc-4f4d-b5b7-912f12d570f8"></div>
+<div id="85b00f8f-a797-4835-8d82-4a384eecb407"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e18ebd5f-54dc-4f4d-b5b7-912f12d570f8');
+var element = $('#85b00f8f-a797-4835-8d82-4a384eecb407');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -93,359 +93,7 @@ var element = $('#e18ebd5f-54dc-4f4d-b5b7-912f12d570f8');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="register_client" class="doc_header"><code>register_client</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>register_client</code>(<strong><code>client_class</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_client_from_registry" class="doc_header"><code>get_client_from_registry</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_client_from_registry</code>(<strong><code>class_name</code></strong>)</p>
-</blockquote>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@register_client</span>
-<span class="k">class</span> <span class="nc">StubClient</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;stub client&quot;</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="e7445fc2-e1c9-4562-926c-ecd4fd1953d5"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#e7445fc2-e1c9-4562-926c-ecd4fd1953d5');
-
-            setTimeout(function() {
-                var nbb_cell_id = 30;
-                var nbb_unformatted_code = "@register_client\nclass StubClient(BaseModel):\n    name: str = \"stub client\"";
-                var nbb_formatted_code = "@register_client\nclass StubClient(BaseModel):\n    name: str = \"stub client\"";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">CLIENT_CLASS_REGISTRY</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;StubClient&#39;: __main__.StubClient}</pre>
-</div>
-
-</div>
-
-<div class="output_area">
-
-
-
-
-<div id="6e008f09-c365-40ad-80d5-4f14eff718d6"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#6e008f09-c365-40ad-80d5-4f14eff718d6');
-
-            setTimeout(function() {
-                var nbb_cell_id = 31;
-                var nbb_unformatted_code = "CLIENT_CLASS_REGISTRY";
-                var nbb_formatted_code = "CLIENT_CLASS_REGISTRY";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h2>
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">StubClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;foobar&quot;</span><span class="p">)</span>
-<span class="n">client_class</span> <span class="o">=</span> <span class="n">get_client_from_registry</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="23484fd0-d847-4c34-8fa9-28395b08d9b5"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#23484fd0-d847-4c34-8fa9-28395b08d9b5');
-
-            setTimeout(function() {
-                var nbb_cell_id = 32;
-                var nbb_unformatted_code = "client = StubClient(name=\"foobar\")\nclient_class = get_client_from_registry(client.__class__.__name__)";
-                var nbb_formatted_code = "client = StubClient(name=\"foobar\")\nclient_class = get_client_from_registry(client.__class__.__name__)";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tests">Tests<a class="anchor-link" href="#Tests"> </a></h2>
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">StubClient</span> <span class="o">==</span> <span class="n">get_client_from_registry</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">client</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="e18ea8d0-88f0-42f2-8aa3-a2417e8a0074"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#e18ea8d0-88f0-42f2-8aa3-a2417e8a0074');
-
-            setTimeout(function() {
-                var nbb_cell_id = 34;
-                var nbb_unformatted_code = "assert StubClient == get_client_from_registry(str(client.__class__.__name__))";
-                var nbb_formatted_code = "assert StubClient == get_client_from_registry(str(client.__class__.__name__))";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">StubClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;foobar&quot;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">get_client_from_registry</span><span class="p">(</span><span class="s2">&quot;StubClient&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">StubClient</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="9799a9de-4782-4456-9dfc-d98be540f37e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#9799a9de-4782-4456-9dfc-d98be540f37e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 36;
-                var nbb_unformatted_code = "client = StubClient(name=\"foobar\")\nassert get_client_from_registry(\"StubClient\") == StubClient";
-                var nbb_formatted_code = "client = StubClient(name=\"foobar\")\nassert get_client_from_registry(\"StubClient\") == StubClient";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Clients">Clients<a class="anchor-link" href="#Clients"> </a></h1>
-</div>
-</div>
-</div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="BaseClient" class="doc_header"><code>class</code> <code>BaseClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L27" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BaseClient" class="doc_header"><code>class</code> <code>BaseClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L14" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -494,13 +142,13 @@ var element = $('#9799a9de-4782-4456-9dfc-d98be540f37e');
 
 
 
-<div id="845a2678-eb08-4bc3-9e06-e5c7a5009333"></div>
+<div id="0a74aa83-8d16-4064-8997-9291326aabbe"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#845a2678-eb08-4bc3-9e06-e5c7a5009333');
+var element = $('#0a74aa83-8d16-4064-8997-9291326aabbe');
 
             setTimeout(function() {
-                var nbb_cell_id = 53;
+                var nbb_cell_id = 4;
                 var nbb_unformatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)";
                 var nbb_formatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -557,13 +205,13 @@ var element = $('#845a2678-eb08-4bc3-9e06-e5c7a5009333');
 
 
 
-<div id="c8fdfd0c-3f55-4237-baf6-2b7d14292b12"></div>
+<div id="50879394-9e8b-43dc-9abb-dc19b3897d8b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c8fdfd0c-3f55-4237-baf6-2b7d14292b12');
+var element = $('#50879394-9e8b-43dc-9abb-dc19b3897d8b');
 
             setTimeout(function() {
-                var nbb_cell_id = 54;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)\n\nassert client.name == name\nassert \"BaseClient\" == client.params()[\"class_name\"]";
                 var nbb_formatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)\n\nassert client.name == name\nassert \"BaseClient\" == client.params()[\"class_name\"]";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -624,13 +272,13 @@ var element = $('#c8fdfd0c-3f55-4237-baf6-2b7d14292b12');
 
 
 
-<div id="fa0e6c07-e1ab-4dd1-912a-47945a86f6d4"></div>
+<div id="0ec7cc34-a9b2-4a5a-8e5a-1a837e935317"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fa0e6c07-e1ab-4dd1-912a-47945a86f6d4');
+var element = $('#0ec7cc34-a9b2-4a5a-8e5a-1a837e935317');
 
             setTimeout(function() {
-                var nbb_cell_id = 55;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "class StubResponse:\n    url = \"foobar\"\n    content = b\"asdf\"\n\n\nclass StubFile:\n    checksum = \"912ec803b2ce49e4a541068d495ab570\"\n\n\nclass StubEpoch:\n    files = [StubFile()]\n    urls = [\"foobar\"]\n\n\nclient.verify_checksums(StubEpoch(), [StubResponse()])";
                 var nbb_formatted_code = "class StubResponse:\n    url = \"foobar\"\n    content = b\"asdf\"\n\n\nclass StubFile:\n    checksum = \"912ec803b2ce49e4a541068d495ab570\"\n\n\nclass StubEpoch:\n    files = [StubFile()]\n    urls = [\"foobar\"]\n\n\nclient.verify_checksums(StubEpoch(), [StubResponse()])";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -657,38 +305,23 @@ var element = $('#fa0e6c07-e1ab-4dd1-912a-47945a86f6d4');
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Client-Parameter-Models">Client Parameter Models<a class="anchor-link" href="#Client-Parameter-Models"> </a></h1><p>They are used to transfer clients via json. It's not clear which Client should be created when we accept a BaseClient. Therefore we transfer a client_parameter instance and have a lookup table to choose the right client.</p>
-
+<h1 id="Serialization-/-Deserialization">Serialization / Deserialization<a class="anchor-link" href="#Serialization-/-Deserialization"> </a></h1>
 </div>
 </div>
 </div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
-<div class="output_wrapper">
-<div class="output">
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.registry</span> <span class="kn">import</span> <span class="n">ModelParameters</span>
+</pre></div>
 
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="ClientParameters" class="doc_header"><code>class</code> <code>ClientParameters</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L50" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ClientParameters</code>(<strong><code>class_name</code></strong>:<code>str</code>, <strong><code>name</code></strong>:<code>str</code>) :: <code>BaseModel</code></p>
-</blockquote>
-
-</div>
-
-</div>
-
+    </div>
 </div>
 </div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
 
 <div class="output_wrapper">
 <div class="output">
@@ -698,15 +331,15 @@ var element = $('#fa0e6c07-e1ab-4dd1-912a-47945a86f6d4');
 
 
 
-<div id="764782d6-7224-4aea-a865-32122205a406"></div>
+<div id="a70030fa-255e-42e8-abaa-3bf599ec12e4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#764782d6-7224-4aea-a865-32122205a406');
+var element = $('#a70030fa-255e-42e8-abaa-3bf599ec12e4');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "# export\n\n\nclass ClientParameters(BaseModel):\n    class_name: str\n    name: str\n\n    def client(self):\n        return get_client_from_registry(self.class_name)(**self.dict())";
-                var nbb_formatted_code = "# export\n\n\nclass ClientParameters(BaseModel):\n    class_name: str\n    name: str\n\n    def client(self):\n        return get_client_from_registry(self.class_name)(**self.dict())";
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "from will_it_saturate.registry import ModelParameters";
+                var nbb_formatted_code = "from will_it_saturate.registry import ModelParameters";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -745,9 +378,9 @@ var element = $('#764782d6-7224-4aea-a865-32122205a406');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Httpx&quot;</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">BaseClient</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 
-<span class="n">client_parameters</span> <span class="o">=</span> <span class="n">ClientParameters</span><span class="p">(</span><span class="o">**</span><span class="n">client</span><span class="o">.</span><span class="n">params</span><span class="p">())</span>
+<span class="n">client_parameters</span> <span class="o">=</span> <span class="n">ModelParameters</span><span class="p">(</span><span class="o">**</span><span class="n">client</span><span class="o">.</span><span class="n">params</span><span class="p">())</span>
 
-<span class="n">client_from_params</span> <span class="o">=</span> <span class="n">client_parameters</span><span class="o">.</span><span class="n">client</span><span class="p">()</span>
+<span class="n">client_from_params</span> <span class="o">=</span> <span class="n">client_parameters</span><span class="o">.</span><span class="n">to_model</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -762,15 +395,15 @@ var element = $('#764782d6-7224-4aea-a865-32122205a406');
 
 
 
-<div id="20fefe75-d0fc-44fa-827b-fab532c24aeb"></div>
+<div id="0d853bc0-053d-429e-b592-7ecac0d08544"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#20fefe75-d0fc-44fa-827b-fab532c24aeb');
+var element = $('#0d853bc0-053d-429e-b592-7ecac0d08544');
 
             setTimeout(function() {
-                var nbb_cell_id = 11;
-                var nbb_unformatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)\n\nclient_parameters = ClientParameters(**client.params())\n\nclient_from_params = client_parameters.client()";
-                var nbb_formatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)\n\nclient_parameters = ClientParameters(**client.params())\n\nclient_from_params = client_parameters.client()";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)\n\nclient_parameters = ModelParameters(**client.params())\n\nclient_from_params = client_parameters.to_model()";
+                var nbb_formatted_code = "name = \"Httpx\"\nclient = BaseClient(name=name)\n\nclient_parameters = ModelParameters(**client.params())\n\nclient_from_params = client_parameters.to_model()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -821,13 +454,13 @@ var element = $('#20fefe75-d0fc-44fa-827b-fab532c24aeb');
 
 
 
-<div id="769a835e-2501-48b8-b772-4e47a6e4098d"></div>
+<div id="c0b246c7-9b10-449e-a9a5-c1aaa70f94d1"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#769a835e-2501-48b8-b772-4e47a6e4098d');
+var element = $('#c0b246c7-9b10-449e-a9a5-c1aaa70f94d1');
 
             setTimeout(function() {
-                var nbb_cell_id = 12;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "assert client_from_params == client";
                 var nbb_formatted_code = "assert client_from_params == client";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -886,6 +519,8 @@ Converted 01_fastapi_views.ipynb.
 Converted 01_file.ipynb.
 Converted 05_epochs.ipynb.
 Converted 06_results.ipynb.
+Converted 100_benchmark_remote_control_server.ipynb.
+Converted 10_registry.ipynb.
 Converted 25_core.ipynb.
 Converted 27_control_server.ipynb.
 Converted 28_control_client.ipynb.
@@ -902,6 +537,36 @@ Converted 98_run_benchmark.ipynb.
 Converted index.ipynb.
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="a3821bb6-3abf-43a4-9cb6-7f0c5eb43611"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#a3821bb6-3abf-43a4-9cb6-7f0c5eb43611');
+
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_formatted_code = "# dont_test\n\nfrom nbdev.export import notebook2script\n\nnotebook2script()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
 </div>
 
 </div>

@@ -21,7 +21,10 @@ from ..servers import (
     DjangoGunicornWSGIServer,
 )
 
-from ..clients import ClientParameters
+# needed for clients to be registered in CLASS_REGISTRY
+from ..clients import BaseClient
+
+from ..registry import ModelParameters
 
 
 app = FastAPI()
@@ -42,14 +45,14 @@ def create_epoch(epoch: Epoch):
 
 
 @app.post("/servers/")
-def create_server(server: BaseServer):
-    print(server)
+def create_server(server_params: ModelParameters):
+    print(server_params)
     global servers
+    server = server_params.to_model()
     if server.name not in servers:
-        created_server = FastAPIUvicornServer(name=server.name, port=5001)
-        created_server.start()
-        servers[server.name] = created_server
-    return servers[server.name]
+        server.start()
+        servers[server.name] = server
+    return server_params
 
 
 @app.get("/servers/")
@@ -64,8 +67,8 @@ def host_details() -> HostDetails:
 
 
 @app.post("/measure/")
-def measure(client_params: ClientParameters, epoch: Epoch):
-    benchmark_client = client_params.client()
+def measure(client_params: ModelParameters, epoch: Epoch):
+    benchmark_client = client_params.to_model()
     print("client: ", benchmark_client)
     print("epoch: ", epoch)
     return benchmark_client.measure(epoch)

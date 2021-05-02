@@ -11,6 +11,7 @@ from urllib.parse import urljoin
 
 from ..files import BenchmarkFile
 from ..hosts import Host, HostDetails
+from ..registry import ModelParameters
 
 
 class ControlClient(BaseModel):
@@ -34,13 +35,13 @@ class ControlClient(BaseModel):
 
     def get_or_create_server(self, server):
         url = urljoin(self.base_url, "servers")
-        r = httpx.post(url, json=server.dict())
+        r = httpx.post(url, json=server.params())
         r.raise_for_status()
-        return server.__class__(**r.json())
+        return ModelParameters(**r.json()).to_model()
 
-    def measure(self, client_params, epoch):
+    def measure(self, client, epoch):
         url = urljoin(self.base_url, "measure")
-        data = {"client_params": client_params.dict(), "epoch": epoch.dict()}
+        data = {"client_params": client.params(), "epoch": epoch.dict()}
         r = httpx.post(url, json=data, timeout=None)
         r.raise_for_status()
         return r.json()

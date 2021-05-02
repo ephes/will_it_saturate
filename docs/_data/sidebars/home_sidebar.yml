@@ -31,6 +31,9 @@ entries:
       title: Remote Benchmark
       url: benchmark_without_benchmark.html
     - output: web,pdf
+      title: Model Registry
+      url: registry.html
+    - output: web,pdf
       title: module Core
       url: core.html
     - output: web,pdf
@@ -43,7 +46,7 @@ entries:
       title: Control Server Command Line Interface
       url: control_cli.html
     - output: web,pdf
-      title: Server Registry
+      title: Servers
       url: servers.html
     - output: web,pdf
       title: FastAPIUvicornServer
@@ -52,7 +55,7 @@ entries:
       title: Nginx Docker Server
       url: docker_servers.html
     - output: web,pdf
-      title: Client Registry
+      title: Clients
       url: clients.html
     - output: web,pdf
       title: Caveats
