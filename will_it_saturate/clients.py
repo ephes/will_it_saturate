@@ -135,7 +135,7 @@ class AioHttpClient(BaseClient):
         print("measure server")
         print(epoch.urls[0])
         urls = epoch.urls
-        max_connections = min(epoch.number_of_connections, 400)
+        max_connections = min(epoch.number_of_connections, 200)
         conn = aiohttp.TCPConnector(limit=max_connections)
         responses = []
         start = time.perf_counter()

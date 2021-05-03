@@ -40,8 +40,6 @@ class BaseServer(BaseModel):
 
 # Cell
 
-from .registry import register_model
-
 
 @register_model
 class FastAPIUvicornServer(BaseServer):
@@ -140,6 +138,7 @@ class DjangoGunicornWSGIServer(BaseServer):
 # Cell
 
 from pathlib import Path
+from .registry import register_model
 
 
 @register_model

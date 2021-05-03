@@ -35,7 +35,7 @@ class ControlClient(BaseModel):
 
     def get_or_create_server(self, server):
         url = urljoin(self.base_url, "servers")
-        r = httpx.post(url, json=server.params())
+        r = httpx.post(url, json=server.params(), timeout=60)
         r.raise_for_status()
         return ModelParameters(**r.json()).to_model()
 
