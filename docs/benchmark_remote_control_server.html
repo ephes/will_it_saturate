@@ -64,10 +64,10 @@ nb_path: "51_benchmark_remote_control_server.ipynb"
 
 
 
-<div id="d9c26e69-efa2-4d02-842d-0349512dae2f"></div>
+<div id="5e65b4ce-abe9-4942-ba1e-6125cba870f2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d9c26e69-efa2-4d02-842d-0349512dae2f');
+var element = $('#5e65b4ce-abe9-4942-ba1e-6125cba870f2');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -129,45 +129,13 @@ var element = $('#d9c26e69-efa2-4d02-842d-0349512dae2f');
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">HTTPStatusError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-3-f4c063154371&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-red-fg">#     servers.FastAPIUvicornServer(host=&#34;192.168.178.113&#34;, port=5001)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-red-fg"># )</span>
-<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg"> server = server_control_client.get_or_create_server(
-</span><span class="ansi-green-intense-fg ansi-bold">     10</span>     servers<span class="ansi-blue-fg">.</span>NginxDockerServer<span class="ansi-blue-fg">(</span>host<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;192.168.178.113&#34;</span><span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">5001</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> )
-
-<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/control/client.py</span> in <span class="ansi-cyan-fg">get_or_create_server</span><span class="ansi-blue-fg">(self, server)</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span>         url <span class="ansi-blue-fg">=</span> urljoin<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>base_url<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;servers&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     38</span>         r <span class="ansi-blue-fg">=</span> httpx<span class="ansi-blue-fg">.</span>post<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> json<span class="ansi-blue-fg">=</span>server<span class="ansi-blue-fg">.</span>params<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">---&gt; 39</span><span class="ansi-red-fg">         </span>r<span class="ansi-blue-fg">.</span>raise_for_status<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span>         <span class="ansi-green-fg">return</span> ModelParameters<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">**</span>r<span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>to_model<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     41</span> 
-
-<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_models.py</span> in <span class="ansi-cyan-fg">raise_for_status</span><span class="ansi-blue-fg">(self)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1403</span>         <span class="ansi-green-fg">elif</span> codes<span class="ansi-blue-fg">.</span>is_server_error<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>status_code<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">   1404</span>             message <span class="ansi-blue-fg">=</span> message<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> error_type<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;Server Error&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">-&gt; 1405</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> HTTPStatusError<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">,</span> response<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1406</span> 
-<span class="ansi-green-intense-fg ansi-bold">   1407</span>     <span class="ansi-green-fg">def</span> json<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">:</span> typing<span class="ansi-blue-fg">.</span>Any<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> typing<span class="ansi-blue-fg">.</span>Any<span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">HTTPStatusError</span>: 500 Server Error: Internal Server Error for url: http://192.168.178.113:8001/servers/
-For more information check: https://httpstatuses.com/500</pre>
-</div>
-</div>
-
-<div class="output_area">
 
 
 
-
-<div id="17356dbd-c7dc-4b16-880a-14d83cb83915"></div>
+<div id="4ac68c95-8f7a-4c06-bd42-767da705ab6c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#17356dbd-c7dc-4b16-880a-14d83cb83915');
+var element = $('#4ac68c95-8f7a-4c06-bd42-767da705ab6c');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -226,10 +194,10 @@ var element = $('#17356dbd-c7dc-4b16-880a-14d83cb83915');
 
 
 
-<div id="b0cb0118-4a2d-4b17-905e-567154f33389"></div>
+<div id="b0d3cdbe-591b-4970-8339-d31d84e99ecf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b0cb0118-4a2d-4b17-905e-567154f33389');
+var element = $('#b0d3cdbe-591b-4970-8339-d31d84e99ecf');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -287,10 +255,10 @@ var element = $('#b0cb0118-4a2d-4b17-905e-567154f33389');
 
 
 
-<div id="ad76c145-a8d1-4986-8d26-c39924e3ee08"></div>
+<div id="4118c958-5904-437a-8ec0-6994cac27a54"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ad76c145-a8d1-4986-8d26-c39924e3ee08');
+var element = $('#4118c958-5904-437a-8ec0-6994cac27a54');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -353,10 +321,10 @@ var element = $('#ad76c145-a8d1-4986-8d26-c39924e3ee08');
 
 
 
-<div id="8af2a347-0d61-42dd-a21d-710ab6222185"></div>
+<div id="cfdfa295-8e68-475a-b1e2-28756b47aa87"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8af2a347-0d61-42dd-a21d-710ab6222185');
+var element = $('#cfdfa295-8e68-475a-b1e2-28756b47aa87');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -419,10 +387,10 @@ var element = $('#8af2a347-0d61-42dd-a21d-710ab6222185');
 
 
 
-<div id="e2644c27-4b1b-45ae-82ff-e8b0c7b6a13c"></div>
+<div id="0c70fd2e-8831-4119-ad14-d93f6193e2ea"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e2644c27-4b1b-45ae-82ff-e8b0c7b6a13c');
+var element = $('#0c70fd2e-8831-4119-ad14-d93f6193e2ea');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -472,10 +440,10 @@ var element = $('#e2644c27-4b1b-45ae-82ff-e8b0c7b6a13c');
 
 
 
-<div id="c358c216-c6d3-4f8a-b6c6-ab05a58c3b03"></div>
+<div id="d388742b-9b8e-4ade-a37f-ed649c34ad93"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c358c216-c6d3-4f8a-b6c6-ab05a58c3b03');
+var element = $('#d388742b-9b8e-4ade-a37f-ed649c34ad93');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -525,10 +493,10 @@ var element = $('#c358c216-c6d3-4f8a-b6c6-ab05a58c3b03');
 
 
 
-<div id="aa37b9ae-ea49-4d75-8098-e4acfb5cb21a"></div>
+<div id="f5f496ff-6a36-4ed7-8fe5-5eb427414e64"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#aa37b9ae-ea49-4d75-8098-e4acfb5cb21a');
+var element = $('#f5f496ff-6a36-4ed7-8fe5-5eb427414e64');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -581,13 +549,42 @@ var element = $('#aa37b9ae-ea49-4d75-8098-e4acfb5cb21a');
 
 <div class="output_area">
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">HTTPStatusError</span>                           Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-10-feaa15c2887b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># dont_test</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> 
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>result<span class="ansi-blue-fg">.</span>elapsed <span class="ansi-blue-fg">=</span> client_control_client<span class="ansi-blue-fg">.</span>measure<span class="ansi-blue-fg">(</span>benchmark_client<span class="ansi-blue-fg">,</span> epoch<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/control/client.py</span> in <span class="ansi-cyan-fg">measure</span><span class="ansi-blue-fg">(self, client, epoch)</span>
+<span class="ansi-green-intense-fg ansi-bold">     50</span>         data <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;client_params&#34;</span><span class="ansi-blue-fg">:</span> client<span class="ansi-blue-fg">.</span>params<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;epoch&#34;</span><span class="ansi-blue-fg">:</span> epoch<span class="ansi-blue-fg">.</span>dict<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">}</span>
+<span class="ansi-green-intense-fg ansi-bold">     51</span>         r <span class="ansi-blue-fg">=</span> httpx<span class="ansi-blue-fg">.</span>post<span class="ansi-blue-fg">(</span>url<span class="ansi-blue-fg">,</span> json<span class="ansi-blue-fg">=</span>data<span class="ansi-blue-fg">,</span> timeout<span class="ansi-blue-fg">=</span><span class="ansi-green-fg">None</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 52</span><span class="ansi-red-fg">         </span>r<span class="ansi-blue-fg">.</span>raise_for_status<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     53</span>         <span class="ansi-green-fg">return</span> r<span class="ansi-blue-fg">.</span>json<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/.virtualenvs/wis/lib/python3.9/site-packages/httpx/_models.py</span> in <span class="ansi-cyan-fg">raise_for_status</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1403</span>         <span class="ansi-green-fg">elif</span> codes<span class="ansi-blue-fg">.</span>is_server_error<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">.</span>status_code<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">   1404</span>             message <span class="ansi-blue-fg">=</span> message<span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> error_type<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;Server Error&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">-&gt; 1405</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> HTTPStatusError<span class="ansi-blue-fg">(</span>message<span class="ansi-blue-fg">,</span> request<span class="ansi-blue-fg">=</span>request<span class="ansi-blue-fg">,</span> response<span class="ansi-blue-fg">=</span>self<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">   1406</span> 
+<span class="ansi-green-intense-fg ansi-bold">   1407</span>     <span class="ansi-green-fg">def</span> json<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">**</span>kwargs<span class="ansi-blue-fg">:</span> typing<span class="ansi-blue-fg">.</span>Any<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> typing<span class="ansi-blue-fg">.</span>Any<span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">HTTPStatusError</span>: 500 Server Error: Internal Server Error for url: http://localhost:8001/measure/
+For more information check: https://httpstatuses.com/500</pre>
+</div>
+</div>
+
+<div class="output_area">
 
 
 
-<div id="506a5a2f-860a-4b53-96a6-cf69a3a90f3a"></div>
+
+<div id="7c5198cc-492d-4f59-9fb6-a23b2065ad02"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#506a5a2f-860a-4b53-96a6-cf69a3a90f3a');
+var element = $('#7c5198cc-492d-4f59-9fb6-a23b2065ad02');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -653,10 +650,10 @@ var element = $('#506a5a2f-860a-4b53-96a6-cf69a3a90f3a');
 
 
 
-<div id="e9aedca1-31fa-4417-8d2f-571b9091f668"></div>
+<div id="47a03543-97af-4d7f-a2bb-c68c5369005c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e9aedca1-31fa-4417-8d2f-571b9091f668');
+var element = $('#47a03543-97af-4d7f-a2bb-c68c5369005c');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -715,10 +712,10 @@ var element = $('#e9aedca1-31fa-4417-8d2f-571b9091f668');
 
 
 
-<div id="18bb8e20-a5e5-4b6a-b54d-1db9e535b44e"></div>
+<div id="93fc6b7c-0ac8-4b3e-a023-7fac50044231"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#18bb8e20-a5e5-4b6a-b54d-1db9e535b44e');
+var element = $('#93fc6b7c-0ac8-4b3e-a023-7fac50044231');
 
             setTimeout(function() {
                 var nbb_cell_id = 11;
@@ -768,10 +765,10 @@ var element = $('#18bb8e20-a5e5-4b6a-b54d-1db9e535b44e');
 
 
 
-<div id="dfa89664-a818-40da-85ec-8356a754b92e"></div>
+<div id="8cd64e07-c1fc-4129-a5cb-aeaa5b3c9456"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dfa89664-a818-40da-85ec-8356a754b92e');
+var element = $('#8cd64e07-c1fc-4129-a5cb-aeaa5b3c9456');
 
             setTimeout(function() {
                 var nbb_cell_id = 12;
@@ -938,10 +935,10 @@ var element = $('#dfa89664-a818-40da-85ec-8356a754b92e');
 
 
 
-<div id="db6b6f1f-3e04-4497-b5b2-8eb619ffeaa3"></div>
+<div id="5304cf20-cb09-46c8-90a7-0463023c8784"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#db6b6f1f-3e04-4497-b5b2-8eb619ffeaa3');
+var element = $('#5304cf20-cb09-46c8-90a7-0463023c8784');
 
             setTimeout(function() {
                 var nbb_cell_id = 13;

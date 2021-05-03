@@ -193,6 +193,7 @@ class NginxDockerServer(BaseServer):
         print(output.stdout)
 
     def start_server(self):
+        self.write_dockerfile()
         self.remove_container()
         self.build_container()
         self.start_container()
