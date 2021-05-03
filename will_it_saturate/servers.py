@@ -139,6 +139,8 @@ class DjangoGunicornWSGIServer(BaseServer):
 
 # Cell
 
+from pathlib import Path
+
 
 @register_model
 class NginxDockerServer(BaseServer):
