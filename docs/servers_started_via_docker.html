@@ -29,59 +29,6 @@ nb_path: "16_servers_started_via_docker.ipynb"
 </div>
     {% endraw %}
 
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="4823cf4a-095f-4e44-bede-4219d3fa763e"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#4823cf4a-095f-4e44-bede-4219d3fa763e');
-
-            setTimeout(function() {
-                var nbb_cell_id = 1;
-                var nbb_unformatted_code = "%load_ext nb_black";
-                var nbb_formatted_code = "%load_ext nb_black";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Nginx-Docker-Server">Nginx Docker Server<a class="anchor-link" href="#Nginx-Docker-Server"> </a></h2>
@@ -98,8 +45,8 @@ var element = $('#4823cf4a-095f-4e44-bede-4219d3fa763e');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 
-
 <span class="kn">from</span> <span class="nn">will_it_saturate.servers</span> <span class="kn">import</span> <span class="n">BaseServer</span>
+<span class="kn">from</span> <span class="nn">will_it_saturate.registry</span> <span class="kn">import</span> <span class="n">register_model</span>
 </pre></div>
 
     </div>
@@ -114,15 +61,15 @@ var element = $('#4823cf4a-095f-4e44-bede-4219d3fa763e');
 
 
 
-<div id="6627e67e-23a3-430e-9b32-424a56b8ccc6"></div>
+<div id="46372fcd-57e5-4664-b352-c317a5fe20c2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6627e67e-23a3-430e-9b32-424a56b8ccc6');
+var element = $('#46372fcd-57e5-4664-b352-c317a5fe20c2');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
-                var nbb_unformatted_code = "import time\nimport subprocess\n\n\nfrom will_it_saturate.servers import BaseServer";
-                var nbb_formatted_code = "import time\nimport subprocess\n\n\nfrom will_it_saturate.servers import BaseServer";
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "import time\nimport subprocess\n\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.registry import register_model";
+                var nbb_formatted_code = "import time\nimport subprocess\n\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.registry import register_model";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -156,7 +103,7 @@ var element = $('#6627e67e-23a3-430e-9b32-424a56b8ccc6');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NginxDockerServer" class="doc_header"><code>class</code> <code>NginxDockerServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L141" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxDockerServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/docker'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>docker_name</code></strong>:<code>str</code>=<em><code>'wis-nginx'</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>subprocess_kwargs</code></strong>:<code>dict</code>=<em><code>{'shell': True, 'capture_output': True, 'text': True}</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="NginxDockerServer" class="doc_header"><code>class</code> <code>NginxDockerServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L143" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxDockerServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/docker'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>docker_name</code></strong>:<code>str</code>=<em><code>'wis-nginx'</code></em>, <strong><code>data_root</code></strong>:<code>str</code>=<em><code>'data'</code></em>, <strong><code>subprocess_kwargs</code></strong>:<code>dict</code>=<em><code>{'shell': True, 'capture_output': True, 'text': True}</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -181,15 +128,15 @@ var element = $('#6627e67e-23a3-430e-9b32-424a56b8ccc6');
 
 
 
-<div id="3243ccb3-4c7f-4245-be06-152acb12bc2b"></div>
+<div id="29c8018e-986c-4630-a866-2714f5258315"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3243ccb3-4c7f-4245-be06-152acb12bc2b');
+var element = $('#29c8018e-986c-4630-a866-2714f5258315');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "# export\n\n\nclass NginxDockerServer(BaseServer):\n    name: str = \"nginx/docker\"\n    docker_name: str = \"wis-nginx\"\n    port: int = 8000\n    data_root: str = \"data\"\n    subprocess_kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n\n    def write_dockerfile(self):\n        dockerfile = f\"\"\"\n        FROM nginx\n        COPY {data_root} /usr/share/nginx/html/{data_root}\n        \"\"\"\n        with Path(\"Dockerfile.nginx\").open(\"w\") as f:\n            f.write(dockerfile)\n\n    @property\n    def docker_id(self):\n        output = subprocess.run(\n            f\"docker ps | grep {self.docker_name}\", **self.subprocess_kwargs\n        )\n        if len(output.stdout) > 0:\n            return output.stdout.split()[0]\n\n    @property\n    def started(self):\n        return self.docker_id is not None\n\n    def stop_container(self, docker_id):\n        output = subprocess.run(f\"docker kill {docker_id}\", **self.subprocess_kwargs)\n        print(output.stdout)\n\n    def remove_container(self):\n        output = subprocess.run(\n            f\"docker rm {self.docker_name}\", **self.subprocess_kwargs\n        )\n        print(output.stdout)\n\n    def build_container(self):\n        output = subprocess.run(\n            f\"docker build -f Dockerfile.nginx -t {self.docker_name} .\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_container(self):\n        output = subprocess.run(\n            f\"docker run --name {self.docker_name} -d -p {self.port}:80 {self.docker_name}\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_server(self):\n        self.remove_container()\n        self.build_container()\n        self.start_container()\n\n    def stop_server(self):\n        if self.started:\n            self.stop_container(self.docker_id)\n            self.remove_container()\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
-                var nbb_formatted_code = "# export\n\n\nclass NginxDockerServer(BaseServer):\n    name: str = \"nginx/docker\"\n    docker_name: str = \"wis-nginx\"\n    port: int = 8000\n    data_root: str = \"data\"\n    subprocess_kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n\n    def write_dockerfile(self):\n        dockerfile = f\"\"\"\n        FROM nginx\n        COPY {data_root} /usr/share/nginx/html/{data_root}\n        \"\"\"\n        with Path(\"Dockerfile.nginx\").open(\"w\") as f:\n            f.write(dockerfile)\n\n    @property\n    def docker_id(self):\n        output = subprocess.run(\n            f\"docker ps | grep {self.docker_name}\", **self.subprocess_kwargs\n        )\n        if len(output.stdout) > 0:\n            return output.stdout.split()[0]\n\n    @property\n    def started(self):\n        return self.docker_id is not None\n\n    def stop_container(self, docker_id):\n        output = subprocess.run(f\"docker kill {docker_id}\", **self.subprocess_kwargs)\n        print(output.stdout)\n\n    def remove_container(self):\n        output = subprocess.run(\n            f\"docker rm {self.docker_name}\", **self.subprocess_kwargs\n        )\n        print(output.stdout)\n\n    def build_container(self):\n        output = subprocess.run(\n            f\"docker build -f Dockerfile.nginx -t {self.docker_name} .\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_container(self):\n        output = subprocess.run(\n            f\"docker run --name {self.docker_name} -d -p {self.port}:80 {self.docker_name}\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_server(self):\n        self.remove_container()\n        self.build_container()\n        self.start_container()\n\n    def stop_server(self):\n        if self.started:\n            self.stop_container(self.docker_id)\n            self.remove_container()\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass NginxDockerServer(BaseServer):\n    name: str = \"nginx/docker\"\n    docker_name: str = \"wis-nginx\"\n    port: int = 8000\n    data_root: str = \"data\"\n    subprocess_kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n\n    def write_dockerfile(self):\n        dockerfile = f\"\"\"\n        FROM nginx\n        COPY {data_root} /usr/share/nginx/html/{data_root}\n        \"\"\"\n        with Path(\"Dockerfile.nginx\").open(\"w\") as f:\n            f.write(dockerfile)\n\n    @property\n    def docker_id(self):\n        output = subprocess.run(\n            f\"docker ps | grep {self.docker_name}\", **self.subprocess_kwargs\n        )\n        if len(output.stdout) > 0:\n            return output.stdout.split()[0]\n\n    @property\n    def started(self):\n        return self.docker_id is not None\n\n    def stop_container(self, docker_id):\n        output = subprocess.run(f\"docker kill {docker_id}\", **self.subprocess_kwargs)\n        print(output.stdout)\n\n    def remove_container(self):\n        output = subprocess.run(\n            f\"docker rm {self.docker_name}\", **self.subprocess_kwargs\n        )\n        print(output.stdout)\n\n    def build_container(self):\n        output = subprocess.run(\n            f\"docker build -f Dockerfile.nginx -t {self.docker_name} .\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_container(self):\n        output = subprocess.run(\n            f\"docker run --name {self.docker_name} -d -p {self.port}:80 {self.docker_name}\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_server(self):\n        self.remove_container()\n        self.build_container()\n        self.start_container()\n\n    def stop_server(self):\n        if self.started:\n            self.stop_container(self.docker_id)\n            self.remove_container()\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_formatted_code = "# export\n\n\n@register_model\nclass NginxDockerServer(BaseServer):\n    name: str = \"nginx/docker\"\n    docker_name: str = \"wis-nginx\"\n    port: int = 8000\n    data_root: str = \"data\"\n    subprocess_kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n\n    def write_dockerfile(self):\n        dockerfile = f\"\"\"\n        FROM nginx\n        COPY {data_root} /usr/share/nginx/html/{data_root}\n        \"\"\"\n        with Path(\"Dockerfile.nginx\").open(\"w\") as f:\n            f.write(dockerfile)\n\n    @property\n    def docker_id(self):\n        output = subprocess.run(\n            f\"docker ps | grep {self.docker_name}\", **self.subprocess_kwargs\n        )\n        if len(output.stdout) > 0:\n            return output.stdout.split()[0]\n\n    @property\n    def started(self):\n        return self.docker_id is not None\n\n    def stop_container(self, docker_id):\n        output = subprocess.run(f\"docker kill {docker_id}\", **self.subprocess_kwargs)\n        print(output.stdout)\n\n    def remove_container(self):\n        output = subprocess.run(\n            f\"docker rm {self.docker_name}\", **self.subprocess_kwargs\n        )\n        print(output.stdout)\n\n    def build_container(self):\n        output = subprocess.run(\n            f\"docker build -f Dockerfile.nginx -t {self.docker_name} .\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_container(self):\n        output = subprocess.run(\n            f\"docker run --name {self.docker_name} -d -p {self.port}:80 {self.docker_name}\",\n            **self.subprocess_kwargs,\n        )\n        print(output.stdout)\n\n    def start_server(self):\n        self.remove_container()\n        self.build_container()\n        self.start_container()\n\n    def stop_server(self):\n        if self.started:\n            self.stop_container(self.docker_id)\n            self.remove_container()\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -246,8 +193,13 @@ var element = $('#3243ccb3-4c7f-4245-be06-152acb12bc2b');
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 
+3eaab2857767f18bb8c8a6b5c187d52917c5730dc30002b68d51b223e021f075
 
-None
+3eaab2857767
+3eaab2857767
+
+wis-nginx
+
 stopped..
 None
 False
@@ -260,13 +212,13 @@ False
 
 
 
-<div id="c98bd05b-d73a-4dda-aa7a-b3288ddf8d67"></div>
+<div id="a56ddd6a-01bb-4888-8d72-3883ac4b7200"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c98bd05b-d73a-4dda-aa7a-b3288ddf8d67');
+var element = $('#a56ddd6a-01bb-4888-8d72-3883ac4b7200');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# dont_test\n\nserver = NginxDockerServer()\nserver.start()\nprint(server.docker_id)\nserver.stop()\nprint(\"stopped..\")\nprint(server.docker_id)\nprint(server.started)";
                 var nbb_formatted_code = "# dont_test\n\nserver = NginxDockerServer()\nserver.start()\nprint(server.docker_id)\nserver.stop()\nprint(\"stopped..\")\nprint(server.docker_id)\nprint(server.started)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -312,10 +264,9 @@ var element = $('#c98bd05b-d73a-4dda-aa7a-b3288ddf8d67');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>wis-nginx
+<pre>
 
-
-1b8d04cb36ad711c65344ebc1b3541a7bd1a1869235bac1f96325d5a14711298
+698b44e7715fae113837e4e16956bc837c26be1efb1a7ec8dec8b6e94db041f2
 
 </pre>
 </div>
@@ -326,13 +277,13 @@ var element = $('#c98bd05b-d73a-4dda-aa7a-b3288ddf8d67');
 
 
 
-<div id="21cfe52c-117b-4780-9a0a-d8a1b18dfe95"></div>
+<div id="fd75cc1b-dbac-4616-8b95-d3ae6b602d7e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#21cfe52c-117b-4780-9a0a-d8a1b18dfe95');
+var element = $('#fd75cc1b-dbac-4616-8b95-d3ae6b602d7e');
 
             setTimeout(function() {
-                var nbb_cell_id = 16;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "server = NginxDockerServer()\nserver.start()";
                 var nbb_formatted_code = "server = NginxDockerServer()\nserver.start()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -377,7 +328,7 @@ var element = $('#21cfe52c-117b-4780-9a0a-d8a1b18dfe95');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1b8d04cb36ad
+<pre>698b44e7715f
 
 wis-nginx
 
@@ -390,13 +341,13 @@ wis-nginx
 
 
 
-<div id="60f31388-1301-4124-b9cf-b25bc1340770"></div>
+<div id="15030aab-3861-436e-bb1d-3e9bffdfe2ee"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#60f31388-1301-4124-b9cf-b25bc1340770');
+var element = $('#15030aab-3861-436e-bb1d-3e9bffdfe2ee');
 
             setTimeout(function() {
-                var nbb_cell_id = 17;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "server.stop()";
                 var nbb_formatted_code = "server.stop()";
                 var nbb_cells = Jupyter.notebook.get_cells();

@@ -140,6 +140,7 @@ class DjangoGunicornWSGIServer(BaseServer):
 # Cell
 
 
+@register_model
 class NginxDockerServer(BaseServer):
     name: str = "nginx/docker"
     docker_name: str = "wis-nginx"
