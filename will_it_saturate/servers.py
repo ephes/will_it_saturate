@@ -151,7 +151,7 @@ class NginxDockerServer(BaseServer):
     def write_dockerfile(self):
         dockerfile = f"""
         FROM nginx
-        COPY {data_root} /usr/share/nginx/html/{data_root}
+        COPY {data_root} /usr/share/nginx/html/{self.data_root}
         """
         with Path("Dockerfile.nginx").open("w") as f:
             f.write(dockerfile)
