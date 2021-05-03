@@ -12,7 +12,7 @@ Start control server
 
 `wis_control_server`
 
-```python
+```
 import httpx
 import pandas as pd
 
@@ -37,7 +37,7 @@ from will_it_saturate.repositories import SqliteRepository, register_default_tab
 
 create server control client + server (needed for turning files into urls)
 
-```python
+```
 # dont_test
 
 server_control_host = Host(name="localhost", port=8001)
@@ -54,7 +54,7 @@ server = server_control_client.get_or_create_server(
 
 ### Create Files and Urls
 
-```python
+```
 # dont_test
 
 byte, file_size, duration = 8, 10 ** 7, 3
@@ -69,7 +69,7 @@ epoch.urls = [server.file_to_url(file) for file in files]
 
 ### Create Control Client
 
-```python
+```
 # dont_test
 
 client_control_host = Host(name="localhost", port=8001)
@@ -84,7 +84,7 @@ benchmark_client = clients.HttpxClient(name="httpx")
 
 ### Create Result
 
-```python
+```
 # dont_test
 
 result = Result(
@@ -103,7 +103,7 @@ result = Result(
 
 ### Measure Server with Client
 
-```python
+```
 # dont_test
 
 result.elapsed = client_control_client.measure(benchmark_client, epoch)
@@ -117,7 +117,7 @@ result.elapsed = client_control_client.measure(benchmark_client, epoch)
 
 We are using a sqlite database for saving benchmark results.
 
-```python
+```
 # dont_test
 
 repository = SqliteRepository.build_repository("results.db")
@@ -129,7 +129,7 @@ results = repository.tables["result"]
     <IPython.core.display.Javascript object>
 
 
-```python
+```
 # dont_test
 
 result_id = results.add_result(result)
@@ -139,7 +139,7 @@ result_id = results.add_result(result)
     <IPython.core.display.Javascript object>
 
 
-```python
+```
 # dont_test
 
 results_from_database = results.get_results()

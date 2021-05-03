@@ -64,9 +64,9 @@ class HttpxClient(BaseClient):
     async def measure_server(self, epoch):
         print("measure server")
         print(epoch.urls[0])
-        max_connections = min(epoch.number_of_connections, 100)
+        max_connections = min(epoch.number_of_connections, 50)
         limits = httpx.Limits(
-            max_keepalive_connections=5, max_connections=max_connections
+            max_keepalive_connections=10, max_connections=max_connections
         )
         timeout = httpx.Timeout(30.0, connect=60.0)
         start = time.perf_counter()
@@ -132,8 +132,10 @@ class AioHttpClient(BaseClient):
             return AioHttpResponse(url, content)
 
     async def measure_server(self, epoch):
-        urls = [bf.url for bf in epoch.files]
-        max_connections = min(epoch.number_of_connections, 200)
+        print("measure server")
+        print(epoch.urls[0])
+        urls = epoch.urls
+        max_connections = min(epoch.number_of_connections, 400)
         conn = aiohttp.TCPConnector(limit=max_connections)
         responses = []
         start = time.perf_counter()
@@ -145,7 +147,7 @@ class AioHttpClient(BaseClient):
 
     def measure_in_new_process(self, epoch):
         elapsed, responses = asyncio.run(self.measure_server(epoch))
-        self.verify_checksums(epoch.files, responses)
+        self.verify_checksums(epoch, responses)
         return elapsed
 
     def measure(self, epoch):
@@ -158,9 +160,11 @@ class AioHttpClient(BaseClient):
 
 @register_model
 class WrkClient(BaseClient):
-    connections: int = 200
+    connections: int = 20
     duration: int = 20
     threads: int = 1
+    host: str = "localhost"
+    port: str = "8000"
 
     def create_urls_string(self, epoch):
         urls = []
@@ -207,23 +211,26 @@ end
     def run_wrk(self):
         kwargs = {"capture_output": True, "text": True}
         start = time.perf_counter()
+        command = [
+            "wrk",
+            "-c",
+            str(self.connections),
+            "-t",
+            str(self.threads),
+            "-s",
+            "wrk.lua",
+            f"http://{self.host}:{self.port}",
+        ]
+        print("command: ", " ".join(command))
         output = subprocess.run(
-            [
-                "wrk",
-                "-c",
-                str(self.connections),
-                "-t",
-                str(self.threads),
-                "-s",
-                "wrk.lua",
-                "http://localhost:8000",
-            ],
+            command,
             **kwargs,
         )
         elapsed = time.perf_counter() - start
         return elapsed
 
     def measure(self, epoch):
+        print("measure? wtf?")
         self.create_lua_script(epoch)
         elapsed = self.run_wrk()
         return elapsed

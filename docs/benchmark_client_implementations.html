@@ -52,10 +52,10 @@ nb_path: "21_benchmark_client_implementations.ipynb"
 
 
 
-<div id="cb659b48-30f6-4427-b63b-fd17d1ebde34"></div>
+<div id="6a3db3d0-634f-40e0-8a1e-0911d7d90cbe"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#cb659b48-30f6-4427-b63b-fd17d1ebde34');
+var element = $('#6a3db3d0-634f-40e0-8a1e-0911d7d90cbe');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -113,10 +113,10 @@ var element = $('#cb659b48-30f6-4427-b63b-fd17d1ebde34');
 
 
 
-<div id="1cdc0059-01e7-4335-a986-a38b4c381744"></div>
+<div id="39350ad4-81be-4687-a498-8c78a61cde8f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1cdc0059-01e7-4335-a986-a38b4c381744');
+var element = $('#39350ad4-81be-4687-a498-8c78a61cde8f');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -192,10 +192,10 @@ var element = $('#1cdc0059-01e7-4335-a986-a38b4c381744');
 
 
 
-<div id="ee6ced5a-c787-4041-b04e-c7da306780c5"></div>
+<div id="21c50cb4-a910-4b03-8e23-b9207e5c7c9f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ee6ced5a-c787-4041-b04e-c7da306780c5');
+var element = $('#21c50cb4-a910-4b03-8e23-b9207e5c7c9f');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -259,10 +259,10 @@ var element = $('#ee6ced5a-c787-4041-b04e-c7da306780c5');
 
 
 
-<div id="88c855c6-7ddc-4b20-8a60-96f3383995ff"></div>
+<div id="9f8b5e9b-e3cf-4e65-95f1-2c347d0592bd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#88c855c6-7ddc-4b20-8a60-96f3383995ff');
+var element = $('#9f8b5e9b-e3cf-4e65-95f1-2c347d0592bd');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -314,10 +314,10 @@ var element = $('#88c855c6-7ddc-4b20-8a60-96f3383995ff');
 
 
 
-<div id="a879569d-aa91-4bfc-8501-f7776ab04ba3"></div>
+<div id="96314ee4-b1d3-47e9-aaf7-c3cfb408d3f0"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a879569d-aa91-4bfc-8501-f7776ab04ba3');
+var element = $('#96314ee4-b1d3-47e9-aaf7-c3cfb408d3f0');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -411,15 +411,15 @@ var element = $('#a879569d-aa91-4bfc-8501-f7776ab04ba3');
 
 
 
-<div id="bec84375-8700-41b6-84b6-3f4781757249"></div>
+<div id="813d58bf-c532-4306-9bba-0369cb9f41ad"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bec84375-8700-41b6-84b6-3f4781757249');
+var element = $('#813d58bf-c532-4306-9bba-0369cb9f41ad');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
-                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, epoch):\n        urls = [bf.url for bf in epoch.files]\n        max_connections = min(epoch.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch.files, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
-                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, epoch):\n        urls = [bf.url for bf in epoch.files]\n        max_connections = min(epoch.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch.files, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
+                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        urls = epoch.urls\n        max_connections = min(epoch.number_of_connections, 400)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
+                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content):\n        self.url = url\n        self.content = content\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            content = await response.read()\n            return AioHttpResponse(url, content)\n\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        urls = epoch.urls\n        max_connections = min(epoch.number_of_connections, 400)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -478,7 +478,7 @@ var element = $('#bec84375-8700-41b6-84b6-3f4781757249');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L159" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>200</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L161" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>str</code>=<em><code>'8000'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -503,15 +503,15 @@ var element = $('#bec84375-8700-41b6-84b6-3f4781757249');
 
 
 
-<div id="e5622ca1-8fb6-4734-9d7a-b01a53c86c5e"></div>
+<div id="4f124f63-0828-4d3e-8d02-b7bb520a9a3d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e5622ca1-8fb6-4734-9d7a-b01a53c86c5e');
+var element = $('#4f124f63-0828-4d3e-8d02-b7bb520a9a3d');
 
             setTimeout(function() {
-                var nbb_cell_id = 13;
-                var nbb_unformatted_code = "# export\n\n\nclass WrkClient(BaseClient):\n    connections: int = 200\n    duration: int = 20\n    threads: int = 1\n\n    def create_urls_string(self, benchmark_row):\n        urls = []\n        for bf in benchmark_row.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, benchmark_row):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(benchmark_row)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        output = subprocess.run(\n            [\n                \"wrk\",\n                \"-c\",\n                str(self.connections),\n                \"-t\",\n                str(self.threads),\n                \"-s\",\n                \"wrk.lua\",\n                \"http://localhost:8000\",\n            ],\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, benchmark_row):\n        self.create_lua_script(benchmark_row)\n        elapsed = self.run_wrk()\n        return elapsed";
-                var nbb_formatted_code = "# export\n\n\nclass WrkClient(BaseClient):\n    connections: int = 200\n    duration: int = 20\n    threads: int = 1\n\n    def create_urls_string(self, benchmark_row):\n        urls = []\n        for bf in benchmark_row.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, benchmark_row):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(benchmark_row)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        output = subprocess.run(\n            [\n                \"wrk\",\n                \"-c\",\n                str(self.connections),\n                \"-t\",\n                str(self.threads),\n                \"-s\",\n                \"wrk.lua\",\n                \"http://localhost:8000\",\n            ],\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, benchmark_row):\n        self.create_lua_script(benchmark_row)\n        elapsed = self.run_wrk()\n        return elapsed";
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass WrkClient(BaseClient):\n    connections: int = 200\n    duration: int = 20\n    threads: int = 1\n    host: str = \"localhost\"\n    port: str = \"8000\"\n\n    def create_urls_string(self, epoch):\n        urls = []\n        for bf in epoch.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, epoch):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(epoch)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        command = [\n                \"wrk\",\n                \"-c\",\n                str(self.connections),\n                \"-t\",\n                str(self.threads),\n                \"-s\",\n                \"wrk.lua\",\n                f\"http://{self.host}:{self.port}\",\n            ]\n        print(\"command: \", \" \".join(command))\n        output = subprocess.run(\n            command,\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, epoch):\n        self.create_lua_script(epoch)\n        elapsed = self.run_wrk()\n        return elapsed";
+                var nbb_formatted_code = "# export\n\n\n@register_model\nclass WrkClient(BaseClient):\n    connections: int = 200\n    duration: int = 20\n    threads: int = 1\n    host: str = \"localhost\"\n    port: str = \"8000\"\n\n    def create_urls_string(self, epoch):\n        urls = []\n        for bf in epoch.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, epoch):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(epoch)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        command = [\n            \"wrk\",\n            \"-c\",\n            str(self.connections),\n            \"-t\",\n            str(self.threads),\n            \"-s\",\n            \"wrk.lua\",\n            f\"http://{self.host}:{self.port}\",\n        ]\n        print(\"command: \", \" \".join(command))\n        output = subprocess.run(\n            command,\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, epoch):\n        self.create_lua_script(epoch)\n        elapsed = self.run_wrk()\n        return elapsed";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
