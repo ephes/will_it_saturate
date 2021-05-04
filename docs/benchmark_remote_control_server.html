@@ -64,10 +64,10 @@ nb_path: "51_benchmark_remote_control_server.ipynb"
 
 
 
-<div id="dc712f7f-fa4c-45ab-b0e5-d7c23c9d266e"></div>
+<div id="1d9d50f5-f217-4bb1-8d05-880a4d545ea5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dc712f7f-fa4c-45ab-b0e5-d7c23c9d266e');
+var element = $('#1d9d50f5-f217-4bb1-8d05-880a4d545ea5');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -115,8 +115,11 @@ var element = $('#dc712f7f-fa4c-45ab-b0e5-d7c23c9d266e');
 <span class="c1"># server = server_control_client.get_or_create_server(</span>
 <span class="c1">#     servers.FastAPIUvicornServer(host=&quot;192.168.178.113&quot;, port=5001)</span>
 <span class="c1"># )</span>
+<span class="c1"># server = server_control_client.get_or_create_server(</span>
+<span class="c1">#     servers.NginxDockerServer(host=&quot;192.168.178.113&quot;, port=5001)</span>
+<span class="c1"># )</span>
 <span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span>
-    <span class="n">servers</span><span class="o">.</span><span class="n">NginxDockerServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;192.168.178.113&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">)</span>
+    <span class="n">servers</span><span class="o">.</span><span class="n">DjangoGunicornWSGIServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;192.168.178.113&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 
@@ -132,15 +135,15 @@ var element = $('#dc712f7f-fa4c-45ab-b0e5-d7c23c9d266e');
 
 
 
-<div id="dadedf99-7c06-4d97-80ef-fa9f9b0e7211"></div>
+<div id="78281ddc-c870-4001-99eb-66cb999d74a2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dadedf99-7c06-4d97-80ef-fa9f9b0e7211');
+var element = $('#78281ddc-c870-4001-99eb-66cb999d74a2');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# dont_test\n\nserver_control_host = Host(name=\"192.168.178.113\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\n# server = server_control_client.get_or_create_server(\n#     servers.FastAPIUvicornServer(host=\"192.168.178.113\", port=5001)\n# )\nserver = server_control_client.get_or_create_server(\n    servers.NginxDockerServer(host=\"192.168.178.113\", port=5001)\n)";
-                var nbb_formatted_code = "# dont_test\n\nserver_control_host = Host(name=\"192.168.178.113\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\n# server = server_control_client.get_or_create_server(\n#     servers.FastAPIUvicornServer(host=\"192.168.178.113\", port=5001)\n# )\nserver = server_control_client.get_or_create_server(\n    servers.NginxDockerServer(host=\"192.168.178.113\", port=5001)\n)";
+                var nbb_unformatted_code = "# dont_test\n\nserver_control_host = Host(name=\"192.168.178.113\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\n# server = server_control_client.get_or_create_server(\n#     servers.FastAPIUvicornServer(host=\"192.168.178.113\", port=5001)\n# )\n# server = server_control_client.get_or_create_server(\n#     servers.NginxDockerServer(host=\"192.168.178.113\", port=5001)\n# )\nserver = server_control_client.get_or_create_server(\n    servers.DjangoGunicornWSGIServer(host=\"192.168.178.113\", port=5001)\n)";
+                var nbb_formatted_code = "# dont_test\n\nserver_control_host = Host(name=\"192.168.178.113\", port=8001)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\n# server = server_control_client.get_or_create_server(\n#     servers.FastAPIUvicornServer(host=\"192.168.178.113\", port=5001)\n# )\n# server = server_control_client.get_or_create_server(\n#     servers.NginxDockerServer(host=\"192.168.178.113\", port=5001)\n# )\nserver = server_control_client.get_or_create_server(\n    servers.DjangoGunicornWSGIServer(host=\"192.168.178.113\", port=5001)\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -176,7 +179,7 @@ var element = $('#dadedf99-7c06-4d97-80ef-fa9f9b0e7211');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span><span class="p">,</span> <span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span><span class="p">,</span> <span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span>
 <span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">(</span><span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span>
 <span class="n">epoch</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_files</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
 <span class="n">epoch</span><span class="o">.</span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">server</span><span class="o">.</span><span class="n">file_to_url</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">epoch</span><span class="o">.</span><span class="n">files</span><span class="p">]</span>
@@ -194,15 +197,15 @@ var element = $('#dadedf99-7c06-4d97-80ef-fa9f9b0e7211');
 
 
 
-<div id="50dcd72f-8ba4-4194-9fc4-632e1c290d05"></div>
+<div id="e73f399e-56bc-452b-a5f5-407e453e91cf"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#50dcd72f-8ba4-4194-9fc4-632e1c290d05');
+var element = $('#e73f399e-56bc-452b-a5f5-407e453e91cf');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]";
-                var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 3\nepoch = Epoch(file_size=file_size, duration=duration)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]";
+                var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 10\nepoch = Epoch(file_size=file_size, duration=duration)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]";
+                var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10 ** 7, 10\nepoch = Epoch(file_size=file_size, duration=duration)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -255,10 +258,10 @@ var element = $('#50dcd72f-8ba4-4194-9fc4-632e1c290d05');
 
 
 
-<div id="67df8b6b-9b23-4b36-ae21-59430ad1bcf3"></div>
+<div id="2f818710-6fe9-4d4a-bf11-03caeee8a716"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#67df8b6b-9b23-4b36-ae21-59430ad1bcf3');
+var element = $('#2f818710-6fe9-4d4a-bf11-03caeee8a716');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
@@ -321,13 +324,13 @@ var element = $('#67df8b6b-9b23-4b36-ae21-59430ad1bcf3');
 
 
 
-<div id="7941d82a-62d1-4f0a-9924-7e5670ab1324"></div>
+<div id="6196eba3-5713-4f44-8cf3-566b6bcd9fc9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7941d82a-62d1-4f0a-9924-7e5670ab1324');
+var element = $('#6196eba3-5713-4f44-8cf3-566b6bcd9fc9');
 
             setTimeout(function() {
-                var nbb_cell_id = 14;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "# dont_test\n\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\n# benchmark_client = clients.HttpxClient(name=\"httpx keepalive 10\")\n# benchmark_client = clients.AioHttpClient(name=\"aiohttp\")\nbenchmark_client = clients.WrkClient(\n    name=\"wrk ethernet\", host=server.host, port=server.port\n)";
                 var nbb_formatted_code = "# dont_test\n\nclient_control_host = Host(name=\"localhost\", port=8001)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\n# benchmark_client = clients.HttpxClient(name=\"httpx keepalive 10\")\n# benchmark_client = clients.AioHttpClient(name=\"aiohttp\")\nbenchmark_client = clients.WrkClient(\n    name=\"wrk ethernet\", host=server.host, port=server.port\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -387,13 +390,13 @@ var element = $('#7941d82a-62d1-4f0a-9924-7e5670ab1324');
 
 
 
-<div id="f9778e2b-0157-45f2-bb91-e76093321428"></div>
+<div id="b436d088-2ac8-4806-90e2-b0b68468817d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f9778e2b-0157-45f2-bb91-e76093321428');
+var element = $('#b436d088-2ac8-4806-90e2-b0b68468817d');
 
             setTimeout(function() {
-                var nbb_cell_id = 15;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "# dont_test\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_formatted_code = "# dont_test\n\nresult = Result(\n    server=server,\n    client=benchmark_client,\n    server_details=server_details,\n    client_details=client_details,\n    file_size=epoch.file_size,\n    complete_size=epoch.complete_size,\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -440,13 +443,13 @@ var element = $('#f9778e2b-0157-45f2-bb91-e76093321428');
 
 
 
-<div id="b5bda65c-9acd-4ba4-807a-961aa3ddb0f4"></div>
+<div id="d8099b36-1904-4b31-a10c-cacc7c1407a8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b5bda65c-9acd-4ba4-807a-961aa3ddb0f4');
+var element = $('#d8099b36-1904-4b31-a10c-cacc7c1407a8');
 
             setTimeout(function() {
-                var nbb_cell_id = 16;
+                var nbb_cell_id = 17;
                 var nbb_unformatted_code = "# epoch.urls[:5]";
                 var nbb_formatted_code = "# epoch.urls[:5]";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -493,13 +496,13 @@ var element = $('#b5bda65c-9acd-4ba4-807a-961aa3ddb0f4');
 
 
 
-<div id="3cc1dd1e-791f-4657-be85-056670078e09"></div>
+<div id="95118784-73a8-496b-82a4-06b130940260"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3cc1dd1e-791f-4657-be85-056670078e09');
+var element = $('#95118784-73a8-496b-82a4-06b130940260');
 
             setTimeout(function() {
-                var nbb_cell_id = 17;
+                var nbb_cell_id = 18;
                 var nbb_unformatted_code = "# result.elapsed = 2.80\n# result.readable_bytes_per_second";
                 var nbb_formatted_code = "# result.elapsed = 2.80\n# result.readable_bytes_per_second";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -552,13 +555,13 @@ var element = $('#3cc1dd1e-791f-4657-be85-056670078e09');
 
 
 
-<div id="b20a8a40-bbf6-460f-86ab-ed04ddaf5fc3"></div>
+<div id="f95bba8c-dd89-4924-9a9a-3d9ec94bd8b6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b20a8a40-bbf6-460f-86ab-ed04ddaf5fc3');
+var element = $('#f95bba8c-dd89-4924-9a9a-3d9ec94bd8b6');
 
             setTimeout(function() {
-                var nbb_cell_id = 18;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(benchmark_client, epoch)";
                 var nbb_formatted_code = "# dont_test\n\nresult.elapsed = client_control_client.measure(benchmark_client, epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -621,13 +624,13 @@ var element = $('#b20a8a40-bbf6-460f-86ab-ed04ddaf5fc3');
 
 
 
-<div id="f622b427-f64a-423c-88cc-6ce1ccd5af63"></div>
+<div id="310bd7dc-cc44-45cf-aac9-c64705c2d3c8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f622b427-f64a-423c-88cc-6ce1ccd5af63');
+var element = $('#310bd7dc-cc44-45cf-aac9-c64705c2d3c8');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 11;
                 var nbb_unformatted_code = "# dont_test\n\nserver_control_client.stop_server(server)";
                 var nbb_formatted_code = "# dont_test\n\nserver_control_client.stop_server(server)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -683,13 +686,13 @@ var element = $('#f622b427-f64a-423c-88cc-6ce1ccd5af63');
 
 
 
-<div id="07b55a35-4314-4a9d-ba30-12b3d320ee62"></div>
+<div id="49ce0e83-cd20-42ca-8657-e8527a8fe4dd"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#07b55a35-4314-4a9d-ba30-12b3d320ee62');
+var element = $('#49ce0e83-cd20-42ca-8657-e8527a8fe4dd');
 
             setTimeout(function() {
-                var nbb_cell_id = 19;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"results.db\")\nregister_default_tables(repository)\nresults_table = repository.tables[\"result\"]";
                 var nbb_formatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"results.db\")\nregister_default_tables(repository)\nresults_table = repository.tables[\"result\"]";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -736,13 +739,13 @@ var element = $('#07b55a35-4314-4a9d-ba30-12b3d320ee62');
 
 
 
-<div id="b241184b-8802-44ee-bdec-082437ef11ca"></div>
+<div id="88b480ad-aa37-483c-971d-90f438d320f3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b241184b-8802-44ee-bdec-082437ef11ca');
+var element = $('#88b480ad-aa37-483c-971d-90f438d320f3');
 
             setTimeout(function() {
-                var nbb_cell_id = 20;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "# dont_test\n\nresult_id = results_table.add_result(result)";
                 var nbb_formatted_code = "# dont_test\n\nresult_id = results_table.add_result(result)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -918,6 +921,46 @@ var element = $('#b241184b-8802-44ee-bdec-082437ef11ca');
       <td>9.54MB</td>
       <td>156.18MB</td>
     </tr>
+    <tr>
+      <th>12</th>
+      <td>django/gunicorn/wsgi</td>
+      <td>wrk ethernet</td>
+      <td>1.857069</td>
+      <td>9.54MB</td>
+      <td>192.58MB</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>django/gunicorn/wsgi</td>
+      <td>httpx keepalive 10</td>
+      <td>3.285525</td>
+      <td>9.54MB</td>
+      <td>108.85MB</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>django/gunicorn/wsgi</td>
+      <td>httpx keepalive 10</td>
+      <td>11.636332</td>
+      <td>9.54MB</td>
+      <td>102.45MB</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>django/gunicorn/wsgi</td>
+      <td>wrk ethernet</td>
+      <td>0.011144</td>
+      <td>9.54MB</td>
+      <td>104.47GB</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>django/gunicorn/wsgi</td>
+      <td>wrk ethernet</td>
+      <td>9.164019</td>
+      <td>9.54MB</td>
+      <td>130.08MB</td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -930,13 +973,13 @@ var element = $('#b241184b-8802-44ee-bdec-082437ef11ca');
 
 
 
-<div id="dcbecd3e-177c-437b-82c4-df93aefbe67b"></div>
+<div id="9732c926-c567-4fd3-a894-621c4bab4013"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dcbecd3e-177c-437b-82c4-df93aefbe67b');
+var element = $('#9732c926-c567-4fd3-a894-621c4bab4013');
 
             setTimeout(function() {
-                var nbb_cell_id = 21;
+                var nbb_cell_id = 11;
                 var nbb_unformatted_code = "# dont_test\n\nresults_from_database = results_table.get_results()\n\ncols = set([\"server\", \"client\", \"elapsed\", \"file_size_h\", \"bytes_per_second_h\"])\npd.DataFrame(\n    [\n        {k: v for k, v in r.dict_for_pandas().items() if k in cols}\n        for r in results_from_database\n    ]\n)";
                 var nbb_formatted_code = "# dont_test\n\nresults_from_database = results_table.get_results()\n\ncols = set([\"server\", \"client\", \"elapsed\", \"file_size_h\", \"bytes_per_second_h\"])\npd.DataFrame(\n    [\n        {k: v for k, v in r.dict_for_pandas().items() if k in cols}\n        for r in results_from_database\n    ]\n)";
                 var nbb_cells = Jupyter.notebook.get_cells();
