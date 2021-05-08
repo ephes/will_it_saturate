@@ -1,0 +1,36 @@
+- hosts: staging
+  tasks:
+    - name: Install required build packages
+      apt:
+        name: ["git"]
+
+    - name: Add the user "wis" with a bash shell
+      user:
+        name: wis
+        shell: /bin/bash
+
+    - name: Git checkout repository
+      git:
+        repo: "https://github.com/ephes/will_it_saturate"
+        dest: /home/wis/will_it_saturate
+      become: true
+      become_user: wis
+
+    - name: Set up virtual environment
+      shell: /usr/local/bin/python3.9 -m venv /home/wis/venv
+      args:
+        warn: no
+      become: true
+      become_user: wis
+
+    - name: Upgrade pip
+      shell: "/home/wis/venv/bin/python -m pip install --upgrade pip"
+      become: true
+      become_user: wis
+
+    - name: Install package
+      shell: "/home/wis/venv/bin/python -m pip install ."
+      args:
+        chdir: /home/wis/will_it_saturate
+      become: true
+      become_user: wis
