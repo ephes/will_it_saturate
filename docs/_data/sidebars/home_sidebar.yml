@@ -55,6 +55,9 @@ entries:
       title: Benchmark Over Network
       url: benchmark_remote_control_server.html
     - output: web,pdf
+      title: Create Benchmark Config
+      url: benchmark_from_config.html
+    - output: web,pdf
       title: module Core
       url: legacy.html
     output: web
