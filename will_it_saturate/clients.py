@@ -161,7 +161,8 @@ class AioHttpClient(BaseClient):
 @register_model
 class WrkClient(BaseClient):
     connections: int = 20
-    duration: int = 20
+    # set duration to two minutes since it is 10 seconds by default and kills the benchmark
+    duration: int = 120
     threads: int = 1
     host: str = "localhost"
     port: str = "8000"
