@@ -214,6 +214,8 @@ end
         start = time.perf_counter()
         command = [
             "wrk",
+            "-d",
+            str(self.duration),
             "-c",
             str(self.connections),
             "-t",

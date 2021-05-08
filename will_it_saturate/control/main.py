@@ -65,6 +65,8 @@ def stop_server(server_params: ModelParameters):
         server.stop()
         del(servers[server.name])
         stopped = True
+    print(servers)
+    print(stopped)
     return stopped
 
 
