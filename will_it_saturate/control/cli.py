@@ -12,7 +12,7 @@ def run_server():
     uvicorn.run(
         "will_it_saturate.control.main:app",
         host="0.0.0.0",
-        port=8001,
+        port=8100,
         log_level="info",
-        reload=True,
+        reload=False,
     )

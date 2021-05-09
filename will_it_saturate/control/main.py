@@ -47,6 +47,7 @@ def create_server(server_params: ModelParameters):
     if server.name not in servers:
         server.start()
         servers[server.name] = server
+    print(servers)
     return server_params
 
 
