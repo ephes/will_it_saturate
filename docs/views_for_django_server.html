@@ -29,6 +29,51 @@ nb_path: "12_views_for_django_server.ipynb"
 </div>
     {% endraw %}
 
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Use-Own-FileResponse-to-Measure-Serving-Time">Use Own FileResponse to Measure Serving Time<a class="anchor-link" href="#Use-Own-FileResponse-to-Measure-Serving-Time"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="MeasuringFileResponse" class="doc_header"><code>class</code> <code>MeasuringFileResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L18" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MeasuringFileResponse</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
+</blockquote>
+<p>A streaming HTTP response class optimized for files.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Django-Views">Django Views<a class="anchor-link" href="#Django-Views"> </a></h2>
@@ -46,7 +91,7 @@ nb_path: "12_views_for_django_server.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L12" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>request</code></strong>, <strong><code>base</code></strong>, <strong><code>path</code></strong>, <strong><code>num</code></strong>)</p>
+<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>request</code></strong>, <strong><code>base</code></strong>, <strong><code>path</code></strong>, <strong><code>num</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -62,6 +107,42 @@ nb_path: "12_views_for_django_server.ipynb"
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="5f74400f-441e-407a-8d76-69b029419293"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#5f74400f-441e-407a-8d76-69b029419293');
+
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "# export\n\nasync def serve_file(request, base, path, num):\n    file_path = Path(base) / path / str(num)\n    # return JsonResponse({\"file_path\": file_path})\n    return FileResponse(file_path.open(\"rb\"))\n    # return MeasuringFileResponse(file_path.open(\"rb\"))";
+                var nbb_formatted_code = "# export\n\n\nasync def serve_file(request, base, path, num):\n    file_path = Path(base) / path / str(num)\n    # return JsonResponse({\"file_path\": file_path})\n    return FileResponse(file_path.open(\"rb\"))\n    # return MeasuringFileResponse(file_path.open(\"rb\"))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
