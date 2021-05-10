@@ -30,13 +30,13 @@ class ControlClient(BaseModel):
 
     def get_or_create_files(self, epoch):
         url = urljoin(self.base_url, "epochs")
-        r = httpx.post(url, json=epoch.dict(), timeout=self.timeout)
+        r = httpx.post(url, json=epoch.dict(), timeout=self.timeout * 3)
         r.raise_for_status()
         return [BenchmarkFile(**file) for file in r.json()["files"]]
 
     def get_or_create_server(self, server):
         url = urljoin(self.base_url, "servers")
-        r = httpx.post(url, json=server.params(), timeout=self.timeout)
+        r = httpx.post(url, json=server.params(), timeout=self.timeout * 5)
         r.raise_for_status()
         return ModelParameters(**r.json()).to_model()
 
@@ -49,6 +49,6 @@ class ControlClient(BaseModel):
     def measure(self, client, epoch):
         url = urljoin(self.base_url, "measure")
         data = {"client_params": client.params(), "epoch": epoch.dict()}
-        r = httpx.post(url, json=data, timeout=None)
+        r = httpx.post(url, json=data, timeout=600)
         r.raise_for_status()
         return r.json()

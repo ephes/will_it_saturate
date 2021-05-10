@@ -16,7 +16,7 @@
     "Sqlite Repository": "sqlite_repository.html",
     "Remote Benchmark": "benchmark_without_benchmark.html",
     "Benchmark Over Network": "benchmark_remote_control_server.html",
-    "Create Benchmark Config": "benchmark_from_config.html",
+    "Create Benchmark Config": "generate_files_for_benchmark.html",
     "module Core": "legacy.html"
   }
 }
