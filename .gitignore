@@ -148,4 +148,5 @@ Dockerfile.nginx
 # sqlite
 example.db
 results.db
+remote_results.db
 django.db
