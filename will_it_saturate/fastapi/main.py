@@ -12,8 +12,6 @@ from fastapi.responses import FileResponse
 
 # Cell
 
-app = FastAPI()
-
 import stat
 import aiofiles
 
@@ -62,6 +60,10 @@ class MyFileResponse(FileResponse):
 
         if self.background is not None:
             await self.background()
+
+# Cell
+
+app = FastAPI()
 
 
 @app.get("/")
