@@ -14,8 +14,9 @@ from fastapi.responses import FileResponse
 
 app = FastAPI()
 
-
+import stat
 import aiofiles
+
 from aiofiles.os import stat as aio_stat
 
 from starlette.types import Receive, Scope, Send
@@ -56,7 +57,7 @@ class MyFileResponse(FileResponse):
                             "more_body": more_body,
                         }
                     )
-                elapsed = s - time.perf_counter()
+                elapsed = time.perf_counter() - start
                 print(f"elapsed: {elapsed} for {self.path}")
 
         if self.background is not None:
