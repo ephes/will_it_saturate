@@ -1,0 +1,5 @@
+uvicorn --host 0.0.0.0 --port 5100 --workers 6 --no-access-log will_it_saturate.fastapi.main:app
+gunicorn --backlog 10000 -w 6 -b :5100 will_it_saturate.django.wsgi
+docker build -f Dockerfile.nginx -t wis-nginx .
+docker run --name wis-nginx -d -p 5100:80 wis-nginx
+
