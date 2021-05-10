@@ -16,6 +16,7 @@ app = FastAPI()
 
 
 import aiofiles
+from aiofiles.os import stat as aio_stat
 
 from starlette.types import Receive, Scope, Send
 
@@ -60,7 +61,6 @@ class MyFileResponse(FileResponse):
 
         if self.background is not None:
             await self.background()
-
 
 
 @app.get("/")
