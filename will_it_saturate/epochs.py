@@ -56,3 +56,9 @@ class Epoch(BaseModel):
             )
             benchmark_file.get_or_create()
             self.files.append(benchmark_file)
+
+    def create_urls_from_files(self, server):
+        self.urls = [server.file_to_url(file) for file in self.files]
+        for epoch_file in self.files:
+            epoch_file.port = server.port
+            epoch_file.hostname = server.host

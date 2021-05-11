@@ -52,10 +52,10 @@ nb_path: "21_benchmark_client_implementations.ipynb"
 
 
 
-<div id="e713cc1e-4c34-4bc3-9ad2-60e46039dd45"></div>
+<div id="bc2a6798-9afb-4704-a231-5e96fab7601e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e713cc1e-4c34-4bc3-9ad2-60e46039dd45');
+var element = $('#bc2a6798-9afb-4704-a231-5e96fab7601e');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -113,13 +113,13 @@ var element = $('#e713cc1e-4c34-4bc3-9ad2-60e46039dd45');
 
 
 
-<div id="bd0846a2-eef1-4d2a-987d-ed85c9f95d22"></div>
+<div id="e145dc3e-46d9-4c81-a6a8-afc11072d80b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bd0846a2-eef1-4d2a-987d-ed85c9f95d22');
+var element = $('#e145dc3e-46d9-4c81-a6a8-afc11072d80b');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
                 var nbb_formatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -192,13 +192,13 @@ var element = $('#bd0846a2-eef1-4d2a-987d-ed85c9f95d22');
 
 
 
-<div id="844d3c4d-77fa-4f4a-b8b6-255a692f2e17"></div>
+<div id="29379c68-609d-4842-ace9-118ec49e445f"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#844d3c4d-77fa-4f4a-b8b6-255a692f2e17');
+var element = $('#29379c68-609d-4842-ace9-118ec49e445f');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\n# benchmark = Benchmark(\n#     bandwidth=bandwidth,\n#     duration=3,\n#     file_sizes=file_sizes,\n# )\n# benchmark.create_epochs()";
                 var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\n# benchmark = Benchmark(\n#     bandwidth=bandwidth,\n#     duration=3,\n#     file_sizes=file_sizes,\n# )\n# benchmark.create_epochs()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -259,15 +259,15 @@ var element = $('#844d3c4d-77fa-4f4a-b8b6-255a692f2e17');
 
 
 
-<div id="c58d29a8-7e3c-4d5c-a5c0-25acf17d0756"></div>
+<div id="49c080c2-b916-4a4d-8f17-98b8420cf395"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c58d29a8-7e3c-4d5c-a5c0-25acf17d0756');
+var element = $('#49c080c2-b916-4a4d-8f17-98b8420cf395');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
-                var nbb_unformatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\n@register_model\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\n\n\n# def run_httpx():\n#     byte = 8\n#     gigabit = 10 ** 9\n#     bandwidth = gigabit / byte\n# \n#     # file_sizes = [10 ** 7, 10 ** 6]\n#     # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n#     file_sizes = [10 ** 7]\n# \n#     benchmark = Benchmark(\n#         bandwidth=bandwidth,\n#         duration=3,\n#         file_sizes=file_sizes,\n#         servers=[BenchmarkServer(name=\"uvicorn\")],\n#         clients=[HttpxClient(name=\"httpx\")],\n#     )\n#     benchmark.create_rows()\n#     benchmark.run()\n#     print(benchmark.results_frame)\n    ";
-                var nbb_formatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\n@register_model\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 100)\n        limits = httpx.Limits(\n            max_keepalive_connections=5, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\n# def run_httpx():\n#     byte = 8\n#     gigabit = 10 ** 9\n#     bandwidth = gigabit / byte\n#\n#     # file_sizes = [10 ** 7, 10 ** 6]\n#     # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n#     file_sizes = [10 ** 7]\n#\n#     benchmark = Benchmark(\n#         bandwidth=bandwidth,\n#         duration=3,\n#         file_sizes=file_sizes,\n#         servers=[BenchmarkServer(name=\"uvicorn\")],\n#         clients=[HttpxClient(name=\"httpx\")],\n#     )\n#     benchmark.create_rows()\n#     benchmark.run()\n#     print(benchmark.results_frame)";
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\n@register_model\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 50)\n        limits = httpx.Limits(\n            max_keepalive_connections=10, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\n\n\n# def run_httpx():\n#     byte = 8\n#     gigabit = 10 ** 9\n#     bandwidth = gigabit / byte\n# \n#     # file_sizes = [10 ** 7, 10 ** 6]\n#     # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n#     file_sizes = [10 ** 7]\n# \n#     benchmark = Benchmark(\n#         bandwidth=bandwidth,\n#         duration=3,\n#         file_sizes=file_sizes,\n#         servers=[BenchmarkServer(name=\"uvicorn\")],\n#         clients=[HttpxClient(name=\"httpx\")],\n#     )\n#     benchmark.create_rows()\n#     benchmark.run()\n#     print(benchmark.results_frame)\n    \n\ndef run_httpx():\n    print(\"running httpx\")";
+                var nbb_formatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\n@register_model\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 50)\n        limits = httpx.Limits(\n            max_keepalive_connections=10, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\n# def run_httpx():\n#     byte = 8\n#     gigabit = 10 ** 9\n#     bandwidth = gigabit / byte\n#\n#     # file_sizes = [10 ** 7, 10 ** 6]\n#     # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n#     file_sizes = [10 ** 7]\n#\n#     benchmark = Benchmark(\n#         bandwidth=bandwidth,\n#         duration=3,\n#         file_sizes=file_sizes,\n#         servers=[BenchmarkServer(name=\"uvicorn\")],\n#         clients=[HttpxClient(name=\"httpx\")],\n#     )\n#     benchmark.create_rows()\n#     benchmark.run()\n#     print(benchmark.results_frame)\n\n\ndef run_httpx():\n    print(\"running httpx\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -286,6 +286,61 @@ var element = $('#c58d29a8-7e3c-4d5c-a5c0-25acf17d0756');
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="run_httpx_with_args" class="doc_header"><code>run_httpx_with_args</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L126" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx_with_args</code>(<strong><code>exponent</code></strong>:<code>int</code>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L143" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -314,13 +369,13 @@ var element = $('#c58d29a8-7e3c-4d5c-a5c0-25acf17d0756');
 
 
 
-<div id="8e3fe29e-6681-4ed8-a9d1-fe0755f543bf"></div>
+<div id="49763b61-61e3-4cff-b0ad-337b130d1d67"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8e3fe29e-6681-4ed8-a9d1-fe0755f543bf');
+var element = $('#49763b61-61e3-4cff-b0ad-337b130d1d67');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
+                var nbb_cell_id = 9;
                 var nbb_unformatted_code = "# dont_test\n\n# client = HttpxClient()\n# elapsed, responses = await client.measure_server(benchmark.epochs[0])\n# print(elapsed)";
                 var nbb_formatted_code = "# dont_test\n\n# client = HttpxClient()\n# elapsed, responses = await client.measure_server(benchmark.epochs[0])\n# print(elapsed)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -362,7 +417,7 @@ var element = $('#8e3fe29e-6681-4ed8-a9d1-fe0755f543bf');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L121" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
+<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L149" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -386,7 +441,7 @@ var element = $('#8e3fe29e-6681-4ed8-a9d1-fe0755f543bf');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L127" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L155" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -411,10 +466,10 @@ var element = $('#8e3fe29e-6681-4ed8-a9d1-fe0755f543bf');
 
 
 
-<div id="67b52230-b009-4421-94fe-236dcd0879e1"></div>
+<div id="909fafcc-5bec-4e74-a79f-31a7ec661643"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#67b52230-b009-4421-94fe-236dcd0879e1');
+var element = $('#909fafcc-5bec-4e74-a79f-31a7ec661643');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -478,7 +533,7 @@ var element = $('#67b52230-b009-4421-94fe-236dcd0879e1');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L161" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>120</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>str</code>=<em><code>'8000'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L189" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>120</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>str</code>=<em><code>'8000'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -503,10 +558,10 @@ var element = $('#67b52230-b009-4421-94fe-236dcd0879e1');
 
 
 
-<div id="8806e626-c305-401c-9d85-d3622e5a05e0"></div>
+<div id="41eededf-5ac0-458e-93d8-b8b93343f362"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8806e626-c305-401c-9d85-d3622e5a05e0');
+var element = $('#41eededf-5ac0-458e-93d8-b8b93343f362');
 
             setTimeout(function() {
                 var nbb_cell_id = 5;
