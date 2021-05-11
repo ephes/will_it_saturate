@@ -91,7 +91,7 @@ nb_path: "12_views_for_django_server.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>request</code></strong>, <strong><code>base</code></strong>, <strong><code>path</code></strong>, <strong><code>num</code></strong>)</p>
+<h4 id="serve_file_sync" class="doc_header"><code>serve_file_sync</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L42" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file_sync</code>(<strong><code>request</code></strong>, <strong><code>base</code></strong>, <strong><code>path</code></strong>, <strong><code>num</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -116,15 +116,198 @@ nb_path: "12_views_for_django_server.ipynb"
 
 
 
-<div id="6eea82c4-05ba-41f7-9f52-3eaffd65c6a6"></div>
+<div id="b4b6ed53-a779-4fc7-8df3-15529ae4ab71"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#6eea82c4-05ba-41f7-9f52-3eaffd65c6a6');
+var element = $('#b4b6ed53-a779-4fc7-8df3-15529ae4ab71');
 
             setTimeout(function() {
                 var nbb_cell_id = 13;
                 var nbb_unformatted_code = "# export\n\nasync def serve_file(request, base, path, num):\n    file_path = Path(base) / path / str(num)\n    # return JsonResponse({\"file_path\": file_path})\n    return FileResponse(file_path.open(\"rb\"))\n    # return MeasuringFileResponse(file_path.open(\"rb\"))";
                 var nbb_formatted_code = "# export\n\n\nasync def serve_file(request, base, path, num):\n    file_path = Path(base) / path / str(num)\n    # return JsonResponse({\"file_path\": file_path})\n    return FileResponse(file_path.open(\"rb\"))\n    # return MeasuringFileResponse(file_path.open(\"rb\"))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">aiofiles</span>
+
+
+<span class="k">class</span> <span class="nc">StubIterator</span><span class="p">:</span>
+    <span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">4096</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">more_body</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">chunk</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">more_body</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span>
+        <span class="k">return</span> <span class="n">chunk</span>
+        <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">more_body</span><span class="p">:</span>
+            <span class="n">chunk</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">more_body</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_size</span>
+            <span class="k">return</span> <span class="n">chunk</span>
+
+
+<span class="k">class</span> <span class="nc">StubResponse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">aiofiles</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">StubIterator</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-30-30a1936a8664&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">13</span>
+<span class="ansi-red-fg">    chunk = await self.file.read(self.chunk_size)</span>
+            ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> &#39;await&#39; outside async function
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="46ef4bf2-309b-4dd4-83c0-6b242c3a850f"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#46ef4bf2-309b-4dd4-83c0-6b242c3a850f');
+
+            setTimeout(function() {
+                var nbb_cell_id = 30;
+                var nbb_unformatted_code = "import aiofiles\n\n\nclass StubIterator:\n    chunk_size = 4096\n    \n    def __init__(self, file):\n        self.file = file\n        self.more_body = True\n\n    def __next__(self):\n        while self.more_body:\n            chunk = await self.file.read(self.chunk_size)\n            self.more_body = len(chunk) == self.chunk_size\n            return chunk\n            \n\n\nclass StubResponse:\n    def __init__(self):\n        async with aiofiles.open(self.path, mode=\"rb\") as file:\n            return StubIterator(file)";
+                var nbb_formatted_code = "import aiofiles\n\n\nclass StubIterator:\n    chunk_size = 4096\n\n    def __init__(self, file):\n        self.file = file\n        self.more_body = True\n\n    def __next__(self):\n        while self.more_body:\n            chunk = await self.file.read(self.chunk_size)\n            self.more_body = len(chunk) == self.chunk_size\n            return chunk\n\n\nclass StubResponse:\n    def __init__(self):\n        async with aiofiles.open(self.path, mode=\"rb\") as file:\n            return StubIterator(file)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AsyncFileResponse" class="doc_header"><code>class</code> <code>AsyncFileResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L51" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AsyncFileResponse</code>(<strong>*<code>args</code></strong>, <strong><code>as_attachment</code></strong>=<em><code>False</code></em>, <strong><code>filename</code></strong>=<em><code>''</code></em>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
+</blockquote>
+<p>A streaming HTTP response class optimized for files.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="serve_file" class="doc_header"><code>serve_file</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/views.py#L57" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>serve_file</code>(<strong><code>request</code></strong>, <strong><code>base</code></strong>, <strong><code>path</code></strong>, <strong><code>num</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="0023b1f3-4d89-46e9-b792-4ed89241cdbe"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#0023b1f3-4d89-46e9-b792-4ed89241cdbe');
+
+            setTimeout(function() {
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "# export\n\nfrom fastapi.responses import FileResponse\n\n\nasync def serve_file(request, base, path, num):\n    file_path = Path(base) / path / str(num)\n    return FileResponse(file_path)";
+                var nbb_formatted_code = "# export\n\nfrom fastapi.responses import FileResponse\n\n\nasync def serve_file(request, base, path, num):\n    file_path = Path(base) / path / str(num)\n    return FileResponse(file_path)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
