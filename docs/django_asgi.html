@@ -54,31 +54,6 @@ nb_path: "13_django_asgi.ipynb"
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h2 id="MyASGIHandler" class="doc_header"><code>class</code> <code>MyASGIHandler</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/asgi.py#L26" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MyASGIHandler</code>() :: <code>ASGIHandler</code></p>
-</blockquote>
-<p>Handler for ASGI requests.</p>
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 </div>
     {% endraw %}
 
@@ -93,7 +68,7 @@ nb_path: "13_django_asgi.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="MyASGIHandler2" class="doc_header"><code>class</code> <code>MyASGIHandler2</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/asgi.py#L103" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MyASGIHandler2</code>() :: <code>ASGIHandler</code></p>
+<h2 id="AsyncFileASGIHandler" class="doc_header"><code>class</code> <code>AsyncFileASGIHandler</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/asgi.py#L31" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AsyncFileASGIHandler</code>() :: <code>ASGIHandler</code></p>
 </blockquote>
 <p>Handler for ASGI requests.</p>
 
@@ -119,15 +94,15 @@ nb_path: "13_django_asgi.ipynb"
 
 
 
-<div id="67f67928-4fa4-43a2-a90e-820af358dbe0"></div>
+<div id="8ae9a1db-c6ba-4e12-82dd-0043f8a372b3"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#67f67928-4fa4-43a2-a90e-820af358dbe0');
+var element = $('#8ae9a1db-c6ba-4e12-82dd-0043f8a372b3');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "# export\n\n\nclass MyASGIHandler2(ASGIHandler):\n    async def send_response(self, response, send):\n        \"\"\"Encode and send a response out over ASGI.\"\"\"\n        # Collect cookies into headers. Have to preserve header case as there\n        # are some non-RFC compliant clients that require e.g. Content-Type.\n        response_headers = []\n        for header, value in response.items():\n            if isinstance(header, str):\n                header = header.encode(\"ascii\")\n            if isinstance(value, str):\n                value = value.encode(\"latin1\")\n            response_headers.append((bytes(header), bytes(value)))\n        for c in response.cookies.values():\n            response_headers.append(\n                (b\"Set-Cookie\", c.output(header=\"\").encode(\"ascii\").strip())\n            )\n        # Initial response message.\n        await send(\n            {\n                \"type\": \"http.response.start\",\n                \"status\": response.status_code,\n                \"headers\": response_headers,\n            }\n        )\n        # Streaming responses need to be pinned to their iterator.\n        if response.streaming:\n            if response.async_file_response:\n                print(\"filename: \", response.filename)\n                async for more_body, chunk in response:\n                    await send(\n                        {\n                            \"type\": \"http.response.body\",\n                            \"body\": chunk,\n                            \"more_body\": more_body,\n                        }\n                    )\n\n            else:\n                # Access `__iter__` and not `streaming_content` directly in case\n                # it has been overridden in a subclass.\n                for part in response:\n                    for chunk, _ in self.chunk_bytes(part):\n                        await send(\n                            {\n                                \"type\": \"http.response.body\",\n                                \"body\": chunk,\n                                # Ignore \"more\" as there may be more parts; instead,\n                                # use an empty final closing message with False.\n                                \"more_body\": True,\n                            }\n                        )\n                # Final closing message.\n                await send({\"type\": \"http.response.body\"})\n        # Other responses just need chunking.\n        else:\n            # Yield chunks of response.\n            for chunk, last in self.chunk_bytes(response.content):\n                await send(\n                    {\n                        \"type\": \"http.response.body\",\n                        \"body\": chunk,\n                        \"more_body\": not last,\n                    }\n                )\n        await sync_to_async(response.close, thread_sensitive=True)()";
-                var nbb_formatted_code = "# export\n\n\nclass MyASGIHandler2(ASGIHandler):\n    async def send_response(self, response, send):\n        \"\"\"Encode and send a response out over ASGI.\"\"\"\n        # Collect cookies into headers. Have to preserve header case as there\n        # are some non-RFC compliant clients that require e.g. Content-Type.\n        response_headers = []\n        for header, value in response.items():\n            if isinstance(header, str):\n                header = header.encode(\"ascii\")\n            if isinstance(value, str):\n                value = value.encode(\"latin1\")\n            response_headers.append((bytes(header), bytes(value)))\n        for c in response.cookies.values():\n            response_headers.append(\n                (b\"Set-Cookie\", c.output(header=\"\").encode(\"ascii\").strip())\n            )\n        # Initial response message.\n        await send(\n            {\n                \"type\": \"http.response.start\",\n                \"status\": response.status_code,\n                \"headers\": response_headers,\n            }\n        )\n        # Streaming responses need to be pinned to their iterator.\n        if response.streaming:\n            if response.async_file_response:\n                print(\"filename: \", response.filename)\n                async for more_body, chunk in response:\n                    await send(\n                        {\n                            \"type\": \"http.response.body\",\n                            \"body\": chunk,\n                            \"more_body\": more_body,\n                        }\n                    )\n\n            else:\n                # Access `__iter__` and not `streaming_content` directly in case\n                # it has been overridden in a subclass.\n                for part in response:\n                    for chunk, _ in self.chunk_bytes(part):\n                        await send(\n                            {\n                                \"type\": \"http.response.body\",\n                                \"body\": chunk,\n                                # Ignore \"more\" as there may be more parts; instead,\n                                # use an empty final closing message with False.\n                                \"more_body\": True,\n                            }\n                        )\n                # Final closing message.\n                await send({\"type\": \"http.response.body\"})\n        # Other responses just need chunking.\n        else:\n            # Yield chunks of response.\n            for chunk, last in self.chunk_bytes(response.content):\n                await send(\n                    {\n                        \"type\": \"http.response.body\",\n                        \"body\": chunk,\n                        \"more_body\": not last,\n                    }\n                )\n        await sync_to_async(response.close, thread_sensitive=True)()";
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "# export\n\n\nclass AsyncFileASGIHandler(ASGIHandler):\n    async def send_response(self, response, send):\n        \"\"\"Encode and send a response out over ASGI.\"\"\"\n        # Collect cookies into headers. Have to preserve header case as there\n        # are some non-RFC compliant clients that require e.g. Content-Type.\n        response_headers = []\n        for header, value in response.items():\n            if isinstance(header, str):\n                header = header.encode(\"ascii\")\n            if isinstance(value, str):\n                value = value.encode(\"latin1\")\n            response_headers.append((bytes(header), bytes(value)))\n        for c in response.cookies.values():\n            response_headers.append(\n                (b\"Set-Cookie\", c.output(header=\"\").encode(\"ascii\").strip())\n            )\n        # Initial response message.\n        await send(\n            {\n                \"type\": \"http.response.start\",\n                \"status\": response.status_code,\n                \"headers\": response_headers,\n            }\n        )\n        # Streaming responses need to be pinned to their iterator.\n        if response.streaming:\n            if response.async_file_response:\n                print(\"filename: \", response.filename)\n                async for more_body, chunk in response:\n                    await send(\n                        {\n                            \"type\": \"http.response.body\",\n                            \"body\": chunk,\n                            \"more_body\": more_body,\n                        }\n                    )\n\n            else:\n                # Access `__iter__` and not `streaming_content` directly in case\n                # it has been overridden in a subclass.\n                for part in response:\n                    for chunk, _ in self.chunk_bytes(part):\n                        await send(\n                            {\n                                \"type\": \"http.response.body\",\n                                \"body\": chunk,\n                                # Ignore \"more\" as there may be more parts; instead,\n                                # use an empty final closing message with False.\n                                \"more_body\": True,\n                            }\n                        )\n                # Final closing message.\n                await send({\"type\": \"http.response.body\"})\n        # Other responses just need chunking.\n        else:\n            # Yield chunks of response.\n            for chunk, last in self.chunk_bytes(response.content):\n                await send(\n                    {\n                        \"type\": \"http.response.body\",\n                        \"body\": chunk,\n                        \"more_body\": not last,\n                    }\n                )\n        await sync_to_async(response.close, thread_sensitive=True)()";
+                var nbb_formatted_code = "# export\n\n\nclass AsyncFileASGIHandler(ASGIHandler):\n    async def send_response(self, response, send):\n        \"\"\"Encode and send a response out over ASGI.\"\"\"\n        # Collect cookies into headers. Have to preserve header case as there\n        # are some non-RFC compliant clients that require e.g. Content-Type.\n        response_headers = []\n        for header, value in response.items():\n            if isinstance(header, str):\n                header = header.encode(\"ascii\")\n            if isinstance(value, str):\n                value = value.encode(\"latin1\")\n            response_headers.append((bytes(header), bytes(value)))\n        for c in response.cookies.values():\n            response_headers.append(\n                (b\"Set-Cookie\", c.output(header=\"\").encode(\"ascii\").strip())\n            )\n        # Initial response message.\n        await send(\n            {\n                \"type\": \"http.response.start\",\n                \"status\": response.status_code,\n                \"headers\": response_headers,\n            }\n        )\n        # Streaming responses need to be pinned to their iterator.\n        if response.streaming:\n            if response.async_file_response:\n                print(\"filename: \", response.filename)\n                async for more_body, chunk in response:\n                    await send(\n                        {\n                            \"type\": \"http.response.body\",\n                            \"body\": chunk,\n                            \"more_body\": more_body,\n                        }\n                    )\n\n            else:\n                # Access `__iter__` and not `streaming_content` directly in case\n                # it has been overridden in a subclass.\n                for part in response:\n                    for chunk, _ in self.chunk_bytes(part):\n                        await send(\n                            {\n                                \"type\": \"http.response.body\",\n                                \"body\": chunk,\n                                # Ignore \"more\" as there may be more parts; instead,\n                                # use an empty final closing message with False.\n                                \"more_body\": True,\n                            }\n                        )\n                # Final closing message.\n                await send({\"type\": \"http.response.body\"})\n        # Other responses just need chunking.\n        else:\n            # Yield chunks of response.\n            for chunk, last in self.chunk_bytes(response.content):\n                await send(\n                    {\n                        \"type\": \"http.response.body\",\n                        \"body\": chunk,\n                        \"more_body\": not last,\n                    }\n                )\n        await sync_to_async(response.close, thread_sensitive=True)()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -154,39 +129,95 @@ var element = $('#67f67928-4fa4-43a2-a90e-820af358dbe0');
     
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="3987b3a6-88e0-4fa7-a2d0-6fd66c997089"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#3987b3a6-88e0-4fa7-a2d0-6fd66c997089');
-
-            setTimeout(function() {
-                var nbb_cell_id = 9;
-                var nbb_unformatted_code = "# export\napplication = MyASGIHandler2()";
-                var nbb_formatted_code = "# export\napplication = MyASGIHandler2()";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
 </div>
+    {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Old-Code-Serving-Files-Directly-from-Handler">Old Code Serving Files Directly from Handler<a class="anchor-link" href="#Old-Code-Serving-Files-Directly-from-Handler"> </a></h2>
 </div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">MyASGIHandlerOld</span><span class="p">(</span><span class="n">ASGIHandler</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">send_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">send</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Encode and send a response out over ASGI.&quot;&quot;&quot;</span>
+        <span class="c1"># Collect cookies into headers. Have to preserve header case as there</span>
+        <span class="c1"># are some non-RFC compliant clients that require e.g. Content-Type.</span>
+        <span class="n">response_headers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">header</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">header</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;latin1&quot;</span><span class="p">)</span>
+            <span class="n">response_headers</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="nb">bytes</span><span class="p">(</span><span class="n">header</span><span class="p">),</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">value</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">response_headers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Set-Cookie&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">header</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="p">)</span>
+        <span class="c1"># Initial response message.</span>
+        <span class="k">await</span> <span class="n">send</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;http.response.start&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span>
+                <span class="s2">&quot;headers&quot;</span><span class="p">:</span> <span class="n">response_headers</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+        <span class="c1"># Streaming responses need to be pinned to their iterator.</span>
+        <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">streaming</span><span class="p">:</span>
+            <span class="c1"># print(&quot;serving streaming response: &quot;, response.async_file_response, response)</span>
+            <span class="c1"># print(&quot;response headers: &quot;, response_headers)</span>
+            <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">async_file_response</span><span class="p">:</span>
+                <span class="c1"># print(&quot;filename: &quot;, response.filename)</span>
+                <span class="k">async</span> <span class="k">with</span> <span class="n">aiofiles</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+                    <span class="n">more_body</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">while</span> <span class="n">more_body</span><span class="p">:</span>
+                        <span class="n">chunk</span> <span class="o">=</span> <span class="k">await</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">chunk_size</span><span class="p">)</span>
+                        <span class="n">more_body</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="o">==</span> <span class="n">response</span><span class="o">.</span><span class="n">chunk_size</span>
+                        <span class="k">await</span> <span class="n">send</span><span class="p">(</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;http.response.body&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="p">,</span>
+                                <span class="s2">&quot;more_body&quot;</span><span class="p">:</span> <span class="n">more_body</span><span class="p">,</span>
+                            <span class="p">}</span>
+                        <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Access `__iter__` and not `streaming_content` directly in case</span>
+                <span class="c1"># it has been overridden in a subclass.</span>
+                <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">chunk</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_bytes</span><span class="p">(</span><span class="n">part</span><span class="p">):</span>
+                        <span class="k">await</span> <span class="n">send</span><span class="p">(</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;http.response.body&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="p">,</span>
+                                <span class="c1"># Ignore &quot;more&quot; as there may be more parts; instead,</span>
+                                <span class="c1"># use an empty final closing message with False.</span>
+                                <span class="s2">&quot;more_body&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                            <span class="p">}</span>
+                        <span class="p">)</span>
+                <span class="c1"># Final closing message.</span>
+                <span class="k">await</span> <span class="n">send</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;http.response.body&quot;</span><span class="p">})</span>
+        <span class="c1"># Other responses just need chunking.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Yield chunks of response.</span>
+            <span class="k">for</span> <span class="n">chunk</span><span class="p">,</span> <span class="n">last</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">chunk_bytes</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">):</span>
+                <span class="k">await</span> <span class="n">send</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;http.response.body&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;body&quot;</span><span class="p">:</span> <span class="n">chunk</span><span class="p">,</span>
+                        <span class="s2">&quot;more_body&quot;</span><span class="p">:</span> <span class="ow">not</span> <span class="n">last</span><span class="p">,</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+        <span class="k">await</span> <span class="n">sync_to_async</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">close</span><span class="p">,</span> <span class="n">thread_sensitive</span><span class="o">=</span><span class="kc">True</span><span class="p">)()</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 

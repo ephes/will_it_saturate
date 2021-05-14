@@ -10,12 +10,7 @@ from django.http import FileResponse
 
 
 class AsyncFileResponse(FileResponse):
-    async_file_response = True
-
     def __init__(self, *args, **kwargs):
-        # open_file = args[0]
-        # print(f"starting to serve: {open_file.name}")
-        # self.open_file_name = args[0].name
         self.started_serving = time.perf_counter()
         self.chunk_size = kwargs.get("chunk_size", 4096)
         self.async_file = None
