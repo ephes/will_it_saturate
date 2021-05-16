@@ -56,7 +56,7 @@ class MeasuringFileResponse(FileResponse):
                         }
                     )
                 elapsed = time.perf_counter() - start
-                print(f"elapsed: {elapsed} for {self.path}")
+                print(f"{self.path},{elapsed}")
 
         if self.background is not None:
             await self.background()
