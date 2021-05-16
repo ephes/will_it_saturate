@@ -14,7 +14,7 @@ IS_ASYNC = False
 # Cell
 
 
-async def serve_file_sync(request, base, path, num):
+def serve_file_sync(request, base, path, num):
     file_path = Path(base) / path / str(num)
     return MeasuringFileResponse(file_path.open("rb"))
 
