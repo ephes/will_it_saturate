@@ -1,6 +1,14 @@
-uvicorn --host 0.0.0.0 --port 5100 --workers 6 --no-access-log will_it_saturate.fastapi.main:app
-gunicorn --backlog 10000 -w 6 -b :5100 will_it_saturate.django.wsgi
+# gunicorn django
+gunicorn -w 6 -b :5100 will_it_saturate.django.wsgi
+gunicorn --worker-class gevent -w 2 -b :5100 will_it_saturate.django.wsgi
+gunicorn --worker-class eventlet -w 2 -b :5100 will_it_saturate.django.wsgi
+
+# uvicorn django
 uvicorn --host 0.0.0.0 --workers 2 --port 5100 will_it_saturate.django.asgi:application
+
+# uvicorn fastapi
+uvicorn --host 0.0.0.0 --port 5100 --workers 6 --no-access-log will_it_saturate.fastapi.main:app
+
+# docker nginx
 docker build -f Dockerfile.nginx -t wis-nginx .
 docker run --name wis-nginx -d -p 5100:80 wis-nginx
-
