@@ -31,6 +31,9 @@ entries:
       title: Clients
       url: clients.html
     - output: web,pdf
+      title: gevent_client
+      url: gevent_client.html
+    - output: web,pdf
       title: Control Server
       url: control_server.html
     - output: web,pdf

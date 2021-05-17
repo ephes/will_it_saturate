@@ -8,6 +8,7 @@
     "Servers": "servers.html",
     "Title": "run_benchmark.html",
     "Clients": "clients.html",
+    "gevent_client": "gevent_client.html",
     "Control Server": "control_server.html",
     "Control Client": "control_client.html",
     "Control Server CLI": "control_cli.html",
