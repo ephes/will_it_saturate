@@ -64,13 +64,13 @@ nb_path: "52_generate_files_for_benchmark.ipynb"
 
 
 
-<div id="1fbb015c-53c9-45ce-b95f-1a1959c8fd4f"></div>
+<div id="d290dbcd-ab6a-4ed5-acad-e2d75bf6792d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1fbb015c-53c9-45ce-b95f-1a1959c8fd4f');
+var element = $('#d290dbcd-ab6a-4ed5-acad-e2d75bf6792d');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 2;
                 var nbb_unformatted_code = "import httpx\nimport pandas as pd\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate import servers\nfrom will_it_saturate import clients\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository, register_default_tables";
                 var nbb_formatted_code = "import httpx\nimport pandas as pd\n\nfrom urllib.parse import urljoin\n\nfrom will_it_saturate import servers\nfrom will_it_saturate import clients\nfrom will_it_saturate.epochs import Epoch\nfrom will_it_saturate.hosts import Host, HostDetails\n\nfrom will_it_saturate.results import Result\nfrom will_it_saturate.files import BenchmarkFile\nfrom will_it_saturate.control.client import ControlClient\nfrom will_it_saturate.repositories import SqliteRepository, register_default_tables";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -144,13 +144,13 @@ var element = $('#1fbb015c-53c9-45ce-b95f-1a1959c8fd4f');
 
 
 
-<div id="4f8f64bd-c649-4938-ab03-9b8f9c6b4cf1"></div>
+<div id="486ae72d-ea12-440d-89eb-63f1f491059d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#4f8f64bd-c649-4938-ab03-9b8f9c6b4cf1');
+var element = $('#486ae72d-ea12-440d-89eb-63f1f491059d');
 
             setTimeout(function() {
-                var nbb_cell_id = 27;
+                var nbb_cell_id = 3;
                 var nbb_unformatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"results.db\")\nregister_default_tables(repository)\nresults_table = repository.tables[\"result\"]\n\ncontrol_server_port, server_port = 8100, 5100\nserver_host_name = \"192.168.178.113\"\n# server_host_name = \"127.0.0.1\"\nserver_control_host = Host(name=server_host_name, port=control_server_port)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\n\n# client_control_host = Host(name=\"127.0.0.1\", port=control_server_port)\n# client_control_client = ControlClient(host=client_control_host)\n# client_details = client_control_client.get_host_details()\n\n# servers_to_test = [\n#     servers.FastAPIUvicornServer(host=server_host_name, port=server_port),\n#     servers.DjangoGunicornWSGIServer(host=server_host_name, port=server_port),\n#     servers.NginxDockerServer(host=server_host_name, port=server_port),\n# ]\n# clients_to_test = [\n#     clients.HttpxClient(name=\"httpx\"),\n#     clients.AioHttpClient(name=\"aiohttp\"),\n#     clients.WrkClient(name=\"wrk\", host=server_host_name, port=server_port),\n# ]\n# epochs_to_test = [\n#     Epoch(file_size=10 ** 7, duration=10),\n# ]";
                 var nbb_formatted_code = "# dont_test\n\nrepository = SqliteRepository.build_repository(\"results.db\")\nregister_default_tables(repository)\nresults_table = repository.tables[\"result\"]\n\ncontrol_server_port, server_port = 8100, 5100\nserver_host_name = \"192.168.178.113\"\n# server_host_name = \"127.0.0.1\"\nserver_control_host = Host(name=server_host_name, port=control_server_port)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\n\n# client_control_host = Host(name=\"127.0.0.1\", port=control_server_port)\n# client_control_client = ControlClient(host=client_control_host)\n# client_details = client_control_client.get_host_details()\n\n# servers_to_test = [\n#     servers.FastAPIUvicornServer(host=server_host_name, port=server_port),\n#     servers.DjangoGunicornWSGIServer(host=server_host_name, port=server_port),\n#     servers.NginxDockerServer(host=server_host_name, port=server_port),\n# ]\n# clients_to_test = [\n#     clients.HttpxClient(name=\"httpx\"),\n#     clients.AioHttpClient(name=\"aiohttp\"),\n#     clients.WrkClient(name=\"wrk\", host=server_host_name, port=server_port),\n# ]\n# epochs_to_test = [\n#     Epoch(file_size=10 ** 7, duration=10),\n# ]";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -197,13 +197,13 @@ var element = $('#4f8f64bd-c649-4938-ab03-9b8f9c6b4cf1');
 
 
 
-<div id="810958b6-8417-4127-998d-13dbb2c06652"></div>
+<div id="3ad59ada-52cf-4e7e-a0ee-1d48fcc4d1b5"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#810958b6-8417-4127-998d-13dbb2c06652');
+var element = $('#3ad59ada-52cf-4e7e-a0ee-1d48fcc4d1b5');
 
             setTimeout(function() {
-                var nbb_cell_id = 28;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# dont_test\n\nserver = servers.FastAPIUvicornServer(host=server_host_name, port=server_port)";
                 var nbb_formatted_code = "# dont_test\n\nserver = servers.FastAPIUvicornServer(host=server_host_name, port=server_port)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -235,7 +235,7 @@ var element = $('#810958b6-8417-4127-998d-13dbb2c06652');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">(</span><span class="n">file_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">(</span><span class="n">file_size</span><span class="o">=</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">epoch</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_files</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
 <span class="n">epoch</span><span class="o">.</span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="n">server</span><span class="o">.</span><span class="n">file_to_url</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">epoch</span><span class="o">.</span><span class="n">files</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">epoch_file</span> <span class="ow">in</span> <span class="n">epoch</span><span class="o">.</span><span class="n">files</span><span class="p">:</span>
@@ -255,15 +255,15 @@ var element = $('#810958b6-8417-4127-998d-13dbb2c06652');
 
 
 
-<div id="c2b5a785-b909-4b3c-add7-39e3da2157f2"></div>
+<div id="84e2df4c-7fac-41b2-9f82-e3fedeefc377"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c2b5a785-b909-4b3c-add7-39e3da2157f2');
+var element = $('#84e2df4c-7fac-41b2-9f82-e3fedeefc377');
 
             setTimeout(function() {
-                var nbb_cell_id = 29;
-                var nbb_unformatted_code = "# dont_test\n\nepoch = Epoch(file_size=10 ** 7, duration=10)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\nfor epoch_file in epoch.files:\n    epoch_file.port = server.port\n    epoch_file.hostname = server.host";
-                var nbb_formatted_code = "# dont_test\n\nepoch = Epoch(file_size=10 ** 7, duration=10)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\nfor epoch_file in epoch.files:\n    epoch_file.port = server.port\n    epoch_file.hostname = server.host";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nepoch = Epoch(file_size=10 ** 6, duration=10)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\nfor epoch_file in epoch.files:\n    epoch_file.port = server.port\n    epoch_file.hostname = server.host";
+                var nbb_formatted_code = "# dont_test\n\nepoch = Epoch(file_size=10 ** 6, duration=10)\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.urls = [server.file_to_url(file) for file in epoch.files]\nfor epoch_file in epoch.files:\n    epoch_file.port = server.port\n    epoch_file.hostname = server.host";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -311,13 +311,13 @@ var element = $('#c2b5a785-b909-4b3c-add7-39e3da2157f2');
 
 
 
-<div id="328921d1-17a7-4352-bee6-7162650ec037"></div>
+<div id="4acd4ce7-4470-424b-b9fc-e38a6e0f0c6b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#328921d1-17a7-4352-bee6-7162650ec037');
+var element = $('#4acd4ce7-4470-424b-b9fc-e38a6e0f0c6b');
 
             setTimeout(function() {
-                var nbb_cell_id = 30;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "# dont_test\n\n\nbenchmark_client = clients.WrkClient(\n    name=\"wrk\", host=server_host_name, port=server_port\n)\nbenchmark_client.create_lua_script(epoch)";
                 var nbb_formatted_code = "# dont_test\n\n\nbenchmark_client = clients.WrkClient(\n    name=\"wrk\", host=server_host_name, port=server_port\n)\nbenchmark_client.create_lua_script(epoch)";
                 var nbb_cells = Jupyter.notebook.get_cells();

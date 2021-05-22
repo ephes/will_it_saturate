@@ -45,6 +45,7 @@ import aiohttp
 import subprocess
 
 from pathlib import Path
+from datetime import datetime
 from multiprocessing import Pool
 from multiprocessing import set_start_method
 
@@ -147,17 +148,27 @@ def run_httpx():
 
 
 class AioHttpResponse:
-    def __init__(self, url, content):
+    def __init__(self, url, content, started, stopped):
         self.url = url
         self.content = content
+        self.started = started
+        self.stopped = stopped
 
 
 @register_model
 class AioHttpClient(BaseClient):
+    timestamps = []
+
+    def set_timestamps(self, responses):
+        for response in responses:
+            self.timestamps.append((response.started, response.stopped))
+
     async def fetch_page(self, session, url):
         async with session.get(url) as response:
+            started = datetime.now()
             content = await response.read()
-            return AioHttpResponse(url, content)
+            stopped = datetime.now()
+            return AioHttpResponse(url, content, started, stopped)
 
     async def measure_server(self, epoch):
         print("measure server")
@@ -176,12 +187,14 @@ class AioHttpClient(BaseClient):
     def measure_in_new_process(self, epoch):
         elapsed, responses = asyncio.run(self.measure_server(epoch))
         self.verify_checksums(epoch, responses)
-        return elapsed
+        self.set_timestamps(responses)
+        print("timestamps: ", len(self.timestamps))
+        return elapsed, self.timestamps
 
     def measure(self, epoch):
         with Pool(1) as p:
-            [result] = p.map(self.measure_in_new_process, [epoch])
-        return result
+            [result, timestamps] = p.map(self.measure_in_new_process, [epoch])
+        return result, timestamps
 
 # Cell
 
