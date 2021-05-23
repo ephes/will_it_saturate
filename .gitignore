@@ -141,6 +141,7 @@ checklink/cookies.txt
 
 # data
 data
+minio_data
 
 # nginx Dockerfile
 Dockerfile.nginx
