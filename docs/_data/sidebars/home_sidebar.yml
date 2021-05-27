@@ -28,6 +28,9 @@ entries:
       title: Title
       url: run_benchmark.html
     - output: web,pdf
+      title: WSGI Application for Django
+      url: django_wsgi.html
+    - output: web,pdf
       title: Clients
       url: clients.html
     - output: web,pdf

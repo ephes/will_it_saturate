@@ -3,13 +3,12 @@
 __all__ = ['fetch', 'FakeResponse', 'streaming_fetch', 'GeventClient', 'run_gevent_with_args', 'run_gevent']
 
 # Cell
-# hide
 
+import gevent
 
-# import gevent
+from gevent import monkey
 
-# from gevent import monkey
-# from gevent.pool import Pool
+monkey.patch_all()
 
 
 import time
@@ -73,6 +72,7 @@ class GeventClient(BaseClient):
 
     def measure(self, epoch):
         print("measure")
+        # monkey.patch_all()
         elapsed, responses = self.measure_server(epoch)
         self.verify_checksums(epoch, responses)
         self.set_timestamps(responses)
@@ -99,7 +99,9 @@ def run_gevent_with_args(exponent: int, server_host_name: str):
     epoch = Epoch(file_size=10 ** exponent, duration=10)
     epoch.files = server_control_client.get_or_create_files(epoch)
     epoch.create_urls_from_files(server)
-    benchmark_client = GeventClient(name="gevent", host=server_host_name, port=server_port)
+    benchmark_client = GeventClient(
+        name="gevent", host=server_host_name, port=server_port
+    )
     elapsed = benchmark_client.measure(epoch)
     print(f"elapsed: {elapsed}")
 

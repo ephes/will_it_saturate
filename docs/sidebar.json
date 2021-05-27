@@ -7,6 +7,7 @@
     "Epoch": "epochs.html",
     "Servers": "servers.html",
     "Title": "run_benchmark.html",
+    "WSGI Application for Django": "django_wsgi.html",
     "Clients": "clients.html",
     "Control Server": "control_server.html",
     "Control Client": "control_client.html",
