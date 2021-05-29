@@ -74,7 +74,9 @@ class GeventClient(BaseClient):
         print("measure")
         # monkey.patch_all()
         elapsed, responses = self.measure_server(epoch)
-        self.verify_checksums(epoch, responses)
+        # self.verify_checksums(epoch, responses)
+        for response in responses:
+            print(response.url, len(response.content))
         self.set_timestamps(responses)
         return elapsed
 
@@ -96,7 +98,7 @@ def run_gevent_with_args(exponent: int, server_host_name: str):
     server = BaseServer(host=server_host_name, port=server_port)
     server_control_host = Host(name=server_host_name, port=control_server_port)
     server_control_client = ControlClient(host=server_control_host)
-    epoch = Epoch(file_size=10 ** exponent, duration=10)
+    epoch = Epoch(file_size=10 ** exponent, duration=10, file_creator_name="minio")
     epoch.files = server_control_client.get_or_create_files(epoch)
     epoch.create_urls_from_files(server)
     benchmark_client = GeventClient(

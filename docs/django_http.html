@@ -53,7 +53,7 @@ nb_path: "14_django_http.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="MeasuringFileResponse" class="doc_header"><code>class</code> <code>MeasuringFileResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/http.py#L17" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MeasuringFileResponse</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
+<h2 id="MeasuringFileResponse" class="doc_header"><code>class</code> <code>MeasuringFileResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/http.py#L18" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>MeasuringFileResponse</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
 </blockquote>
 <p>A streaming HTTP response class optimized for files.</p>
 
@@ -79,14 +79,14 @@ nb_path: "14_django_http.ipynb"
 
 
 
-<div id="65ff090e-1bc6-4db0-9962-e9b2627a4160"></div>
+<div id="8e5805ea-73b5-4741-9b65-d72bf8f54db8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#65ff090e-1bc6-4db0-9962-e9b2627a4160');
+var element = $('#8e5805ea-73b5-4741-9b65-d72bf8f54db8');
 
             setTimeout(function() {
-                var nbb_cell_id = 23;
-                var nbb_unformatted_code = "# export\n\nclass MeasuringFileResponse(FileResponse):\n    def __init__(self, *args, **kwargs):\n        self.open_file_name = args[0].name\n        self.started_serving = time.perf_counter()\n        super().__init__(*args, **kwargs)\n\n    def close(self):\n        super().close()\n        elapsed = time.perf_counter() - self.started_serving\n        # print(f\"elapsed: {elapsed} for {self.open_file_name}\")\n        logger.info(f\"{self.open_file_name},{elapsed}\")";
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "# export\n\n\nclass MeasuringFileResponse(FileResponse):\n    def __init__(self, *args, **kwargs):\n        self.open_file_name = args[0].name\n        self.started_serving = time.perf_counter()\n        super().__init__(*args, **kwargs)\n\n    def close(self):\n        super().close()\n        elapsed = time.perf_counter() - self.started_serving\n        # print(f\"elapsed: {elapsed} for {self.open_file_name}\")\n        logger.info(f\"{self.open_file_name},{elapsed}\")";
                 var nbb_formatted_code = "# export\n\n\nclass MeasuringFileResponse(FileResponse):\n    def __init__(self, *args, **kwargs):\n        self.open_file_name = args[0].name\n        self.started_serving = time.perf_counter()\n        super().__init__(*args, **kwargs)\n\n    def close(self):\n        super().close()\n        elapsed = time.perf_counter() - self.started_serving\n        # print(f\"elapsed: {elapsed} for {self.open_file_name}\")\n        logger.info(f\"{self.open_file_name},{elapsed}\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
@@ -127,7 +127,7 @@ var element = $('#65ff090e-1bc6-4db0-9962-e9b2627a4160');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AsyncFileResponse" class="doc_header"><code>class</code> <code>AsyncFileResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/http.py#L34" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AsyncFileResponse</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
+<h2 id="AsyncFileResponse" class="doc_header"><code>class</code> <code>AsyncFileResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/http.py#L35" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AsyncFileResponse</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
 </blockquote>
 <p>A streaming HTTP response class optimized for files.</p>
 
@@ -191,13 +191,13 @@ True
 
 
 
-<div id="e9fa7afe-c668-4f64-8ba7-9ecc0fe3a743"></div>
+<div id="60d5e830-4ef7-4177-9c4a-3091287b7293"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e9fa7afe-c668-4f64-8ba7-9ecc0fe3a743');
+var element = $('#60d5e830-4ef7-4177-9c4a-3091287b7293');
 
             setTimeout(function() {
-                var nbb_cell_id = 26;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "# dont_test\nimport os\nimport asyncio\n\nimport django\n\nos.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"will_it_saturate.django.settings\")\n\ndjango.setup(set_prefix=False)\n\n\nafr = AsyncFileResponse()\nprint(asyncio.iscoroutinefunction(afr.__aiter__))\nprint(hasattr(afr, \"__aiter__\"))";
                 var nbb_formatted_code = "# dont_test\nimport os\nimport asyncio\n\nimport django\n\nos.environ.setdefault(\"DJANGO_SETTINGS_MODULE\", \"will_it_saturate.django.settings\")\n\ndjango.setup(set_prefix=False)\n\n\nafr = AsyncFileResponse()\nprint(asyncio.iscoroutinefunction(afr.__aiter__))\nprint(hasattr(afr, \"__aiter__\"))";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -218,6 +218,44 @@ var element = $('#e9fa7afe-c668-4f64-8ba7-9ecc0fe3a743');
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="AsyncMinioResponse">AsyncMinioResponse<a class="anchor-link" href="#AsyncMinioResponse"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="AsyncMinioResponse" class="doc_header"><code>class</code> <code>AsyncMinioResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/django/http.py#L72" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AsyncMinioResponse</code>(<strong>*<code>args</code></strong>, <strong>**<code>kwargs</code></strong>) :: <code>FileResponse</code></p>
+</blockquote>
+<p>A streaming HTTP response class optimized for files.</p>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}

@@ -1,6 +1,7 @@
 # gunicorn django
 gunicorn -w 3 -b :5100 will_it_saturate.django.wsgi
 gunicorn -w 3 -b :5100 "will_it_saturate.django.asgi:create_app_filesystem()"
+gunicorn -k gevent -w 3 -b :5100 "will_it_saturate.django.wsgi:create_app_minio()"
 gunicorn --worker-class gevent -w 2 -b :5100 will_it_saturate.django.wsgi
 gunicorn --worker-class eventlet -w 2 -b :5100 will_it_saturate.django.wsgi
 gunicorn --threads 130 -b :5100 will_it_saturate.django.wsgi
@@ -8,6 +9,7 @@ gunicorn --threads 130 -b :5100 will_it_saturate.django.wsgi
 # uvicorn django
 uvicorn --no-access-log --host 0.0.0.0 --workers 2 --port 5100 will_it_saturate.django.asgi:application
 gunicorn -w 2 -k uvicorn.workers.UvicornWorker -b :5100 "will_it_saturate.django.asgi:create_app_filesystem()"
+gunicorn -w 2 -k uvicorn.workers.UvicornWorker -b :5100 "will_it_saturate.django.asgi:create_app_minio()"
 
 # uvicorn fastapi
 uvicorn --no-access-log --host 0.0.0.0 --port 5100 --workers 2 will_it_saturate.fastapi.main:app

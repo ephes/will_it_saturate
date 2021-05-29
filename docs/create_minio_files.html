@@ -51,10 +51,10 @@ nb_path: "55_create_minio_files.ipynb"
 
 
 
-<div id="8324d0a2-6aac-4dbd-b5b3-be0605a8fffa"></div>
+<div id="51fdcf70-5dee-4206-8abd-df5fdaed47d4"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8324d0a2-6aac-4dbd-b5b3-be0605a8fffa');
+var element = $('#51fdcf70-5dee-4206-8abd-df5fdaed47d4');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -91,6 +91,7 @@ var element = $('#8324d0a2-6aac-4dbd-b5b3-be0605a8fffa');
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">io</span>
+<span class="kn">import</span> <span class="nn">httpx</span>
 
 <span class="kn">import</span> <span class="nn">aiobotocore</span>
 
@@ -109,15 +110,15 @@ var element = $('#8324d0a2-6aac-4dbd-b5b3-be0605a8fffa');
 
 
 
-<div id="24db52a1-dc54-45f5-95d4-cef514caa090"></div>
+<div id="10758b3b-0ad7-44bc-9224-aac8dc969611"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#24db52a1-dc54-45f5-95d4-cef514caa090');
+var element = $('#10758b3b-0ad7-44bc-9224-aac8dc969611');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
-                var nbb_unformatted_code = "# dont_test\n\nimport os\nimport io\n\nimport aiobotocore\n\nfrom minio import Minio";
-                var nbb_formatted_code = "# dont_test\n\nimport os\nimport io\n\nimport aiobotocore\n\nfrom minio import Minio";
+                var nbb_cell_id = 45;
+                var nbb_unformatted_code = "# dont_test\n\nimport os\nimport io\nimport httpx\n\nimport aiobotocore\n\nfrom minio import Minio";
+                var nbb_formatted_code = "# dont_test\n\nimport os\nimport io\nimport httpx\n\nimport aiobotocore\n\nfrom minio import Minio";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -162,15 +163,15 @@ var element = $('#24db52a1-dc54-45f5-95d4-cef514caa090');
 
 
 
-<div id="9a837839-1e64-4d28-b087-97ce9ffd1577"></div>
+<div id="ba605052-cf4c-44d5-ab26-9ca72647ca15"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9a837839-1e64-4d28-b087-97ce9ffd1577');
+var element = $('#ba605052-cf4c-44d5-ab26-9ca72647ca15');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
-                var nbb_unformatted_code = "client = Minio(\"127.0.0.1:9000\", \"minioadmin\", \"minioadmin\", secure=False)";
-                var nbb_formatted_code = "client = Minio(\"127.0.0.1:9000\", \"minioadmin\", \"minioadmin\", secure=False)";
+                var nbb_unformatted_code = "# dont_test\n\nclient = Minio(\"127.0.0.1:9000\", \"minioadmin\", \"minioadmin\", secure=False)";
+                var nbb_formatted_code = "# dont_test\n\nclient = Minio(\"127.0.0.1:9000\", \"minioadmin\", \"minioadmin\", secure=False)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -228,15 +229,15 @@ var element = $('#9a837839-1e64-4d28-b087-97ce9ffd1577');
 
 
 
-<div id="e6e26702-29ef-4c6c-adb6-c341dee475ab"></div>
+<div id="0eec445c-12b2-4033-8481-20b98ac9c180"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e6e26702-29ef-4c6c-adb6-c341dee475ab');
+var element = $('#0eec445c-12b2-4033-8481-20b98ac9c180');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
-                var nbb_unformatted_code = "bucket_name = \"wis\"\nfound = client.bucket_exists(bucket_name)\nif not found:\n    client.make_bucket(bucket_name)\nelse:\n    print(f\"Bucket '{bucket_name}' already exists\")";
-                var nbb_formatted_code = "bucket_name = \"wis\"\nfound = client.bucket_exists(bucket_name)\nif not found:\n    client.make_bucket(bucket_name)\nelse:\n    print(f\"Bucket '{bucket_name}' already exists\")";
+                var nbb_unformatted_code = "# dont_test\n\n\nbucket_name = \"wis\"\nfound = client.bucket_exists(bucket_name)\nif not found:\n    client.make_bucket(bucket_name)\nelse:\n    print(f\"Bucket '{bucket_name}' already exists\")";
+                var nbb_formatted_code = "# dont_test\n\n\nbucket_name = \"wis\"\nfound = client.bucket_exists(bucket_name)\nif not found:\n    client.make_bucket(bucket_name)\nelse:\n    print(f\"Bucket '{bucket_name}' already exists\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -294,7 +295,7 @@ var element = $('#e6e26702-29ef-4c6c-adb6-c341dee475ab');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>created foo/bar/baz object; etag: 2964cf8c8fcbbe7f1732f754280d7d4a-2, version-id: None
+<pre>created foo/bar/baz object; etag: ac3a11ea4d70702bb681e1f98870b5f2-2, version-id: None
 </pre>
 </div>
 </div>
@@ -304,15 +305,126 @@ var element = $('#e6e26702-29ef-4c6c-adb6-c341dee475ab');
 
 
 
-<div id="ce10ee6c-3282-4d61-a6ad-1ecc7d844ea2"></div>
+<div id="b20f8095-2ea4-46df-8aad-02a504b75a26"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#ce10ee6c-3282-4d61-a6ad-1ecc7d844ea2');
+var element = $('#b20f8095-2ea4-46df-8aad-02a504b75a26');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# dont_test\n\n\npath = \"foo/bar/baz\"\nsize = 10 ** 7\ndata = os.urandom(size)\nresult = client.put_object(\n    bucket_name,\n    path,\n    io.BytesIO(data),\n    size,\n)\nprint(\n    \"created {0} object; etag: {1}, version-id: {2}\".format(\n        result.object_name,\n        result.etag,\n        result.version_id,\n    ),\n)";
+                var nbb_formatted_code = "# dont_test\n\n\npath = \"foo/bar/baz\"\nsize = 10 ** 7\ndata = os.urandom(size)\nresult = client.put_object(\n    bucket_name,\n    path,\n    io.BytesIO(data),\n    size,\n)\nprint(\n    \"created {0} object; etag: {1}, version-id: {2}\".format(\n        result.object_name,\n        result.etag,\n        result.version_id,\n    ),\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">stat_object</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="ce71f309-97e3-4ffb-823e-bf555d9ddace"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#ce71f309-97e3-4ffb-823e-bf555d9ddace');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
-                var nbb_unformatted_code = "path = \"foo/bar/baz\"\nsize = 10 ** 7\ndata = os.urandom(size)\nresult = client.put_object(\n    bucket_name, path, io.BytesIO(data), size,\n)\nprint(\n    \"created {0} object; etag: {1}, version-id: {2}\".format(\n        result.object_name, result.etag, result.version_id,\n    ),\n)";
-                var nbb_formatted_code = "path = \"foo/bar/baz\"\nsize = 10 ** 7\ndata = os.urandom(size)\nresult = client.put_object(\n    bucket_name,\n    path,\n    io.BytesIO(data),\n    size,\n)\nprint(\n    \"created {0} object; etag: {1}, version-id: {2}\".format(\n        result.object_name,\n        result.etag,\n        result.version_id,\n    ),\n)";
+                var nbb_unformatted_code = "# dont_test\n\nresult = client.stat_object(bucket_name, path)";
+                var nbb_formatted_code = "# dont_test\n\nresult = client.stat_object(bucket_name, path)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">bucket_name</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">response</span><span class="o">.</span><span class="n">release_conn</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="101fd5ee-50df-4b16-b9ee-064b614b31a8"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#101fd5ee-50df-4b16-b9ee-064b614b31a8');
+
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "# dont_test\n\ntry:\n    response = client.get_object(bucket_name, path)\n    data = response.read()\nfinally:\n    response.close()\n    response.release_conn()";
+                var nbb_formatted_code = "# dont_test\n\ntry:\n    response = client.get_object(bucket_name, path)\n    data = response.read()\nfinally:\n    response.close()\n    response.release_conn()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -346,8 +458,8 @@ var element = $('#ce10ee6c-3282-4d61-a6ad-1ecc7d844ea2');
 <span class="n">AWS_SECRET_ACCESS_KEY</span> <span class="o">=</span> <span class="s2">&quot;minioadmin&quot;</span>
 
 <span class="n">bucket</span> <span class="o">=</span> <span class="s2">&quot;wis&quot;</span>
-<span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;data/3000000_2_12500000/0&quot;</span>
-
+<span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;data/10000000_10_125000000/0&quot;</span>
+<span class="c1"># key = &quot;foo/bar/baz&quot;</span>
 <span class="n">session</span> <span class="o">=</span> <span class="n">aiobotocore</span><span class="o">.</span><span class="n">get_session</span><span class="p">()</span>
 </pre></div>
 
@@ -363,15 +475,15 @@ var element = $('#ce10ee6c-3282-4d61-a6ad-1ecc7d844ea2');
 
 
 
-<div id="0b68de61-39a8-41aa-bfda-eba57883d063"></div>
+<div id="cd70db47-1008-4c39-a65a-fb1208a278f9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0b68de61-39a8-41aa-bfda-eba57883d063');
+var element = $('#cd70db47-1008-4c39-a65a-fb1208a278f9');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
-                var nbb_unformatted_code = "# dont_test\n\nAWS_ACCESS_KEY_ID = \"minioadmin\"\nAWS_SECRET_ACCESS_KEY = \"minioadmin\"\n\nbucket = \"wis\"\nkey = \"data/3000000_2_12500000/0\"\n\nsession = aiobotocore.get_session()";
-                var nbb_formatted_code = "# dont_test\n\nAWS_ACCESS_KEY_ID = \"minioadmin\"\nAWS_SECRET_ACCESS_KEY = \"minioadmin\"\n\nbucket = \"wis\"\nkey = \"data/3000000_2_12500000/0\"\n\nsession = aiobotocore.get_session()";
+                var nbb_cell_id = 17;
+                var nbb_unformatted_code = "# dont_test\n\nAWS_ACCESS_KEY_ID = \"minioadmin\"\nAWS_SECRET_ACCESS_KEY = \"minioadmin\"\n\nbucket = \"wis\"\nkey = \"data/10000000_10_125000000/0\"\n# key = \"foo/bar/baz\"\nsession = aiobotocore.get_session()";
+                var nbb_formatted_code = "# dont_test\n\nAWS_ACCESS_KEY_ID = \"minioadmin\"\nAWS_SECRET_ACCESS_KEY = \"minioadmin\"\n\nbucket = \"wis\"\nkey = \"data/10000000_10_125000000/0\"\n# key = \"foo/bar/baz\"\nsession = aiobotocore.get_session()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -425,13 +537,13 @@ var element = $('#0b68de61-39a8-41aa-bfda-eba57883d063');
 
 
 
-<div id="b1cf5a32-a9ba-456b-9983-24706f449c01"></div>
+<div id="34adc0ec-2c9e-4b6d-8855-28a6f9647e15"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b1cf5a32-a9ba-456b-9983-24706f449c01');
+var element = $('#34adc0ec-2c9e-4b6d-8855-28a6f9647e15');
 
             setTimeout(function() {
-                var nbb_cell_id = 25;
+                var nbb_cell_id = 18;
                 var nbb_unformatted_code = "# dont_test\n\nasync with session.create_client(\n    \"s3\",\n    endpoint_url=\"http://localhost:9000\",\n    region_name=\"us-west-2\",\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n) as client:\n    response = await client.get_object(Bucket=bucket, Key=key)\n    async with response[\"Body\"] as stream:\n        data = await stream.read()";
                 var nbb_formatted_code = "# dont_test\n\nasync with session.create_client(\n    \"s3\",\n    endpoint_url=\"http://localhost:9000\",\n    region_name=\"us-west-2\",\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n) as client:\n    response = await client.get_object(Bucket=bucket, Key=key)\n    async with response[\"Body\"] as stream:\n        data = await stream.read()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -464,6 +576,7 @@ var element = $('#b1cf5a32-a9ba-456b-9983-24706f449c01');
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">will_it_saturate.files</span> <span class="kn">import</span> <span class="n">calculate_checksum</span>
+
 <span class="n">calculate_checksum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 
@@ -478,16 +591,2727 @@ var element = $('#b1cf5a32-a9ba-456b-9983-24706f449c01');
 
 
 
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;a758380acd31c9633963f4e6651e93b4&#39;</pre>
+</div>
 
-<div id="eea6786c-8e0f-45c8-a96a-c4d84214d911"></div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="f71c7855-2509-439e-81b7-9f41816ee398"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#eea6786c-8e0f-45c8-a96a-c4d84214d911');
+var element = $('#f71c7855-2509-439e-81b7-9f41816ee398');
 
             setTimeout(function() {
-                var nbb_cell_id = 23;
-                var nbb_unformatted_code = "from will_it_saturate.files import calculate_checksum";
-                var nbb_formatted_code = "from will_it_saturate.files import calculate_checksum";
+                var nbb_cell_id = 19;
+                var nbb_unformatted_code = "# dont_test\nfrom will_it_saturate.files import calculate_checksum\n\ncalculate_checksum(data)";
+                var nbb_formatted_code = "# dont_test\nfrom will_it_saturate.files import calculate_checksum\n\ncalculate_checksum(data)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;data/10000000_10_125000000/124&quot;</span>
+
+<span class="n">more_body</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">chunk_size</span> <span class="o">=</span> <span class="mi">4096</span>
+
+<span class="n">chunks</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">async</span> <span class="k">with</span> <span class="n">session</span><span class="o">.</span><span class="n">create_client</span><span class="p">(</span>
+    <span class="s2">&quot;s3&quot;</span><span class="p">,</span>
+    <span class="n">endpoint_url</span><span class="o">=</span><span class="s2">&quot;http://localhost:9000&quot;</span><span class="p">,</span>
+    <span class="n">region_name</span><span class="o">=</span><span class="s2">&quot;us-west-2&quot;</span><span class="p">,</span>
+    <span class="n">aws_secret_access_key</span><span class="o">=</span><span class="n">AWS_SECRET_ACCESS_KEY</span><span class="p">,</span>
+    <span class="n">aws_access_key_id</span><span class="o">=</span><span class="n">AWS_ACCESS_KEY_ID</span><span class="p">,</span>
+<span class="p">)</span> <span class="k">as</span> <span class="n">client</span><span class="p">:</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">client</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="n">Bucket</span><span class="o">=</span><span class="n">bucket</span><span class="p">,</span> <span class="n">Key</span><span class="o">=</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">response</span><span class="p">[</span><span class="s2">&quot;Body&quot;</span><span class="p">]</span> <span class="k">as</span> <span class="n">stream</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">more_body</span><span class="p">:</span>
+            <span class="n">chunk</span> <span class="o">=</span> <span class="k">await</span> <span class="n">stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">chunk_size</span><span class="p">)</span>
+            <span class="n">more_body</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="o">==</span> <span class="n">chunk_size</span>
+            <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">))</span>
+            <span class="n">chunks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+4096
+1664
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="2dab63d5-caf4-431f-9dd0-a8b43d7e8b74"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#2dab63d5-caf4-431f-9dd0-a8b43d7e8b74');
+
+            setTimeout(function() {
+                var nbb_cell_id = 28;
+                var nbb_unformatted_code = "# dont_test\n\nkey = \"data/10000000_10_125000000/124\"\n\nmore_body = True\nchunk_size = 4096\n\nchunks = []\n\nasync with session.create_client(\n    \"s3\",\n    endpoint_url=\"http://localhost:9000\",\n    region_name=\"us-west-2\",\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n) as client:\n    response = await client.get_object(Bucket=bucket, Key=key)\n    async with response[\"Body\"] as stream:\n        while more_body:\n            chunk = await stream.read(chunk_size)\n            more_body = len(chunk) == chunk_size\n            print(len(chunk))\n            chunks.append(chunk)";
+                var nbb_formatted_code = "# dont_test\n\nkey = \"data/10000000_10_125000000/124\"\n\nmore_body = True\nchunk_size = 4096\n\nchunks = []\n\nasync with session.create_client(\n    \"s3\",\n    endpoint_url=\"http://localhost:9000\",\n    region_name=\"us-west-2\",\n    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,\n    aws_access_key_id=AWS_ACCESS_KEY_ID,\n) as client:\n    response = await client.get_object(Bucket=bucket, Key=key)\n    async with response[\"Body\"] as stream:\n        while more_body:\n            chunk = await stream.read(chunk_size)\n            more_body = len(chunk) == chunk_size\n            print(len(chunk))\n            chunks.append(chunk)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">sum</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span> <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">chunks</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>10000000</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="25803bae-bfc6-49d3-a73a-3f1ef4e0fbe7"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#25803bae-bfc6-49d3-a73a-3f1ef4e0fbe7');
+
+            setTimeout(function() {
+                var nbb_cell_id = 29;
+                var nbb_unformatted_code = "# dont_test\n\nsum([len(chunk) for chunk in chunks])";
+                var nbb_formatted_code = "# dont_test\n\nsum([len(chunk) for chunk in chunks])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">content</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">chunks</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">calculate_checksum</span><span class="p">(</span><span class="n">content</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>d22ed933952d590f18cff4ae5c3420a7
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="cbb310c1-0e9b-4253-ab2b-d06769741906"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#cbb310c1-0e9b-4253-ab2b-d06769741906');
+
+            setTimeout(function() {
+                var nbb_cell_id = 30;
+                var nbb_unformatted_code = "# dont_test\n\ncontent = b\"\".join(chunks)\nprint(calculate_checksum(content))";
+                var nbb_formatted_code = "# dont_test\n\ncontent = b\"\".join(chunks)\nprint(calculate_checksum(content))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># r = httpx.get(&quot;http://localhost:5100/data/10000000_10_125000000/124&quot;)</span>
+<span class="c1"># print(len(r.content))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="764969a8-e790-4aea-ab3f-07fff3c051a9"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#764969a8-e790-4aea-ab3f-07fff3c051a9');
+
+            setTimeout(function() {
+                var nbb_cell_id = 47;
+                var nbb_unformatted_code = "# dont_test\n\n# r = httpx.get(\"http://localhost:5100/data/10000000_10_125000000/124\")\n# print(len(r.content))";
+                var nbb_formatted_code = "# dont_test\n\n# r = httpx.get(\"http://localhost:5100/data/10000000_10_125000000/124\")\n# print(len(r.content))";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

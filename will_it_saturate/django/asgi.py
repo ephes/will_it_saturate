@@ -16,6 +16,7 @@ from django.conf import settings
 
 from . import urls
 from .handlers import AsyncFileASGIHandler
+from .handlers import AsyncMinioASGIHandler
 
 
 def create_app_filesystem():
@@ -25,4 +26,4 @@ def create_app_filesystem():
 
 def create_app_minio():
     urls.urlpatterns = urls.urlpatterns_async_minio
-    return AsyncFileASGIHandler()
+    return AsyncMinioASGIHandler()
