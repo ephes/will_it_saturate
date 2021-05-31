@@ -146,9 +146,6 @@ class AsyncMinioASGIHandler(ASGIHandler):
                             send_size += chunk_len
                         # print("send size: ", send_size)
 
-
-
-
             else:
                 # Access `__iter__` and not `streaming_content` directly in case
                 # it has been overridden in a subclass.

@@ -17,6 +17,8 @@ from pathlib import Path
 from typing import Optional
 from pydantic import BaseModel
 
+from .config import settings
+
 
 def calculate_checksum(content):
     return hashlib.md5(content).hexdigest()
@@ -67,23 +69,21 @@ def get_minio_client_and_bucket(endpoint, params, bucket):
 
 
 def build_create_via_minio():
-    client_endpoint = "127.0.0.1:9000"
-    client_params = {
-        "access_key": "minioadmin",
-        "secret_key": "minioadmin",
+    endpoint = settings.minio_endpoint
+    params = {
+        "access_key": settings.minio_access_key,
+        "secret_key": settings.minio_secret_key,
         "secure": False,
     }
     client = None
-    bucket = "wis"
+    bucket = settings.minio_bucket
 
     def create_via_minio(path, size):
         nonlocal client
         if client is None:
             # dont try to connect to minio server until create_via_minio
             # is really used, because it will break CI otherwise
-            client = get_minio_client_and_bucket(
-                client_endpoint, client_params, bucket
-            )
+            client = get_minio_client_and_bucket(endpoint, params, bucket)
         key = str(path)
         try:
             result = client.stat_object(bucket, key)

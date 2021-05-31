@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"Host": "01_host.ipynb",
+index = {"Settings": "01_config.ipynb",
+         "settings": "01_config.ipynb",
+         "Host": "01_host.ipynb",
          "get_macos_machine_id": "60_legacy.ipynb",
          "get_linux_machine_id": "60_legacy.ipynb",
          "get_machine_id": "60_legacy.ipynb",
@@ -109,7 +111,8 @@ index = {"Host": "01_host.ipynb",
          "register_default_tables": "42_sqlite_repository.ipynb",
          "Benchmark": "60_legacy.ipynb"}
 
-modules = ["hosts.py",
+modules = ["config.py",
+           "hosts.py",
            "files.py",
            "registry.py",
            "epochs.py",
