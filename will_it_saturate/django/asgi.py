@@ -32,5 +32,5 @@ def create_app_minio():
 
 
 def create_django_fileresponse_app():
-    urls.urlpatterns = urls.urlpatterns_async_minio
+    urls.urlpatterns = urls.urlpatterns_async_django_fileresponse
     return DFAsyncFileASGIHandler()

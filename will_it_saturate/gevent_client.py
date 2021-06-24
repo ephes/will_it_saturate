@@ -74,7 +74,7 @@ class GeventClient(BaseClient):
         print("measure")
         # monkey.patch_all()
         elapsed, responses = self.measure_server(epoch)
-        self.verify_checksums(epoch, responses)
+        # self.verify_checksums(epoch, responses)
 #         for response in responses:
 #             print(response.url, len(response.content))
         self.set_timestamps(responses)
