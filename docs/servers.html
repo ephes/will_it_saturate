@@ -51,10 +51,10 @@ nb_path: "10_servers.ipynb"
 
 
 
-<div id="05ce928e-bff5-4241-b642-11871283e9c8"></div>
+<div id="980c0140-8fb0-477b-a862-9fc48081c726"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#05ce928e-bff5-4241-b642-11871283e9c8');
+var element = $('#980c0140-8fb0-477b-a862-9fc48081c726');
 
             setTimeout(function() {
                 var nbb_cell_id = 1;
@@ -93,7 +93,7 @@ var element = $('#05ce928e-bff5-4241-b642-11871283e9c8');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="BaseServer" class="doc_header"><code>class</code> <code>BaseServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L16" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'base_server'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>) :: <code>BaseModel</code></p>
+<h2 id="BaseServer" class="doc_header"><code>class</code> <code>BaseServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L16" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>BaseServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'base_server'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <code>BaseModel</code></p>
 </blockquote>
 
 </div>
@@ -142,13 +142,13 @@ var element = $('#05ce928e-bff5-4241-b642-11871283e9c8');
 
 
 
-<div id="1e102d08-aac1-4ad3-b687-3b164bd15666"></div>
+<div id="a5f9c893-2273-404c-a969-508fb6a39eca"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#1e102d08-aac1-4ad3-b687-3b164bd15666');
+var element = $('#a5f9c893-2273-404c-a969-508fb6a39eca');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
+                var nbb_cell_id = 13;
                 var nbb_unformatted_code = "name = \"Nginx Docker\"\nserver = BaseServer(name=name)";
                 var nbb_formatted_code = "name = \"Nginx Docker\"\nserver = BaseServer(name=name)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -207,13 +207,13 @@ var element = $('#1e102d08-aac1-4ad3-b687-3b164bd15666');
 
 
 
-<div id="5ef41d1c-19cb-4ffb-a167-4f26497bb7e7"></div>
+<div id="1d0f9c9b-8892-4a63-ac9c-f252b8894256"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#5ef41d1c-19cb-4ffb-a167-4f26497bb7e7');
+var element = $('#1d0f9c9b-8892-4a63-ac9c-f252b8894256');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
+                var nbb_cell_id = 14;
                 var nbb_unformatted_code = "name = \"Nginx Docker\"\nserver = BaseServer(name=name)\n\nassert server.name == name\nassert server.start() is None\nassert server.stop() is None\nassert server.host == \"localhost\"";
                 var nbb_formatted_code = "name = \"Nginx Docker\"\nserver = BaseServer(name=name)\n\nassert server.name == name\nassert server.start() is None\nassert server.stop() is None\nassert server.host == \"localhost\"";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -262,13 +262,13 @@ var element = $('#5ef41d1c-19cb-4ffb-a167-4f26497bb7e7');
 
 
 
-<div id="aa7b9bc1-ce41-4c9d-94ff-81e6d0052008"></div>
+<div id="6f334dcf-f601-4992-afba-166eb3caf3a8"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#aa7b9bc1-ce41-4c9d-94ff-81e6d0052008');
+var element = $('#6f334dcf-f601-4992-afba-166eb3caf3a8');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 16;
                 var nbb_unformatted_code = "file = BenchmarkFile(number=1, base_path=\"foobar\", size=123)\nserver = BaseServer(name=\"test server\")\nassert \"http://localhost:8000/data/foobar/1\" == server.file_to_url(file)";
                 var nbb_formatted_code = "file = BenchmarkFile(number=1, base_path=\"foobar\", size=123)\nserver = BaseServer(name=\"test server\")\nassert \"http://localhost:8000/data/foobar/1\" == server.file_to_url(file)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -315,15 +315,71 @@ var element = $('#aa7b9bc1-ce41-4c9d-94ff-81e6d0052008');
 
 
 
-<div id="840cb466-46cd-49ac-b284-735f2c2d9e1a"></div>
+<div id="d0c51235-6e71-4c34-9fc9-bf7383f514f2"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#840cb466-46cd-49ac-b284-735f2c2d9e1a');
+var element = $('#d0c51235-6e71-4c34-9fc9-bf7383f514f2');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
+                var nbb_cell_id = 17;
                 var nbb_unformatted_code = "assert \"class_name\" in server.params()";
                 var nbb_formatted_code = "assert \"class_name\" in server.params()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="n">BenchmarkFile</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">base_path</span><span class="o">=</span><span class="s2">&quot;foobar&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="n">view</span> <span class="o">=</span> <span class="s2">&quot;async&quot;</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;test server&quot;</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="n">view</span><span class="p">)</span>
+<span class="k">assert</span> <span class="sa">f</span><span class="s2">&quot;http://localhost:8000/</span><span class="si">{</span><span class="n">view</span><span class="si">}</span><span class="s2">/data/foobar/1&quot;</span> <span class="o">==</span> <span class="n">server</span><span class="o">.</span><span class="n">file_to_url</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="9f2ddc18-29f3-4761-9057-76368da20ba5"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#9f2ddc18-29f3-4761-9057-76368da20ba5');
+
+            setTimeout(function() {
+                var nbb_cell_id = 22;
+                var nbb_unformatted_code = "file = BenchmarkFile(number=1, base_path=\"foobar\", size=123)\nview = \"async\"\nserver = BaseServer(name=\"test server\", view=view)\nassert f\"http://localhost:8000/{view}/data/foobar/1\" == server.file_to_url(file)";
+                var nbb_formatted_code = "file = BenchmarkFile(number=1, base_path=\"foobar\", size=123)\nview = \"async\"\nserver = BaseServer(name=\"test server\", view=view)\nassert f\"http://localhost:8000/{view}/data/foobar/1\" == server.file_to_url(file)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -374,13 +430,13 @@ var element = $('#840cb466-46cd-49ac-b284-735f2c2d9e1a');
 
 
 
-<div id="242be113-317f-4560-91c7-3a18c79d413c"></div>
+<div id="e8dbf429-7d4e-45c6-8161-a1481b31fb98"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#242be113-317f-4560-91c7-3a18c79d413c');
+var element = $('#e8dbf429-7d4e-45c6-8161-a1481b31fb98');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
+                var nbb_cell_id = 23;
                 var nbb_unformatted_code = "from will_it_saturate.registry import ModelParameters";
                 var nbb_formatted_code = "from will_it_saturate.registry import ModelParameters";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -438,13 +494,13 @@ var element = $('#242be113-317f-4560-91c7-3a18c79d413c');
 
 
 
-<div id="67c4ae7d-864c-4088-aa5c-3afc7364d300"></div>
+<div id="7e9c7715-6588-4ae7-99ba-d39a6fe0c37b"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#67c4ae7d-864c-4088-aa5c-3afc7364d300');
+var element = $('#7e9c7715-6588-4ae7-99ba-d39a6fe0c37b');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
+                var nbb_cell_id = 24;
                 var nbb_unformatted_code = "name = \"Some Server\"\nserver = BaseServer(name=name)\n\nserver_parameters = ModelParameters(**server.params())\n\nserver_from_params = server_parameters.to_model()";
                 var nbb_formatted_code = "name = \"Some Server\"\nserver = BaseServer(name=name)\n\nserver_parameters = ModelParameters(**server.params())\n\nserver_from_params = server_parameters.to_model()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -497,13 +553,13 @@ var element = $('#67c4ae7d-864c-4088-aa5c-3afc7364d300');
 
 
 
-<div id="be28e995-cb79-4702-85b9-768499e46a83"></div>
+<div id="3eeb0c68-379f-47fd-a810-6206f7210fee"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#be28e995-cb79-4702-85b9-768499e46a83');
+var element = $('#3eeb0c68-379f-47fd-a810-6206f7210fee');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 25;
                 var nbb_unformatted_code = "assert server == server_from_params";
                 var nbb_formatted_code = "assert server == server_from_params";
                 var nbb_cells = Jupyter.notebook.get_cells();

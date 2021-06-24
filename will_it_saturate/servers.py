@@ -19,6 +19,7 @@ class BaseServer(BaseModel):
     name: str = "base_server"
     host: str = "localhost"
     port: int = 8000
+    view: str = ""
 
     def start(self):
         pass
@@ -30,7 +31,8 @@ class BaseServer(BaseModel):
         return False
 
     def file_to_url(self, file: BenchmarkFile):
-        return f"{self.protocol}://{self.host}:{self.port}/{file.path}"
+        path = f"{self.view}/{file.path}" if self.view else f"{file.path}"
+        return f"{self.protocol}://{self.host}:{self.port}/{path}"
 
     def params(self):
         return {
