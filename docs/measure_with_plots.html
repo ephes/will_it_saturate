@@ -72,10 +72,10 @@ nb_path: "54_measure_with_plots.ipynb"
 
 
 
-<div id="d0da3012-4da3-4dfe-bf2e-8890442cd7b1"></div>
+<div id="61b50a5b-6ff2-4ca7-abcc-b73b87ce1361"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#d0da3012-4da3-4dfe-bf2e-8890442cd7b1');
+var element = $('#61b50a5b-6ff2-4ca7-abcc-b73b87ce1361');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -133,10 +133,10 @@ var element = $('#d0da3012-4da3-4dfe-bf2e-8890442cd7b1');
 
 
 
-<div id="09502d68-5461-41c3-918f-d7a023e2255a"></div>
+<div id="3da887bd-dc50-4bc5-9802-fdec6f1ef105"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#09502d68-5461-41c3-918f-d7a023e2255a');
+var element = $('#3da887bd-dc50-4bc5-9802-fdec6f1ef105');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -174,7 +174,8 @@ var element = $('#09502d68-5461-41c3-918f-d7a023e2255a');
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">file_size</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span>
 <span class="n">server_host_name</span> <span class="o">=</span> <span class="s2">&quot;192.168.178.113&quot;</span>
 <span class="n">control_server_port</span><span class="p">,</span> <span class="n">server_port</span> <span class="o">=</span> <span class="mi">8100</span><span class="p">,</span> <span class="mi">5100</span>
-<span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_host_name</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">server_port</span><span class="p">)</span>
+<span class="n">view_name</span> <span class="o">=</span> <span class="s2">&quot;serve_sync_filesystem&quot;</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">BaseServer</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_host_name</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">server_port</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="n">view_name</span><span class="p">)</span>
 <span class="n">server_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">server_host_name</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">control_server_port</span><span class="p">)</span>
 <span class="n">server_control_client</span> <span class="o">=</span> <span class="n">ControlClient</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="n">server_control_host</span><span class="p">)</span>
 <span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">(</span><span class="n">file_size</span><span class="o">=</span><span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -195,15 +196,15 @@ var element = $('#09502d68-5461-41c3-918f-d7a023e2255a');
 
 
 
-<div id="e32aeef2-7966-4b28-ac71-53ccfb4faf20"></div>
+<div id="128d5216-a792-4101-8680-6d5cc7c8335e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e32aeef2-7966-4b28-ac71-53ccfb4faf20');
+var element = $('#128d5216-a792-4101-8680-6d5cc7c8335e');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# dont_test\n\nfile_size = 10 ** 7\nserver_host_name = \"192.168.178.113\"\ncontrol_server_port, server_port = 8100, 5100\nserver = BaseServer(host=server_host_name, port=server_port)\nserver_control_host = Host(name=server_host_name, port=control_server_port)\nserver_control_client = ControlClient(host=server_control_host)\nepoch = Epoch(file_size=file_size, duration=10)\n# epoch = Epoch(file_size=file_size, duration=10, file_creator_name=\"minio\")\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.create_urls_from_files(server)";
-                var nbb_formatted_code = "# dont_test\n\nfile_size = 10 ** 7\nserver_host_name = \"192.168.178.113\"\ncontrol_server_port, server_port = 8100, 5100\nserver = BaseServer(host=server_host_name, port=server_port)\nserver_control_host = Host(name=server_host_name, port=control_server_port)\nserver_control_client = ControlClient(host=server_control_host)\nepoch = Epoch(file_size=file_size, duration=10)\n# epoch = Epoch(file_size=file_size, duration=10, file_creator_name=\"minio\")\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.create_urls_from_files(server)";
+                var nbb_unformatted_code = "# dont_test\n\nfile_size = 10 ** 7\nserver_host_name = \"192.168.178.113\"\ncontrol_server_port, server_port = 8100, 5100\nview_name = \"serve_sync_filesystem\"\nserver = BaseServer(host=server_host_name, port=server_port, view=view_name)\nserver_control_host = Host(name=server_host_name, port=control_server_port)\nserver_control_client = ControlClient(host=server_control_host)\nepoch = Epoch(file_size=file_size, duration=10)\n# epoch = Epoch(file_size=file_size, duration=10, file_creator_name=\"minio\")\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.create_urls_from_files(server)";
+                var nbb_formatted_code = "# dont_test\n\nfile_size = 10 ** 7\nserver_host_name = \"192.168.178.113\"\ncontrol_server_port, server_port = 8100, 5100\nview_name = \"serve_sync_filesystem\"\nserver = BaseServer(host=server_host_name, port=server_port, view=view_name)\nserver_control_host = Host(name=server_host_name, port=control_server_port)\nserver_control_client = ControlClient(host=server_control_host)\nepoch = Epoch(file_size=file_size, duration=10)\n# epoch = Epoch(file_size=file_size, duration=10, file_creator_name=\"minio\")\nepoch.files = server_control_client.get_or_create_files(epoch)\nepoch.create_urls_from_files(server)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -252,9 +253,1170 @@ var element = $('#e32aeef2-7966-4b28-ac71-53ccfb4faf20');
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>measure
 measure server
-http://192.168.178.113:5100/data/10000000_10_125000000/0
-elapsed: 12.121698357000014
+http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/0
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/4
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d390bf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/0
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d3908c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/2
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d3909d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/6
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d390e10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/33
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eed00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/8
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/36
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/99
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d5088c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/35
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/34
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eee10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/37
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/38
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/39
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/41
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f36a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/42
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f37b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/7
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/40
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/63
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/64
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/10
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/102
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508bf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/43
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f38c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/103
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508d00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/3
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d390ae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/5
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d390d00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/101
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508ae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/1
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d390590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/9
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/100
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d5089d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/104
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508e10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/105
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4c9040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/106
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4c9150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/109
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4c9480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/62
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8e10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/65
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/107
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4c9260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/108
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4c9370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/11
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/12
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/93
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/15
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea8c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/13
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea6a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/88
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d502bf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/89
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d502d00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/17
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eaae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/20
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eae10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/14
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea7b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/16
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ea9d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/18
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eabf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/19
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ead00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/21
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/22
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/23
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/24
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/25
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/26
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/27
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee6a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/28
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee7b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/29
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee8c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/30
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4ee9d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/31
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eeae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/32
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4eebf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/52
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/53
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/54
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/56
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f87b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/57
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f88c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/47
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3d00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/90
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d502e10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/46
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3bf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/61
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8d00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/94
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/92
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/91
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d508040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/49
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/50
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/58
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f89d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/51
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/55
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f86a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/59
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8ae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/44
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f39d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/45
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3ae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/48
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f3e10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/60
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4f8bf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/66
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/67
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/68
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/69
+2021-06-24T09:18:00Z &lt;Greenlet at 0x12d4fc6a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/70
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fc7b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/71
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fc8c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/72
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fc9d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/73
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fcae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/74
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fcbf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/75
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fcd00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/76
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4fce10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/77
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/78
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/79
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/80
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/81
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/82
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/83
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d5026a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/84
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d5027b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/85
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d5028c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/86
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d5029d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/96
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d508590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/111
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c96a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/87
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d502ae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/95
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d508480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/97
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d5086a0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/98
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d5087b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/110
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c9590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/112
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c97b0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/113
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c98c0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/114
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c99d0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/115
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c9ae0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/116
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c9bf0: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/117
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c9d00: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/118
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c9e10: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/119
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c7040: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/120
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c7150: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/121
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c7260: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/122
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c7370: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/123
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c7480: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+Traceback (most recent call last):
+  File &#34;src/gevent/greenlet.py&#34;, line 906, in gevent._gevent_cgreenlet.Greenlet.run
+  File &#34;/Users/jochen/projects/will_it_saturate/will_it_saturate/gevent_client.py&#34;, line 45, in streaming_fetch
+    r.raise_for_status()
+  File &#34;/Users/jochen/.virtualenvs/wis/lib/python3.9/site-packages/requests/models.py&#34;, line 943, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: http://192.168.178.113:5100/serve_sync_filesystem/data/10000000_10_125000000/124
+2021-06-24T09:18:01Z &lt;Greenlet at 0x12d4c7590: streaming_fetch(&#39;http://192.168.178.113:5100/serve_sync_filesystem)&gt; failed with HTTPError
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-f9429be92be1&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span>     name<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;gevent&#34;</span><span class="ansi-blue-fg">,</span> host<span class="ansi-blue-fg">=</span>server_host_name<span class="ansi-blue-fg">,</span> port<span class="ansi-blue-fg">=</span>server_port
+<span class="ansi-green-intense-fg ansi-bold">      5</span> )
+<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg"> </span>elapsed <span class="ansi-blue-fg">=</span> benchmark_client<span class="ansi-blue-fg">.</span>measure<span class="ansi-blue-fg">(</span>epoch<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      7</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;elapsed: {elapsed}&#34;</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/gevent_client.py</span> in <span class="ansi-cyan-fg">measure</span><span class="ansi-blue-fg">(self, epoch)</span>
+<span class="ansi-green-intense-fg ansi-bold">     78</span> <span class="ansi-red-fg">#         for response in responses:</span>
+<span class="ansi-green-intense-fg ansi-bold">     79</span> <span class="ansi-red-fg">#             print(response.url, len(response.content))</span>
+<span class="ansi-green-fg">---&gt; 80</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>set_timestamps<span class="ansi-blue-fg">(</span>responses<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     81</span>         <span class="ansi-green-fg">return</span> elapsed
+<span class="ansi-green-intense-fg ansi-bold">     82</span> 
+
+<span class="ansi-green-fg">~/projects/will_it_saturate/will_it_saturate/gevent_client.py</span> in <span class="ansi-cyan-fg">set_timestamps</span><span class="ansi-blue-fg">(self, responses)</span>
+<span class="ansi-green-intense-fg ansi-bold">     58</span>     <span class="ansi-green-fg">def</span> set_timestamps<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> responses<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">     59</span>         <span class="ansi-green-fg">for</span> response <span class="ansi-green-fg">in</span> responses<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-fg">---&gt; 60</span><span class="ansi-red-fg">             </span>self<span class="ansi-blue-fg">.</span>timestamps<span class="ansi-blue-fg">.</span>append<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">(</span>response<span class="ansi-blue-fg">.</span>started<span class="ansi-blue-fg">,</span> response<span class="ansi-blue-fg">.</span>stopped<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     61</span> 
+<span class="ansi-green-intense-fg ansi-bold">     62</span>     <span class="ansi-green-fg">def</span> measure_server<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> epoch<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;started&#39;</pre>
 </div>
 </div>
 
@@ -263,13 +1425,13 @@ elapsed: 12.121698357000014
 
 
 
-<div id="dee33112-7d87-4f83-811a-0c020ca991f5"></div>
+<div id="6af02d45-bed9-4821-b08e-b9cbafa2c73c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dee33112-7d87-4f83-811a-0c020ca991f5');
+var element = $('#6af02d45-bed9-4821-b08e-b9cbafa2c73c');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# dont_test\n\nbenchmark_client = gevent_client.GeventClient(\n    name=\"gevent\", host=server_host_name, port=server_port\n)\nelapsed = benchmark_client.measure(epoch)\nprint(f\"elapsed: {elapsed}\")";
                 var nbb_formatted_code = "# dont_test\n\nbenchmark_client = gevent_client.GeventClient(\n    name=\"gevent\", host=server_host_name, port=server_port\n)\nelapsed = benchmark_client.measure(epoch)\nprint(f\"elapsed: {elapsed}\")";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -328,10 +1490,10 @@ var element = $('#dee33112-7d87-4f83-811a-0c020ca991f5');
 
 
 
-<div id="8507306e-04ed-4067-a5f2-ebcaf335de0c"></div>
+<div id="76315140-bd7a-47d8-9386-f68562cc42bc"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8507306e-04ed-4067-a5f2-ebcaf335de0c');
+var element = $('#76315140-bd7a-47d8-9386-f68562cc42bc');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -381,10 +1543,10 @@ var element = $('#8507306e-04ed-4067-a5f2-ebcaf335de0c');
 
 
 
-<div id="a1946a83-5600-4f52-af30-aa52a3185c9b"></div>
+<div id="87df07d3-78ee-4b75-8a9f-30ca5b0f671a"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a1946a83-5600-4f52-af30-aa52a3185c9b');
+var element = $('#87df07d3-78ee-4b75-8a9f-30ca5b0f671a');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -450,10 +1612,10 @@ height=374
 
 
 
-<div id="c5c570e7-23c3-4a74-9b7a-f756b77ccd8f"></div>
+<div id="1941abbb-7d71-4183-8751-9736feb3ec3d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#c5c570e7-23c3-4a74-9b7a-f756b77ccd8f');
+var element = $('#1941abbb-7d71-4183-8751-9736feb3ec3d');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -505,10 +1667,10 @@ var element = $('#c5c570e7-23c3-4a74-9b7a-f756b77ccd8f');
 
 
 
-<div id="885c92ab-51e8-45fb-8818-7996d57d3b6e"></div>
+<div id="96ff7aec-c533-4cf5-8f3a-c38739c6a0f6"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#885c92ab-51e8-45fb-8818-7996d57d3b6e');
+var element = $('#96ff7aec-c533-4cf5-8f3a-c38739c6a0f6');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -573,10 +1735,10 @@ elapsed: 12.014179154999965
 
 
 
-<div id="3878cf78-42ce-4e17-ae38-8fe25661376b"></div>
+<div id="71320bfb-d338-4096-85eb-c59f50d4257e"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3878cf78-42ce-4e17-ae38-8fe25661376b');
+var element = $('#71320bfb-d338-4096-85eb-c59f50d4257e');
 
             setTimeout(function() {
                 var nbb_cell_id = 20;
@@ -626,10 +1788,10 @@ var element = $('#3878cf78-42ce-4e17-ae38-8fe25661376b');
 
 
 
-<div id="7558a741-b321-4006-a080-d8758456c603"></div>
+<div id="9123bcd1-dc78-4937-a515-7677604448c9"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7558a741-b321-4006-a080-d8758456c603');
+var element = $('#9123bcd1-dc78-4937-a515-7677604448c9');
 
             setTimeout(function() {
                 var nbb_cell_id = 21;
@@ -695,10 +1857,10 @@ height=374
 
 
 
-<div id="9ab65e6f-77b7-49a4-9c58-fe04d1cf2b9d"></div>
+<div id="9fd4891d-da9d-456a-9740-e9114da73922"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9ab65e6f-77b7-49a4-9c58-fe04d1cf2b9d');
+var element = $('#9fd4891d-da9d-456a-9740-e9114da73922');
 
             setTimeout(function() {
                 var nbb_cell_id = 22;

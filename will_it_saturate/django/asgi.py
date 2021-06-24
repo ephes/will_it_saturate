@@ -23,20 +23,16 @@ from .handlers import AsyncMinioASGIHandler
 
 
 def create_app_filesystem():
-    urls.urlpatterns = urls.urlpatterns_async_filesystem
     return AsyncFileASGIHandler()
 
 
 def create_app_minio():
-    urls.urlpatterns = urls.urlpatterns_async_minio
     return AsyncMinioASGIHandler()
 
 
 def create_django_fileresponse_app():
-    urls.urlpatterns = urls.urlpatterns_async_django_fileresponse
     return DFAsyncFileASGIHandler()
 
 
 def create_django_fileresponse_app():
-    urls.urlpatterns = urls.urlpatterns_async_django_fileresponse
     return DFAsyncFileASGIHandler()
