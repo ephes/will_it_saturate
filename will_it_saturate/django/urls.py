@@ -12,6 +12,6 @@ urlpatterns = [
     path("serve_async_filesystem/<str:base>/<str:path>/<int:num>", views.serve_async_filesystem),
     path("server_sync_minio/<str:base>/<str:path>/<int:num>", views.serve_sync_minio),
     path("serve_async_minio/<str:base>/<str:path>/<int:num>", views.serve_async_minio),
-    path("serve_async_django_fileresponse<str:base>/<str:path>/<int:num>", views.serve_async_django_fileresponse),
+    path("serve_async_django_fileresponse/<str:base>/<str:path>/<int:num>", views.serve_async_django_fileresponse),
 
 ]
