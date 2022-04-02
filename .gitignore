@@ -157,3 +157,6 @@ minio
 
 # wrk
 wrk.lua
+
+# nginx
+nginx.conf
