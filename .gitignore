@@ -154,3 +154,6 @@ django.db
 
 # minio binary
 minio
+
+# wrk
+wrk.lua
