@@ -23,31 +23,31 @@ class ControlClient(BaseModel):
         return f"http://{self.host.name}:{self.host.port}/"
 
     def get_host_details(self):
-        url = urljoin(self.base_url, "host-details")
+        url = urljoin(self.base_url, "host-details/")
         r = httpx.get(url)
         r.raise_for_status()
         return HostDetails(**r.json())
 
     def get_or_create_files(self, epoch):
-        url = urljoin(self.base_url, "epochs")
+        url = urljoin(self.base_url, "epochs/")
         r = httpx.post(url, json=epoch.dict(), timeout=self.timeout * 3)
         r.raise_for_status()
         return [BenchmarkFile(**file) for file in r.json()["files"]]
 
     def get_or_create_server(self, server):
-        url = urljoin(self.base_url, "servers")
+        url = urljoin(self.base_url, "servers/")
         r = httpx.post(url, json=server.params(), timeout=self.timeout * 5)
         r.raise_for_status()
         return ModelParameters(**r.json()).to_model()
 
     def stop_server(self, server):
-        url = urljoin(self.base_url, "server-stop")
+        url = urljoin(self.base_url, "server-stop/")
         r = httpx.post(url, json=server.params())
         r.raise_for_status()
         return r.json()
 
     def measure(self, client, epoch):
-        url = urljoin(self.base_url, "measure")
+        url = urljoin(self.base_url, "measure/")
         data = {"client_params": client.params(), "epoch": epoch.dict()}
         r = httpx.post(url, json=data, timeout=600)
         r.raise_for_status()

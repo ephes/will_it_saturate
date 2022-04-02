@@ -132,13 +132,14 @@ def run_httpx_with_args(exponent: int):
     server = BaseServer(host=server_host_name, port=server_port)
     server_control_host = Host(name=server_host_name, port=control_server_port)
     server_control_client = ControlClient(host=server_control_host)
-    epoch = Epoch(file_size=10 ** exponent, duration=10)
+    epoch = Epoch(file_size=10**exponent, duration=10)
     epoch.files = server_control_client.get_or_create_files(epoch)
     epoch.create_urls_from_files(server)
-    benchmark_client = HttpxClient(name="httpx", host=server_host_name, port=server_port)
+    benchmark_client = HttpxClient(
+        name="httpx", host=server_host_name, port=server_port
+    )
     elapsed = benchmark_client.measure(epoch)
     print(f"elapsed: {elapsed}")
-
 
 
 def run_httpx():
@@ -206,12 +207,20 @@ class WrkClient(BaseClient):
     duration: int = 120
     threads: int = 1
     host: str = "localhost"
-    port: str = "8000"
+    port: str = "5001"
+
+    def get_host_and_port_from_epoch(self, epoch):
+        url = epoch.urls[0]
+        host = url.split(":")[1].split("/")[-1]
+        port = url.split(":")[-1].split("/")[0]
+        return host, port
 
     def create_urls_string(self, epoch):
         urls = []
-        for bf in epoch.files:
-            urls.append(f'    {{path = "/{bf.path}"}},')
+        for url in epoch.urls:
+            path = "/".join(url.split(":")[-1].split("/")[1:])
+            urls.append(f'    {{path = "/{path}"}},')
+        print("urls: ", urls)
         return "\n".join(urls)
 
     def create_lua_script(self, epoch):
@@ -246,6 +255,8 @@ request = function()
 end
         """
         urls = self.create_urls_string(epoch)
+        # urls = epoch.urls
+        print("urls: ", urls)
         lua = "\n".join([requests_head, urls, requests_tail, lua_body])
         with Path(f"wrk.lua").open("w") as f:
             f.write(lua)
@@ -275,6 +286,7 @@ end
 
     def measure(self, epoch):
         print("measure? wtf?")
+        self.host, self.port = self.get_host_and_port_from_epoch(epoch)
         self.create_lua_script(epoch)
         elapsed = self.run_wrk()
         return elapsed
