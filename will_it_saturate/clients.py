@@ -190,12 +190,15 @@ class AioHttpClient(BaseClient):
         self.verify_checksums(epoch, responses)
         self.set_timestamps(responses)
         print("timestamps: ", len(self.timestamps))
-        return elapsed, self.timestamps
+        # return elapsed, self.timestamps
+        return elapsed
 
     def measure(self, epoch):
         with Pool(1) as p:
-            [result, timestamps] = p.map(self.measure_in_new_process, [epoch])
-        return result, timestamps
+            # [result, timestamps] = p.map(self.measure_in_new_process, [epoch])
+            [result] = p.map(self.measure_in_new_process, [epoch])
+        return result
+        # return result, timestamps
 
 # Cell
 

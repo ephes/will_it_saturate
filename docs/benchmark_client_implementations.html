@@ -52,13 +52,12 @@ nb_path: "21_benchmark_client_implementations.ipynb"
 
 
 
-<div id="7bdda258-e2b5-4978-a790-e44c83f4a0ec"></div>
-<div class="output_subarea output_javascript ">
+<div id="e3a3c97f-a9ba-4b37-a60d-d5554d056ef5" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7bdda258-e2b5-4978-a790-e44c83f4a0ec');
+var element = $('#e3a3c97f-a9ba-4b37-a60d-d5554d056ef5');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 3;
                 var nbb_unformatted_code = "from will_it_saturate.clients import BaseClient\nfrom will_it_saturate.registry import register_model";
                 var nbb_formatted_code = "from will_it_saturate.clients import BaseClient\nfrom will_it_saturate.registry import register_model";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -113,13 +112,12 @@ var element = $('#7bdda258-e2b5-4978-a790-e44c83f4a0ec');
 
 
 
-<div id="e6d704f4-d951-4997-8e09-9a38c3e787ef"></div>
-<div class="output_subarea output_javascript ">
+<div id="9cb9ffde-5e46-42b1-8a5a-671eda438903" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e6d704f4-d951-4997-8e09-9a38c3e787ef');
+var element = $('#9cb9ffde-5e46-42b1-8a5a-671eda438903');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
+                var nbb_cell_id = 10;
                 var nbb_unformatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
                 var nbb_formatted_code = "# os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"] = \"YES\"\n# set_start_method(\"fork\")\n# print(os.environ[\"OBJC_DISABLE_INITIALIZE_FORK_SAFETY\"])";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -165,11 +163,11 @@ var element = $('#e6d704f4-d951-4997-8e09-9a38c3e787ef');
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">gigabit</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">9</span>
+<span class="n">gigabit</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="mi">9</span>
 <span class="n">bandwidth</span> <span class="o">=</span> <span class="n">gigabit</span> <span class="o">/</span> <span class="n">byte</span>
 
 <span class="c1"># file_sizes = [10 ** 7, 10 ** 6]</span>
-<span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="o">**</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span> <span class="o">**</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">file_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">]</span>
 <span class="c1"># file_sizes = [10 ** 7]</span>
 
 <span class="c1"># benchmark = Benchmark(</span>
@@ -192,15 +190,14 @@ var element = $('#e6d704f4-d951-4997-8e09-9a38c3e787ef');
 
 
 
-<div id="8fff64fb-7432-4ea2-b989-aecd76c91edd"></div>
-<div class="output_subarea output_javascript ">
+<div id="6a2e9581-22d9-4136-a8f1-7d86adb20698" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8fff64fb-7432-4ea2-b989-aecd76c91edd');
+var element = $('#6a2e9581-22d9-4136-a8f1-7d86adb20698');
 
             setTimeout(function() {
-                var nbb_cell_id = 9;
-                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\n# benchmark = Benchmark(\n#     bandwidth=bandwidth,\n#     duration=3,\n#     file_sizes=file_sizes,\n# )\n# benchmark.create_epochs()";
-                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10 ** 9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n# file_sizes = [10 ** 7]\n\n# benchmark = Benchmark(\n#     bandwidth=bandwidth,\n#     duration=3,\n#     file_sizes=file_sizes,\n# )\n# benchmark.create_epochs()";
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10**9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10**7, 10**6, 10**5]\n# file_sizes = [10 ** 7]\n\n# benchmark = Benchmark(\n#     bandwidth=bandwidth,\n#     duration=3,\n#     file_sizes=file_sizes,\n# )\n# benchmark.create_epochs()";
+                var nbb_formatted_code = "# dont_test\n\nbyte = 8\ngigabit = 10**9\nbandwidth = gigabit / byte\n\n# file_sizes = [10 ** 7, 10 ** 6]\nfile_sizes = [10**7, 10**6, 10**5]\n# file_sizes = [10 ** 7]\n\n# benchmark = Benchmark(\n#     bandwidth=bandwidth,\n#     duration=3,\n#     file_sizes=file_sizes,\n# )\n# benchmark.create_epochs()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -259,13 +256,12 @@ var element = $('#8fff64fb-7432-4ea2-b989-aecd76c91edd');
 
 
 
-<div id="fe392342-4704-4959-9a64-8fa4df784781"></div>
-<div class="output_subarea output_javascript ">
+<div id="d0e477e5-0453-49f8-b021-faa6f19fac77" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#fe392342-4704-4959-9a64-8fa4df784781');
+var element = $('#d0e477e5-0453-49f8-b021-faa6f19fac77');
 
             setTimeout(function() {
-                var nbb_cell_id = 10;
+                var nbb_cell_id = 8;
                 var nbb_unformatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\n@register_model\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 50)\n        print(\"max_connections: \", max_connections)\n        # max_connections = 10\n        limits = httpx.Limits(\n            max_keepalive_connections=10, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\n# def run_httpx():\n#     byte = 8\n#     gigabit = 10 ** 9\n#     bandwidth = gigabit / byte\n#\n#     # file_sizes = [10 ** 7, 10 ** 6]\n#     # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n#     file_sizes = [10 ** 7]\n#\n#     benchmark = Benchmark(\n#         bandwidth=bandwidth,\n#         duration=3,\n#         file_sizes=file_sizes,\n#         servers=[BenchmarkServer(name=\"uvicorn\")],\n#         clients=[HttpxClient(name=\"httpx\")],\n#     )\n#     benchmark.create_rows()\n#     benchmark.run()\n#     print(benchmark.results_frame)";
                 var nbb_formatted_code = "# export\n\n\n# just here because of broken nbdev confusing lua with python\ncounter = 0\nrequest = None\n\n\n@register_model\nclass HttpxClient(BaseClient):\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        max_connections = min(epoch.number_of_connections, 50)\n        print(\"max_connections: \", max_connections)\n        # max_connections = 10\n        limits = httpx.Limits(\n            max_keepalive_connections=10, max_connections=max_connections\n        )\n        timeout = httpx.Timeout(30.0, connect=60.0)\n        start = time.perf_counter()\n        async with httpx.AsyncClient(limits=limits, timeout=timeout) as client:\n            responses = await asyncio.gather(*[client.get(url) for url in epoch.urls])\n        elapsed = time.perf_counter() - start\n        print(\"done: \", elapsed)\n        print(\"responses status: \", responses[0].status_code)\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        print(\"new process\")\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure\")\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n\n\n# def run_httpx():\n#     byte = 8\n#     gigabit = 10 ** 9\n#     bandwidth = gigabit / byte\n#\n#     # file_sizes = [10 ** 7, 10 ** 6]\n#     # file_sizes = [10 ** 7, 10 ** 6, 10 ** 5]\n#     file_sizes = [10 ** 7]\n#\n#     benchmark = Benchmark(\n#         bandwidth=bandwidth,\n#         duration=3,\n#         file_sizes=file_sizes,\n#         servers=[BenchmarkServer(name=\"uvicorn\")],\n#         clients=[HttpxClient(name=\"httpx\")],\n#     )\n#     benchmark.create_rows()\n#     benchmark.run()\n#     print(benchmark.results_frame)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -325,7 +321,7 @@ var element = $('#fe392342-4704-4959-9a64-8fa4df784781');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L144" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
+<h4 id="run_httpx" class="doc_header"><code>run_httpx</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L145" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>run_httpx</code>()</p>
 </blockquote>
 
 </div>
@@ -369,10 +365,9 @@ var element = $('#fe392342-4704-4959-9a64-8fa4df784781');
 
 
 
-<div id="74bc69ce-b2ae-4eea-8572-2a04aa7ad2c0"></div>
-<div class="output_subarea output_javascript ">
+<div id="9233c432-b440-471a-b1d6-89501798a008" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#74bc69ce-b2ae-4eea-8572-2a04aa7ad2c0');
+var element = $('#9233c432-b440-471a-b1d6-89501798a008');
 
             setTimeout(function() {
                 var nbb_cell_id = 9;
@@ -417,7 +412,7 @@ var element = $('#74bc69ce-b2ae-4eea-8572-2a04aa7ad2c0');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L150" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>, <strong><code>started</code></strong>, <strong><code>stopped</code></strong>)</p>
+<h2 id="AioHttpResponse" class="doc_header"><code>class</code> <code>AioHttpResponse</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L151" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpResponse</code>(<strong><code>url</code></strong>, <strong><code>content</code></strong>, <strong><code>started</code></strong>, <strong><code>stopped</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -441,7 +436,7 @@ var element = $('#74bc69ce-b2ae-4eea-8572-2a04aa7ad2c0');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L158" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>timestamps</code></strong>:<code>list</code>=<em><code>[]</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="AioHttpClient" class="doc_header"><code>class</code> <code>AioHttpClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L159" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>AioHttpClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>timestamps</code></strong>:<code>list</code>=<em><code>[]</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -466,15 +461,14 @@ var element = $('#74bc69ce-b2ae-4eea-8572-2a04aa7ad2c0');
 
 
 
-<div id="592eaafa-7006-4841-b390-e17b33ce66ec"></div>
-<div class="output_subarea output_javascript ">
+<div id="acb90514-bcba-436a-876d-ac1747b44de8" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#592eaafa-7006-4841-b390-e17b33ce66ec');
+var element = $('#acb90514-bcba-436a-876d-ac1747b44de8');
 
             setTimeout(function() {
-                var nbb_cell_id = 15;
-                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content, started, stopped):\n        self.url = url\n        self.content = content\n        self.started = started\n        self.stopped = stopped\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    timestamps = []\n\n    def set_timestamps(self, responses):\n        for response in responses:\n            self.timestamps.append((response.started, response.stopped))\n\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            started = datetime.now()\n            content = await response.read()\n            stopped = datetime.now()\n            return AioHttpResponse(url, content, started, stopped)\n\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        urls = epoch.urls\n        max_connections = min(epoch.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        self.set_timestamps(responses)\n        print(\"timestamps: \", len(self.timestamps))\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
-                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content, started, stopped):\n        self.url = url\n        self.content = content\n        self.started = started\n        self.stopped = stopped\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    timestamps = []\n\n    def set_timestamps(self, responses):\n        for response in responses:\n            self.timestamps.append((response.started, response.stopped))\n\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            started = datetime.now()\n            content = await response.read()\n            stopped = datetime.now()\n            return AioHttpResponse(url, content, started, stopped)\n\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        urls = epoch.urls\n        max_connections = min(epoch.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        self.set_timestamps(responses)\n        print(\"timestamps: \", len(self.timestamps))\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content, started, stopped):\n        self.url = url\n        self.content = content\n        self.started = started\n        self.stopped = stopped\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    timestamps = []\n\n    def set_timestamps(self, responses):\n        for response in responses:\n            self.timestamps.append((response.started, response.stopped))\n\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            started = datetime.now()\n            content = await response.read()\n            stopped = datetime.now()\n            return AioHttpResponse(url, content, started, stopped)\n\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        urls = epoch.urls\n        max_connections = min(epoch.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        self.set_timestamps(responses)\n        print(\"timestamps: \", len(self.timestamps))\n        # return elapsed, self.timestamps\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            # [result, timestamps] = p.map(self.measure_in_new_process, [epoch])\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n        # return result, timestamps";
+                var nbb_formatted_code = "# export\n\n\nclass AioHttpResponse:\n    def __init__(self, url, content, started, stopped):\n        self.url = url\n        self.content = content\n        self.started = started\n        self.stopped = stopped\n\n\n@register_model\nclass AioHttpClient(BaseClient):\n    timestamps = []\n\n    def set_timestamps(self, responses):\n        for response in responses:\n            self.timestamps.append((response.started, response.stopped))\n\n    async def fetch_page(self, session, url):\n        async with session.get(url) as response:\n            started = datetime.now()\n            content = await response.read()\n            stopped = datetime.now()\n            return AioHttpResponse(url, content, started, stopped)\n\n    async def measure_server(self, epoch):\n        print(\"measure server\")\n        print(epoch.urls[0])\n        urls = epoch.urls\n        max_connections = min(epoch.number_of_connections, 200)\n        conn = aiohttp.TCPConnector(limit=max_connections)\n        responses = []\n        start = time.perf_counter()\n        async with aiohttp.ClientSession(connector=conn) as session:\n            tasks = [asyncio.create_task(self.fetch_page(session, url)) for url in urls]\n            responses = await asyncio.gather(*tasks)\n        elapsed = time.perf_counter() - start\n        return elapsed, responses\n\n    def measure_in_new_process(self, epoch):\n        elapsed, responses = asyncio.run(self.measure_server(epoch))\n        self.verify_checksums(epoch, responses)\n        self.set_timestamps(responses)\n        print(\"timestamps: \", len(self.timestamps))\n        # return elapsed, self.timestamps\n        return elapsed\n\n    def measure(self, epoch):\n        with Pool(1) as p:\n            # [result, timestamps] = p.map(self.measure_in_new_process, [epoch])\n            [result] = p.map(self.measure_in_new_process, [epoch])\n        return result\n        # return result, timestamps";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -533,7 +527,7 @@ var element = $('#592eaafa-7006-4841-b390-e17b33ce66ec');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L202" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>120</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>str</code>=<em><code>'8000'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
+<h2 id="WrkClient" class="doc_header"><code>class</code> <code>WrkClient</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/clients.py#L206" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>WrkClient</code>(<strong><code>name</code></strong>:<code>str</code>=<em><code>'base_client'</code></em>, <strong><code>connections</code></strong>:<code>int</code>=<em><code>20</code></em>, <strong><code>duration</code></strong>:<code>int</code>=<em><code>120</code></em>, <strong><code>threads</code></strong>:<code>int</code>=<em><code>1</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>str</code>=<em><code>'5001'</code></em>) :: <a href="/will_it_saturate/clients.html#BaseClient"><code>BaseClient</code></a></p>
 </blockquote>
 
 </div>
@@ -558,15 +552,14 @@ var element = $('#592eaafa-7006-4841-b390-e17b33ce66ec');
 
 
 
-<div id="80fb5d15-7293-49ca-80e5-d753db0a2ad9"></div>
-<div class="output_subarea output_javascript ">
+<div id="ffb2243f-3ba9-4a6c-b0d2-d6e26f72f72b" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#80fb5d15-7293-49ca-80e5-d753db0a2ad9');
+var element = $('#ffb2243f-3ba9-4a6c-b0d2-d6e26f72f72b');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass WrkClient(BaseClient):\n    connections: int = 20\n    # set duration to two minutes since it is 10 seconds by default and kills the benchmark\n    duration: int = 120\n    threads: int = 1\n    host: str = \"localhost\"\n    port: str = \"8000\"\n\n    def create_urls_string(self, epoch):\n        urls = []\n        for bf in epoch.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, epoch):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(epoch)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        command = [\n            \"wrk\",\n            \"-c\",\n            str(self.connections),\n            \"-t\",\n            str(self.threads),\n            \"-s\",\n            \"wrk.lua\",\n            f\"http://{self.host}:{self.port}\",\n        ]\n        print(\"command: \", \" \".join(command))\n        output = subprocess.run(\n            command,\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure? wtf?\")\n        self.create_lua_script(epoch)\n        elapsed = self.run_wrk()\n        return elapsed";
-                var nbb_formatted_code = "# export\n\n\n@register_model\nclass WrkClient(BaseClient):\n    connections: int = 20\n    # set duration to two minutes since it is 10 seconds by default and kills the benchmark\n    duration: int = 120\n    threads: int = 1\n    host: str = \"localhost\"\n    port: str = \"8000\"\n\n    def create_urls_string(self, epoch):\n        urls = []\n        for bf in epoch.files:\n            urls.append(f'    {{path = \"/{bf.path}\"}},')\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, epoch):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(epoch)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        command = [\n            \"wrk\",\n            \"-c\",\n            str(self.connections),\n            \"-t\",\n            str(self.threads),\n            \"-s\",\n            \"wrk.lua\",\n            f\"http://{self.host}:{self.port}\",\n        ]\n        print(\"command: \", \" \".join(command))\n        output = subprocess.run(\n            command,\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure? wtf?\")\n        self.create_lua_script(epoch)\n        elapsed = self.run_wrk()\n        return elapsed";
+                var nbb_cell_id = 44;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass WrkClient(BaseClient):\n    connections: int = 20\n    # set duration to two minutes since it is 10 seconds by default and kills the benchmark\n    duration: int = 120\n    threads: int = 1\n    host: str = \"localhost\"\n    port: str = \"5001\"\n\n    def get_host_and_port_from_epoch(self, epoch):\n        url = epoch.urls[0]\n        host = url.split(\":\")[1].split(\"/\")[-1]\n        port = url.split(\":\")[-1].split(\"/\")[0]\n        return host, port\n\n    def create_urls_string(self, epoch):\n        urls = []\n        for url in epoch.urls:\n            path = \"/\".join(url.split(\":\")[-1].split(\"/\")[1:])\n            urls.append(f'    {{path = \"/{path}\"}},')\n        print(\"urls: \", urls)\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, epoch):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(epoch)\n        # urls = epoch.urls\n        print(\"urls: \", urls)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        command = [\n            \"wrk\",\n            \"-d\",\n            str(self.duration),\n            \"-c\",\n            str(self.connections),\n            \"-t\",\n            str(self.threads),\n            \"-s\",\n            \"wrk.lua\",\n            f\"http://{self.host}:{self.port}\",\n        ]\n        print(\"command: \", \" \".join(command))\n        output = subprocess.run(\n            command,\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure? wtf?\")\n        self.host, self.port = self.get_host_and_port_from_epoch(epoch)\n        self.create_lua_script(epoch)\n        elapsed = self.run_wrk()\n        return elapsed";
+                var nbb_formatted_code = "# export\n\n\n@register_model\nclass WrkClient(BaseClient):\n    connections: int = 20\n    # set duration to two minutes since it is 10 seconds by default and kills the benchmark\n    duration: int = 120\n    threads: int = 1\n    host: str = \"localhost\"\n    port: str = \"5001\"\n\n    def get_host_and_port_from_epoch(self, epoch):\n        url = epoch.urls[0]\n        host = url.split(\":\")[1].split(\"/\")[-1]\n        port = url.split(\":\")[-1].split(\"/\")[0]\n        return host, port\n\n    def create_urls_string(self, epoch):\n        urls = []\n        for url in epoch.urls:\n            path = \"/\".join(url.split(\":\")[-1].split(\"/\")[1:])\n            urls.append(f'    {{path = \"/{path}\"}},')\n        print(\"urls: \", urls)\n        return \"\\n\".join(urls)\n\n    def create_lua_script(self, epoch):\n        requests_head = \"requests = {\"\n        requests_tail = \"}\"\n        lua_body = \"\"\"\nprint(requests[1])\n\nif #requests <= 0 then\n  print(\"multiplerequests: No requests found.\")\n  os.exit()\nend\n\nprint(\"multiplerequests: Found \" .. #requests .. \" requests\")\n\ncounter = 1\nrequest = function()\n  -- Get the next requests array element\n  local request_object = requests[counter]\n\n  -- Increment the counter\n  counter = counter + 1\n\n  -- If the counter is longer than the requests array length -> stop and exit\n  if counter > #requests then\n    wrk.thread:stop()\n    os.exit()\n  end\n\n  -- Return the request object with the current URL path\n  return wrk.format(request_object.method, request_object.path, request_object.headers, request_object.body)\nend\n        \"\"\"\n        urls = self.create_urls_string(epoch)\n        # urls = epoch.urls\n        print(\"urls: \", urls)\n        lua = \"\\n\".join([requests_head, urls, requests_tail, lua_body])\n        with Path(f\"wrk.lua\").open(\"w\") as f:\n            f.write(lua)\n\n    def run_wrk(self):\n        kwargs = {\"capture_output\": True, \"text\": True}\n        start = time.perf_counter()\n        command = [\n            \"wrk\",\n            \"-d\",\n            str(self.duration),\n            \"-c\",\n            str(self.connections),\n            \"-t\",\n            str(self.threads),\n            \"-s\",\n            \"wrk.lua\",\n            f\"http://{self.host}:{self.port}\",\n        ]\n        print(\"command: \", \" \".join(command))\n        output = subprocess.run(\n            command,\n            **kwargs,\n        )\n        elapsed = time.perf_counter() - start\n        return elapsed\n\n    def measure(self, epoch):\n        print(\"measure? wtf?\")\n        self.host, self.port = self.get_host_and_port_from_epoch(epoch)\n        self.create_lua_script(epoch)\n        elapsed = self.run_wrk()\n        return elapsed";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -615,6 +608,50 @@ var element = $('#80fb5d15-7293-49ca-80e5-d753db0a2ad9');
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>CPU times: user 1.73 ms, sys: 8.84 ms, total: 10.6 ms
+Wall time: 26.6 ms
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="10ab06f9-4e91-42b9-9899-f9fb807b8f83" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#10ab06f9-4e91-42b9-9899-f9fb807b8f83');
+
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "%%time\n# dont_test\nkwargs = {\"capture_output\": True, \"text\": True}\noutput = subprocess.run([\"wrk\", \"-c20\", \"-t1\", \"-d2\", \"-s\", \"wrk.lua\", \"http://localhost:8000\"], **kwargs)\n# output = subprocess.run([\"wrk\", \"-d2\", \"http://localhost:8000\"], **kwargs)";
+                var nbb_formatted_code = "%%time\n# dont_test\nkwargs = {\"capture_output\": True, \"text\": True}\noutput = subprocess.run([\"wrk\", \"-c20\", \"-t1\", \"-d2\", \"-s\", \"wrk.lua\", \"http://localhost:8000\"], **kwargs)\n# output = subprocess.run([\"wrk\", \"-d2\", \"http://localhost:8000\"], **kwargs)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -629,6 +666,51 @@ var element = $('#80fb5d15-7293-49ca-80e5-d753db0a2ad9');
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>nil
+multiplerequests: No requests found.
+
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="315e29ea-2d4c-4160-8f84-c6d35e7d43e4" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#315e29ea-2d4c-4160-8f84-c6d35e7d43e4');
+
+            setTimeout(function() {
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "# dont_test\nprint(output.stdout)";
+                var nbb_formatted_code = "# dont_test\nprint(output.stdout)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -648,6 +730,126 @@ var element = $('#80fb5d15-7293-49ca-80e5-d753db0a2ad9');
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [28]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 4&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span style="color: rgb(95,135,135)"># dont_test</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> client <span style="color: rgb(98,98,98)">=</span> WrkClient()
+<span class="ansi-green-fg">----&gt; 4</span> elapsed <span style="color: rgb(98,98,98)">=</span> client<span style="color: rgb(98,98,98)">.</span>measure(<span class="ansi-yellow-bg">benchmark</span><span style="color: rgb(98,98,98)">.</span>epochs[<span style="color: rgb(98,98,98)">0</span>])
+<span class="ansi-green-intense-fg ansi-bold">      5</span> <span style="color: rgb(0,135,0)">print</span>(elapsed)
+
+<span class="ansi-red-fg">NameError</span>: name &#39;benchmark&#39; is not defined</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="c24ee7fd-6461-4d4b-985a-458adbb41777" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#c24ee7fd-6461-4d4b-985a-458adbb41777');
+
+            setTimeout(function() {
+                var nbb_cell_id = 28;
+                var nbb_unformatted_code = "# dont_test\n\nclient = WrkClient()\nelapsed = client.measure(benchmark.epochs[0])\nprint(elapsed)";
+                var nbb_formatted_code = "# dont_test\n\nclient = WrkClient()\nelapsed = client.measure(benchmark.epochs[0])\nprint(elapsed)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tests">Tests<a class="anchor-link" href="#Tests"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">host</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;10.0.0.1&quot;</span><span class="p">,</span> <span class="s2">&quot;5555&quot;</span>
+
+
+<span class="k">class</span> <span class="nc">Epoch</span><span class="p">:</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;http://</span><span class="si">{</span><span class="n">host</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">port</span><span class="si">}</span><span class="s2">/data/100000_3_125000000/0&quot;</span><span class="p">]</span>
+
+
+<span class="n">epoch</span> <span class="o">=</span> <span class="n">Epoch</span><span class="p">()</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">WrkClient</span><span class="p">()</span>
+<span class="n">actual_host</span><span class="p">,</span> <span class="n">actual_port</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_host_and_port_from_epoch</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">actual_host</span> <span class="o">==</span> <span class="n">host</span>
+<span class="k">assert</span> <span class="n">actual_port</span> <span class="o">==</span> <span class="n">port</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="15d4b5ee-7a01-4b92-ad24-28d641e25cce" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#15d4b5ee-7a01-4b92-ad24-28d641e25cce');
+
+            setTimeout(function() {
+                var nbb_cell_id = 45;
+                var nbb_unformatted_code = "host, port = \"10.0.0.1\", \"5555\"\n\n\nclass Epoch:\n    urls = [f\"http://{host}:{port}/data/100000_3_125000000/0\"]\n\n\nepoch = Epoch()\nclient = WrkClient()\nactual_host, actual_port = client.get_host_and_port_from_epoch(epoch)\nassert actual_host == host\nassert actual_port == port";
+                var nbb_formatted_code = "host, port = \"10.0.0.1\", \"5555\"\n\n\nclass Epoch:\n    urls = [f\"http://{host}:{port}/data/100000_3_125000000/0\"]\n\n\nepoch = Epoch()\nclient = WrkClient()\nactual_host, actual_port = client.get_host_and_port_from_epoch(epoch)\nassert actual_host == host\nassert actual_port == port";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
 </div>
 </div>
 
