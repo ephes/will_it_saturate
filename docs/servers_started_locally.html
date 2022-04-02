@@ -1,6 +1,6 @@
 ---
 
-title: Title
+title: Caddy
 
 
 keywords: fastai
@@ -61,10 +61,9 @@ nb_path: "16_servers_started_locally.ipynb"
 
 
 
-<div id="db448131-7ab0-4d65-bbe1-5d663e081240"></div>
-<div class="output_subarea output_javascript ">
+<div id="8c458d52-f333-439b-a199-e43f4060d961" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#db448131-7ab0-4d65-bbe1-5d663e081240');
+var element = $('#8c458d52-f333-439b-a199-e43f4060d961');
 
             setTimeout(function() {
                 var nbb_cell_id = 3;
@@ -103,7 +102,7 @@ var element = $('#db448131-7ab0-4d65-bbe1-5d663e081240');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="FastAPIUvicornServer" class="doc_header"><code>class</code> <code>FastAPIUvicornServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L44" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FastAPIUvicornServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'fastAPI/uvicorn'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="FastAPIUvicornServer" class="doc_header"><code>class</code> <code>FastAPIUvicornServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L46" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FastAPIUvicornServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'fastAPI/uvicorn'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -128,14 +127,13 @@ var element = $('#db448131-7ab0-4d65-bbe1-5d663e081240');
 
 
 
-<div id="0bb4e66e-9762-4db2-84db-c62a09e78af4"></div>
-<div class="output_subarea output_javascript ">
+<div id="47386aa9-787d-4cef-8f84-92301f02dbc3" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#0bb4e66e-9762-4db2-84db-c62a09e78af4');
+var element = $('#47386aa9-787d-4cef-8f84-92301f02dbc3');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "# export\n\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_formatted_code = "# export\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
@@ -193,15 +191,201 @@ var element = $('#0bb4e66e-9762-4db2-84db-c62a09e78af4');
 
 
 
-<div id="8c5b4337-1bc6-4769-a485-f7284af595a8"></div>
-<div class="output_subarea output_javascript ">
+<div id="21310c78-8972-4ebc-85ab-0e759d2ccce4" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#8c5b4337-1bc6-4769-a485-f7284af595a8');
+var element = $('#21310c78-8972-4ebc-85ab-0e759d2ccce4');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
                 var nbb_unformatted_code = "# dont_test\n\n# server = FastAPIUvicornServer()\n# server.start()\n# print(server.get_pid())\n# server.stop()\n# print(\"stopped..\")\n# print(server.get_pid())\n# print(server.started)";
                 var nbb_formatted_code = "# dont_test\n\n# server = FastAPIUvicornServer()\n# server.start()\n# print(server.get_pid())\n# server.stop()\n# print(\"stopped..\")\n# print(server.get_pid())\n# print(server.started)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span> <span class="o">=</span> <span class="n">FastAPIUvicornServer</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">get_pid</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>None
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="0623f563-b6f3-47fd-b131-b8c7c09ca4d6" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#0623f563-b6f3-47fd-b131-b8c7c09ca4d6');
+
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "server = FastAPIUvicornServer()\nprint(server.get_pid())";
+                var nbb_formatted_code = "server = FastAPIUvicornServer()\nprint(server.get_pid())";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="9d4127b1-40b5-44a6-88e0-a891f27cfe3b" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#9d4127b1-40b5-44a6-88e0-a891f27cfe3b');
+
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "server.start()";
+                var nbb_formatted_code = "server.start()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO:     Started server process [25235]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8000 (Press CTRL+C to quit)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [25235]
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="b0837d99-0215-4096-8958-a916f359a505" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#b0837d99-0215-4096-8958-a916f359a505');
+
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "server.stop()";
+                var nbb_formatted_code = "server.stop()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -241,7 +425,7 @@ var element = $('#8c5b4337-1bc6-4769-a485-f7284af595a8');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DjangoGunicornWSGIServer" class="doc_header"><code>class</code> <code>DjangoGunicornWSGIServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L91" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DjangoGunicornWSGIServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'django/gunicorn/wsgi'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="DjangoGunicornWSGIServer" class="doc_header"><code>class</code> <code>DjangoGunicornWSGIServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L93" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DjangoGunicornWSGIServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'django/gunicorn/wsgi'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -266,10 +450,9 @@ var element = $('#8c5b4337-1bc6-4769-a485-f7284af595a8');
 
 
 
-<div id="7407f39d-915b-4086-a52c-027d047d18bc"></div>
-<div class="output_subarea output_javascript ">
+<div id="9e45892d-2775-404f-9511-cd7f090f0467" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7407f39d-915b-4086-a52c-027d047d18bc');
+var element = $('#9e45892d-2775-404f-9511-cd7f090f0467');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -339,10 +522,9 @@ False
 
 
 
-<div id="f099cee5-d813-4b06-8f83-9240f9e037e4"></div>
-<div class="output_subarea output_javascript ">
+<div id="2a5c111b-3646-43a4-b4fc-494c96c6cc7e" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f099cee5-d813-4b06-8f83-9240f9e037e4');
+var element = $('#2a5c111b-3646-43a4-b4fc-494c96c6cc7e');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -362,6 +544,111 @@ var element = $('#f099cee5-d813-4b06-8f83-9240f9e037e4');
 </script>
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="CaddyFileServer" class="doc_header"><code>class</code> <code>CaddyFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L143" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CaddyFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'caddy'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">server</span> <span class="o">=</span> <span class="n">CaddyFileServer</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">start_server</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">get_pids</span><span class="p">())</span>
+<span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">get_pids</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">started</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>{&#34;level&#34;:&#34;warn&#34;,&#34;ts&#34;:1648802602.167109,&#34;logger&#34;:&#34;admin&#34;,&#34;msg&#34;:&#34;admin endpoint disabled&#34;}
+{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802602.1672041,&#34;logger&#34;:&#34;tls.cache.maintenance&#34;,&#34;msg&#34;:&#34;started background certificate maintenance&#34;,&#34;cache&#34;:&#34;0x140008c3dc0&#34;}
+{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802602.167552,&#34;logger&#34;:&#34;tls&#34;,&#34;msg&#34;:&#34;cleaning storage unit&#34;,&#34;description&#34;:&#34;FileStorage:/Users/jochen/Library/Application Support/Caddy&#34;}
+{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802602.167604,&#34;logger&#34;:&#34;tls&#34;,&#34;msg&#34;:&#34;finished cleaning storage units&#34;}
+{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802602.16818,&#34;msg&#34;:&#34;autosaved config (load with --resume flag)&#34;,&#34;file&#34;:&#34;/Users/jochen/Library/Application Support/Caddy/autosave.json&#34;}
+2022/04/01 10:43:22 Caddy 2 serving static files on 0.0.0.0:5001
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+[&#39;11319&#39;]
+1
+1
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802604.331993,&#34;msg&#34;:&#34;shutting down apps, then terminating&#34;,&#34;signal&#34;:&#34;SIGTERM&#34;}
+{&#34;level&#34;:&#34;warn&#34;,&#34;ts&#34;:1648802604.332008,&#34;msg&#34;:&#34;exiting; byeee!! 👋&#34;,&#34;signal&#34;:&#34;SIGTERM&#34;}
+{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802604.33333,&#34;logger&#34;:&#34;tls.cache.maintenance&#34;,&#34;msg&#34;:&#34;stopped background certificate maintenance&#34;,&#34;cache&#34;:&#34;0x140008c3dc0&#34;}
+{&#34;level&#34;:&#34;info&#34;,&#34;ts&#34;:1648802604.333366,&#34;msg&#34;:&#34;shutdown complete&#34;,&#34;signal&#34;:&#34;SIGTERM&#34;,&#34;exit_code&#34;:0}
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+[]
+0
+False
+</pre>
+</div>
 </div>
 
 </div>
