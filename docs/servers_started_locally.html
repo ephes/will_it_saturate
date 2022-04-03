@@ -55,6 +55,41 @@ nb_path: "16_servers_started_locally.ipynb"
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="a4222722-36da-4ddb-a751-5c3082aefb9c" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#a4222722-36da-4ddb-a751-5c3082aefb9c');
+
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "import time\nimport subprocess\n\nfrom pathlib import Path\n\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.registry import register_model";
+                var nbb_formatted_code = "import time\nimport subprocess\n\nfrom pathlib import Path\n\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.registry import register_model";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     {% endraw %}
 
@@ -94,14 +129,14 @@ nb_path: "16_servers_started_locally.ipynb"
 
 
 
-<div id="70610198-9df1-49fb-ad69-643965b5071e" class="output_subarea output_javascript ">
+<div id="5d85b69c-7878-4ed3-91bb-bca43f7d7ae0" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#70610198-9df1-49fb-ad69-643965b5071e');
+var element = $('#5d85b69c-7878-4ed3-91bb-bca43f7d7ae0');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
-                var nbb_formatted_code = "# export\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--workers\",\n                \"8\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_formatted_code = "# export\n\n\n@register_model\nclass FastAPIUvicornServer(BaseServer):\n    name: str = \"fastAPI/uvicorn\"\n\n    def get_pid(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(\n            f\"ps aux | grep will_it_saturate.fastapi.main:app\", **kwargs\n        )\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        if len(lines) > 0:\n            pid = lines[0].split()[1]\n            return pid\n\n    @property\n    def started(self):\n        return self.get_pid() is not None\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"uvicorn\",\n                \"--workers\",\n                \"8\",\n                \"--host\",\n                str(self.host),\n                \"--port\",\n                str(self.port),\n                \"--no-access-log\",\n                \"will_it_saturate.fastapi.main:app\",\n            ]\n        )\n        # subprocess.Popen([\"uvicorn\", \"will_it_saturate.fastapi.main:app\"])\n\n    def stop_server(self):\n        subprocess.check_output([\"kill\", self.get_pid()])\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -158,12 +193,12 @@ var element = $('#70610198-9df1-49fb-ad69-643965b5071e');
 
 
 
-<div id="bcf4212f-41af-4966-b9f0-ee62085315b9" class="output_subarea output_javascript ">
+<div id="6d493b21-2378-4791-ad7b-395f5134b807" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#bcf4212f-41af-4966-b9f0-ee62085315b9');
+var element = $('#6d493b21-2378-4791-ad7b-395f5134b807');
 
             setTimeout(function() {
-                var nbb_cell_id = 6;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# dont_test\n\n# server = FastAPIUvicornServer()\n# server.start()\n# print(server.get_pid())\n# server.stop()\n# print(\"stopped..\")\n# print(server.get_pid())\n# print(server.started)";
                 var nbb_formatted_code = "# dont_test\n\n# server = FastAPIUvicornServer()\n# server.start()\n# print(server.get_pid())\n# server.stop()\n# print(\"stopped..\")\n# print(server.get_pid())\n# print(server.started)";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -219,12 +254,12 @@ var element = $('#bcf4212f-41af-4966-b9f0-ee62085315b9');
 
 
 
-<div id="f5ed22d6-7547-4d7c-87a6-5b09f6cdbc4d" class="output_subarea output_javascript ">
+<div id="68773f12-7db3-4276-888c-1f994331cc38" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f5ed22d6-7547-4d7c-87a6-5b09f6cdbc4d');
+var element = $('#68773f12-7db3-4276-888c-1f994331cc38');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
+                var nbb_cell_id = 6;
                 var nbb_unformatted_code = "server = FastAPIUvicornServer()\nprint(server.get_pid())";
                 var nbb_formatted_code = "server = FastAPIUvicornServer()\nprint(server.get_pid())";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -271,12 +306,12 @@ var element = $('#f5ed22d6-7547-4d7c-87a6-5b09f6cdbc4d');
 
 
 
-<div id="3f540182-7b8e-45a1-99c7-c4a0d5357f08" class="output_subarea output_javascript ">
+<div id="1f9eae03-9f58-4aa5-982e-c79a211ed9f3" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#3f540182-7b8e-45a1-99c7-c4a0d5357f08');
+var element = $('#1f9eae03-9f58-4aa5-982e-c79a211ed9f3');
 
             setTimeout(function() {
-                var nbb_cell_id = 8;
+                var nbb_cell_id = 7;
                 var nbb_unformatted_code = "server.start()";
                 var nbb_formatted_code = "server.start()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -298,10 +333,10 @@ var element = $('#3f540182-7b8e-45a1-99c7-c4a0d5357f08');
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>INFO:     Started server process [25235]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://localhost:8000 (Press CTRL+C to quit)
+<pre>Usage: uvicorn [OPTIONS] APP
+Try &#39;uvicorn --help&#39; for help.
+
+Error: No such option: -w
 </pre>
 </div>
 </div>
@@ -345,9 +380,9 @@ INFO:     Finished server process [25235]
 
 
 
-<div id="7011cad3-9621-4d49-b8a5-6d4c69f6c489" class="output_subarea output_javascript ">
+<div id="e813f63a-3efb-4a97-806c-bed5c6ef21e4" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7011cad3-9621-4d49-b8a5-6d4c69f6c489');
+var element = $('#e813f63a-3efb-4a97-806c-bed5c6ef21e4');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -392,7 +427,7 @@ var element = $('#7011cad3-9621-4d49-b8a5-6d4c69f6c489');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DjangoGunicornWSGIServer" class="doc_header"><code>class</code> <code>DjangoGunicornWSGIServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L96" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DjangoGunicornWSGIServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'django/gunicorn/wsgi'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="DjangoGunicornWSGIServer" class="doc_header"><code>class</code> <code>DjangoGunicornWSGIServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L98" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DjangoGunicornWSGIServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'django/gunicorn/wsgi'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -417,12 +452,12 @@ var element = $('#7011cad3-9621-4d49-b8a5-6d4c69f6c489');
 
 
 
-<div id="e9ad676b-96aa-407d-af3d-ea2ef86a520a" class="output_subarea output_javascript ">
+<div id="d5570d62-5eb0-47d9-ac70-6bf2c6188ccd" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e9ad676b-96aa-407d-af3d-ea2ef86a520a');
+var element = $('#d5570d62-5eb0-47d9-ac70-6bf2c6188ccd');
 
             setTimeout(function() {
-                var nbb_cell_id = 7;
+                var nbb_cell_id = 5;
                 var nbb_unformatted_code = "# export\n\n\n@register_model\nclass DjangoGunicornWSGIServer(BaseServer):\n    name: str = \"django/gunicorn/wsgi\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep will_it_saturate.django.wsgi\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"gunicorn\",\n                \"--backlog\",\n                \"10000\",\n                \"-w\",\n                \"8\",\n                \"-b\" f\":{self.port}\",\n                \"will_it_saturate.django.wsgi\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_formatted_code = "# export\n\n\n@register_model\nclass DjangoGunicornWSGIServer(BaseServer):\n    name: str = \"django/gunicorn/wsgi\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep will_it_saturate.django.wsgi\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"gunicorn\",\n                \"--backlog\",\n                \"10000\",\n                \"-w\",\n                \"8\",\n                \"-b\" f\":{self.port}\",\n                \"will_it_saturate.django.wsgi\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_cells = Jupyter.notebook.get_cells();
@@ -489,9 +524,9 @@ False
 
 
 
-<div id="dfd9a639-d929-4475-ad39-6d7e635dcb6e" class="output_subarea output_javascript ">
+<div id="abf5301a-4b9b-40bd-9ca8-8002fac6e44c" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#dfd9a639-d929-4475-ad39-6d7e635dcb6e');
+var element = $('#abf5301a-4b9b-40bd-9ca8-8002fac6e44c');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -530,7 +565,7 @@ var element = $('#dfd9a639-d929-4475-ad39-6d7e635dcb6e');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CaddyFileServer" class="doc_header"><code>class</code> <code>CaddyFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L146" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CaddyFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'caddy'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="CaddyFileServer" class="doc_header"><code>class</code> <code>CaddyFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L148" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CaddyFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'caddy'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -555,14 +590,14 @@ var element = $('#dfd9a639-d929-4475-ad39-6d7e635dcb6e');
 
 
 
-<div id="e410c667-d401-4db8-931e-0223419a0e15" class="output_subarea output_javascript ">
+<div id="9c3093ec-31f4-415b-a618-69d68426ca5f" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e410c667-d401-4db8-931e-0223419a0e15');
+var element = $('#9c3093ec-31f4-415b-a618-69d68426ca5f');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "# export\n\nfrom pathlib import Path\n\n\n\n@register_model\nclass CaddyFileServer(BaseServer):\n    name: str = \"caddy\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i caddy\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"caddy\",\n                \"file-server\",\n                \"--listen\",\n                f\"0.0.0.0:{self.port}\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
-                var nbb_formatted_code = "# export\n\nfrom pathlib import Path\n\n\n@register_model\nclass CaddyFileServer(BaseServer):\n    name: str = \"caddy\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i caddy\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"caddy\",\n                \"file-server\",\n                \"--listen\",\n                f\"0.0.0.0:{self.port}\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass CaddyFileServer(BaseServer):\n    name: str = \"caddy\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i caddy\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"caddy\",\n                \"file-server\",\n                \"--listen\",\n                f\"0.0.0.0:{self.port}\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_formatted_code = "# export\n\n\n@register_model\nclass CaddyFileServer(BaseServer):\n    name: str = \"caddy\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i caddy\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"caddy\",\n                \"file-server\",\n                \"--listen\",\n                f\"0.0.0.0:{self.port}\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -676,7 +711,7 @@ False
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NginxFileServer" class="doc_header"><code>class</code> <code>NginxFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L193" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/minimal'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="NginxFileServer" class="doc_header"><code>class</code> <code>NginxFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L195" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/minimal'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -700,7 +735,7 @@ False
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="NginxSendfileServer" class="doc_header"><code>class</code> <code>NginxSendfileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L261" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxSendfileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/sendfile'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers_started_locally.html#NginxFileServer"><code>NginxFileServer</code></a></p>
+<h2 id="NginxSendfileServer" class="doc_header"><code>class</code> <code>NginxSendfileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L264" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxSendfileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/sendfile'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers_started_locally.html#NginxFileServer"><code>NginxFileServer</code></a></p>
 </blockquote>
 
 </div>
@@ -716,6 +751,41 @@ False
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="2a58b9c0-13f4-410a-bdcd-fded700113cb" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#2a58b9c0-13f4-410a-bdcd-fded700113cb');
+
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "# export\n\n\n@register_model\nclass NginxFileServer(BaseServer):\n    name: str = \"nginx/minimal\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i nginx\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def create_config(self):\n        cwd = Path.cwd()\n        server_root = str(cwd)\n        config = f\"\"\"\ndaemon off;\nerror_log /dev/null;\npid /tmp/nginx.pid;\nevents {{}}\nhttp {{\n    server {{\n        listen {self.port};\n        sendfile           off;\n        tcp_nopush         off;\n        tcp_nodelay        off;\n        root {server_root};\n    }}\n}}\n        \"\"\"\n        config_path = cwd / \"nginx.conf\"\n        with config_path.open(\"w\") as f:\n            f.write(config)\n        return config_path\n\n    def start_server(self):\n        config_path = self.create_config()\n        subprocess.Popen(\n            [\n                \"nginx\",\n                \"-c\",\n                str(config_path),\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()\n\n\n@register_model\nclass NginxSendfileServer(NginxFileServer):\n    name: str = \"nginx/sendfile\"\n\n    def create_config(self):\n        cwd = Path.cwd()\n        server_root = str(cwd)\n        config = f\"\"\"\nerror_log /dev/null;\npid /tmp/nginx.pid;\ndaemon off;\nevents {{}}\nhttp {{\n    server {{\n        listen    {self.port};\n        sendfile           on;\n        sendfile_max_chunk 1m;\n        tcp_nopush         on;\n        tcp_nodelay        on;\n        keepalive_timeout  65;\n        root {server_root};\n    }}\n}}\n        \"\"\"\n        print(config)\n        config_path = cwd / \"nginx.conf\"\n        with config_path.open(\"w\") as f:\n            f.write(config)\n        return config_path";
+                var nbb_formatted_code = "# export\n\n\n@register_model\nclass NginxFileServer(BaseServer):\n    name: str = \"nginx/minimal\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i nginx\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def create_config(self):\n        cwd = Path.cwd()\n        server_root = str(cwd)\n        config = f\"\"\"\ndaemon off;\nerror_log /dev/null;\npid /tmp/nginx.pid;\nevents {{}}\nhttp {{\n    server {{\n        listen {self.port};\n        sendfile           off;\n        tcp_nopush         off;\n        tcp_nodelay        off;\n        root {server_root};\n    }}\n}}\n        \"\"\"\n        config_path = cwd / \"nginx.conf\"\n        with config_path.open(\"w\") as f:\n            f.write(config)\n        return config_path\n\n    def start_server(self):\n        config_path = self.create_config()\n        subprocess.Popen(\n            [\n                \"nginx\",\n                \"-c\",\n                str(config_path),\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()\n\n\n@register_model\nclass NginxSendfileServer(NginxFileServer):\n    name: str = \"nginx/sendfile\"\n\n    def create_config(self):\n        cwd = Path.cwd()\n        server_root = str(cwd)\n        config = f\"\"\"\nerror_log /dev/null;\npid /tmp/nginx.pid;\ndaemon off;\nevents {{}}\nhttp {{\n    server {{\n        listen    {self.port};\n        sendfile           on;\n        sendfile_max_chunk 1m;\n        tcp_nopush         on;\n        tcp_nodelay        on;\n        keepalive_timeout  65;\n        root {server_root};\n    }}\n}}\n        \"\"\"\n        print(config)\n        config_path = cwd / \"nginx.conf\"\n        with config_path.open(\"w\") as f:\n            f.write(config)\n        return config_path";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -775,9 +845,9 @@ False
 
 
 
-<div id="76dd5c2c-bba4-4110-a94a-a9383fd17ec2" class="output_subarea output_javascript ">
+<div id="82ab9cf9-ab16-4830-bd31-5e01579ab61d" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#76dd5c2c-bba4-4110-a94a-a9383fd17ec2');
+var element = $('#82ab9cf9-ab16-4830-bd31-5e01579ab61d');
 
             setTimeout(function() {
                 var nbb_cell_id = 26;

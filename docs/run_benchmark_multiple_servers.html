@@ -66,9 +66,9 @@ nb_path: "63_run_benchmark_multiple_servers.ipynb"
 
 
 
-<div id="802915d5-c07e-4a0e-954a-7faa9d36fb42" class="output_subarea output_javascript ">
+<div id="c52cbbc8-3149-4b02-9063-694a9985d8d2" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#802915d5-c07e-4a0e-954a-7faa9d36fb42');
+var element = $('#c52cbbc8-3149-4b02-9063-694a9985d8d2');
 
             setTimeout(function() {
                 var nbb_cell_id = 2;
@@ -103,8 +103,64 @@ var element = $('#802915d5-c07e-4a0e-954a-7faa9d36fb42');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># control_host = &quot;localhost&quot;</span>
-<span class="n">control_host</span> <span class="o">=</span> <span class="s2">&quot;staging.wersdoerfer.de&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_results</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;local_results.db&quot;</span><span class="p">):</span>
+    <span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;local_results.db&quot;</span><span class="p">)</span>
+    <span class="n">register_default_tables</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">results</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="4140b767-694b-45af-9538-feadeb8549a4" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#4140b767-694b-45af-9538-feadeb8549a4');
+
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "def get_results(name=\"local_results.db\"):\n    repository = SqliteRepository.build_repository(\"local_results.db\")\n    register_default_tables(repository)\n    results = repository.tables[\"result\"]\n    return results";
+                var nbb_formatted_code = "def get_results(name=\"local_results.db\"):\n    repository = SqliteRepository.build_repository(\"local_results.db\")\n    register_default_tables(repository)\n    results = repository.tables[\"result\"]\n    return results";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">control_host</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+<span class="c1"># control_host = &quot;staging.wersdoerfer.de&quot;</span>
 <span class="n">control_port</span> <span class="o">=</span> <span class="mi">8100</span>
 
 <span class="n">client_control_host</span> <span class="o">=</span> <span class="n">Host</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">control_host</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="n">control_port</span><span class="p">)</span>
@@ -140,14 +196,14 @@ var element = $('#802915d5-c07e-4a0e-954a-7faa9d36fb42');
 
 
 
-<div id="febdface-a07d-4e28-8204-8ea98c82c61a" class="output_subarea output_javascript ">
+<div id="c9ea0968-76f7-4ec1-90e7-16aa67b45f2d" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#febdface-a07d-4e28-8204-8ea98c82c61a');
+var element = $('#c9ea0968-76f7-4ec1-90e7-16aa67b45f2d');
 
             setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "# dont_test\n\n# control_host = \"localhost\"\ncontrol_host = \"staging.wersdoerfer.de\"\ncontrol_port = 8100\n\nclient_control_host = Host(name=control_host, port=control_port)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_clients = [\n    clients.WrkClient(name=\"wrk\"),\n    # clients.AioHttpClient(name=\"aiohttp\"),\n    # clients.HttpxClient(name=\"httpx\"),\n]\n# benchmark_client = clients.WrkClient(name=\"wrk\")\n\nserver_control_host = Host(name=control_host, port=control_port)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver_classes = [\n    servers.NginxFileServer,\n    servers.FastAPIUvicornServer,\n    servers.NginxSendfileServer,\n    servers.CaddyFileServer,\n]";
-                var nbb_formatted_code = "# dont_test\n\n# control_host = \"localhost\"\ncontrol_host = \"staging.wersdoerfer.de\"\ncontrol_port = 8100\n\nclient_control_host = Host(name=control_host, port=control_port)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_clients = [\n    clients.WrkClient(name=\"wrk\"),\n    # clients.AioHttpClient(name=\"aiohttp\"),\n    # clients.HttpxClient(name=\"httpx\"),\n]\n# benchmark_client = clients.WrkClient(name=\"wrk\")\n\nserver_control_host = Host(name=control_host, port=control_port)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver_classes = [\n    servers.NginxFileServer,\n    servers.FastAPIUvicornServer,\n    servers.NginxSendfileServer,\n    servers.CaddyFileServer,\n]";
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# dont_test\n\ncontrol_host = \"localhost\"\n# control_host = \"staging.wersdoerfer.de\"\ncontrol_port = 8100\n\nclient_control_host = Host(name=control_host, port=control_port)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_clients = [\n    clients.WrkClient(name=\"wrk\"),\n    # clients.AioHttpClient(name=\"aiohttp\"),\n    # clients.HttpxClient(name=\"httpx\"),\n]\n# benchmark_client = clients.WrkClient(name=\"wrk\")\n\nserver_control_host = Host(name=control_host, port=control_port)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver_classes = [\n    servers.NginxFileServer,\n    servers.FastAPIUvicornServer,\n    servers.NginxSendfileServer,\n    servers.CaddyFileServer,\n]";
+                var nbb_formatted_code = "# dont_test\n\ncontrol_host = \"localhost\"\n# control_host = \"staging.wersdoerfer.de\"\ncontrol_port = 8100\n\nclient_control_host = Host(name=control_host, port=control_port)\nclient_control_client = ControlClient(host=client_control_host)\nclient_details = client_control_client.get_host_details()\nbenchmark_clients = [\n    clients.WrkClient(name=\"wrk\"),\n    # clients.AioHttpClient(name=\"aiohttp\"),\n    # clients.HttpxClient(name=\"httpx\"),\n]\n# benchmark_client = clients.WrkClient(name=\"wrk\")\n\nserver_control_host = Host(name=control_host, port=control_port)\nserver_control_client = ControlClient(host=server_control_host)\nserver_details = server_control_client.get_host_details()\nserver_classes = [\n    servers.NginxFileServer,\n    servers.FastAPIUvicornServer,\n    servers.NginxSendfileServer,\n    servers.CaddyFileServer,\n]";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -177,7 +233,7 @@ var element = $('#febdface-a07d-4e28-8204-8ea98c82c61a');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span><span class="p">,</span> <span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">byte</span><span class="p">,</span> <span class="n">file_size</span><span class="p">,</span> <span class="n">duration</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="o">**</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span>
 <span class="k">for</span> <span class="n">server_class</span> <span class="ow">in</span> <span class="n">server_classes</span><span class="p">:</span>
     <span class="n">server</span> <span class="o">=</span> <span class="n">server_control_client</span><span class="o">.</span><span class="n">get_or_create_server</span><span class="p">(</span>
         <span class="n">server_class</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">)</span>
@@ -195,9 +251,7 @@ var element = $('#febdface-a07d-4e28-8204-8ea98c82c61a');
             <span class="n">complete_size</span><span class="o">=</span><span class="n">epoch</span><span class="o">.</span><span class="n">complete_size</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">result</span><span class="o">.</span><span class="n">elapsed</span> <span class="o">=</span> <span class="n">client_control_client</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">benchmark_client</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
-        <span class="n">repository</span> <span class="o">=</span> <span class="n">SqliteRepository</span><span class="o">.</span><span class="n">build_repository</span><span class="p">(</span><span class="s2">&quot;all_results.db&quot;</span><span class="p">)</span>
-        <span class="n">register_default_tables</span><span class="p">(</span><span class="n">repository</span><span class="p">)</span>
-        <span class="n">results</span> <span class="o">=</span> <span class="n">repository</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="s2">&quot;result&quot;</span><span class="p">]</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">()</span>
         <span class="n">result_id</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">add_result</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
     <span class="n">server_control_client</span><span class="o">.</span><span class="n">stop_server</span><span class="p">(</span><span class="n">server</span><span class="p">)</span>
 </pre></div>
@@ -214,14 +268,14 @@ var element = $('#febdface-a07d-4e28-8204-8ea98c82c61a');
 
 
 
-<div id="9a240efb-7423-471d-8160-4d074c84e2cd" class="output_subarea output_javascript ">
+<div id="9d1c4261-532c-4d04-9528-fc81487b6f00" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#9a240efb-7423-471d-8160-4d074c84e2cd');
+var element = $('#9d1c4261-532c-4d04-9528-fc81487b6f00');
 
             setTimeout(function() {
-                var nbb_cell_id = 4;
-                var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10**5, 3\nfor server_class in server_classes:\n    server = server_control_client.get_or_create_server(\n        server_class(host=\"localhost\", port=5001)\n    )\n    epoch = Epoch(file_size=file_size, duration=duration)\n    files = server_control_client.get_or_create_files(epoch)\n    epoch.urls = [server.file_to_url(file) for file in files]\n    for benchmark_client in benchmark_clients:\n        result = Result(\n            server=server,\n            client=benchmark_client,\n            server_details=server_details,\n            client_details=client_details,\n            file_size=epoch.file_size,\n            complete_size=epoch.complete_size,\n        )\n        result.elapsed = client_control_client.measure(benchmark_client, epoch)\n        repository = SqliteRepository.build_repository(\"all_results.db\")\n        register_default_tables(repository)\n        results = repository.tables[\"result\"]\n        result_id = results.add_result(result)\n    server_control_client.stop_server(server)";
-                var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10**5, 3\nfor server_class in server_classes:\n    server = server_control_client.get_or_create_server(\n        server_class(host=\"localhost\", port=5001)\n    )\n    epoch = Epoch(file_size=file_size, duration=duration)\n    files = server_control_client.get_or_create_files(epoch)\n    epoch.urls = [server.file_to_url(file) for file in files]\n    for benchmark_client in benchmark_clients:\n        result = Result(\n            server=server,\n            client=benchmark_client,\n            server_details=server_details,\n            client_details=client_details,\n            file_size=epoch.file_size,\n            complete_size=epoch.complete_size,\n        )\n        result.elapsed = client_control_client.measure(benchmark_client, epoch)\n        repository = SqliteRepository.build_repository(\"all_results.db\")\n        register_default_tables(repository)\n        results = repository.tables[\"result\"]\n        result_id = results.add_result(result)\n    server_control_client.stop_server(server)";
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10**5, 10\nfor server_class in server_classes:\n    server = server_control_client.get_or_create_server(\n        server_class(host=\"localhost\", port=5001)\n    )\n    epoch = Epoch(file_size=file_size, duration=duration)\n    files = server_control_client.get_or_create_files(epoch)\n    epoch.urls = [server.file_to_url(file) for file in files]\n    for benchmark_client in benchmark_clients:\n        result = Result(\n            server=server,\n            client=benchmark_client,\n            server_details=server_details,\n            client_details=client_details,\n            file_size=epoch.file_size,\n            complete_size=epoch.complete_size,\n        )\n        result.elapsed = client_control_client.measure(benchmark_client, epoch)\n        results = get_results()\n        result_id = results.add_result(result)\n    server_control_client.stop_server(server)";
+                var nbb_formatted_code = "# dont_test\n\nbyte, file_size, duration = 8, 10**5, 10\nfor server_class in server_classes:\n    server = server_control_client.get_or_create_server(\n        server_class(host=\"localhost\", port=5001)\n    )\n    epoch = Epoch(file_size=file_size, duration=duration)\n    files = server_control_client.get_or_create_files(epoch)\n    epoch.urls = [server.file_to_url(file) for file in files]\n    for benchmark_client in benchmark_clients:\n        result = Result(\n            server=server,\n            client=benchmark_client,\n            server_details=server_details,\n            client_details=client_details,\n            file_size=epoch.file_size,\n            complete_size=epoch.complete_size,\n        )\n        result.elapsed = client_control_client.measure(benchmark_client, epoch)\n        results = get_results()\n        result_id = results.add_result(result)\n    server_control_client.stop_server(server)";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
@@ -251,15 +305,27 @@ var element = $('#9a240efb-7423-471d-8160-4d074c84e2cd');
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results_from_database</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">get_results</span><span class="p">()</span>
+<span class="n">results_from_database</span> <span class="o">=</span> <span class="n">results</span><span class="o">.</span><span class="n">get_results</span><span class="p">()</span>
 
-<span class="n">cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;server&quot;</span><span class="p">,</span> <span class="s2">&quot;client&quot;</span><span class="p">,</span> <span class="s2">&quot;elapsed&quot;</span><span class="p">,</span> <span class="s2">&quot;file_size_h&quot;</span><span class="p">,</span> <span class="s2">&quot;bytes_per_second_h&quot;</span><span class="p">])</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="n">show_columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;server&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;client&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;elapsed&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;file_size_h&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bytes_per_second_h&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;arch&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">show_columns</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;bytes_per_second&quot;</span><span class="p">])</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">[</span>
         <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">dict_for_pandas</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">}</span>
         <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">results_from_database</span>
     <span class="p">]</span>
 <span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;file_size_h&quot;</span><span class="p">,</span> <span class="s2">&quot;bytes_per_second&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)[</span><span class="n">show_columns</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -295,48 +361,45 @@ var element = $('#9a240efb-7423-471d-8160-4d074c84e2cd');
       <th>elapsed</th>
       <th>file_size_h</th>
       <th>bytes_per_second_h</th>
+      <th>arch</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>nginx/minimal</td>
-      <td>wrk</td>
-      <td>0.006021</td>
-      <td>97.66KB</td>
-      <td>58.0GB</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>nginx/minimal</td>
-      <td>wrk</td>
-      <td>0.005982</td>
-      <td>97.66KB</td>
-      <td>58.38GB</td>
-    </tr>
-    <tr>
       <th>2</th>
-      <td>fastAPI/uvicorn</td>
+      <td>nginx/sendfile</td>
       <td>wrk</td>
-      <td>6.253678</td>
+      <td>0.248960</td>
       <td>97.66KB</td>
-      <td>57.19MB</td>
+      <td>4.68GB</td>
+      <td>arm64</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>nginx/sendfile</td>
-      <td>wrk</td>
-      <td>0.006430</td>
-      <td>97.66KB</td>
-      <td>54.32GB</td>
-    </tr>
-    <tr>
-      <th>4</th>
       <td>caddy</td>
       <td>wrk</td>
-      <td>0.190858</td>
+      <td>0.467159</td>
       <td>97.66KB</td>
-      <td>1.83GB</td>
+      <td>2.49GB</td>
+      <td>arm64</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>nginx/minimal</td>
+      <td>wrk</td>
+      <td>0.971686</td>
+      <td>97.66KB</td>
+      <td>1.2GB</td>
+      <td>arm64</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>fastAPI/uvicorn</td>
+      <td>wrk</td>
+      <td>3.985233</td>
+      <td>97.66KB</td>
+      <td>299.13MB</td>
+      <td>arm64</td>
     </tr>
   </tbody>
 </table>
@@ -349,14 +412,14 @@ var element = $('#9a240efb-7423-471d-8160-4d074c84e2cd');
 
 
 
-<div id="b5255700-daf7-4c6c-97d3-f61231565f7a" class="output_subarea output_javascript ">
+<div id="d8427170-e07a-4975-a4cc-88c162decd16" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b5255700-daf7-4c6c-97d3-f61231565f7a');
+var element = $('#d8427170-e07a-4975-a4cc-88c162decd16');
 
             setTimeout(function() {
-                var nbb_cell_id = 5;
-                var nbb_unformatted_code = "# dont_test\n\nresults_from_database = results.get_results()\n\ncols = set([\"server\", \"client\", \"elapsed\", \"file_size_h\", \"bytes_per_second_h\"])\npd.DataFrame(\n    [\n        {k: v for k, v in r.dict_for_pandas().items() if k in cols}\n        for r in results_from_database\n    ]\n)";
-                var nbb_formatted_code = "# dont_test\n\nresults_from_database = results.get_results()\n\ncols = set([\"server\", \"client\", \"elapsed\", \"file_size_h\", \"bytes_per_second_h\"])\npd.DataFrame(\n    [\n        {k: v for k, v in r.dict_for_pandas().items() if k in cols}\n        for r in results_from_database\n    ]\n)";
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# dont_test\n\nresults = get_results()\nresults_from_database = results.get_results()\n\nshow_columns = [\n    \"server\",\n    \"client\",\n    \"elapsed\",\n    \"file_size_h\",\n    \"bytes_per_second_h\",\n    \"arch\",\n]\n\ncols = set(show_columns + [\"bytes_per_second\"])\n\ndf = pd.DataFrame(\n    [\n        {k: v for k, v in r.dict_for_pandas().items() if k in cols}\n        for r in results_from_database\n    ]\n)\ndf.sort_values([\"file_size_h\", \"bytes_per_second\"], ascending=False)[show_columns]";
+                var nbb_formatted_code = "# dont_test\n\nresults = get_results()\nresults_from_database = results.get_results()\n\nshow_columns = [\n    \"server\",\n    \"client\",\n    \"elapsed\",\n    \"file_size_h\",\n    \"bytes_per_second_h\",\n    \"arch\",\n]\n\ncols = set(show_columns + [\"bytes_per_second\"])\n\ndf = pd.DataFrame(\n    [\n        {k: v for k, v in r.dict_for_pandas().items() if k in cols}\n        for r in results_from_database\n    ]\n)\ndf.sort_values([\"file_size_h\", \"bytes_per_second\"], ascending=False)[show_columns]";
                 var nbb_cells = Jupyter.notebook.get_cells();
                 for (var i = 0; i < nbb_cells.length; ++i) {
                     if (nbb_cells[i].input_prompt_number == nbb_cell_id) {

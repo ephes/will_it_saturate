@@ -68,6 +68,8 @@ class FastAPIUvicornServer(BaseServer):
         subprocess.Popen(
             [
                 "uvicorn",
+                "--workers",
+                "4",
                 "--host",
                 str(self.host),
                 "--port",
@@ -214,6 +216,7 @@ class NginxFileServer(BaseServer):
         server_root = str(cwd)
         config = f"""
 daemon off;
+worker_processes 4;
 error_log /dev/null;
 pid /tmp/nginx.pid;
 events {{}}
@@ -268,6 +271,7 @@ class NginxSendfileServer(NginxFileServer):
         config = f"""
 error_log /dev/null;
 pid /tmp/nginx.pid;
+worker_processes 4;
 daemon off;
 events {{}}
 http {{
