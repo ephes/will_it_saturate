@@ -45,46 +45,13 @@ nb_path: "16_servers_started_locally.ipynb"
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
 <span class="kn">from</span> <span class="nn">will_it_saturate.servers</span> <span class="kn">import</span> <span class="n">BaseServer</span>
 <span class="kn">from</span> <span class="nn">will_it_saturate.registry</span> <span class="kn">import</span> <span class="n">register_model</span>
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-
-<div id="2cbf51c6-966d-4688-b0bc-cf4ea849c6b4" class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#2cbf51c6-966d-4688-b0bc-cf4ea849c6b4');
-
-            setTimeout(function() {
-                var nbb_cell_id = 3;
-                var nbb_unformatted_code = "import time\nimport subprocess\n\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.registry import register_model";
-                var nbb_formatted_code = "import time\nimport subprocess\n\nfrom will_it_saturate.servers import BaseServer\nfrom will_it_saturate.registry import register_model";
-                var nbb_cells = Jupyter.notebook.get_cells();
-                for (var i = 0; i < nbb_cells.length; ++i) {
-                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
-                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
-                             nbb_cells[i].set_text(nbb_formatted_code);
-                        }
-                        break;
-                    }
-                }
-            }, 500);
-            
-</script>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -102,7 +69,7 @@ var element = $('#2cbf51c6-966d-4688-b0bc-cf4ea849c6b4');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="FastAPIUvicornServer" class="doc_header"><code>class</code> <code>FastAPIUvicornServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L46" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FastAPIUvicornServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'fastAPI/uvicorn'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="FastAPIUvicornServer" class="doc_header"><code>class</code> <code>FastAPIUvicornServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L49" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>FastAPIUvicornServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'fastAPI/uvicorn'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -127,9 +94,9 @@ var element = $('#2cbf51c6-966d-4688-b0bc-cf4ea849c6b4');
 
 
 
-<div id="b003fb56-8c95-4bfb-a8f8-292ffc098b85" class="output_subarea output_javascript ">
+<div id="70610198-9df1-49fb-ad69-643965b5071e" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#b003fb56-8c95-4bfb-a8f8-292ffc098b85');
+var element = $('#70610198-9df1-49fb-ad69-643965b5071e');
 
             setTimeout(function() {
                 var nbb_cell_id = 4;
@@ -191,9 +158,9 @@ var element = $('#b003fb56-8c95-4bfb-a8f8-292ffc098b85');
 
 
 
-<div id="7b60a2d6-41ce-49f9-9233-c6bbc35f9213" class="output_subarea output_javascript ">
+<div id="bcf4212f-41af-4966-b9f0-ee62085315b9" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#7b60a2d6-41ce-49f9-9233-c6bbc35f9213');
+var element = $('#bcf4212f-41af-4966-b9f0-ee62085315b9');
 
             setTimeout(function() {
                 var nbb_cell_id = 6;
@@ -252,9 +219,9 @@ var element = $('#7b60a2d6-41ce-49f9-9233-c6bbc35f9213');
 
 
 
-<div id="96564e5e-ef3c-4d73-9da3-82e7ec4e6fa6" class="output_subarea output_javascript ">
+<div id="f5ed22d6-7547-4d7c-87a6-5b09f6cdbc4d" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#96564e5e-ef3c-4d73-9da3-82e7ec4e6fa6');
+var element = $('#f5ed22d6-7547-4d7c-87a6-5b09f6cdbc4d');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -304,9 +271,9 @@ var element = $('#96564e5e-ef3c-4d73-9da3-82e7ec4e6fa6');
 
 
 
-<div id="75aec6a1-50bd-4149-b932-2f255c2ecf2d" class="output_subarea output_javascript ">
+<div id="3f540182-7b8e-45a1-99c7-c4a0d5357f08" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#75aec6a1-50bd-4149-b932-2f255c2ecf2d');
+var element = $('#3f540182-7b8e-45a1-99c7-c4a0d5357f08');
 
             setTimeout(function() {
                 var nbb_cell_id = 8;
@@ -378,9 +345,9 @@ INFO:     Finished server process [25235]
 
 
 
-<div id="a9f88420-36c6-412b-a3c7-2720e3574ff7" class="output_subarea output_javascript ">
+<div id="7011cad3-9621-4d49-b8a5-6d4c69f6c489" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a9f88420-36c6-412b-a3c7-2720e3574ff7');
+var element = $('#7011cad3-9621-4d49-b8a5-6d4c69f6c489');
 
             setTimeout(function() {
                 var nbb_cell_id = 10;
@@ -425,7 +392,7 @@ var element = $('#a9f88420-36c6-412b-a3c7-2720e3574ff7');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="DjangoGunicornWSGIServer" class="doc_header"><code>class</code> <code>DjangoGunicornWSGIServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L93" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DjangoGunicornWSGIServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'django/gunicorn/wsgi'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="DjangoGunicornWSGIServer" class="doc_header"><code>class</code> <code>DjangoGunicornWSGIServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L96" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>DjangoGunicornWSGIServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'django/gunicorn/wsgi'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -450,9 +417,9 @@ var element = $('#a9f88420-36c6-412b-a3c7-2720e3574ff7');
 
 
 
-<div id="a80663d9-e662-41cc-a89d-e6e171e6820f" class="output_subarea output_javascript ">
+<div id="e9ad676b-96aa-407d-af3d-ea2ef86a520a" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#a80663d9-e662-41cc-a89d-e6e171e6820f');
+var element = $('#e9ad676b-96aa-407d-af3d-ea2ef86a520a');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -522,9 +489,9 @@ False
 
 
 
-<div id="babd0bad-9012-45ed-b762-1457ac1a41a6" class="output_subarea output_javascript ">
+<div id="dfd9a639-d929-4475-ad39-6d7e635dcb6e" class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#babd0bad-9012-45ed-b762-1457ac1a41a6');
+var element = $('#dfd9a639-d929-4475-ad39-6d7e635dcb6e');
 
             setTimeout(function() {
                 var nbb_cell_id = 7;
@@ -563,7 +530,7 @@ var element = $('#babd0bad-9012-45ed-b762-1457ac1a41a6');
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="CaddyFileServer" class="doc_header"><code>class</code> <code>CaddyFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L143" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CaddyFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'caddy'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+<h2 id="CaddyFileServer" class="doc_header"><code>class</code> <code>CaddyFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L146" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>CaddyFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'caddy'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
 </blockquote>
 
 </div>
@@ -579,6 +546,41 @@ var element = $('#babd0bad-9012-45ed-b762-1457ac1a41a6');
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+
+<div id="e410c667-d401-4db8-931e-0223419a0e15" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#e410c667-d401-4db8-931e-0223419a0e15');
+
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# export\n\nfrom pathlib import Path\n\n\n\n@register_model\nclass CaddyFileServer(BaseServer):\n    name: str = \"caddy\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i caddy\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"caddy\",\n                \"file-server\",\n                \"--listen\",\n                f\"0.0.0.0:{self.port}\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_formatted_code = "# export\n\nfrom pathlib import Path\n\n\n@register_model\nclass CaddyFileServer(BaseServer):\n    name: str = \"caddy\"\n\n    def get_pids(self):\n        kwargs = {\"shell\": True, \"capture_output\": True, \"text\": True}\n        output = subprocess.run(f\"ps aux | grep -i caddy\", **kwargs)\n        lines = [l for l in output.stdout.split(\"\\n\") if len(l) > 0 and \"grep\" not in l]\n        print(len(lines))\n        pids = []\n        for line in lines:\n            pid = line.split()[1]\n            pids.append(pid)\n        return pids\n\n    @property\n    def started(self):\n        return len(self.get_pids()) > 0\n\n    def start_server(self):\n        subprocess.Popen(\n            [\n                \"caddy\",\n                \"file-server\",\n                \"--listen\",\n                f\"0.0.0.0:{self.port}\",\n            ]\n        )\n        time.sleep(2)\n\n    def stop_server(self):\n        kill_command = [\"kill\"]\n        kill_command.extend(self.get_pids())\n        subprocess.check_output(kill_command)\n        time.sleep(1)  # dunno why this is necessary\n\n    def start(self):\n        if not self.started:\n            self.start_server()\n\n    def stop(self):\n        if self.started:\n            self.stop_server()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
 
 </div>
     {% endraw %}
@@ -649,6 +651,152 @@ var element = $('#babd0bad-9012-45ed-b762-1457ac1a41a6');
 False
 </pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Nginx">Nginx<a class="anchor-link" href="#Nginx"> </a></h1>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="NginxFileServer" class="doc_header"><code>class</code> <code>NginxFileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L193" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxFileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/minimal'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers.html#BaseServer"><code>BaseServer</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h2 id="NginxSendfileServer" class="doc_header"><code>class</code> <code>NginxSendfileServer</code><a href="https://github.com/ephes/will_it_saturate/tree/main/will_it_saturate/servers.py#L261" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>NginxSendfileServer</code>(<strong><code>protocol</code></strong>:<code>str</code>=<em><code>'http'</code></em>, <strong><code>name</code></strong>:<code>str</code>=<em><code>'nginx/sendfile'</code></em>, <strong><code>host</code></strong>:<code>str</code>=<em><code>'localhost'</code></em>, <strong><code>port</code></strong>:<code>int</code>=<em><code>8000</code></em>, <strong><code>view</code></strong>:<code>str</code>=<em><code>''</code></em>) :: <a href="/will_it_saturate/servers_started_locally.html#NginxFileServer"><code>NginxFileServer</code></a></p>
+</blockquote>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># server = NginxFileServer(port=5001)</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">NginxSendfileServer</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">5001</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">start_server</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">get_pids</span><span class="p">())</span>
+<span class="n">server</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">get_pids</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">server</span><span class="o">.</span><span class="n">started</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+daemon off;
+events {}
+http {
+    server {
+        listen 5001;
+        sendfile        on;
+        sendfile_max_chunk 1m;
+        root /Users/jochen/projects/will_it_saturate;
+    }
+}
+        
+2
+[&#39;39178&#39;, &#39;39177&#39;]
+2
+2
+0
+[]
+0
+False
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+
+<div id="76dd5c2c-bba4-4110-a94a-a9383fd17ec2" class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#76dd5c2c-bba4-4110-a94a-a9383fd17ec2');
+
+            setTimeout(function() {
+                var nbb_cell_id = 26;
+                var nbb_unformatted_code = "# dont_test\n\n# server = NginxFileServer(port=5001)\nserver = NginxSendfileServer(port=5001)\nserver.start_server()\nprint(server.get_pids())\nserver.stop()\nprint(server.get_pids())\nprint(server.started)";
+                var nbb_formatted_code = "# dont_test\n\n# server = NginxFileServer(port=5001)\nserver = NginxSendfileServer(port=5001)\nserver.start_server()\nprint(server.get_pids())\nserver.stop()\nprint(server.get_pids())\nprint(server.started)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            
+</script>
+</div>
+
 </div>
 
 </div>

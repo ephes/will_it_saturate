@@ -8,6 +8,8 @@ __all__ = ['BaseServer', 'FastAPIUvicornServer', 'DjangoGunicornWSGIServer', 'Ca
 import time
 import subprocess
 
+from pathlib import Path
+
 from pydantic import BaseModel
 
 from .files import BenchmarkFile
@@ -187,8 +189,6 @@ class CaddyFileServer(BaseServer):
 
 # Cell
 
-from pathlib import Path
-
 
 @register_model
 class NginxFileServer(BaseServer):
@@ -214,6 +214,8 @@ class NginxFileServer(BaseServer):
         server_root = str(cwd)
         config = f"""
 daemon off;
+error_log /dev/null;
+pid /tmp/nginx.pid;
 events {{}}
 http {{
     server {{
@@ -264,6 +266,8 @@ class NginxSendfileServer(NginxFileServer):
         cwd = Path.cwd()
         server_root = str(cwd)
         config = f"""
+error_log /dev/null;
+pid /tmp/nginx.pid;
 daemon off;
 events {{}}
 http {{
