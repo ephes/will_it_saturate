@@ -90,5 +90,5 @@ class Result(BaseModel):
             "complete_size": self.complete_size,
             "bytes_per_second": self.bytes_per_second,
             "bytes_per_second_h": self.readable_bytes_per_second,
-            "arch": self.server_details.cpu_info["arch_string_raw"],
+            "arch": self.server_details.cpu_info.get("arch_string_raw", "unknown"),
         }
